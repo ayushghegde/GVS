@@ -21,6 +21,19 @@ After every experiment, the agent must add or update an experiment directory und
 
 The agent must not leave the only copy of experimental work in chat, temporary storage, `/tmp`, a notebook kernel, or an uncommitted working tree.
 
+## Storage hygiene
+
+The repository must stay compact. After each experiment:
+
+- preserve only files needed to reproduce or audit the conclusion;
+- prefer compact CSV/JSON summaries over duplicate raw output;
+- delete temporary logs, caches, editor files, simulator scratch files, duplicate plots, unpacked copies of archives, and other regenerable intermediates;
+- do not commit PDK distributions, extracted PDK copies, virtual environments, build caches, or large generated waveforms unless a specific result cannot be reproduced without them;
+- keep failed experiments only when they teach something, and keep them in the smallest reproducible form;
+- never delete the only evidence supporting a claimed result.
+
+Run `python scripts/cleanup_experiment.py experiments/<version-or-id>` before finalizing an experiment. If a large file is required, document why it must be retained in `REPORT.md`.
+
 ## Evidence and provenance
 
 - Never invent missing historical results.
@@ -34,10 +47,11 @@ The agent must not leave the only copy of experimental work in chat, temporary s
 Before reporting an experiment as complete:
 
 1. Put its files in `experiments/<version-or-id>/`.
-2. Run `python scripts/finalize_experiment.py experiments/<version-or-id>`.
-3. Inspect the generated/updated `manifest.json`.
-4. Commit the experiment files and manifest to the active branch.
-5. In the final response, state the commit/branch and the next unresolved problem.
+2. Run `python scripts/cleanup_experiment.py experiments/<version-or-id>`.
+3. Run `python scripts/finalize_experiment.py experiments/<version-or-id>`.
+4. Inspect the generated/updated `manifest.json`.
+5. Commit the experiment files and manifest to the active branch.
+6. In the final response, state the commit/branch and the next unresolved problem.
 
 If GitHub write access is unavailable, package the full experiment directory and tell the user that repository persistence is the blocker. Do not claim the repository was updated.
 
