@@ -1,0 +1,22 @@
+# PDK distributions / extracted PDK
+pdk/source/*
+pdk/extracted/*
+!pdk/source/.gitkeep
+!pdk/extracted/.gitkeep
+*.tar.zst
+
+# Simulation output
+results/*
+!results/.gitkeep
+*.raw
+*.log
+*.out
+
+# Local environment
+.env
+.venv/
+__pycache__/
+
+# Editor / OS
+.DS_Store
+.vscode/
