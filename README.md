@@ -2,13 +2,17 @@
 
 Reproducible workspace for the GVS hardware experiments.
 
-## Current baseline policy
+## Current baseline
 
-The unfinished v11T experiment is **not** the validated baseline. This repository resumes from the last completed experiment before v11T. Until the exact prior netlist/results are recovered, they must not be reconstructed or presented as measured results.
+The preserved baseline is **v12S — PARTIAL PASS**. Its supplied complete package is stored at `artifacts/v12S/NEURAL_GLYPH_V12S_AUTONOMOUS_COMPLETE_TILE.zip`.
+
+v12S integrated the complete SKY130 schematic lifecycle and recorded nominal PVT, mismatch, parasitic-stress and hierarchical-rebuild results. It remains PARTIAL PASS because there is no real placed/routed RC extraction yet. The unfinished later layout attempt is not promoted over this baseline.
 
 ## Experimental rule
 
 Preserve the existing GVS architecture and test intent. A new architecture change is accepted only when experiment evidence justifies it.
+
+Every AI/Codex agent must follow `AGENTS.md`: an experiment is not finished until its reproducible artifacts, status, report and manifest are written back into this repository.
 
 ## Environment
 
@@ -16,27 +20,24 @@ The intended simulation stack is:
 
 - NGSpice
 - SKY130 PDK transistor models
-- reproducible shell scripts
+- reproducible shell/Python scripts
 - versioned SPICE testbenches and results
+- physical layout/extraction tools when the experiment reaches that stage
 
-Large PDK archives are intentionally not committed to Git. Put the supplied `sky130_fd_pr.tar.zst` and `common.tar.zst` in `pdk/source/` (or point `PDK_ROOT` at an extracted SKY130 installation).
+Large PDK distributions remain local rather than duplicated in Git. Put the supplied `sky130_fd_pr.tar.zst` and `common.tar.zst` in `pdk/source/`, or point `PDK_ROOT` at an extracted SKY130 installation.
 
 ## Repository layout
 
-- `experiments/baseline/` — last completed pre-v11T experiment (exact artifacts only)
-- `experiments/v11T_unfinished/` — notes/artifacts from the unfinished v11T attempt
-- `tests/` — regression/testbench definitions once recovered
-- `scripts/` — setup and simulation entry points
+- `artifacts/v12S/` — immutable supplied v12S package
+- `experiments/` — normal experiment records and future versions
+- `scripts/` — setup, simulation and experiment-finalization helpers
 - `pdk/` — local PDK staging, excluded from Git
-- `results/` — generated simulation output, excluded except intentional reference summaries
-- `docs/` — experiment history and rules
+- `results/` — generated scratch output; persistent experiment results belong with the experiment
+- `docs/` — experiment rules/history
+- `AGENTS.md` — persistence rules for AI/Codex agents
 
-## Next checkpoint
+## Next physical checkpoint
 
-1. Recover the exact last completed pre-v11T netlist/testbench/results.
-2. Record its tool/model versions and SKY130 corner.
-3. Run it unchanged under NGSpice.
-4. Confirm reproduced outputs against the recorded baseline.
-5. Only after reproduction passes, continue new experiments.
+Preserve the v12S architecture, make a real layout, extract real RC, then rerun the existing lifecycle/test battery. Fix specific physical failures if extraction exposes them rather than redesigning the architecture without evidence.
 
-No missing experimental result should be invented to make a test pass.
+No missing result should be invented to make a test pass.
