@@ -1,0 +1,89 @@
+name: v12S physical extraction preflight
+
+on:
+  push:
+    branches:
+      - agent/gvs-baseline-setup
+    paths:
+      - '.github/workflows/v12s-physical-preflight.yml'
+  workflow_dispatch:
+
+jobs:
+  preflight:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout preserved GVS experiment
+        uses: actions/checkout@v4
+
+      - name: Record host and package candidates
+        shell: bash
+        run: |
+          set -euxo pipefail
+          mkdir -p experiments/v13P_layout_rc/preflight
+          {
+            echo "date_utc=$(date -u +%FT%TZ)"
+            uname -a
+            cat /etc/os-release
+            python3 --version
+          } | tee experiments/v13P_layout_rc/preflight/host.txt
+
+          sudo apt-get update
+          apt-cache policy ngspice magic netgen-lvs klayout 2>/dev/null \
+            | tee experiments/v13P_layout_rc/preflight/apt-policy.txt || true
+
+      - name: Install available physical tools
+        shell: bash
+        run: |
+          set -euxo pipefail
+          pkgs=()
+          for p in ngspice magic netgen-lvs klayout; do
+            if apt-cache show "$p" >/dev/null 2>&1; then pkgs+=("$p"); fi
+          done
+          if ((${#pkgs[@]})); then sudo apt-get install -y "${pkgs[@]}"; fi
+          {
+            command -v ngspice || true
+            command -v magic || true
+            command -v netgen || true
+            command -v klayout || true
+            ngspice --version 2>&1 | head -20 || true
+            magic --version 2>&1 | head -20 || true
+            netgen -batch version 2>&1 | head -20 || true
+            klayout -v 2>&1 | head -20 || true
+          } | tee experiments/v13P_layout_rc/preflight/tool-versions.txt
+
+      - name: Inventory preserved v12S package
+        shell: bash
+        run: |
+          set -euxo pipefail
+          zip=artifacts/v12S/NEURAL_GLYPH_V12S_AUTONOMOUS_COMPLETE_TILE.zip
+          test -f "$zip"
+          sha256sum "$zip" | tee experiments/v13P_layout_rc/preflight/v12s-zip.sha256
+          unzip -l "$zip" | tee experiments/v13P_layout_rc/preflight/v12s-zip-list.txt
+          rm -rf /tmp/v12s && mkdir -p /tmp/v12s
+          unzip -q "$zip" -d /tmp/v12s
+          find /tmp/v12s -type f -printf '%P\n' | sort \
+            | tee experiments/v13P_layout_rc/preflight/v12s-files.txt
+
+          echo '--- candidate netlists/scripts ---' \
+            | tee experiments/v13P_layout_rc/preflight/candidates.txt
+          find /tmp/v12s -type f \( -iname '*.spice' -o -iname '*.sp' -o -iname '*.cir' -o -iname '*.tcl' -o -iname '*.py' -o -iname '*.sh' -o -iname '*.mag' -o -iname '*.gds' -o -iname '*.lef' -o -iname '*.def' \) \
+            -printf '%P\n' | sort \
+            | tee -a experiments/v13P_layout_rc/preflight/candidates.txt
+
+      - name: Check v12S source for PDK and run requirements
+        shell: bash
+        run: |
+          set -euxo pipefail
+          {
+            echo '=== include/lib/model references ==='
+            grep -RniE '\.(include|lib)|sky130|ngspice|magic|netgen|klayout|openrcx|pex|extract' /tmp/v12s \
+              --include='*.spice' --include='*.sp' --include='*.cir' --include='*.tcl' --include='*.py' --include='*.sh' --include='*.md' \
+              | head -1000 || true
+          } | tee experiments/v13P_layout_rc/preflight/requirements-scan.txt
+
+      - name: Upload preflight evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: v12s-physical-preflight
+          path: experiments/v13P_layout_rc/preflight
+          if-no-files-found: error
