@@ -1,0 +1,10 @@
+node,layer,length_um,substrate_cap_fF,total_crossing_coupling_fF,drc_errors
+R0,M4,1000,75.9080,0.88482,0
+R1,M4,1000,75.9080,0.88482,0
+R2,M4,1000,75.9080,0.88482,0
+R3,M4,1000,75.9080,0.88482,0
+C0,M5,1000,87.8772,0.88482,0
+C1,M5,1000,87.8772,0.88482,0
+C2,M5,1000,87.8772,0.88482,0
+C3,M5,1000,87.8772,0.88482,0
+# 16 M4/M5 crossings; each extracted coupling = 0.221205 fF
