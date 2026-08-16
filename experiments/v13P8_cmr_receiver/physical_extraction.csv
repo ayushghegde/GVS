@@ -1,0 +1,15 @@
+metric,value,unit,notes
+drc_errors,0,count,Magic SKY130A
+nfet_count,2,count,sky130_fd_pr__nfet_01v8 W=0.42um L=0.15um
+pfet_count,2,count,sky130_fd_pr__pfet_01v8 W=0.84um L=0.15um
+unintended_equiv_nets,0,count,no extraction equivalence shorts
+waken_substrate_cap,0.555394,fF,Magic extracted
+waken_vdd_coupling,0.375191,fF,Magic extracted
+waken_row_coupling,0.258556,fF,Magic extracted
+waken_col_coupling,0.165330,fF,Magic extracted
+waken_mid_coupling,0.0865691,fF,Magic extracted
+row_substrate_cap,0.512918,fF,Magic extracted
+col_substrate_cap,0.550324,fF,Magic extracted
+row_vdd_coupling,0.371436,fF,Magic extracted
+col_vdd_coupling,0.384204,fF,Magic extracted
+row_col_coupling,0.0767351,fF,Magic extracted
