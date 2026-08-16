@@ -1,0 +1,4 @@
+case,layer,length_um,taps,attached_device,drc_errors,extracted_spine_cap_fF,delta_vs_bare_fF,notes
+bare_spine,M4,100,0,,0,7.610610,0.000000,minimum-width M4
+empty_tap,M4,100,1,,0,7.963000,0.352390,legal M4-M3-M2-M1 stack plus local M1 branch
+nfet_gate_tap,M4,100,1,sky130_fd_pr__nfet_01v8 W=0.84um L=0.15um gate,0,8.317110,0.706500,device extracts correctly; delta is extra layout parasitic beyond schematic intrinsic device model
