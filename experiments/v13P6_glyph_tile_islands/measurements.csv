@@ -1,0 +1,11 @@
+experiment,geometry,drc_errors,node0_substrate_fF,node1_substrate_fF,coupling_fF,notes
+single_m4_100um,100um x 0.30um M4,0,7.61061,,,minimum-width event link
+single_m4_250um,250um x 0.30um M4,0,18.9935,,,minimum-width event link
+single_m4_500um,500um x 0.30um M4,0,37.9650,,,minimum-width event link
+single_m4_1000um,1000um x 0.30um M4,0,75.9080,,,minimum-width event link
+parallel_m4_gap_0p4um,two 1mm M4 wires gap 0.4um,0,40.7985,40.7985,48.4536,strong parallel coupling
+parallel_m4_gap_0p6um,two 1mm M4 wires gap 0.6um,0,41.5794,41.5794,40.1709,strong parallel coupling
+parallel_m4_gap_1p0um,two 1mm M4 wires gap 1.0um,0,43.1237,43.1237,29.9363,strong parallel coupling
+parallel_m4_gap_5um,two 1mm M4 wires gap 5um,0,55.5694,55.5694,8.43806,still measurable coupling
+parallel_m4_gap_10um,two 1mm M4 wires gap 10um,0,75.9080,75.9080,,coupling below extractor reporting threshold in this setup
+orthogonal_m4_m5,1mm M4 horizontal crossing 1mm M5 vertical once,0,75.9080,87.9215,0.221205,preferred sparse-event topology
