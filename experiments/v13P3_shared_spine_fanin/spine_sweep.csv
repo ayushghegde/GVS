@@ -1,0 +1,27 @@
+experiment,layer,length_um,taps,drc_errors,extracted_cap_fF,notes
+wire_only,M2,25,0,0,1.959820,minimum-width spine
+wire_only,M2,50,0,0,3.909070,minimum-width spine
+wire_only,M2,100,0,0,7.807570,minimum-width spine
+wire_only,M2,200,0,0,15.604600,minimum-width spine
+wire_only,M3,25,0,0,2.166870,minimum-width spine
+wire_only,M3,50,0,0,4.309140,minimum-width spine
+wire_only,M3,100,0,0,8.593690,minimum-width spine
+wire_only,M3,200,0,0,17.162800,minimum-width spine
+wire_only,M4,25,0,0,1.919160,minimum-width spine
+wire_only,M4,50,0,0,3.816310,minimum-width spine
+wire_only,M4,100,0,0,7.610610,minimum-width spine
+wire_only,M4,200,0,0,15.199200,minimum-width spine
+wire_only,M5,25,0,0,2.319620,minimum-width spine
+wire_only,M5,50,0,0,4.514920,minimum-width spine
+wire_only,M5,100,0,0,8.905520,minimum-width spine
+wire_only,M5,200,0,0,17.686700,minimum-width spine
+m4_taps,M4,200,0,0,15.199200,bare shared spine
+m4_taps,M4,200,2,0,15.904000,legal M4-to-M1 tap stacks with 1um local M1 branches
+m4_taps,M4,200,4,0,16.608800,legal M4-to-M1 tap stacks with 1um local M1 branches
+m4_taps,M4,200,8,0,18.018300,legal M4-to-M1 tap stacks with 1um local M1 branches
+m4_taps,M4,200,16,0,20.837500,exceeds historical +20fF shared-node stress envelope before device terminal capacitance
+m4_taps,M4,100,0,0,7.610610,bare shared spine
+m4_taps,M4,100,8,0,10.429700,legal tap stacks
+m4_taps,M4,100,16,0,12.279900,legal tap stacks
+m4_taps,M4,100,24,0,14.018900,legal tap stacks
+m4_taps,M4,100,32,0,15.499300,legal tap stacks; remains below +20fF envelope before device terminal capacitance
