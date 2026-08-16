@@ -1,0 +1,5 @@
+structure,geometry,drc_errors,extracted_device,terminal_a_substrate_fF,terminal_b_substrate_fF,terminal_coupling_fF,notes
+m1_wire_10um,10.00um x 0.14um M1,0,,0.858852,,,bare route calibration
+nfet_switch,W=0.42um L=0.15um,0,sky130_fd_pr__nfet_01v8,,,,extracted device reports w=0.42um l=0.15um
+mim_2x2,2.00um x 2.00um MIM,0,sky130_fd_pr__cap_mim_m3_1,0.130789,0.438133,0.187061,unrouted primitive; parasitics exclude intrinsic MIM model
+routed_mim_10um,2.00um x 2.00um MIM + 10um access routing on M3/M4,0,sky130_fd_pr__cap_mim_m3_1,0.951508,1.539970,0.528756,parasitics exclude intrinsic MIM model
