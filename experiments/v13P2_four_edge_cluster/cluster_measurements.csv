@@ -1,0 +1,15 @@
+node_or_pair,pitch_um,drc_errors,inter_edge_coupling_fF,notes
+H0_total_neighbors,4.5,0,0.017064700,edge node one neighbor
+H1_total_neighbors,4.5,0,0.034551803,middle node two neighbors plus tiny mixed coupling
+H2_total_neighbors,4.5,0,0.034551803,middle node two neighbors plus tiny mixed coupling
+H3_total_neighbors,4.5,0,0.017487103,edge node one neighbor plus tiny mixed coupling
+G1_total_neighbors,4.5,0,0.232195300,middle Grammar node accumulated cross-edge coupling
+G2_total_neighbors,4.5,0,0.232195300,middle Grammar node accumulated cross-edge coupling
+MX1_total_neighbors,4.5,0,0.128949300,middle Myelin internal node accumulated cross-edge coupling
+MX2_total_neighbors,4.5,0,0.128949300,middle Myelin internal node accumulated cross-edge coupling
+H0_H1,4.5,0,0.017064700,nearest-neighbor dendrite coupling
+H1_H2,4.5,0,0.017064700,nearest-neighbor dendrite coupling
+H2_H3,4.5,0,0.017064700,nearest-neighbor dendrite coupling
+G0_G1,4.5,0,0.112633000,nearest-neighbor Grammar coupling
+MX0_MX1,4.5,0,0.060883000,nearest-neighbor internal coupling
+Q0_Q1,4.5,0,0.005343270,nearest-neighbor gate coupling; actual v12S Q is shared
