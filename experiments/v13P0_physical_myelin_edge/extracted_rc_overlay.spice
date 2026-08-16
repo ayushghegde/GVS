@@ -1,0 +1,25 @@
+* GVS v13P0 connected physical Myelin-edge overlay
+* Source: Magic 8.3.681 SKY130A extraction of myelin_edge0_v2
+* This is an extracted-RC replacement for the v12S XMY0 + XMYS0 pair.
+* Capacitances are physical parasitics; intrinsic MIM capacitance remains in the PDK device.
+* Resistor values are converted from Magic extresist milliohms to ohms.
+
+.subckt GVS_MYELIN_EDGE0_PEX G0 Q H0 VSS
+XMY G0 MX_MIM sky130_fd_pr__cap_mim_m3_1 w=2 l=2
+R_MX_PATH MX_MIM MX0 0.261854
+XMYS MX0 Q H0_INT VSS sky130_fd_pr__nfet_01v8 W=.42 L=.15
+R_H0_PATH H0_INT H0 0.247529
+
+* Node-to-substrate parasitics
+C_G0_SUB G0 VSS 1.279300f
+C_MX0_SUB MX0 VSS 0.707921f
+C_Q_SUB Q VSS 0.403547f
+C_H0_SUB H0 VSS 0.319232f
+
+* Extracted inter-node coupling parasitics
+C_MX0_G0 MX0 G0 0.397983f
+C_MX0_Q MX0 Q 0.00988026f
+C_Q_G0 Q G0 0.00502246f
+C_H0_MX0 H0 MX0 0.0331362f
+C_H0_Q H0 Q 0.00665531f
+.ends GVS_MYELIN_EDGE0_PEX
