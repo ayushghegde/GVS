@@ -1,0 +1,5 @@
+tiles_per_row,row_input_load_fF,col_input_load_fF,row_trunk_total_fF,col_trunk_total_fF,selected_row_plus_col_energy_pJ
+4,1.24525,1.19779,81.7758,93.5760,0.56814
+16,1.24525,1.19779,99.3733,110.6040,0.68033
+32,1.24525,1.19779,122.8365,133.3080,0.82991
+64,1.24525,1.19779,169.7630,178.7159,1.12907
