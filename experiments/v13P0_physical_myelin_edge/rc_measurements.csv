@@ -3,3 +3,4 @@ m1_wire_10um,10.00um x 0.14um M1,0,,0.858852,,,bare route calibration
 nfet_switch,W=0.42um L=0.15um,0,sky130_fd_pr__nfet_01v8,,,,extracted device reports w=0.42um l=0.15um
 mim_2x2,2.00um x 2.00um MIM,0,sky130_fd_pr__cap_mim_m3_1,0.130789,0.438133,0.187061,unrouted primitive; parasitics exclude intrinsic MIM model
 routed_mim_10um,2.00um x 2.00um MIM + 10um access routing on M3/M4,0,sky130_fd_pr__cap_mim_m3_1,0.951508,1.539970,0.528756,parasitics exclude intrinsic MIM model
+connected_myelin_edge_v2,2x2um MIM + M4/M3/M2/M1 stack + W0.42/L0.15 NFET + G0/MX0/Q/H0 ports,0,sky130_fd_pr__cap_mim_m3_1 + sky130_fd_pr__nfet_01v8,1.279300,0.707921,0.397983,G0 and MX0 substrate caps shown; Q=0.403547fF H0=0.319232fF; extracted MX0 path ~=0.261854ohm and H0 path ~=0.247529ohm
