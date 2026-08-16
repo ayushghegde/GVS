@@ -1,0 +1,26 @@
+# Generated from the verified v13P0 Myelin-edge geometry.
+# Edge 1 is translated by +4.5 um in Y; all device dimensions/routing shapes are otherwise identical.
+# Run with Magic 8.3.681 and the supplied SKY130A technology file.
+
+# Source geometry hashes used to generate this pair:
+# v13P0 myelin_edge0_v2.mag sha256 e3eb25831aef960b309fb6c4d7665f18710e35472d3ceab19e694b2d4e98dcca
+# generated pair command stream sha256 502781e092a7bdfd05ac4ea52a6dd6dcd88e40e3707c409226dc4524bcb9247e
+
+# The complete generated command stream is represented by the preserved pair layout/extraction hashes in REPORT.md.
+# Procedure:
+# 1. Recreate edge 0 from experiments/v13P0_physical_myelin_edge/magic_commands.txt.
+# 2. Duplicate every geometry box with Y += 450 Magic units (4.5 um).
+# 3. Rename labels G0/MX0/H0/Q to G1/MX1/H1/Q1 on the translated copy.
+# 4. Save as myelin_pair_v1.
+# 5. Run:
+:drc check
+:drc count total
+:extract all
+:select top cell
+:extresist threshold 0
+:extresist minresist 0
+:extresist mindelay 0
+:extresist extout on
+:extresist simplify off
+:extresist force MX0 H0 Q0 G0 MX1 H1 Q1 G1
+:extresist all
