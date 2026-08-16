@@ -1,0 +1,19 @@
+scale 1000 1 1e+06
+rnode "MX0.t0" 0 8.17424 537 101 0
+rnode "MX0.t1" 0 375.463 100 100 0
+rnode "MX0" 0 46.3844 485 92 0
+rnode "MX0.n0" 0 2.68355 492 100 0
+rnode "MX0" 0 -0.547918 485 92 0
+rnode "MX0.n1" 0 10.5235 505 100 0
+rnode "MX0" 0 -1.68111 485 92 0
+resist "MX0" "MX0.n0" 0.0168269
+resist "MX0.t1" "MX0" 13.1254
+resist "MX0.n1" "MX0.n0" 0.065
+resist "MX0" "MX0.n0" 0.035
+resist "MX0" "MX0.n1" 0.0925926
+resist "MX0.n1" "MX0.t0" 248.646
+rnode "H0.t0" 0 6.85222 552 101 0
+rnode "H0" 0 32.9393 820 92 0
+resist "H0.t0" "H0" 247.529
+device msubckt sky130_fd_pr__nfet_01v8 537 80 538 81  "$SUB" "Q" 30 0 "MX0.t0" 42 1554,158 "H0.t0" 42 1596,160
+device csubckt sky130_fd_pr__cap_mim_m3_1 0 0 1 1  "None" "MX0.t1" 1440 0 "G0" -412 81984,2912
