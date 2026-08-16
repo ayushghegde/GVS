@@ -1,0 +1,74 @@
+:load myelin_edge0_v2
+:box -14 -14 214 214
+:paint metal3
+:box 0 0 200 200
+:paint mimcap
+:box 20 20 52 180
+:paint mimcc
+:box 19 19 53 181
+:paint metal4
+:box -1014 70 -14 100
+:paint metal3
+:box -900 70 -850 100
+:label G0 center metal3
+:box 19 85 492 115
+:paint metal4
+:box 440 75 492 127
+:paint metal4
+:paint metal3
+:box 450 85 482 117
+:paint via3
+:box 440 75 492 127
+:paint metal2
+:box 452 87 480 115
+:paint via2
+:box 440 75 492 127
+:paint metal1
+:box 453 88 479 114
+:paint via1
+:box 500 80 590 122
+:paint ndiffusion
+:box 537 50 552 190
+:paint polysilicon
+:box 520 140 570 190
+:paint polysilicon
+:box 510 92 527 109
+:paint ndc
+:paint mcon
+:box 562 92 579 109
+:paint ndc
+:paint mcon
+:box 537 160 554 177
+:paint pc
+:paint mcon
+:box 440 88 532 113
+:paint metal1
+:box 505 87 532 114
+:paint metal1
+:box 485 92 515 109
+:label MX0 center metal1
+:box 557 87 584 114
+:paint metal1
+:box 557 92 900 109
+:paint metal1
+:box 820 92 870 109
+:label H0 center metal1
+:box 532 155 559 182
+:paint metal1
+:box 537 177 554 350
+:paint metal1
+:box 537 300 554 340
+:label Q center metal1
+:save
+:drc check
+:drc count total
+:extract all
+:select top cell
+:extresist threshold 0
+:extresist minresist 0
+:extresist mindelay 0
+:extresist extout on
+:extresist simplify off
+:extresist force MX0 H0 Q G0
+:extresist all
+:quit -noprompt
