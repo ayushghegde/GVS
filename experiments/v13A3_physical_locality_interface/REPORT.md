@@ -53,11 +53,13 @@ The extracted PRE-to-substrate capacitance also drops from roughly 4.94 fF in th
 
 Selected compact combined layout:
 - DRC errors: 0;
-- extracted intended devices: 9 NFET + 2 PFET + 1 MIM = the expected 4T coordinate + 5T lease + capacitor;
+- extracted intended devices: **7 NFET + 2 PFET + 1 MIM** = 2 coordinate NFET + 2 coordinate PFET + 5 lease NFET + capacitor;
 - physical PRE route connects the coordinate release to the lease diode-write device;
 - WAKE remains a separate storage node;
 - ROWB/COLB remain separate;
 - no accidental coordinate-to-WAKE short.
+
+The earlier report text incorrectly said 9 NFET. The extracted netlist itself contains 7 NFET; this report is corrected so the bookkeeping matches the physical source of truth.
 
 Coordinate and lease grounds are exposed as separate local ground shapes in the extraction and are tied to the same external ground in the transient bench. A future regional power-grid layout should make that shared ground connection physical rather than relying on an external common node.
 
