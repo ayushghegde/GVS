@@ -1,0 +1,10 @@
+disturbance,amplitude_V,corner,wake_peak_V,gated_event_peak_V
+orthogonal_5mV,0.005,tt,1.188113e-05,2.361222e-06
+orthogonal_5mV,0.005,ff,1.336882e-05,4.437233e-06
+orthogonal_5mV,0.005,ss,1.044433e-05,-2.413994e-08
+bad_parallel_0p74V,0.74,tt,0.2383142,0.002248147
+bad_parallel_0p74V,0.74,ff,0.2753879,0.00305223
+bad_parallel_0p74V,0.74,ss,0.2074725,0.001511976
+true_coordinate,1.8,tt,1.181983,0.2000039
+true_coordinate,1.8,ff,1.234702,0.2002008
+true_coordinate,1.8,ss,1.136534,0.2000056
