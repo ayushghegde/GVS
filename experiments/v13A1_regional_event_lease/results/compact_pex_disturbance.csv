@@ -1,0 +1,10 @@
+corner,case,input_V,wake_peak_V,out_peak_V,pass
+tt,orthogonal_5mV,0.005,0.00001556055,0.0003467562,True
+tt,bad_parallel_740mV,0.74,0.2376819,0.002937357,True
+tt,true_coordinate,1.8,1.181614,0.200557,True
+ff,orthogonal_5mV,0.005,0.00001722815,0.0003504713,True
+ff,bad_parallel_740mV,0.74,0.2749648,0.003831417,True
+ff,true_coordinate,1.8,1.234499,0.2001584,True
+ss,orthogonal_5mV,0.005,0.00001398963,0.0003411024,True
+ss,bad_parallel_740mV,0.74,0.2067645,0.002072201,True
+ss,true_coordinate,1.8,1.136099,0.2001433,True
