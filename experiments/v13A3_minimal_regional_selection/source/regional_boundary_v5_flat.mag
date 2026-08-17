@@ -1,0 +1,49 @@
+magic
+tech sky130A
+timestamp 1786994994
+<< checkpaint >>
+rect -100 -100 1290 650
+<< ndiff >>
+rect 0 0 37 63
+rect 52 0 90 63
+rect 400 0 437 63
+rect 452 0 490 63
+<< nmos >>
+rect 37 0 52 63
+rect 437 0 452 63
+<< poly >>
+rect 37 -30 52 0
+rect 37 63 52 140
+rect 437 -30 452 0
+rect 437 63 452 140
+<< ndiffc >>
+rect 10 23 27 40
+rect 62 23 79 40
+rect 410 23 427 40
+rect 462 23 479 40
+<< polycont >>
+rect 36 110 53 127
+rect 436 110 453 127
+<< viali >>
+rect 10 23 27 40
+rect 62 23 79 40
+rect 410 23 427 40
+rect 462 23 479 40
+rect 36 110 53 127
+rect 436 110 453 127
+<< metal1 >>
+rect 5 18 32 45
+rect 57 18 84 45
+rect 405 18 432 45
+rect 457 18 484 45
+rect 31 105 58 132
+rect 431 105 458 132
+rect 44 127 444 132
+rect 44 105 431 127
+<< labels >>
+rlabel metal1 5 18 32 45 0 TEGLOBAL
+rlabel metal1 57 18 84 45 0 TELOCAL
+rlabel metal1 405 18 432 45 0 GND
+rlabel metal1 457 18 484 45 0 LRET
+rlabel metal1 200 105 300 127 0 LEASEWAKE
+<< end >>
