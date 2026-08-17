@@ -1,49 +1,86 @@
 magic
 tech sky130A
-timestamp 1786994994
-<< checkpaint >>
-rect -100 -100 1290 650
-<< ndiff >>
-rect 0 0 37 63
-rect 52 0 90 63
-rect 400 0 437 63
-rect 452 0 490 63
+timestamp 1786984165
 << nmos >>
-rect 37 0 52 63
-rect 437 0 452 63
-<< poly >>
-rect 37 -30 52 0
-rect 37 63 52 140
-rect 437 -30 452 0
-rect 437 63 452 140
+rect 37 30 52 72
+rect 437 30 452 93
+<< ndiff >>
+rect 0 59 37 72
+rect 0 42 10 59
+rect 27 42 37 59
+rect 0 30 37 42
+rect 52 59 90 72
+rect 52 42 62 59
+rect 79 42 90 59
+rect 52 30 90 42
+rect 400 59 437 93
+rect 400 42 410 59
+rect 427 42 437 59
+rect 400 30 437 42
+rect 452 59 490 93
+rect 452 42 462 59
+rect 479 42 490 59
+rect 452 30 490 42
 << ndiffc >>
-rect 10 23 27 40
-rect 62 23 79 40
-rect 410 23 427 40
-rect 462 23 479 40
+rect 10 42 27 59
+rect 62 42 79 59
+rect 410 42 427 59
+rect 462 42 479 59
+<< poly >>
+rect 420 148 470 161
+rect 20 127 70 140
+rect 20 110 37 127
+rect 54 110 70 127
+rect 420 131 437 148
+rect 454 131 470 148
+rect 420 111 470 131
+rect 20 90 70 110
+rect 437 93 452 111
+rect 37 72 52 90
+rect 37 0 52 30
+rect 437 0 452 30
 << polycont >>
-rect 36 110 53 127
-rect 436 110 453 127
+rect 37 110 54 127
+rect 437 131 454 148
 << viali >>
-rect 10 23 27 40
-rect 62 23 79 40
-rect 410 23 427 40
-rect 462 23 479 40
-rect 36 110 53 127
-rect 436 110 453 127
+rect 437 131 454 148
+rect 37 110 54 127
+rect 10 42 27 59
+rect 62 42 79 59
+rect 410 42 427 59
+rect 462 42 479 59
 << metal1 >>
-rect 5 18 32 45
-rect 57 18 84 45
-rect 405 18 432 45
-rect 457 18 484 45
-rect 31 105 58 132
-rect 431 105 458 132
-rect 44 127 444 132
-rect 44 105 431 127
+rect 32 220 59 250
+rect 432 220 459 271
+rect 32 190 459 220
+rect 32 127 59 190
+rect 32 110 37 127
+rect 54 110 59 127
+rect 432 148 459 190
+rect 432 131 437 148
+rect 454 131 459 148
+rect 432 126 459 131
+rect 32 105 59 110
+rect -120 59 32 64
+rect -120 42 10 59
+rect 27 42 32 59
+rect -120 37 32 42
+rect 57 59 210 64
+rect 57 42 62 59
+rect 79 42 210 59
+rect 57 37 210 42
+rect 280 59 432 64
+rect 280 42 410 59
+rect 427 42 432 59
+rect 280 37 432 42
+rect 457 59 610 64
+rect 457 42 462 59
+rect 479 42 610 59
+rect 457 37 610 42
 << labels >>
-rlabel metal1 5 18 32 45 0 TEGLOBAL
-rlabel metal1 57 18 84 45 0 TELOCAL
-rlabel metal1 405 18 432 45 0 GND
-rlabel metal1 457 18 484 45 0 LRET
-rlabel metal1 200 105 300 127 0 LEASEWAKE
+rlabel metal1 -120 37 0 64 0 TEGLOBAL
+rlabel metal1 100 37 210 64 0 TELOCAL
+rlabel metal1 280 37 400 64 0 GND
+rlabel metal1 500 37 610 64 0 LRET
+rlabel metal1 220 192 270 218 0 LEASEWAKE
 << end >>
