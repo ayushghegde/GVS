@@ -1,0 +1,4 @@
+corner,launch,wake12_V,min_event_V,max_event_V,post_done_event_V,pass
+tt,1,1.120267,0.2002213,0.2003036,-0.01072959,True
+ff,1,1.201609,0.2000599,0.2000689,-0.01273385,True
+ss,1,1.029621,0.200132,0.20038,-0.01494164,True
