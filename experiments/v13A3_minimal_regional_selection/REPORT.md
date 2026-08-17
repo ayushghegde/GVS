@@ -1,12 +1,12 @@
 # v13A3 — Minimal Regional Selection Boundary
 
-**Verdict: PARTIAL PASS — full real-SKY130 lifecycle + mismatch passed; final added boundary transistors still need physical PEX**
+**Verdict: PARTIAL PASS — selected regional boundary is now physically extracted and passes full lifecycle PVT/mismatch; the 4T coordinate-release front end remains to be physically extracted in the same chain**
 
 ## What happened
 
-v13A2 physically solved the short-lived Regional Event Lease. The next task was to place that lease between inter-region coordinate selection and the unchanged v12S local lifecycle.
+v13A2 physically solved the short-lived Regional Event Lease. v13A3 places that lease between inter-region coordinate selection and the unchanged v12S local lifecycle.
 
-The final selected chain is intentionally small:
+The selected chain is intentionally small:
 
 `ROWB/COLB -> 4T exact coordinate release -> v13A2 physical lease PEX -> local Grammar/template gates -> lease-keyed soma competition -> unchanged v12S route/error/fallback`
 
@@ -15,45 +15,64 @@ The v12S Grammar/Myelin/soma/route/recovery/invalidation/fallback architecture w
 ## Failure sequence and what it taught us
 
 ### Attempt 1 — gate only Grammar evidence: FAIL
-
-The physical lease gated the 0.2 V Grammar event, but the old stable-template event still reached the dendrite directly. An incomplete coordinate could therefore still produce a physical winner.
+The physical lease gated the 0.2 V Grammar event, but the stable-template event still reached the dendrite directly. An incomplete coordinate could therefore still produce a physical winner.
 
 **Lesson:** a regional lease must cover every local evidence class that can independently contribute enough evidence to fire.
 
 ### Attempt 2 — gate Grammar + template: FAIL at SS
-
 A minimum NFET was added to the template-event source. TT blocked false coordinates, but at SS/85C off-state leakage slowly charged the floating capacitive template node over several microseconds. The tile could still fire.
 
 ### Attempt 3 — two-device off stacks: FAIL at SS
-
 Adding another off device reduced leakage current but did not solve charge accumulation on a deliberately floating evidence node.
 
 ### Attempt 4 — weak long-channel bleeders: evidence quiet, but still incomplete
-
 Weak bleeders held the inactive evidence nodes close to 0 V. However, at SS the two somas were still globally allowed to leave precharge. With nearly equal/resting dendrite voltages, the analog competition could choose a meaningless winner even with almost no evidence.
 
 This revealed the actual correctness boundary.
 
-## Selected fix — authorize the competition, not every analog node
+## Selected fix — authorize competition, not every analog node
 
-One minimum NFET is shared under the two soma discharge paths:
-
-- original `XT0` and `XT1` sources connected directly to GND;
-- selected version connects both sources to local return node `LRET`;
-- `XLEASEKEY LRET LEASEWAKE 0 0 sky130_fd_pr__nfet_01v8 W=.42 L=.15`.
+The two original soma discharge devices share a local return node `LRET`; a lease-keyed NFET connects `LRET` to ground.
 
 Lease active -> the soma pair may compete.
 
 Lease inactive -> neither soma can discharge into a winner, regardless of small evidence leakage or equal resting evidence.
 
-This is the cheapest tested robust boundary. A W=.63/.84 device gave no useful advantage, so minimum W=.42 was selected.
+The final minimal regional boundary therefore contains:
 
-The final minimal design therefore needs only the physical lease's existing Grammar event gate plus:
+- the v13A2 lease's existing Grammar event gate;
+- **1 minimum template-event gate**, W=0.42 um, L=0.15 um;
+- **1 shared soma-return key**, selected W=0.63 um, L=0.15 um.
 
-- **1 minimum NFET template gate**
-- **1 minimum NFET shared soma key**
+The extra event stacks and weak evidence bleeders are rejected as unnecessary.
 
-The extra event stacks and weak evidence bleeders are **rejected as unnecessary in the selected design**.
+## Why the soma key is W=0.63, not minimum W=0.42
+
+At schematic level a minimum W=0.42 soma key passed. The first physical companion layout also extracted correctly and passed nominal PVT.
+
+However, with real contact/interconnect PEX, one FF mismatch launch preserved a healthy ~39.9 mV dendrite separation but missed the fixed v12S route-capture measurement deadline. The result eventually became correct, so this was a **timing-strength failure**, not an evidence/correctness failure.
+
+Only the one shared soma-key device was widened:
+
+- W=0.42 physical key -> rejected after the FF mismatch timing miss;
+- W=0.63 proxy -> 12/12 selected mismatch pass;
+- W=0.63 physical layout/PEX -> 12/12 selected mismatch pass and 8/8 inactive/partial worst-corner mismatch block;
+- W=0.84 was unnecessary.
+
+The selected W=0.63 key is therefore the smallest physically validated robust point tested.
+
+## Physical companion-cell result
+
+The final companion cell contains the template gate and soma key with a shared `LEASEWAKE` control.
+
+- flattened Magic DRC errors: **0**
+- template gate: exact `sky130_fd_pr__nfet_01v8`, W=0.42 um, L=0.15 um
+- soma key: exact `sky130_fd_pr__nfet_01v8`, W=0.63 um, L=0.15 um
+- template access resistance: ~246-249 ohm
+- soma-return access resistance: ~229-231 ohm
+- added gate/diffusion coupling: sub-fF scale
+
+A hierarchical version reported false interaction errors because the reusable transistor child cells carried large `checkpaint` DRC halos; flattening the actual geometry produced zero real DRC errors. The compact geometry was retained rather than adding artificial tens-of-micrometers spacing.
 
 ## Model environment / control reproduction
 
@@ -64,100 +83,77 @@ The installed ngspice build rejects syntax in the full combined SKY130 wrapper. 
 - removing process-MC suffix expressions from corner parameter lines while `MC_PR_SWITCH=0`;
 - preserving device/MIM mismatch expressions controlled by `MC_MM_SWITCH`.
 
-The unchanged v12S control was rerun first under this same model subset. It reproduced the historical tile behavior closely and is the differential control for this experiment.
+The unchanged v12S control was rerun first under this same model subset and reproduced the historical behavior closely. It remains the differential control.
 
 TT control exact/partial dendrites: 0.5439304 / 0.5013039 V, margin 42.6265 mV; correct route ~1.8 V; fallback 1.8 V; total VDD window ~33.017 pJ.
 
-## Selected true-coordinate PVT result
+## Final physical-boundary true-coordinate PVT
 
-| corner | exact dendrite | partial dendrite | margin | correct route | wrong route | physical output | fallback |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| TT | 0.545225 V | 0.501873 V | 43.353 mV | 1.799993 V | 1.86 uV | 1.8 V | 1.8 V |
-| FF | 0.545937 V | 0.502821 V | 43.115 mV | 1.799996 V | -1.02 uV | 1.8 V | 1.8 V |
-| SS | 0.542144 V | 0.499591 V | 42.552 mV | 1.799982 V | 0.075 uV | 1.8 V | 1.8 V |
+| corner | exact dendrite | partial dendrite | margin | correct route | wrong route | physical output | fallback | VDD window |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| TT | 0.543083 V | 0.501861 V | 41.223 mV | 1.799974 V | 5.59 uV | 1.8 V | 1.8 V | 33.294 pJ |
+| FF | 0.544884 V | 0.502804 V | 42.080 mV | 1.799997 V | 0.53 uV | 1.8 V | 1.8 V | 48.494 pJ |
+| SS | 0.542983 V | 0.501119 V | 41.863 mV | 1.799982 V | 0.10 uV | 1.8 V | 1.8 V | 24.487 pJ |
 
-The local 0.2 V Grammar event and 0.1 V template event remain essentially full amplitude when selected.
+The correct route, invalidation, second-query physical block and exact fallback remain intact.
 
-## Inactive/partial coordinate PVT result
+## Final selected-coordinate mismatch battery
 
-ROW-only, COL-only, no-coordinate and deliberately partial-coordinate cases were screened.
-
-Across TT/FF/SS:
-
-- physical route nodes remain nanovolt-class;
-- physical-query output remains microvolt-class;
-- exact fallback remains 1.8 V;
-- inactive VDD window is only about 1.3–1.9 pJ for no-coordinate cases.
-
-A deliberately partial coordinate raises the coordinate-release node only to tens of millivolts and still cannot produce a physical route.
-
-## Selected-coordinate mismatch battery
-
-4 launches each at TT mismatch, FF mismatch and SS mismatch: **12/12 pass**.
+Four launches each at TT mismatch, FF mismatch and SS mismatch: **12/12 pass** with the physical W=0.63 boundary PEX.
 
 Worst observed:
 
-- minimum exact-vs-partial decision margin: **40.50 mV**
-- largest wrong selected route magnitude: **3.17 uV**
+- minimum exact-vs-partial decision margin: **39.1362 mV**
+- largest wrong selected route magnitude: **6.799 uV**
 - all correct routes: full-swing
 - invalidated second physical route: blocked
 - exact fallback: full-swing.
 
-## Inactive worst-corner mismatch
+## Final inactive/partial worst-corner mismatch
 
-At SS mismatch, four no-coordinate and four deliberately partial-coordinate launches were run: **8/8 blocked**.
+At SS mismatch:
+
+- four no-coordinate launches: **4/4 blocked**
+- four deliberately partial-coordinate launches: **4/4 blocked**
 
 Worst observed:
 
-- maximum false route: **9.46 nV**
-- maximum physical-query output: **4.31 uV**
+- maximum false route: **9.546 nV**
+- maximum physical-query output: **4.099 uV**
 - exact fallback: 1.8 V.
 
-This verifies that mismatch in the minimum soma-key transistor does not reopen the inactive region.
+Thus widening the shared soma key does not compromise the inactive-region block.
 
 ## Stale charge / reselection
 
-The gated template node can receive a negative charge-injection kick after lease/error cleanup and can remain around -0.1 V while isolated. Instead of adding a permanent bleeder, reselection was tested directly.
-
-A later true coordinate reconnects the node to the inactive 0 V source before the next event:
-
-- TT before next event: template ~-0.24 uV, Grammar ~-0.06 uV
-- SS before next event: template ~-0.08 uV, Grammar ~-0.29 uV
-- next template event: ~0.100 V
-- next Grammar event: ~0.200 V.
-
-Therefore the selected re-entry operation already clears the stale isolated charge. A permanent bleeder is not justified.
-
-## Energy observation
-
-Under the same reproduced v12S model environment, selected VDD-window energy changes versus the unchanged control were:
-
-- TT: 33.017 pJ -> **32.024 pJ** (-3.0%)
-- FF: 50.044 pJ -> **48.446 pJ** (-3.2%)
-- SS: 27.576 pJ -> **25.257 pJ** (-8.4%)
-
-This is not a whole-chip energy claim and does not include the separately extracted ~0.68 pJ long 16x16 coordinate-wire charge. The reduction occurs because after error the invalid region no longer enters another physical competition/evidence cycle.
-
-Even after adding one ~0.68 pJ long selection as a first-order communication term, the selected path remains close to or below the unchanged VDD-window control in these nominal cases. A complete-chip driver/hierarchy measurement remains future work.
+The gated template node can receive a negative charge-injection kick after lease/error cleanup and can remain around -0.1 V while isolated. A permanent bleeder is not required: a later true coordinate reconnects the node to the inactive 0 V source before the next event, resetting it essentially to zero before the next 0.1 V template and 0.2 V Grammar events arrive.
 
 ## Architecture rule learned
 
-The regional boundary is now:
+The regional boundary is:
 
-> **Lease gates expensive local evidence, but correctness is enforced by lease-authorized competition.**
+> **Lease gates expensive local evidence, while lease-authorized competition is the hard correctness boundary.**
 
-Do not spend transistors trying to force every floating analog node to perfect zero. Small residual/leakage is acceptable if an inactive region physically cannot enter its decision dynamics.
+Do not spend transistors trying to force every floating analog evidence node to perfect zero. Residual analog charge is acceptable if an inactive region physically cannot enter its winner dynamics.
 
 This is a direct continuation of old Glyph source-gating + lease behavior, not a digital replacement of the analog tile.
 
+## What is solved
+
+- physical v13A2 regional lease: solved through full RC PEX
+- template-event regional gate: physically extracted
+- shared soma authorization key: physically extracted and right-sized at W=0.63 after PEX timing evidence
+- selected lifecycle: TT/FF/SS + 12/12 mismatch pass
+- inactive/partial selection: worst-corner mismatch block pass
+
 ## What remains
 
-The full v13A2 lease is physical/RC-extracted, but the newly selected minimum template gate and minimum shared soma-key are still schematic devices in this integrated screen.
+The 4T active-low coordinate-release front end is still schematic in this exact integrated chain. Earlier GTI receiver work physically validated a related 4T coincidence topology, but the final active-low release polarity/topology must be physically extracted rather than assumed equivalent.
 
 ## Next
 
-1. physically lay out the one template gate + one shared soma-key beside the existing v13A2 lease/soma slice;
-2. DRC + RC extract them;
-3. insert those PEX parasitics into this same full-lifecycle test;
-4. rerun true/inactive TT/FF/SS + selected mismatch + inactive worst-corner mismatch;
-5. only after that, replicate the boundary across a small multi-region cluster and measure whether a lease really amortizes the long-fabric selection in physical layout.
+1. physically lay out the exact 4T active-low coordinate-release cell: two W=0.84 PFETs in series, two W=0.42 NFETs in parallel;
+2. DRC + full RC extract it;
+3. insert coordinate-release PEX in front of the already physical lease + boundary PEX;
+4. rerun true/inactive/partial TT/FF/SS and mismatch;
+5. after the whole selection chain is PEX-clean, replicate it across a small multi-region cluster and measure actual long-selection amortization.
