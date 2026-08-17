@@ -1,0 +1,4 @@
+corner,case,launch,wake_peak_V,wake12_V,min_active_event_V,max_active_event_V,max_inactive_output_V,max_post_done_abs_V,pass
+tt,true,1,1.180705,1.127057,0.2002139,0.2002953,2.682755e-06,0.01290231,True
+ff,true,1,1.238256,1.206506,0.2000595,0.2000685,1.575245e-06,0.01577759,True
+ss,true,1,1.134823,1.043354,0.2000168,0.2004535,6.255245e-06,0.01817829,True
