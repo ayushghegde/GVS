@@ -1,0 +1,4 @@
+corner,case,input_V,wake_peak_V,out_peak_V
+ss,safe,0.005,1.369237e-05,0.0003411199
+ss,bad,0.74,0.2063679,0.002021534
+ss,true,1.8,1.1357,0.2001323
