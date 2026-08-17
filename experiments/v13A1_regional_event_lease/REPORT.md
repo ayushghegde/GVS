@@ -1,140 +1,120 @@
 # Neural Glyph v13A1 — Regional Event Lease
 
-**Verdict: PARTIAL PASS — real SKY130 transistor-level PVT/mismatch passed; physical layout/PEX remains**
+**Verdict: PARTIAL PASS — physical lease layout/PEX, PVT, mismatch and disturbance screens pass; complete historical-v12S signoff is still blocked by simulator/model compatibility.**
 
 ## What problem this solves
 
-v13A showed that a cheap physical/event representation can lose its advantage if every local motif or reasoning hop repeatedly pays a millimeter-scale inter-island selection cost. The physically extracted 16x16 GTI row+column selection is about 0.68 pJ per long selection.
+v13A showed that cheap physical/event computation can lose its advantage if every local motif or reasoning hop repeatedly pays the millimeter-scale inter-island selection cost. The extracted 16x16 GTI row+column selection is about 0.68 pJ per long selection.
 
-The missing primitive was a cheap local state that remembers: **this region is already selected; keep several useful local events here before paying the long fabric again.**
+The Regional Event Lease remembers **this region is already selected** for a short useful burst, so related Grammar/template/Myelin/reasoning work can remain local rather than recharging the long fabric each time.
 
-This is not a new AI architecture. It wraps the existing Grammar/template/Myelin/v12S mechanisms with a short-lived physical locality state.
+This is not a replacement for v12S run/capture, soma competition or exact fallback. It is a local communication-state primitive around those mechanisms.
 
 ## Design lineage
 
-The selected circuit deliberately reuses older Glyph mechanisms:
+The circuit deliberately reuses older Glyph mechanisms:
 
-- v12D: firing charge as short-lived electrical memory
-- v12J: gate wrong/inactive evidence at the source
-- v12P: physical lease/hotness rather than continuous bookkeeping
+- v12D: firing charge as short-lived electrical memory;
+- v12J: stop inactive/wrong evidence at the source;
+- v12P: physical lease/hotness rather than continuous bookkeeping.
 
-A slow trace is **not** continuously read by a CMOS inverter, avoiding static current near inverter threshold.
+Only **validated local success** may refresh the lease. Raw/noisy activity must never refresh it. DONE/CLEAN hard-clears it, and exact fallback remains independent.
 
 ## Selected circuit
 
-- coordinate-write NFET: W=0.42 um, L=0.15 um, diode-connected
-- validated-success refresh NFET: W=0.42 um, L=0.15 um, diode-connected
-- weak inactivity leak NFET: W=1 um, L=8 um, gate biased at 0.40 V
-- DONE/CLEAN clear NFET: W=0.42 um, L=0.15 um
-- local low-voltage event-gate NFET: W=0.42 um, L=0.15 um
-- wake/lease storage capacitor: **20 fF**
+- coordinate-write NFET: W=0.42 um, L=0.15 um;
+- validated-success refresh NFET: W=0.42 um, L=0.15 um;
+- weak inactivity leak NFET: W=1 um, L=8 um, gate biased near 0.40 V;
+- DONE/CLEAN clear NFET: W=0.42 um, L=0.15 um;
+- local low-voltage event-gate NFET: W=0.42 um, L=0.15 um;
+- one physical 2x2 um `sky130_fd_pr__cap_mim_m3_1` on WAKE.
 
-Only a validated local success refreshes the lease. Raw/noisy local activity does not.
-Existing DONE/CLEAN hard-clears the trace.
-Exact fallback does not depend on the lease.
+The original schematic target was about 20 fF of wake storage. The selected physical layout reaches approximately that class **without a dedicated 20 fF ideal capacitor**: at the typical linear-cap corner the 2x2 MIM is about 9.5 fF intrinsic (area + perimeter), while the compact extracted WAKE network contributes about 9.605 fF of explicit WAKE-to-ground parasitic capacitance, plus smaller cross-couplings. The storage is distributed, so this is an engineering interpretation rather than an exact single-C value.
 
-## Real SKY130 model route
+This is a useful case where unavoidable physical capacitance performs useful state storage instead of being treated only as waste.
 
-The run used the supplied SKY130 device-specific 1.8 V NFET BSIM files rather than a compact stand-in:
+## Physical layout and compaction
 
-- `parameters/lod.spice`
-- `parameters/invariant.spice`
-- `sky130_fd_pr__nfet_01v8__{corner}.corner.spice`
-- `sky130_fd_pr__nfet_01v8__mismatch.corner.spice`
-- `sky130_fd_pr__nfet_01v8__{corner}.pm3.spice`
+The first correct physical lease (`v3`) was DRC-clean and extracted as exactly five intended NFETs plus one 2x2 MIM, but it was unnecessarily loose.
 
-with `.option scale=1u` and `mc_mm_switch` for the mismatch launches.
+A compaction experiment then reduced empty vertical spacing without changing topology.
 
-## 12-hop stretch result
+- original bounding box: ~15.52 um x 27.0 um = ~419.04 um^2;
+- selected compact bounding box: ~15.52 um x 22.0 um = ~341.44 um^2;
+- bounding-box reduction: **~18.5%**.
 
-One true coordinate writes the regional lease. Twelve local 0.2 V events then execute; the first eleven validated successes refresh the lease. DONE clears it afterward and a later event must remain blocked.
+The first compact attempt is explicitly rejected: it had zero DRC errors but extraction showed WAKE/OK and capacitor connectivity were wrong because routing was moved without moving referenced transistor subcells. This is preserved as evidence that DRC-clean does not prove topology correctness.
 
-Nominal + 4 mismatch launches per corner = **15/15 PASS**.
+The corrected compact layout:
 
-Key nominal values:
-- TT wake at hop 12: ~1.1253 V
-- FF wake at hop 12: ~1.2083 V
-- SS wake at hop 12: ~1.0293 V
+- DRC errors: **0**;
+- extracted devices: **5 intended NFETs + 1 intended MIM**;
+- PRE, OK, DONE, EVT, OUT, WAKE, LEAKG and GND remain separate;
+- full RC extraction completed.
 
-Weakest mismatch case:
-- SS mismatch wake at hop 12: **~0.9833 V**
+## Compact full-RC PVT result
 
-Every one of the twelve local event outputs remained essentially the full 0.2 V; minimum measured across the screen was ~0.199997 V.
+12-hop local burst, with validated-success refresh and DONE clear:
 
-After DONE, the post-burst output stayed blocked. With the minimum clear device, the cleanup kick was limited to roughly -7 to -11 mV across the screen instead of the ~-20 mV class seen with an unnecessarily large clear transistor.
+- TT: WAKE at hop 12 ~1.12027 V; minimum local event ~0.200221 V; post-DONE output ~-10.73 mV;
+- FF: WAKE ~1.20161 V; minimum local event ~0.200060 V; post-DONE ~-12.73 mV;
+- SS: WAKE ~1.02962 V; minimum local event ~0.200132 V; post-DONE ~-14.94 mV.
 
-## Disturbance filtering
+All nominal corners pass.
 
-The lease also acts as a useful physical partial-coordinate filter.
+## Compact mismatch result
 
-### Safe orthogonal-fabric disturbance: 5 mV
+Four mismatch launches per corner: **12/12 PASS**.
+
+Weakest hop-12 WAKE in the verified battery:
+
+- TT mismatch minimum ~1.11369 V;
+- FF mismatch minimum ~1.16441 V;
+- SS mismatch minimum **~0.98405 V**.
+
+All twelve local events remained essentially full 0.2 V. Cleanup remained within the existing +/-30 mV acceptance screen.
+
+## Compact disturbance result
+
+The compact PEX retains the useful partial-coordinate filtering:
+
+### 5 mV orthogonal-fabric disturbance
 Across TT/FF/SS:
-- wake trace peak: ~10-13 uV
-- gated event output: only microvolts
+- WAKE peak ~14-17 uV;
+- local event output only ~0.341-0.350 mV.
 
-### Deliberately bad partial coordinate: 0.74 V
+### Deliberately bad 0.74 V partial coordinate
 Across TT/FF/SS:
-- wake trace peak: ~0.207-0.275 V
-- gated 0.2 V event output: only ~1.5-3.1 mV
+- WAKE peak ~0.207-0.275 V;
+- local event output only ~2.07-3.83 mV.
 
-### True coordinate: 1.8 V
+### True 1.8 V coordinate
 Across TT/FF/SS:
-- wake trace peak: ~1.137-1.235 V
-- local event passes at ~0.200 V
+- WAKE peak ~1.136-1.234 V;
+- local event output ~0.200 V.
 
-So the regional lease does not turn the previously measured long-wire partial-crosstalk case into a full local event.
+## Energy result retained from transistor-level selection
 
-## Energy
+For the selected 20-fF-class circuit, coordinate write was about 38-40 fJ and eleven validated refreshes about 7-47 fJ depending on corner. One long 16x16 selection plus the TT lease overhead is roughly 0.736 pJ versus ~8.16 pJ for twelve repeated long selections, approximately a 91% reduction in that **communication-only proxy**. This is not a whole-system energy claim.
 
-Selected 20 fF circuit, actual SKY130 corner models:
+## What is now solved
 
-Coordinate write:
-- TT: ~38.37 fJ
-- FF: ~37.70 fJ
-- SS: ~40.29 fJ
-
-Eleven validated refreshes for a 12-hop burst:
-- TT: ~18.10 fJ
-- FF: ~7.00 fJ
-- SS: ~46.61 fJ
-
-Total lease write+refresh:
-- TT: ~56.46 fJ
-- FF: ~44.70 fJ
-- SS: ~86.89 fJ
-
-For comparison, twelve repeated long 16x16 coordinate selections at ~0.68 pJ each would be ~8.16 pJ of communication charge. With the regional lease, only one long selection is required plus the tens-of-fJ lease overhead. This is a communication-energy comparison, not whole-system energy.
-
-At TT, one long selection + lease write/refresh is roughly 0.736 pJ versus 8.16 pJ for twelve long selections, about a 91% reduction in that communication-only proxy.
-
-## Why 20 fF was selected
-
-40 fF passed comfortably but cost more storage/write charge.
-20 fF also passed the complete 12-hop PVT/mismatch screen after shrinking the clear device to minimum size.
-A 10 fF version was not fully signed off and is not selected.
-
-The correct lesson was not "make the capacitor as small as possible". The clear-device charge injection had to be reduced as well.
-
-## What is solved
-
-- one global coordinate can amortize several local operations without a digital counter/scheduler;
-- the v13A 4-event locality target is exceeded: the same lease passed a 12-hop stretch case;
-- successful local work can refresh locality state;
-- inactivity has a real weak-leak path;
+- one global coordinate can be amortized over at least a 12-event local burst without a digital counter;
+- real SKY130 devices passed TT/FF/SS and mismatch;
+- the physical lease is DRC-clean and full-RC extracted;
+- the physical implementation uses parasitic capacitance productively;
+- compacting the cell reduced its bounding-box area by ~18.5% without losing function;
+- safe and deliberately bad partial-coordinate disturbances do not become full local events;
 - DONE/CLEAN clears the region;
-- partial coordinate/crosstalk does not become a full local event;
-- TT/FF/SS and 12 mismatch launches passed at transistor level.
+- exact fallback does not depend on the lease.
 
 ## Remaining problem
 
-This is not yet a physical-layout pass.
+The next problem is **integration above this physical cell**, not the lease itself.
 
-Still required:
-1. draw the 5-NFET + 20 fF lease in Magic;
-2. DRC and PEX;
-3. measure actual wake-node parasitics and clear-device injection;
-4. connect PEX lease to the selected physical coordinate-release cell and local event path;
-5. rerun TT/FF/SS/mismatch with extracted parasitics;
-6. integrate one leased region into the complete v12S lifecycle and verify that invalidation/exact fallback remain independent.
+1. co-place/extract the physical 4T active-low coordinate-release cell with the compact lease;
+2. verify the direct physical coordinate -> lease handoff, including combined mismatch and incomplete-coordinate cases;
+3. connect the selected regional event to local Grammar/template/Myelin evidence without touching solved v12S run/capture nodes;
+4. repeat complete historical-v12S signoff only with a simulator/model route compatible with the continuous SKY130 deck used by the historical baseline.
 
-If physical parasitics consume too much of the 20 fF design margin, increase to 30-40 fF rather than redesigning the architecture.
+The current Linux ngspice build can run the device-specific SKY130 models used for these physical sub-block tests, but it cannot parse the newer continuous model deck used by the historical combined v12S library. The unchanged v12S control fails the same way under the stripped legacy model route, so that simulator limitation must not be misclassified as a Regional Lease failure.
