@@ -1,102 +1,81 @@
-# Current Next Experiment — Physical PVT-Tracking Grammar Block Behind the Eight-Way Lease
+# Current Next Experiment — Physical Direct One-Phase Grammar Reader
 
 ## What is already solved
 
-The selected physical locality path remains:
+The physical locality path remains:
 
 `orthogonal coordinate -> compact coordinate release -> Regional Event Lease -> 8 isolated local event paths`.
 
-v13A4 physically proved the eight-way group at TT/FF/SS, false-coordinate cases and 12/12 mismatch launches.
+v13A5 solved the old fixed 0.500 V Grammar-threshold problem with a PVT-tracking equal-total legal-MIM candidate/reference ratio. The physical series-pair extraction and real readout/mismatch data remain preserved under `experiments/v13A5_pvt_tracking_grammar_readout/`.
 
-v13A5 then placed the old v12N 3-step sound Grammar computation behind that locality path and found a real old-design problem:
+The final 3-step sound Grammar physical ratio produces roughly 25-30 mV candidate/reference evidence in the real combined mismatch screen, not the artificial ~11 mV low-margin stress that originally motivated unconditional two-phase checking.
 
-- TT exact motif ~0.52219 V; partial ~0.49479 V
-- SS exact ~0.53044 V; partial ~0.50030 V
+## v13A6 simplification
 
-Therefore the historical fixed 0.500 V Grammar threshold is not a safe physical decision boundary under the real MIM corner spread.
+Re-analysis of the preserved latch data shows:
 
-## Selected v13A5 electrical solution
+- +/-31 mV single-phase phase-0 decisions: 24/24 correct
+- +/-18 mV: 24/24 correct
+- +/-11 mV: 22/24 correct -> low-margin one-phase is not universally safe
+- final real Grammar ratio (~25-30 mV), combined MIM+MOS mismatch: **24/24 phase-0 decisions correct**
 
-### Equal-total legal-MIM ratio
+In the final real-swap screen, both full-readout fallbacks occurred in phase 1; phase 0 was already correct.
 
-Candidate:
-- 3 full driven 2x2 um MIMs
-- one physical 2x2 + 2x2 MIM series pair to ground
-- 5 physical MIM devices total
+Therefore the **normal high-margin 3-step Grammar path no longer uses an unconditional two-phase swap reader**.
 
-Shared reference:
-- 2 full driven 2x2 um MIMs
-- one physical driven 2x2 + 2x2 series pair
-- 1 full 2x2 um MIM to ground
-- 5 physical MIM devices total
-
-A real Magic extraction of the two-MIM series pair is preserved in `experiments/v13A5_pvt_tracking_grammar_readout/physical/`.
-
-With real comparator input devices attached, nominal evidence margins remain roughly:
-- exact: +26.9 to +27.4 mV
-- partial: -24.3 to -25.7 mV
-
-Independent MIM mismatch plus SKY130 transistor mismatch did not collapse the ratio in the current screen.
-
-### Self-checking readout
-
-Selected latch core:
+Selected normal reader concept:
 - PFET tail W=1/L=0.3 um
-- PFET differential pair W=1/L=1 um
-- cross NFETs W=0.42/L=0.3 um
-- 2 fF output storage
+- two PFET differential inputs W=1/L=1 um
+- two cross-coupled NFETs W=0.42/L=0.3 um
+- two output-reset NFETs
+- direct short/symmetric GC/GR routes into the PFET gates
 
-Real minimum-NFET input swapping performs two phases:
-1. candidate/reference normal
-2. reset
-3. candidate/reference swapped
+Conceptual reader count: **7 MOS** instead of the 13-MOS two-phase/swap implementation.
 
-A valid decision must reverse physical latch polarity. Same-side preference or weak resolution is fallback.
+Removed from the normal path:
+- four input-swap NFETs
+- two input-reset NFETs
+- X0/X1 sample routing
+- PH1 routing
+- second local motif replay
+- second regenerative comparison
 
-Real-swap 7 ns/phase combined mismatch screen:
-- 24 exact/partial cases across TT/FF/SS
-- correct accepts: 22
-- fallbacks: 2
-- wrong accepts: **0**
+Two-phase self-check is retained as a **margin-tiered safety mode**, not deleted.
 
-## Honest readout energy
+## Critical rule
 
-The robust readout is tens of femtojoules, not sub-fJ:
+Use one phase only for a representation whose physical evidence class is characterized with adequate margin.
 
-- TT: ~46.7 fJ exact / ~52.7 fJ partial
-- FF: ~33.4 / ~39.5 fJ
-- SS: ~58.5 / ~63.6 fJ
+Use two-phase self-check or exact fallback for:
+- low/unknown evidence margin;
+- drifted/uncharacterized physical structures;
+- health/calibration checks;
+- analog representations whose margin can approach the known ~11 mV unsafe band.
 
-The Grammar/reference capacitor-event work itself remains only a few tenths of a femtojoule. Regenerative readout dominates.
-
-Therefore Grammar must not replace the warm static selector merely because its capacitive motif core is cheap. It is worthwhile when the motif event also avoids larger downstream work or one/more long physical selections (~0.68 pJ each in the measured 16x16 fabric).
+This makes readout precision adaptive like the rest of the hybrid compiler.
 
 ## Next physical experiment
 
-The current unknown is **layout interaction**, not the electrical ratio concept.
+1. lay out the 7-MOS direct reader in Magic;
+2. keep GC/GR routes extremely short, symmetric and away from output/control wiring;
+3. DRC and extraction; reject DRC-clean layouts with wrong connectivity;
+4. connect it to the extracted 10-MIM candidate/reference network;
+5. measure direct GC/GR loading and GC<->GR coupling;
+6. run TT/FF/SS and combined MIM+MOS mismatch;
+7. require zero wrong accepted decisions in the characterized high-margin 3-step Grammar class;
+8. measure the **actual one-phase readout energy** rather than dividing the old two-phase number by two;
+9. compare reader transistor count, area, evidence-node capacitance and energy against the 13-MOS reader attempt;
+10. place the shared reference/direct reader behind the selected eight-way Regional Lease.
 
-1. physically lay out one 5-MIM candidate using only legal 2x2 um MIMs;
-2. physically lay out the 5-MIM shared reference beside it;
-3. compact them while keeping series-pair midpoint parasitics controlled;
-4. DRC and extract the combined candidate/reference network;
-5. measure unwanted candidate-reference and neighboring-MIM coupling;
-6. replace the proxy capacitor matrix with the full extracted network and verify the exact/partial differential margins;
-7. physically place the selected latch-D plus real swap/reset NFETs beside the MIM block;
-8. run combined PEX PVT + mismatch + two-phase self-check;
-9. place the resulting shared reference/readout beside the selected eight-way Regional Lease;
-10. measure area and full event energy per useful motif.
+## After direct-reader signoff
 
-## After physical two-phase signoff
+Test the compiler policy itself:
+- high-margin/stable motif -> one-phase local readout
+- low-margin/unknown motif -> two-phase self-check
+- detected ambiguity/failure -> exact computer path
 
-Only then test the optional old-v11U-inspired optimization:
-
-- self-check/calibrate comparator offset slowly or during idle;
-- remember the slow offset state regionally;
-- use one phase on normal events when calibration is trustworthy;
-- periodically re-run the two-phase check and fall back immediately on drift/uncertainty.
-
-Do **not** replace the safe two-phase baseline with calibration until calibration shows zero wrong accepted decisions across mismatch and PVT drift.
+Then repeat the same idea for image first-look Grammar and local Myelin/reasoning evidence instead of assuming one confidence circuit fits every representation.
 
 ## Separate tooling issue
 
-Complete historical-v12S continuous-model signoff remains a separate simulator/model compatibility task. Do not modify v12S around that tooling mismatch.
+Complete historical-v12S continuous-model signoff remains a separate simulator/model compatibility task. Do not modify solved v12S behavior around that tooling mismatch.
