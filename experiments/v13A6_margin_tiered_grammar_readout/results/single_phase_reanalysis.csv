@@ -1,0 +1,5 @@
+screen,evidence_band_mV,cases,phase0_correct,phase0_wrong,notes
+latchD_stress,31,24,24,0,both signs across TT/FF/SS and four mismatch seeds
+latchD_stress,18,24,24,0,both signs across TT/FF/SS and four mismatch seeds
+latchD_stress,11,24,22,2,both signs; demonstrates low-margin one-phase is not universally safe
+real_swap_final_ratio,25_to_30,24,24,0,combined MIM+MOS mismatch actual Grammar margins; phase0 correct even in the two full-readout fallback cases
