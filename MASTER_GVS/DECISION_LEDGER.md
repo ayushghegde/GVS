@@ -21,7 +21,7 @@
 - use unavoidable physical capacitance as useful state when extraction proves it is stable enough; do not automatically fight every parasitic
 - validate physical topology by extraction, not DRC alone
 - for Grammar confidence, compare capacitor **ratios** made from the same MIM family rather than using an absolute 0.5 V threshold
-- selected safe Grammar readout baseline: short regenerative latch with **two-phase polarity swap/self-check**; same-side preference or weak resolution becomes fallback
+- **margin-tiered readout**: spend one comparison on a physically characterized high-margin representation; spend two-phase self-check or exact fallback only when the margin is low/unknown
 
 ## Regional Event Lease correctness invariants
 - only a **validated local success/winner** may refresh the lease
@@ -30,12 +30,15 @@
 - exact fallback must remain independent of lease state
 - do not make solved v12S run/capture/dendrite correctness depend on the regional lease
 
-## Grammar/readout invariants from v13A5
+## Grammar/readout invariants from v13A5/v13A6
 - do not directly trust an absolute Grammar voltage threshold across real MIM corners
 - candidate/reference total capacitance should be physically symmetric before attaching a comparator; unequal total capacitance can move the decision boundary when reader gate capacitance is added
 - tiny analog evidence must not silently become a digital/full-swing answer when comparator offset dominates; ambiguity must escalate
 - robust readout energy must be included in compiler decisions, not only sub-fJ MIM coupling energy
 - a Grammar Cell is not preferred over a warm static selector solely on local event energy; it must save larger downstream or communication work
+- the old two-phase polarity-swap reader remains the **safe low-margin mode**, not the normal high-margin 3-step sound-Grammar path
+- current empirical boundary: single-phase produced no errors in the tested >=18 mV stress classes and in the ~25-30 mV final Grammar class, but errors appeared at the artificial ~11 mV stress class
+- do not generalize that boundary into a fabrication-yield guarantee; physical PEX and larger mismatch sampling are still required
 
 ## Keep selectively / mode-dependent
 - visual Grammar first-look, not universal vision
@@ -44,7 +47,8 @@
 - dynamic shared selector banks only for severe area constraints
 - extra intentional receiver membrane capacitor only if a real glitch problem later requires it
 - old regional PVT/leak adaptation if a future measured PVT/leak problem reappears in the current small-dendrite architecture
-- v11U-style slow calibration/offset memory for the shared Grammar comparator **only if** it proves zero wrong accepts and materially reduces average two-phase readout energy
+- v11U-style slow calibration/offset memory for genuinely low-margin comparators if it later proves cheaper than repeated self-check
+- two-phase polarity-swap/self-check for low-margin/unknown analog evidence or periodic health checking
 
 ## Rejected / not default
 - analog exact ALU
@@ -65,11 +69,13 @@
 - long-lived v12S-sized soma race as Grammar readout: electrically correctable but pJ-class waste
 - over-shrunk regenerative latch/input pair that produced wrong accepted decisions at ~11 mV evidence
 - adding charge-recovery hardware to the ~50 fJ Grammar readout before proving recovery saves more than its own devices/wiring
+- unconditional two-phase swap for the final high-margin 3-step sound Grammar primitive; v13A6 shows the current data does not justify paying that cost on every normal event
 
 ## Open, worth testing
-- full physical layout/PEX of the v13A5 **5-MIM candidate + 5-MIM shared reference + real swap/self-check latch**
-- pack one shared Grammar reference/readout beside the selected eight-way Regional Lease and measure real area/coupling
-- v11U-inspired slow comparator offset calibration, after the safe two-phase baseline is physically validated
+- physical layout/PEX of the v13A6 **7-MOS direct one-phase Grammar reader** attached to the extracted equal-total MIM ratio
+- measured one-phase readout energy; do not estimate by simply halving the old two-phase number
+- pack one shared Grammar reference/direct reader beside the selected eight-way Regional Lease and measure real area/coupling
+- retain/characterize the two-phase reader as a low-margin safety mode rather than the default
 - local template/Myelin evidence behind the eight-way lease after Grammar readout layout
 - physical 4x4 / 16x16 grid loaded with the final selected coordinate-release/lease interfaces
 - full physical tile layout/extraction beyond slices
