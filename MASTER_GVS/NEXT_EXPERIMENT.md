@@ -1,69 +1,102 @@
-# Current Next Experiment — Real Glyph Work Behind the Eight-Way Local Lease
+# Current Next Experiment — Physical PVT-Tracking Grammar Block Behind the Eight-Way Lease
 
 ## What is already solved
 
-The selected compact physical locality interface (`experiments/v13A3_physical_locality_interface/`) is:
+The selected physical locality path remains:
 
-`ROWB/COLB -> 4T coordinate release -> physical PRE handoff -> 5T Regional Event Lease + 2x2 MIM`
+`orthogonal coordinate -> compact coordinate release -> Regional Event Lease -> 8 isolated local event paths`.
 
-Corrected physical core device count:
-- **7 NFET + 2 PFET + 1 MIM**;
-- 0 DRC errors;
-- ~30.02 um x 22.0 um = ~660.44 um^2;
-- TT/FF/SS and 12/12 combined mismatch pass.
+v13A4 physically proved the eight-way group at TT/FF/SS, false-coordinate cases and 12/12 mismatch launches.
 
-`experiments/v13A4_shared_local_group/` now proves that the same interface can serve **eight isolated local event paths**:
+v13A5 then placed the old v12N 3-step sound Grammar computation behind that locality path and found a real old-design problem:
 
-- eight-way physical layout remains in the same ~30.02 um x 22.0 um bounding box;
-- 14 NFET + 2 PFET + 1 MIM extracted total;
-- DRC = 0;
-- TT/FF/SS pass;
-- row-only / column-only / none / partial-coordinate cases blocked;
-- 12/12 mismatch launches pass;
-- weakest SS-mismatch WAKE at event 12 ~1.0166 V;
-- active local events remain ~0.2 V;
-- inactive outputs remain microvolt-class;
-- DONE/CLEAN clears the shared lease.
+- TT exact motif ~0.52219 V; partial ~0.49479 V
+- SS exact ~0.53044 V; partial ~0.50030 V
 
-Ground-referenced WAKE-network capacitance proxy grows from ~9.625 fF for one path to ~13.961 fF for eight paths. The extra capacitance remains acceptable and partly contributes useful lease storage when validated refresh is present.
+Therefore the historical fixed 0.500 V Grammar threshold is not a safe physical decision boundary under the real MIM corner spread.
 
-At TT, moving from four physical paths to eight raises coordinate-write + eleven-refresh energy only from ~99.7 fJ to ~106.8 fJ (~7.2%) while doubling path count.
+## Selected v13A5 electrical solution
 
-A 16-gate electrical loading screen also passes SS and four SS-mismatch launches, so the current limit is physical packing/routing rather than WAKE electrical drive. Sixteen-way is not selected yet because eight-way already fits in existing whitespace with no bounding-box growth.
+### Equal-total legal-MIM ratio
 
-## Current selected local-group size
+Candidate:
+- 3 full driven 2x2 um MIMs
+- one physical 2x2 + 2x2 MIM series pair to ground
+- 5 physical MIM devices total
 
-**Eight nearby event paths per physical Regional Lease** is the current default physical granularity.
+Shared reference:
+- 2 full driven 2x2 um MIMs
+- one physical driven 2x2 + 2x2 series pair
+- 1 full 2x2 um MIM to ground
+- 5 physical MIM devices total
 
-This is not a rigid architectural constant. The future physical-cost-aware compiler may choose smaller/larger groups when measured workload reuse, area, communication and fallback cost justify them.
+A real Magic extraction of the two-MIM series pair is preserved in `experiments/v13A5_pvt_tracking_grammar_readout/physical/`.
 
-## Critical invariant
+With real comparator input devices attached, nominal evidence margins remain roughly:
+- exact: +26.9 to +27.4 mV
+- partial: -24.3 to -25.7 mV
 
-Only **validated local success/winner state** may refresh the Regional Lease. Raw sensory activity, noise, incomplete coordinates and unselected regions may not refresh it. Exact fallback remains independent.
+Independent MIM mismatch plus SKY130 transistor mismatch did not collapse the ratio in the current screen.
 
-## Next problem
+### Self-checking readout
 
-The eight paths used in v13A4 are deliberately simple pass/isolation loads. The next question is whether the same locality advantage survives **real Glyph computation**.
+Selected latch core:
+- PFET tail W=1/L=0.3 um
+- PFET differential pair W=1/L=1 um
+- cross NFETs W=0.42/L=0.3 um
+- 2 fF output storage
 
-### Next experiment
+Real minimum-NFET input swapping performs two phases:
+1. candidate/reference normal
+2. reset
+3. candidate/reference swapped
 
-Use the old proven hybrid mechanisms rather than inventing a new compute block:
+A valid decision must reverse physical latch polarity. Same-side preference or weak resolution is fallback.
 
-1. recover the v12N Grammar Cell and/or v12M static-template/Myelin evidence primitive from the preserved archives;
-2. place a small number of these real evidence structures behind several of the eight leased paths;
-3. keep each evidence source isolated;
-4. keep analog evidence/competition local to the group;
-5. allow only a robust validated local winner to refresh WAKE;
-6. DRC/extract the local evidence wiring where practical;
-7. compare exact/partial motif separation with and without locality-interface loading;
-8. measure whether inactive local structures remain quiet;
-9. compare area/event energy against selecting each structure independently;
-10. retain exact escalation for ambiguous/low-margin cases.
+Real-swap 7 ns/phase combined mismatch screen:
+- 24 exact/partial cases across TT/FF/SS
+- correct accepts: 22
+- fallbacks: 2
+- wrong accepts: **0**
 
-### First preferred workload
+## Honest readout energy
 
-Start with the **v12N sound Grammar primitive**, because sound already showed strong local 3-step motif repetition and v13A showed Grammar grouping is valuable as communication compression as well as recognition. After that, test image first-look Grammar and local Myelin/reasoning reuse.
+The robust readout is tens of femtojoules, not sub-fJ:
+
+- TT: ~46.7 fJ exact / ~52.7 fJ partial
+- FF: ~33.4 / ~39.5 fJ
+- SS: ~58.5 / ~63.6 fJ
+
+The Grammar/reference capacitor-event work itself remains only a few tenths of a femtojoule. Regenerative readout dominates.
+
+Therefore Grammar must not replace the warm static selector merely because its capacitive motif core is cheap. It is worthwhile when the motif event also avoids larger downstream work or one/more long physical selections (~0.68 pJ each in the measured 16x16 fabric).
+
+## Next physical experiment
+
+The current unknown is **layout interaction**, not the electrical ratio concept.
+
+1. physically lay out one 5-MIM candidate using only legal 2x2 um MIMs;
+2. physically lay out the 5-MIM shared reference beside it;
+3. compact them while keeping series-pair midpoint parasitics controlled;
+4. DRC and extract the combined candidate/reference network;
+5. measure unwanted candidate-reference and neighboring-MIM coupling;
+6. replace the proxy capacitor matrix with the full extracted network and verify the exact/partial differential margins;
+7. physically place the selected latch-D plus real swap/reset NFETs beside the MIM block;
+8. run combined PEX PVT + mismatch + two-phase self-check;
+9. place the resulting shared reference/readout beside the selected eight-way Regional Lease;
+10. measure area and full event energy per useful motif.
+
+## After physical two-phase signoff
+
+Only then test the optional old-v11U-inspired optimization:
+
+- self-check/calibrate comparator offset slowly or during idle;
+- remember the slow offset state regionally;
+- use one phase on normal events when calibration is trustworthy;
+- periodically re-run the two-phase check and fall back immediately on drift/uncertainty.
+
+Do **not** replace the safe two-phase baseline with calibration until calibration shows zero wrong accepted decisions across mismatch and PVT drift.
 
 ## Separate tooling issue
 
-Complete historical-v12S continuous-model signoff remains blocked by the current Linux ngspice parser/model compatibility. Do not redesign the solved v12S tile around that tooling issue. Physical sub-block experiments continue with the device-specific SKY130 models that are working correctly.
+Complete historical-v12S continuous-model signoff remains a separate simulator/model compatibility task. Do not modify v12S around that tooling mismatch.
