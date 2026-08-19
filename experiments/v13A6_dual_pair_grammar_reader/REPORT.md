@@ -1,83 +1,158 @@
 # Neural Glyph v13A6 — 10-MOS Dual-Input-Pair Grammar Reader
 
-**Verdict: PARTIAL PASS — direct physical-ratio electrical model passes PVT and 96 combined MIM+MOS mismatch cases with 0 wrong accepts; physical reader layout/PEX remains.**
+**Verdict: PARTIAL PASS — the selected reader is now a real 0-DRC, body-tied SKY130 layout with full RC PEX. The full reader PEX + local event gates + physical-ratio Grammar model passes 48/48 combined mismatch cases at a 3.5 ns/phase safe timing. Co-placement with the actual 10-MIM array remains.**
 
 ## Analysis target
-v13A5 solved the old fixed 0.5 V Grammar threshold with a legal-MIM PVT-tracking candidate/reference ratio, but the sequential 13-MOS analog-swap reader became physically asymmetric and parasitic. The goal here is to remove the analog swap crossbar without returning to a conventional ADC/comparator.
+v13A5 solved the old fixed 0.5 V Grammar threshold with a legal-MIM PVT-tracking candidate/reference ratio, but the sequential analog-swap reader became physically asymmetric. v13A6 removes the analog crossbar and keeps weak evidence fixed locally.
 
 ## Selected topology
-Use one shared regenerative latch and two mirrored PMOS differential input pairs:
+One regenerative core is reused for two mirrored input pairs:
 
-- shared core: 2 cross-coupled NFET + 2 output-reset NFET
-- phase-0 tail PFET + normal PMOS pair
-- phase-1 tail PFET + crossed PMOS pair
+- 2 cross-coupled NFETs: W=.42 um / L=.30 um
+- 2 output-reset NFETs: W=.42 um / L=.15 um
+- 2 phase-tail PFETs: W=1 um / L=.30 um
+- 4 evidence-input PFETs
 - total: **10 MOS**
 
-Weak candidate/reference evidence never moves through an analog switch crossbar. Phase selection occurs by enabling one of the two PMOS input pairs. Fresh local capacitive evidence is replayed before phase 2; the replay stays inside the already-selected Regional Lease and does not repay the long coordinate event.
+Phase 0 uses the normal candidate/reference orientation. After reset and a fresh local evidence replay, phase 1 uses the mirrored orientation. A valid answer must reverse physical latch side while preserving the same logical result. Same-side preference or weak resolution is fallback, never an accepted answer.
 
-Acceptance is strict: phase 0 and phase 1 must resolve to opposite physical sides corresponding to the same logical answer. Same-side preference or weak resolution is **fallback**, never accepted.
+## Electrical input-pair optimization
+The physically useful parameter was input-pair **aspect ratio**, not larger tail current.
 
-## Important transistor optimization
-The original W=1 um / L=1 um PMOS input devices were too slow when connected directly to the real ratio network, whose common-mode is ~0.57-0.60 V.
+The selected electrical geometry is:
 
-Tail-strength sweeps did not solve this efficiently.
+**W=2.75 um / L=.55 um**
 
-The useful solution was to preserve approximately the same PMOS input gate area while changing aspect ratio:
+It has ~1.51 um^2 gate area, preserving useful mismatch averaging while giving much higher W/L than the old W=1/L=1 pair.
 
-- old: W=1 um, L=1 um
-- selected: **W=2 um, L=0.5 um**
+Fully integrated electrical comparison:
 
-This keeps first-order device area/mismatch scale similar while increasing W/L by about 4x. The direct capacitor-ratio network then resolves robustly in the original 1.5 ns/phase window.
+- W=2.0/L=.5: good energy but rare fallback
+- W=2.5/L=.6: lower energy but fallback remained
+- **W=2.75/L=.55: 96/96 integrated mismatch cases correct, 0 fallback, 0 wrong — selected**
+- W=3/L=.5: also robust but higher energy
 
-More aggressive devices (e.g. much wider/shorter) increased energy without enough benefit and were not selected.
+## Local reference/event tracking
+The reference line is heavier than one motif line, so an identical pass device is not sufficient at nanosecond timing.
 
-## Direct physical-ratio nominal result
-Candidate/reference use the v13A5 legal 2x2 MIM ratio model including physical series-pair midpoint parasitic and ~0.055 fF candidate-reference cross-coupling.
+Selected local interface:
+- motif event gate: W=.42/L=.15 NFET
+- shared reference gate: ~W=.945/L=.15 NFET (~2.25x motif width)
+- reference and motif come from the same local ~0.2 V event domain
+- allow ~1 ns local settle before comparison
 
-At TT/FF/SS, exact and partial motifs both resolve correctly in two 1.5 ns phases. Typical evidence margins remain roughly +/-24 to 27 mV.
+This avoids precision analog calibration while keeping reference/motif amplitude reasonably tracking across PVT/mismatch.
 
-VDD decision energy is approximately:
-- FF: ~50-57 fJ
-- TT: ~54-60 fJ
-- SS: ~58-64 fJ
+## Physical reader layout
+The selected reader was manually laid out in Magic/SKY130A from verified transistor primitives.
 
-The local capacitive evidence replay remains sub-fJ class and is not the dominant cost.
+Verified primitives:
+- PMOS input W=2.75/L=.55
+- PMOS tail W=1/L=.30
+- NFET cross W=.42/L=.30
+- NFET reset W=.42/L=.15
 
-## Combined mismatch
-Both independent MIM mismatch and SKY130 MOS mismatch are active.
+All primitive dimensions extract exactly.
 
-Two batches, 8 seeds per corner/motif each, total **96 exact/partial cases** across TT/FF/SS:
+### First topology error caught by extraction
+The first full reader was 0-DRC but tail control `N0/N1` crossed the `SP0/SP1` drain routes on M2, shorting control and source nodes. That layout was rejected. Moving N0/N1 control routes to M3 fixed the topology without changing devices.
 
-- correct accepts: **95**
-- deliberate fallback: **1**
+### Physical body infrastructure
+The first electrically correct reader still relied on a testbench tie for NFET substrate/body.
+
+A real local p-substrate contact was then added below the NFET row:
+- `psc` substrate contact
+- local interconnect + mcon + M1
+- physical via stack into the existing GND M3 rail
+
+Final extraction now shows all NFET body terminals physically on **GND**. No floating body/testbench body assumption remains.
+
+### Final reader physical checks
+- DRC: **0 errors**
+- extracted devices: exactly **10 intended MOS**
+- PMOS input geometry: exact W=2.75 um / L=.55 um
+- GC/GR, SP0/SP1, N0/N1, O0/O1, RST, VDD and GND remain separate
+- no unintended net equivalences
+- full resistance extraction completed
+- ext2spice regenerated with `scale off`, so physical W/L are explicit in the PEX netlist
+
+## What physical PEX changed
+The original electrical reader used very small output-node load assumptions. Extraction shows substantially larger real loading.
+
+Approximate extracted boundary capacitance:
+- O0: ~6.8 fF after physical substrate tie
+- O1: ~7.0 fF
+- SP0: ~4.5 fF
+- SP1: ~4.0 fF
+- GC: ~1.87 fF reader-side parasitic
+- GR: ~1.90 fF reader-side parasitic
+- direct GC-GR reader coupling: only ~0.017 fF
+
+The earlier reader had assumed ~2 fF output storage. Physical diffusion/junction/routing capacitance is therefore the main reason regeneration slows.
+
+Detailed extresist also shows hundreds-of-ohms local contact/terminal paths. Reducing those resistances helps, but resistance is **not** the main limit: even with reader resistances numerically removed, the 1.5 ns schematic timing remains too short. Real distributed capacitance dominates.
+
+## Physical timing screen
+With full reader PEX and ideal +/-25 mV evidence:
+- 1.5 ns/phase: correct polarity but not robust
+- 2.5 ns: close to threshold at FF
+- ~2.7 ns: first nominal ideal-evidence point above 0.9 V
+
+With the full local event gate + MIM-ratio network attached, FF is again the limiting corner:
+- 3.0 ns: FF exact phase 0 ~0.886 V, not accepted
+- 3.1 ns: ~0.905 V, technically passes but too little margin
+- 3.2 ns: ~0.924 V
+- **3.5 ns: selected physical signoff point**
+
+The extra few hundred picoseconds are preferable to enlarging devices or adding a new analog stage.
+
+## Full physical-reader PEX + combined mismatch
+The 3.5 ns/phase battery includes simultaneously:
+- extracted reader R/C
+- physical body tie
+- event-gate mismatch
+- independent MIM mismatch in the ratio model
+- reader MOS mismatch
+- fresh local evidence replay for phase 2
+- ~1 ns local source/reference settle
+
+Two batches, seeds 101..808, TT/FF/SS, exact and partial:
+
+**48/48 correct accepts**
+
+- fallback: **0**
 - wrong accepts: **0**
 
-The single fallback was a TT partial case where both phases fully resolved to the same physical latch side despite a ~-24 mV physical evidence margin. The self-check therefore detected input-pair offset and refused the analog answer.
+Examples of hard points:
+- weakest FF exact winner in the second batch: ~0.953 V
+- SS partial exact-fallback-side losers remain below the 0.9 V robust threshold
+- evidence sign remains correct in both phases
 
-Across the screen, evidence remained approximately:
-- exact: +24 to +29 mV
-- partial: -21 to -27 mV
+Physical-reader VDD work over the two-phase decision is roughly:
+- FF: ~105-121 fJ in the current screen
+- TT: ~114-128 fJ
+- SS: ~117-134 fJ
 
-## Comparison to rejected/less-useful points
-- W=1/L=1 input pairs: lower energy but much higher SS fallback rate under mismatch.
-- W=1.25/L=1: insufficient reliability improvement.
-- W=1.5/L=1: lower fallback than W=1, but slower and ~60 fJ class; still occasional offset fallback.
-- W=2/L=1: added capacitance and did not improve the trade.
-- stronger tail only: did not restore robust direct-ratio resolution efficiently.
+This is about 2x the schematic readout estimate, but still around 0.1 pJ — much smaller than the ~0.68 pJ long coordinate-selection proxy that Grammar/locality is intended to avoid.
 
-## Conclusion
-The architecture problem from v13A5 is now electrically improved without adding a conventional digital threshold:
+## Analysis conclusion
+The important result is not that the reader stayed at the original 1.5 ns timing — it did not.
 
-`legal-MIM Grammar ratio -> phase0 PMOS pair -> shared latch -> reset/replay -> phase1 mirrored PMOS pair -> accept or fallback`
+The result is that the **same 10-MOS analog self-check architecture survives real layout/extracted parasitics** after accepting a longer local 3.5 ns evaluation window. No ADC, digital threshold, analog swap crossbar, or larger comparator architecture was required.
 
-The key improvement is **same-area faster input transistor geometry**, not more tail current or a larger comparator.
+The current physical bottleneck is capacitance on robust latch nodes, not loss of the candidate/reference evidence ratio.
 
-## Remaining problem / next
-1. physically lay out the exact 10-MOS reader with W=2/L=.5 PMOS input devices;
-2. keep GC/GR routes short and geometrically symmetric;
-3. DRC + extraction; reject any DRC-clean topology with wrong connectivity;
-4. co-place beside the extracted 10-MIM ratio array;
-5. rerun direct PEX ratio -> reader at TT/FF/SS;
-6. rerun combined MIM+MOS mismatch;
-7. measure full event energy including reset/tail controls and local evidence replay;
-8. only after physical PEX passes, connect the robust Grammar winner to the selected eight-way Regional Lease refresh/event path.
+## Still not complete
+The reader PEX is physical, but the 10-MIM candidate/reference array is still represented using physically measured MIM/series-pair values rather than co-placed in the same extracted layout as this reader.
+
+### Next
+1. reconstruct/place the accepted 10-MIM Grammar candidate/reference array;
+2. place it directly beside the body-tied 10-MOS reader;
+3. route GC/GR physically with matched short paths;
+4. DRC + full combined extraction;
+5. verify actual array-reader cross-coupling and floating series midpoint behavior;
+6. rerun 3.5 ns TT/FF/SS + combined mismatch;
+7. measure combined area and full event energy;
+8. if it passes, connect the robust Grammar result behind the selected eight-way Regional Event Lease.
+
+Do not shrink the phase window or change input transistor geometry merely to recover schematic energy unless the physical layout proves a material system-level benefit.
