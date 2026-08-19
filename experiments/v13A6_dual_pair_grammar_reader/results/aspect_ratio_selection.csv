@@ -1,0 +1,5 @@
+input_pair_W_um,input_pair_L_um,device_area_um2,screen,correct,fallback,wrong,energy_comment,status
+2.0,0.5,1.0,96 direct-ratio cases,95,1,0,~50-64 fJ VDD,good but rare fallback
+2.5,0.6,1.5,48 fully integrated cases,47,1,0,~47-58 fJ VDD,low-energy optional
+2.75,0.55,1.5125,96 fully integrated cases,96,0,0,~52-64 fJ VDD,SELECTED
+3.0,0.5,1.5,96 fully integrated cases,96,0,0,~57-68 fJ VDD,robust but higher energy
