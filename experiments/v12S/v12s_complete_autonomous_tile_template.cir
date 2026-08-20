@@ -1,0 +1,214 @@
+* v12S autonomous single-tile lifecycle: lease request -> local rebuild -> query -> invalidation -> exact fallback
+.lib "__PDK_LIB__" __CORNER__
+.temp __TEMP__
+.option klu
+VDD vdd 0 1.8
+* ------------------------------------------------------------------
+* recovery reservoir shared by soma reset and lease demotion
+CREC rec 0 10p IC=.2
+* ------------------------------------------------------------------
+* physical lease: two successful prior exact uses build hotness naturally
+XLEASE lease 0 sky130_fd_pr__cap_mim_m3_1 w=3 l=3
+XPACK up 0 sky130_fd_pr__cap_mim_m3_1 w=1 l=1
+.ic v(lease)=.2
+VPREB preb 0 PWL(0 1.8 1u 1.8 1.001u 0 3u 0 3.001u 1.8 8u 1.8 8.001u 0 10u 0 10.001u 1.8 70u 1.8)
+VSH sh 0 PWL(0 0 4u 0 4.001u 1.8 6u 1.8 6.001u 0 11u 0 11.001u 1.8 13u 1.8 13.001u 0 70u 0)
+VSHB shb 0 PWL(0 1.8 4u 1.8 4.001u 0 6u 0 6.001u 1.8 11u 1.8 11.001u 0 13u 0 13.001u 1.8 70u 1.8)
+XPRE up preb vdd vdd sky130_fd_pr__pfet_01v8 W=.84 L=.5
+XSHN up sh lease 0 sky130_fd_pr__nfet_01v8 W=.84 L=.5
+XSHP up shb lease vdd sky130_fd_pr__pfet_01v8 W=.84 L=.5
+* confirmed-error lease dump uses two-device off stack into recovery rail
+VERR err 0 PWL(0 0 42u 0 42.001u 1.8 70u 1.8)
+* long-channel transmission-gate demotion: equalize lease to recovery rail without threshold undershoot
+XEDN lease err rec 0 sky130_fd_pr__nfet_01v8 W=2 L=1
+* sleep request: hot lease must discharge request node before 0.25us shared deadline
+VREQPRE reqpre 0 PWL(0 0 15u 0 15.001u 1.8 18u 1.8)
+VPROBE probe 0 PWL(0 0 16.020u 0 16.021u 1.8 18u 1.8)
+XREQP reqb reqpre vdd vdd sky130_fd_pr__pfet_01v8 W=.84 L=.15
+XREQE reqb probe reqmid 0 sky130_fd_pr__nfet_01v8 W=.84 L=.5
+XREQL reqmid lease 0 0 sky130_fd_pr__nfet_01v8 W=.84 L=.5
+CREQ reqb 0 10f
+* ------------------------------------------------------------------
+* ONE exact VALID bit. Sleep search writes 1 after request; error writes 0.
+* Long-channel cell: slow/low-leak storage, fast write access.
+VWL wl 0 PWL(0 0 20u 0 20.001u 1.8 20.5u 1.8 20.501u 0 42u 0 42.001u 1.8 42.5u 1.8 42.501u 0 70u 0)
+VBL bl 0 PWL(0 1.8 42u 1.8 42.001u 0 70u 0)
+VBLB blb 0 PWL(0 0 42u 0 42.001u 1.8 70u 1.8)
+XVP1 q qb vdd vdd sky130_fd_pr__pfet_01v8 W=1 L=1
+XVN1 q qb 0 0 sky130_fd_pr__nfet_01v8 W=1.5 L=1
+XVP2 qb q vdd vdd sky130_fd_pr__pfet_01v8 W=1 L=1
+XVN2 qb q 0 0 sky130_fd_pr__nfet_01v8 W=1.5 L=1
+XVA1 q wl bl 0 sky130_fd_pr__nfet_01v8 W=2 L=.15
+XVA2 qb wl blb 0 sky130_fd_pr__nfet_01v8 W=2 L=.15
+CQ q 0 2f
+CQB qb 0 2f
+.ic v(q)=0 v(qb)=1.8
+* ------------------------------------------------------------------
+* two repeated motif queries: first after rebuild at30us; second after invalidation at50us
+VB3P b3p 0 PULSE(0 .2 30u 1n 1n 8u 20u)
+VB3N b3n 0 0
+VB2P b2p 0 0
+VB2N b2n 0 PULSE(0 .2 30u 1n 1n 8u 20u)
+VB1P b1p 0 PULSE(0 .2 30u 1n 1n 8u 20u)
+VB1N b1n 0 0
+VB0P b0p 0 0
+VB0N b0n 0 PULSE(0 .2 30u 1n 1n 8u 20u)
+VTE0 te0 0 PULSE(0 0.1 30u 1n 1n 8u 20u)
+VTE1 te1 0 PULSE(0 0 30u 1n 1n 8u 20u)
+CG0 g0 0 40f
+CG1 g1 0 40f
+.ic v(g0)=.44 v(g1)=.44 v(h0)=.44 v(h1)=.44 v(mx0)=.44 v(mx1)=.44 v(tx0)=.44 v(tx1)=.44
+* exact Grammar 1010
+XG00 g0 b3p sky130_fd_pr__cap_mim_m3_1 w=2 l=2
+XG01 g0 b2n sky130_fd_pr__cap_mim_m3_1 w=2 l=2
+XG02 g0 b1p sky130_fd_pr__cap_mim_m3_1 w=2 l=2
+XG03 g0 b0n sky130_fd_pr__cap_mim_m3_1 w=2 l=2
+* partial Grammar 1001
+XG10 g1 b3p sky130_fd_pr__cap_mim_m3_1 w=2 l=2
+XG11 g1 b2n sky130_fd_pr__cap_mim_m3_1 w=2 l=2
+XG12 g1 b1n sky130_fd_pr__cap_mim_m3_1 w=2 l=2
+XG13 g1 b0p sky130_fd_pr__cap_mim_m3_1 w=2 l=2
+* pre-placed programmable passive Myelin slots; q installs/removes them locally
+XMY0 g0 mx0 sky130_fd_pr__cap_mim_m3_1 w=2 l=2
+XMY1 g1 mx1 sky130_fd_pr__cap_mim_m3_1 w=2 l=2
+XMYS0 mx0 q h0 0 sky130_fd_pr__nfet_01v8 W=.42 L=.15
+XMYS1 mx1 q h1 0 sky130_fd_pr__nfet_01v8 W=.42 L=.15
+* capacitive stable template slots converge on same local dendrites
+XTM0 te0 tx0 sky130_fd_pr__cap_mim_m3_1 w=2 l=2
+XTM1 te1 tx1 sky130_fd_pr__cap_mim_m3_1 w=2 l=2
+XTMS0 tx0 q h0 0 sky130_fd_pr__nfet_01v8 W=.42 L=.15
+XTMS1 tx1 q h1 0 sky130_fd_pr__nfet_01v8 W=.42 L=.15
+CH0 h0 0 10f
+CH1 h1 0 10f
+* ------------------------------------------------------------------
+* robust somas + shared competition. Digital gates only touch these 100fF somas, never tiny dendrites.
+VPRE pre 0 PWL(0 0 31u 0 31.001u 1.8 43u 1.8 43.001u 0 51u 0 51.001u 1.8 65u 1.8)
+XP0 s0 pre vdd vdd sky130_fd_pr__pfet_01v8 W=.84 L=.15
+XP1 s1 pre vdd vdd sky130_fd_pr__pfet_01v8 W=.84 L=.15
+* VALID=0 clamps somas high, guaranteeing invalid physical structure cannot fire
+XVC0 s0 q vdd vdd sky130_fd_pr__pfet_01v8 W=.84 L=.15
+XVC1 s1 q vdd vdd sky130_fd_pr__pfet_01v8 W=.84 L=.15
+CS0 s0 0 100f
+CS1 s1 0 100f
+RRUN vdd run 50meg
+CRUN run 0 50f IC=1.8
+XD0 s0 h0 d0 0 sky130_fd_pr__nfet_01v8 W=.42 L=1
+XT0 d0 run 0 0 sky130_fd_pr__nfet_01v8 W=.84 L=.5
+XD1 s1 h1 d1 0 sky130_fd_pr__nfet_01v8 W=.42 L=1
+XT1 d1 run 0 0 sky130_fd_pr__nfet_01v8 W=.84 L=.5
+* soma->spike; shared inhibition senses only robust full-swing-ish spike nodes
+XSP0 sp0 s0 vdd vdd sky130_fd_pr__pfet_01v8 W=1.68 L=.15
+XSN0 sp0 s0 0 0 sky130_fd_pr__nfet_01v8 W=.84 L=.15
+XSP1 sp1 s1 vdd vdd sky130_fd_pr__pfet_01v8 W=1.68 L=.15
+XSN1 sp1 s1 0 0 sky130_fd_pr__nfet_01v8 W=.84 L=.15
+CSP0 sp0 0 20f
+CSP1 sp1 0 20f
+* long weak shared sensors delay inhibition until winner spike is robust
+XIS0 run sp0 0 0 sky130_fd_pr__nfet_01v8 W=.42 L=16
+XIS1 run sp1 0 0 sky130_fd_pr__nfet_01v8 W=.42 L=16
+* ------------------------------------------------------------------
+* dual full-swing Myelin boundary with self-locking winner capture.
+* capture is high for a new query. First valid winner sets exactly one route hold, which pulls capture low.
+RCAP vdd capture 50meg
+CCAP capture 0 50f IC=1.8
+* invalid q=0 also restores capture high quickly; avoids analog mid-rail cleanup-control current
+XCAPRST capture q vdd vdd sky130_fd_pr__pfet_01v8 W=.84 L=.15
+* candidate0 q-authorized route then shared capture gate
+XQ0N sp0 q eq0 0 sky130_fd_pr__nfet_01v8 W=.84 L=.15
+XQ0P sp0 qb eq0 vdd sky130_fd_pr__pfet_01v8 W=1.68 L=.15
+XQ0C eq0 qb 0 0 sky130_fd_pr__nfet_01v8 W=2 L=.15
+XC0 eq0 capture evm0 0 sky130_fd_pr__nfet_01v8 W=.84 L=.15
+RKE0 evm0 0 100Meg
+XI0P myb0 evm0 vdd vdd sky130_fd_pr__pfet_01v8 W=1.68 L=.15
+XI0N myb0 evm0 0 0 sky130_fd_pr__nfet_01v8 W=.84 L=.15
+* regenerative one-hot route latch; evm0 SETs rhold0, qb RESETs it when representation is invalid
+XR0P0 rhold0 rhold0b vdd vdd sky130_fd_pr__pfet_01v8 W=1.68 L=.5
+XR0N0 rhold0 rhold0b 0 0 sky130_fd_pr__nfet_01v8 W=.84 L=.5
+XR0P1 rhold0b rhold0 vdd vdd sky130_fd_pr__pfet_01v8 W=1.68 L=.5
+XR0N1 rhold0b rhold0 0 0 sky130_fd_pr__nfet_01v8 W=.84 L=.5
+XR0SET rhold0b evm0 0 0 sky130_fd_pr__nfet_01v8 W=2 L=.15
+XR0RST rhold0 qb 0 0 sky130_fd_pr__nfet_01v8 W=2 L=.15
+CRH0 rhold0 0 20f
+CRHB0 rhold0b 0 20f
+.ic v(rhold0)=0 v(rhold0b)=1.8
+* candidate1 identical route, used only to prove cleanup cannot create a false winner
+XQ1N sp1 q eq1 0 sky130_fd_pr__nfet_01v8 W=.84 L=.15
+XQ1P sp1 qb eq1 vdd sky130_fd_pr__pfet_01v8 W=1.68 L=.15
+XQ1C eq1 qb 0 0 sky130_fd_pr__nfet_01v8 W=2 L=.15
+XC1 eq1 capture evm1 0 sky130_fd_pr__nfet_01v8 W=.84 L=.15
+RKE1 evm1 0 100Meg
+XI1P myb1 evm1 vdd vdd sky130_fd_pr__pfet_01v8 W=1.68 L=.15
+XI1N myb1 evm1 0 0 sky130_fd_pr__nfet_01v8 W=.84 L=.15
+XR1P0 rhold1 rhold1b vdd vdd sky130_fd_pr__pfet_01v8 W=1.68 L=.5
+XR1N0 rhold1 rhold1b 0 0 sky130_fd_pr__nfet_01v8 W=.84 L=.5
+XR1P1 rhold1b rhold1 vdd vdd sky130_fd_pr__pfet_01v8 W=1.68 L=.5
+XR1N1 rhold1b rhold1 0 0 sky130_fd_pr__nfet_01v8 W=.84 L=.5
+XR1SET rhold1b evm1 0 0 sky130_fd_pr__nfet_01v8 W=2 L=.15
+XR1RST rhold1 qb 0 0 sky130_fd_pr__nfet_01v8 W=2 L=.15
+CRH1 rhold1 0 20f
+CRHB1 rhold1b 0 20f
+.ic v(rhold1)=0 v(rhold1b)=1.8
+* any captured route closes the capture window before cleanup-induced loser spikes can be stored.
+XLOCK0 capture rhold0 0 0 sky130_fd_pr__nfet_01v8 W=4 L=.15
+XLOCK1 capture rhold1 0 0 sky130_fd_pr__nfet_01v8 W=4 L=.15
+* ordered self-clear: capture must close first. Only NOT(capture) can start recovery.
+XCLP clean capture vdd vdd sky130_fd_pr__pfet_01v8 W=1.68 L=.15
+XCLN clean capture 0 0 sky130_fd_pr__nfet_01v8 W=.84 L=.15
+CCLEAN clean 0 20f
+* invalid representation immediately disables recovery path so precharge cannot pump the reservoir
+XCLINV clean qb 0 0 sky130_fd_pr__nfet_01v8 W=2 L=.15
+XRC0 s0 clean rec 0 sky130_fd_pr__nfet_01v8 W=12 L=.15
+XRC1 s1 clean rec 0 sky130_fd_pr__nfet_01v8 W=12 L=.15
+* ------------------------------------------------------------------
+* exact kernel: new data arrives after route decision. q1 uses Myelin; q2 uses exact timeout fallback.
+VDATA data 0 PULSE(0 1.8 36u 1n 1n 1u 20u)
+VFB fb 0 PWL(0 0 55.5u 0 55.501u 1.8 58u 1.8 58.001u 0 70u 0)
+VRPRE rpre 0 PWL(0 0 35.5u 0 35.501u 1.8 43u 1.8 43.001u 0 55.5u 0 55.501u 1.8 65u 1.8)
+XRP result rpre vdd vdd sky130_fd_pr__pfet_01v8 W=.84 L=.15
+* Myelin-enabled exact execution stack
+XRD1 result data rxm 0 sky130_fd_pr__nfet_01v8 W=1.2 L=.15
+XRD2 rxm rhold0 0 0 sky130_fd_pr__nfet_01v8 W=1.2 L=.15
+* exact fallback execution stack in parallel
+XRF1 result data rxf 0 sky130_fd_pr__nfet_01v8 W=1.2 L=.15
+XRF2 rxf fb 0 0 sky130_fd_pr__nfet_01v8 W=1.2 L=.15
+CR result 0 30f
+* restore a rail-clean exact output; dynamic result node may intentionally over-discharge
+XROP out result vdd vdd sky130_fd_pr__pfet_01v8 W=1.68 L=.15
+XRON out result 0 0 sky130_fd_pr__nfet_01v8 W=.84 L=.15
+COUT out 0 20f
+* ------------------------------------------------------------------
+.tran 5n 65u uic
+* lease and local rebuild request
+.meas tran L2 find v(lease) at=14u
+.meas tran TREQ WHEN v(reqb)=.9 FALL=1 FROM=16.021u
+.meas tran QSET find v(q) at=22u
+* first physical query after local rebuild
+.meas tran H0A find v(h0) at=30.6u
+.meas tran H1A find v(h1) at=30.6u
+.meas tran TS0A WHEN v(sp0)=.9 RISE=1 FROM=31u TO=42u
+.meas tran SP1A find v(sp1) at=39u
+.meas tran ROUTE0A find v(rhold0) at=35u
+.meas tran ROUTE1A find v(rhold1) at=35u
+.meas tran CAPA find v(capture) at=35u
+.meas tran CLEANA find v(clean) at=35u
+.meas tran RESA find v(result) at=37.5u
+.meas tran OUTA find v(out) at=37.5u
+.meas tran OUTA find v(out) at=37.5u
+.meas tran RECA find v(rec) at=31u
+.meas tran RECB find v(rec) at=35u
+* invalidation and second query
+.meas tran LERR find v(lease) at=44u
+.meas tran QCLR find v(q) at=44u
+.meas tran H0B find v(h0) at=50.6u
+.meas tran SP0B find v(sp0) at=55u
+.meas tran ROUTE0B find v(rhold0) at=55u
+.meas tran ROUTE1B find v(rhold1) at=55u
+.meas tran RESB find v(result) at=57.5u
+.meas tran OUTB find v(out) at=57.5u
+.meas tran OUTB find v(out) at=57.5u
+* energy rails/sources core proxy
+.meas tran EVDD INTEG par('v(vdd)*(-i(VDD))') from=0 to=65u
+.meas tran EQ1 INTEG par('v(vdd)*(-i(VDD))') from=29u to=42u
+.meas tran EQ2 INTEG par('v(vdd)*(-i(VDD))') from=49u to=60u
+.meas tran EPOST INTEG par('v(vdd)*(-i(VDD))') from=42u to=65u
+.end
