@@ -1,0 +1,64 @@
+magic
+tech sky130A
+timestamp 1787000000
+<< checkpaint >>
+rect 430 -50 920 250
+<< nmos >>
+rect 537 80 552 122
+<< ndiff >>
+rect 500 109 537 122
+rect 500 92 510 109
+rect 527 92 537 109
+rect 500 80 537 92
+rect 552 109 590 122
+rect 552 92 562 109
+rect 579 92 590 109
+rect 552 80 590 92
+<< ndiffc >>
+rect 510 92 527 109
+rect 562 92 579 109
+<< poly >>
+rect 520 177 570 190
+rect 520 160 537 177
+rect 554 160 570 177
+rect 520 140 570 160
+rect 537 122 552 140
+rect 537 50 552 80
+<< polycont >>
+rect 537 160 554 177
+<< viali >>
+rect 537 160 554 177
+rect 510 92 527 109
+rect 562 92 579 109
+<< metal1 >>
+rect 537 182 554 230
+rect 532 177 559 182
+rect 532 160 537 177
+rect 554 160 559 177
+rect 532 155 559 160
+rect 479 109 532 113
+rect 479 92 510 109
+rect 527 92 532 109
+rect 479 88 532 92
+rect 557 109 584 114
+rect 557 92 562 109
+rect 579 92 900 109
+rect 557 87 584 92
+<< metal3 >>
+rect 600 0 800 200
+<< mimcap >>
+rect 600 180 800 200
+rect 600 20 620 180
+rect 652 20 800 180
+rect 600 0 800 20
+<< mimcapcontact >>
+rect 620 20 652 180
+<< metal4 >>
+rect 619 19 653 181
+<< labels >>
+rlabel metal1 820 92 870 109 0 DRAIN
+rlabel metal1 537 205 554 225 0 GATE
+rlabel metal1 480 92 510 109 0 SOURCE
+rlabel metal3 730 20 790 50 0 CAPBOT
+rlabel metal4 625 50 650 150 0 CAPTOP
+<< end >>
