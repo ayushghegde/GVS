@@ -41,6 +41,7 @@ Run `python scripts/cleanup_experiment.py experiments/<version-or-id>` before fi
 - Preserve unsuccessful experiments when they teach something; mark them `FAIL` or `PARTIAL PASS` rather than deleting the evidence.
 - Separate measured/simulated results from inference.
 - Record architecture changes and the evidence that justified them.
+- If an archive's size or hash does not match the supplied source package, do not treat the archive as authoritative.
 
 ## End-of-experiment procedure
 
@@ -57,4 +58,4 @@ If GitHub write access is unavailable, package the full experiment directory and
 
 ## Current historical baseline
 
-`v12S` is the preserved autonomous complete-tile schematic experiment. It is a **PARTIAL PASS** because the integrated SKY130 schematic lifecycle passed the recorded electrical tests, while real placed/routed RC extraction was not completed. The original supplied package is preserved in `artifacts/v12S/`.
+`v12S` is the preserved autonomous complete-tile schematic experiment. It is a **PARTIAL PASS** because the integrated SKY130 schematic lifecycle passed the recorded electrical tests, while real placed/routed RC extraction was not completed. The canonical repository copy is `experiments/v12S/`.
