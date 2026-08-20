@@ -1,0 +1,13 @@
+time_ms,rid,question_type,plan,action,lease_v,archetypes_after
+5650.0,8,image_corrupted,vision,new_local_structure,0.7265861389274235,13
+5650.0,12,multimodal_image_sound,av_fusion,new_local_structure,0.848359860179144,14
+5800.0,6,exact_logic,xor,new_local_structure,0.6780835157803788,15
+5850.0,2,exact_arithmetic,mul,new_local_structure,0.593656630000603,16
+6200.0,61,code_recognition,kernel_1,reuse_existing,0.7271018655768304,16
+6300.0,79,irregular_reasoning_12hop,irrel_5,reuse_existing,0.5871359928009051,16
+6850.0,40,irregular_reasoning_12hop,irrel_6,reuse_existing,0.5898556065198134,16
+7000.0,17,irregular_reasoning_12hop,irrel_7,new_local_structure,0.5997633569587693,17
+7550.0,23,irregular_reasoning_12hop,irrel_3,reuse_existing,0.5748554879891171,17
+8000.0,9,familiar_workflow,workflow_0,new_local_structure,0.756462367744591,18
+8000.0,29,hot_retrieval,hot_table_0,new_local_structure,0.6635568544452368,19
+8450.0,32,code_recognition,kernel_2,reuse_existing,0.6453120840397988,19
