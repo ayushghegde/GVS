@@ -4,9 +4,11 @@ Reproducible workspace for the GVS hardware experiments.
 
 ## Current baseline
 
-The preserved baseline is **v12S — PARTIAL PASS**. Its supplied complete package is stored at `artifacts/v12S/NEURAL_GLYPH_V12S_AUTONOMOUS_COMPLETE_TILE.zip`.
+The preserved baseline is **v12S — PARTIAL PASS**. The canonical repository copy is stored directly under `experiments/v12S/` as readable source, runnable scripts, and compact result tables.
 
 v12S integrated the complete SKY130 schematic lifecycle and recorded nominal PVT, mismatch, parasitic-stress and hierarchical-rebuild results. It remains PARTIAL PASS because there is no real placed/routed RC extraction yet. The unfinished later layout attempt is not promoted over this baseline.
+
+The previously committed `artifacts/v12S/...zip` copy was removed because it was incomplete compared with the user-supplied package. Do not use an old archive as authoritative when its size/hash does not match the supplied source.
 
 ## Experimental rule
 
@@ -28,7 +30,7 @@ Large PDK distributions remain local rather than duplicated in Git. Put the supp
 
 ## Repository layout
 
-- `artifacts/v12S/` — immutable supplied v12S package
+- `experiments/v12S/` — canonical preserved v12S experiment files
 - `experiments/` — normal experiment records and future versions
 - `scripts/` — setup, simulation and experiment-finalization helpers
 - `pdk/` — local PDK staging, excluded from Git
