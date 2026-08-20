@@ -1,0 +1,2 @@
+sky130_nfet_instances,sky130_pfet_instances,total_mos,mim_cap_instances,explicit_lumped_caps,resistors,note
+47,23,70,14,21,4,schematic-level count; does not include extracted wire RC or pad/ESD
