@@ -1,0 +1,9 @@
+experiment,verdict,result
+single integrated transistor tile,PASS,All major v12P/R fast-path pieces now operate in one SKY130 schematic netlist.
+hierarchical local rebuild,PASS,"12 requested-region inspections vs 67,706 whole-model inspections; exact answers preserved."
+physical local rebuild mechanism,PASS,Pre-placed MIM Myelin/template slots are installed/removed by one exact local VALID/config state.
+nominal PVT lifecycle,PASS,"TT/FF/SS: rebuild, winner route, exact new-data kernel, recovery, invalidation, and exact fallback all pass."
+final mismatch lifecycle,PARTIAL PASS,12/12 independent final launches passed; sample too small for yield claim.
+self-clearing Myelin energy fix,PASS,TT physical-query VDD window 28.28 pJ vs ~315 pJ rejected half-on version.
+parasitic stress,PARTIAL PASS,Moderate explicit parasitic profile passes PVT + one mismatch/corner; real extraction not available.
+actual extracted layout,NOT DONE,No installed layout/extraction executable in this runtime; cannot honestly call the netlist extracted.
