@@ -1,0 +1,3 @@
+design,regions,sleep_epochs,regions_inspected,representation_candidate_checks_proxy,exact_metadata_bits_proxy,rebuilds,final_accuracy,region_inspection_reduction_pct,candidate_check_reduction_pct,metadata_reduction_pct
+periodic whole-model scan,349,194,67706,270824,8376,12,1.0,0.0,0.0,0.0
+physical-lease hierarchical local rebuild,349,194,12,39,349,12,1.0,99.98227631229138,99.98559950373675,95.83333333333334
