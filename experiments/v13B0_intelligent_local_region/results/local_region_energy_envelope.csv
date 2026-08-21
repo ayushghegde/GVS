@@ -1,0 +1,5 @@
+scenario,grammar_readouts,template_events,passive_myelin_edges,extra_checkpoint_readouts,local_core_fJ,independent_selection_total_fJ,shared_8way_total_fJ,saving_pct
+all_grammar_8,8,0,0,0,1072.0,6512.0,1858.8,71.4558
+mixed_3grammar_3template_2myelin,3,3,2,2,671.958406,6111.958406,1458.758406,76.1327
+all_template_8,0,8,0,0,5.152016,5445.152016,791.952016,85.4558
+all_myelin_with_checkpoint_8,0,0,8,8,1072.1056,6512.1056,1858.9056,71.4546
