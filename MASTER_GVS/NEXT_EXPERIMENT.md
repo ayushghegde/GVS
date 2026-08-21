@@ -1,4 +1,4 @@
-# Current Next Experiment — v13B1 Mixed Intelligent Local Region
+# Current Next Experiment — v13B2 Tri-Wall Local Cell Emulation
 
 ## What is already solved
 
@@ -8,74 +8,97 @@ The physical locality path remains:
 
 The repository already contains:
 
-- v13A5: PVT-tracking legal-MIM Grammar ratio + conservative self-check readout work;
-- v13A6 dual-pair reader: physical 10-MOS reader PEX, 48/48 combined mismatch pass at the selected 3.5 ns/phase point;
-- v13A6 margin-tiered policy: high-margin characterized representations may use a cheaper one-phase reader, while low/unknown margin keeps the conservative self-check/fallback path;
+- v13A5: physically closed PVT-tracking Grammar ratio with co-placed self-check readout;
+- v13A6 dual-pair reader: physical 10-MOS mirrored reader that avoids analog swap-path asymmetry;
+- v13A6 margin-tiered policy: high-margin characterized representations may use a cheaper one-phase reader, while low/unknown margin keeps conservative self-check/fallback;
 - v13A7: same-die MIM-over-transistor vertical placement is physically legal in the tested SKY130 slice;
-- v13B0: deep Passive-Myelin analog chains are **not** safe as unlimited local transmission lines.
+- v13B0: deep Passive-Myelin analog chains are not safe as unlimited transmission lines;
+- v13B1: direct analog Grammar steering is useful when the destination already has a local membrane/competition node;
+- v13B2: three capacitor walls + one controlled connection face is a promising cell geometry; a continuous conductive interior fill is rejected, while a structured insulating core with sparse controlled conductors is kept as a future architecture target.
 
-## New v13B0 result
+## New v13B2 result
 
-An eight-hop passive-Myelin chain was simulated from the preserved v12R Grammar/Myelin circuit.
+### Tri-Wall Glyph Cell (TWGC)
 
-For the historical-scale 2x2 um MIM / 3 fF target edge:
+A future 3D cell uses three capacitive faces as evidence/synapse inputs and its fourth face as the controlled connection/output.
 
-- source exact-vs-partial separation: ~45.82 mV
-- hop 1: ~26.17 mV
-- hop 2: ~14.94 mV
-- hop 3: ~8.54 mV
+Using the present typical 2x2 MIM value (~9.52 fF per wall) with the historical 40 fF Grammar dendrite and 0.2 V events gives a first-order screen:
 
-The best possible symmetric reference margin therefore falls to ~13.08 mV after one hop and ~7.47 mV after two hops.
+- 3 active walls: ~0.523314 V from a 0.44 V baseline;
+- 2 active walls: ~0.495543 V;
+- separation: ~27.77 mV.
 
-Larger MIM edges were tested rather than assumed. A 5x5 um edge barely reaches ~18.17 mV best symmetric margin after one hop, but uses 6.25x the MIM area of a 2x2 edge and still loses margin on later hops.
+This closely reproduces the old 3-input Grammar behavior, so the geometry is computationally meaningful rather than decorative.
 
-**Decision:** do not solve local chain depth by making every Myelin capacitor large. Passive Myelin remains a short structural edge. Regenerate weak analog evidence locally when margin requires it.
+Literal vertical sidewall MIM is not available in SKY130. Emulate TWGC first with three legal planar MIMs placed above/around the local logic using the v13A7 vertical-overlap result.
 
-Even with a conservative ~134 fJ physical reader checkpoint, one shared eight-way region still saves roughly 71-85% of the measured communication + local-core proxy versus eight separate long selections, depending on workload mix. This is not a whole-chip claim.
+### Touch/contact propagation
+
+Do not use uncontrolled conductive touching as a routing replacement.
+
+A passive equal-capacitance chain starting with a 0.2 V stored packet falls approximately:
+
+`200 -> 100 -> 50 -> 25 -> 12.5 mV`
+
+after four sequential equal-cell charge-sharing transfers.
+
+This confirms:
+
+- one characterized short analog contact can be useful;
+- deep passive contact chains destroy margin;
+- a hot long relation should be promoted to a direct Myelin chord or regenerated;
+- robust/exact state remains full-swing.
+
+### Interior fill
+
+Do not fill the cavity with one conductor. It destroys selectivity by equalizing attached states.
+
+Selected future interpretation:
+
+**Nervous Core Scaffold** = insulating/structural non-silicon fill containing isolated controlled conductors/junctions and sparse promoted Myelin chords.
+
+A generic orthogonal 3D interior mesh gives little path improvement for large link growth. A structured core or sparse direct chords is more promising, but physical wire length—not hop count alone—must decide the result.
 
 See:
-- `experiments/v13B0_intelligent_local_region/REPORT.md`
-- `experiments/v13B0_intelligent_local_region/results/`
+- `experiments/v13B2_triwall_nervous_core/REPORT.md`
 
-## Next physical experiment — v13B1
+## Next physical experiment — TWGC emulation inside v13B
 
-Build the first **heterogeneous intelligent local region** behind the already-extracted eight-way Regional Lease.
+Build one ordinary-silicon emulation of the Tri-Wall Glyph Cell before attempting a true hollow package.
 
-Required local contents:
+Required steps:
 
-1. at least two real Grammar structures;
-2. at least two static template-selector paths;
-3. at least two Passive-Myelin structural edges;
-4. one robust Myelin/exact-computer boundary;
-5. local confidence/regeneration checkpoints only where analog margin needs them;
-6. unused paths remain electrically quiet;
-7. only validated local winners may refresh the lease.
-
-## Measurements required
-
-- local-event amplitude after the physical eight-way lease PEX;
-- Grammar exact/partial margin with neighboring template/Myelin activity present;
-- Passive-Myelin margin after one short edge;
-- inactive-path leakage/crosstalk;
-- lease WAKE voltage through the mixed event sequence;
-- robust final event correctness;
-- total local energy versus repeating long coordinate selection for each operation;
-- area/capacitance cost of shared checkpoints and shared reference structures.
+1. three real legal 2x2 MIMs act as the three logical capacitor walls;
+2. place them above/around a compact local evidence node where v13A7 says vertical overlap is legal;
+3. make the fourth logical face a weak controlled MOS contact/output;
+4. connect that output directly to an already-existing local competition node;
+5. compare readerless analog steering against the closed dual-pair reader;
+6. run TT/FF/SS plus actual independent mismatch;
+7. measure crosstalk, analog margin, area, and source/VDD energy;
+8. if one-hop contact passes, compare two sequential contacts against one promoted direct Myelin chord;
+9. only retain the hollow/filled-core architecture if this local emulation materially reduces reader count, routing energy, or area.
 
 ## Acceptance rule
 
-The mixed region is accepted only if:
+The TWGC emulation is accepted only if:
 
-- no inactive local structure creates a false robust result;
-- analog evidence never continues through an uncharacterized deep passive chain;
-- final robust events remain correct across the tested PVT/mismatch screen;
-- exact fallback remains independent;
-- shared locality still provides a material measured advantage after robust-readout cost is included.
+- one-hop direct analog steering preserves correct exact/partial polarity across tested PVT and independent mismatch;
+- no neighboring inactive wall/contact creates a false robust result;
+- the fourth-face contact does not erase the analog margin through charge sharing;
+- readerless operation saves material energy/area versus the closed reader when the destination already contains a membrane;
+- a two-hop passive chain is not allowed unless measured margin remains characterized; otherwise use regeneration or a promoted chord;
+- exact/global fallback remains independent.
 
-## 3D / hollow-chip idea
+## Hollow-chip decision
 
-Do **not** force the hollow/inside-out 3D chip concept into v13B1. Same-die vertical MIM-over-transistor placement may be used where it reduces real area/wiring, because v13A7 physically demonstrated that technique. More exotic hollow-volume/stacked packaging remains parked until a measured local-region bottleneck justifies it.
+Do not fabricate the real hollow/filled-core chip yet.
 
-## Separate tooling issue
+The current selected long-term interpretation is:
 
-Historical full-v12S continuous-model signoff remains separate. Do not alter solved v12S behavior to work around simulator/model compatibility.
+- active semiconductor skins/surfaces where transistors are required;
+- three-wall capacitive cells on inner/outer surfaces;
+- an insulating Nervous Core Scaffold instead of a solid conductive core;
+- sparse controlled diagonal Myelin chords through that core;
+- robust full-swing/exact routing for changing or precise information.
+
+The real hollow package becomes justified only after the TWGC emulation and mixed eight-way region show a measured advantage.
