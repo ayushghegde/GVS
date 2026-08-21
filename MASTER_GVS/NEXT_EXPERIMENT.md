@@ -1,4 +1,4 @@
-# Current Next Experiment — Verticalized Direct Grammar Cell
+# Current Next Experiment — v13B1 Mixed Intelligent Local Region
 
 ## What is already solved
 
@@ -6,68 +6,76 @@ The physical locality path remains:
 
 `orthogonal coordinate -> compact coordinate release -> Regional Event Lease -> 8 isolated local event paths`.
 
-v13A5/v13A6 established the PVT-tracking equal-total Grammar MIM ratio and the **margin-tiered** reader policy:
+The repository already contains:
 
-- high-margin/stable representation -> one-phase direct reader
-- low/unknown margin -> two-phase self-check
-- ambiguity/failure -> exact computer path
+- v13A5: PVT-tracking legal-MIM Grammar ratio + conservative self-check readout work;
+- v13A6 dual-pair reader: physical 10-MOS reader PEX, 48/48 combined mismatch pass at the selected 3.5 ns/phase point;
+- v13A6 margin-tiered policy: high-margin characterized representations may use a cheaper one-phase reader, while low/unknown margin keeps the conservative self-check/fallback path;
+- v13A7: same-die MIM-over-transistor vertical placement is physically legal in the tested SKY130 slice;
+- v13B0: deep Passive-Myelin analog chains are **not** safe as unlimited local transmission lines.
 
-The current normal high-margin 3-step sound Grammar reader target is the 7-MOS direct reader, not the old unconditional 13-MOS two-phase reader.
+## New v13B0 result
 
-## New v13A7 result
+An eight-hop passive-Myelin chain was simulated from the preserved v12R Grammar/Myelin circuit.
 
-A real SKY130 physical experiment placed one legal 2x2 um MIM **directly above** a W=0.42/L=0.15 NFET in XY.
+For the historical-scale 2x2 um MIM / 3 fF target edge:
 
-- DRC errors: 0
-- exactly one NFET + one MIM extracted
-- no accidental short
-- largest measured MIM-plate-to-transistor parasitic in this test: ~0.059 fF
+- source exact-vs-partial separation: ~45.82 mV
+- hop 1: ~26.17 mV
+- hop 2: ~14.94 mV
+- hop 3: ~8.54 mV
 
-Therefore the next reader should not be laid out as a flat side-by-side block by default. The MIM evidence layer should be deliberately placed above the local transistor logic where routing allows.
+The best possible symmetric reference margin therefore falls to ~13.08 mV after one hop and ~7.47 mV after two hops.
+
+Larger MIM edges were tested rather than assumed. A 5x5 um edge barely reaches ~18.17 mV best symmetric margin after one hop, but uses 6.25x the MIM area of a 2x2 edge and still loses margin on later hops.
+
+**Decision:** do not solve local chain depth by making every Myelin capacitor large. Passive Myelin remains a short structural edge. Regenerate weak analog evidence locally when margin requires it.
+
+Even with a conservative ~134 fJ physical reader checkpoint, one shared eight-way region still saves roughly 71-85% of the measured communication + local-core proxy versus eight separate long selections, depending on workload mix. This is not a whole-chip claim.
 
 See:
-- `experiments/v13A7_3d_vertical_architecture/`
-- `MASTER_GVS/3D_ARCHITECTURE.md`
+- `experiments/v13B0_intelligent_local_region/REPORT.md`
+- `experiments/v13B0_intelligent_local_region/results/`
 
-## Next physical experiment
+## Next physical experiment — v13B1
 
-Build the first **vertical Glyph compute cell** by merging v13A6 and v13A7:
+Build the first **heterogeneous intelligent local region** behind the already-extracted eight-way Regional Lease.
 
-1. lay out the 7-MOS direct one-phase Grammar reader in FEOL/M1/M2;
-2. place the 10-MIM candidate/reference ratio array directly above as much of the reader as legal using M3/M4;
-3. keep GC/GR routes very short and symmetric;
-4. keep robust output nodes O0/O1 physically short and away from weak evidence wiring;
-5. reserve the highest available metal for robust/global event routing where practical;
-6. DRC + extraction; reject DRC-clean layouts with wrong connectivity;
-7. measure:
-   - total XY footprint
-   - GC/GR ground/cross coupling
-   - O0/O1 parasitic capacitance
-   - unwanted MIM-to-transistor vertical coupling
-8. compare against a side-by-side reference placement;
-9. run TT/FF/SS + combined MIM/MOS mismatch;
-10. measure actual one-phase readout energy;
-11. connect the verticalized Grammar cell behind one path of the selected 8-way Regional Lease.
+Required local contents:
 
-## Acceptance rules
+1. at least two real Grammar structures;
+2. at least two static template-selector paths;
+3. at least two Passive-Myelin structural edges;
+4. one robust Myelin/exact-computer boundary;
+5. local confidence/regeneration checkpoints only where analog margin needs them;
+6. unused paths remain electrically quiet;
+7. only validated local winners may refresh the lease.
 
-Keep the verticalized cell only if:
+## Measurements required
 
-- exact/partial Grammar sign remains correct across the characterized physical class;
-- there are zero wrong accepted high-margin decisions in the signoff screen;
-- weak analog evidence remains local and is not exported vertically/long-distance;
-- XY area or evidence-wire parasitics improve materially versus side-by-side placement;
-- robust output parasitics stay within the measured reader timing budget;
-- exact fallback remains independent.
+- local-event amplitude after the physical eight-way lease PEX;
+- Grammar exact/partial margin with neighboring template/Myelin activity present;
+- Passive-Myelin margin after one short edge;
+- inactive-path leakage/crosstalk;
+- lease WAKE voltage through the mixed event sequence;
+- robust final event correctness;
+- total local energy versus repeating long coordinate selection for each operation;
+- area/capacitance cost of shared checkpoints and shared reference structures.
 
-## True die-stacked 3D after this
+## Acceptance rule
 
-Do **not** make hybrid bonding a prerequisite for the first GVS chip.
+The mixed region is accepted only if:
 
-After the same-die vertical cell passes, screen a regional hybrid-bond partition where a memory/config/event tier sits directly over local Glyph groups. Only robust events and static/slow configuration should cross the die interface.
+- no inactive local structure creates a false robust result;
+- analog evidence never continues through an uncharacterized deep passive chain;
+- final robust events remain correct across the tested PVT/mismatch screen;
+- exact fallback remains independent;
+- shared locality still provides a material measured advantage after robust-readout cost is included.
 
-The v13A7 architecture model suggests substantial communication-energy headroom versus the ~0.68 pJ planar long-selection proxy, but those hybrid-bond numbers are literature-based modeling, not GVS-extracted silicon.
+## 3D / hollow-chip idea
+
+Do **not** force the hollow/inside-out 3D chip concept into v13B1. Same-die vertical MIM-over-transistor placement may be used where it reduces real area/wiring, because v13A7 physically demonstrated that technique. More exotic hollow-volume/stacked packaging remains parked until a measured local-region bottleneck justifies it.
 
 ## Separate tooling issue
 
-Complete historical-v12S continuous-model signoff remains a separate simulator/model compatibility task. Do not modify solved v12S behavior around that tooling mismatch.
+Historical full-v12S continuous-model signoff remains separate. Do not alter solved v12S behavior to work around simulator/model compatibility.
