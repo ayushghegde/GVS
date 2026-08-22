@@ -1,0 +1,16 @@
+corner,sequence,Vref_V,promote_step,final_use_V,final_promoted
+FF,hot_reuse,0.420000,7,0.520265,true
+FF,alternating,0.420000,13,0.506300,true
+FF,two_then_idle,0.420000,,0.231875,false
+FF,noise_only,0.420000,,0.200000,false
+FF,bursty,0.420000,11,0.510945,true
+TT,hot_reuse,0.436378,8,0.520265,true
+TT,alternating,0.436378,15,0.500086,true
+TT,two_then_idle,0.436378,,0.200000,false
+TT,noise_only,0.436378,,0.200000,false
+TT,bursty,0.436378,12,0.505817,true
+SS,hot_reuse,0.470530,11,0.520265,true
+SS,alternating,0.470530,27,0.496171,true
+SS,two_then_idle,0.470530,,0.200000,false
+SS,noise_only,0.470530,,0.200000,false
+SS,bursty,0.470530,18,0.502586,true
