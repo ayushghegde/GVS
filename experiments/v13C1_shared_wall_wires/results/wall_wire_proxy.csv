@@ -1,0 +1,3 @@
+variant,length_um,a_service_mutual_fF,b_service_mutual_fF,service_ground_or_shield_fF,a_evid_ground_fF,b_evid_ground_fF,service_1p8V_kick_on_72fF_mV,drc
+unshielded,100,1.18388,1.18388,2.79459,5.24837,5.24837,29.12,0
+shielded,100,not_extracted,not_extracted,6.230,4.61189,4.53739,below_extraction_resolution,0
