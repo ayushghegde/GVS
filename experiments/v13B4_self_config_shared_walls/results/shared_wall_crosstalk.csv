@@ -1,0 +1,4 @@
+case,cross_coupling_fF,neighbor_transition_V,evidence_cap_fF,injected_mV,decision
+floating_midpoint_two_2x2_MIM,4.756,0.2,72,12.393,reject_default
+co_placed_coupling_proxy,0.135,0.2,72,0.374,acceptable_proxy
+shielded_target,0.050,0.2,72,0.139,target
