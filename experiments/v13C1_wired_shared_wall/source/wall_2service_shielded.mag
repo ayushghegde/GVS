@@ -1,0 +1,20 @@
+magic
+tech sky130A
+timestamp 1788000002
+<< checkpaint >>
+rect 0 0 10500 1300
+<< metal4 >>
+rect 100 100 10100 140
+rect 100 300 10100 360
+rect 100 520 10100 560
+rect 100 700 10100 740
+rect 100 900 10100 960
+rect 100 1120 10100 1160
+<< labels >>
+rlabel metal4 200 100 400 140 0 A_EVID
+rlabel metal4 200 300 400 360 0 SHIELD_A
+rlabel metal4 200 520 400 560 0 SERVICE0
+rlabel metal4 200 700 400 740 0 SERVICE1
+rlabel metal4 200 900 400 960 0 SHIELD_B
+rlabel metal4 200 1120 400 1160 0 B_EVID
+<< end >>
