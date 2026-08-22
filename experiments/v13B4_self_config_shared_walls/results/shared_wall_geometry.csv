@@ -1,0 +1,6 @@
+t_over_p,independent_shell_solid_frac,shared_framework_solid_frac,framework_material_saving_pct,independent_void_frac,shared_void_frac,void_volume_gain_pct,shared_three_wall_area_per_footprint
+0.02,0.115264,0.058808,48.98,0.884736,0.941192,6.38,2.8812
+0.05,0.271000,0.142625,47.37,0.729000,0.857375,17.61,2.7075
+0.10,0.488000,0.271000,44.47,0.512000,0.729000,42.38,2.4300
+0.15,0.657000,0.385875,41.27,0.343000,0.614125,79.05,2.1675
+0.20,0.784000,0.488000,37.76,0.216000,0.512000,137.04,1.9200
