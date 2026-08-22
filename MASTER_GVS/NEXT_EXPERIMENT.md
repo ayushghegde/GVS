@@ -1,97 +1,67 @@
-# Current Next Experiment — v13D3 Physical Autonomic Tap Spine
+# Current Next Experiment — v13G4 Mixed Physical/Volumetric Glyph Region
 
-## What v13D added
+## What is now closed or selected
 
-v13D deliberately reopened useful old physical principles before creating new routing.
+- v13E four-tap electrical event spine: selected promoted tap gate **0.9 V**, nominal TT/FF/SS pass, **12/12 independent mismatch launches pass**, direct-neighbor fourth face remains cheaper than the shared spine, and post-capture expired tap charge can be partially recovered without disturbing the live event.
+- v13F hollow photonic void: conventional optics rejected locally; Optical Void Chords kept only for long/hot robust relations; direct Photocharge Receptor kept as a future photonic-process candidate.
+- v13F1 crossover compiler: direct-photocharge optical scenarios cross the present dedicated electrical-event slope at roughly **2–18 mm** depending on source/path efficiency; conventional ~120–150 fJ photonics does not beat a simple local wire inside ordinary chip distances.
+- v13G0 multi-physics screen: electricity remains primary local physics; capacitive/inductive links are only for tiny contactless gaps; RF/mmWave is backup/broadcast mode; acoustic is signal-processing-only; heat/microfluidics are slow control/cooling; MEMS/PCM and magnetism are rare future consolidation technologies.
+- v13G1 Heterogeneous Void Fabric: cavity is zoned into active framework walls, Optical Corridors, Thermal Arteries, Component Bays, structural/alignment ribs and reserve/bypass volume.
+- v13G2 Optical Dendrite/Fanout: long optical fan-in/fanout is promising only for sparse promoted relations; weak analog optical use must be differential/self-referenced rather than absolute-thresholded.
+- v13G3 mixed-carrier workload screen: image/sound/code/reasoning all remain hybrid; communication-sensitive code/reasoning gain most when a subset of truly long/hot selections earns optical promotion.
 
-- `v13D0_old_idea_rescue`: reuses v12E self-referenced repetition, v12F electrical homeostasis, v12G short electrical context, v12P lease/speculation, v12I expired-charge recovery, and v11U/v12A replica PVT sensing.
-- `v13D1_autonomic_tap_spine`: compares dedicated fourth-face links against a shared shielded trunk with short subwires/taps into cells.
-- `v13D2_decentralized_physics`: selects electricity for fast local computation/adaptation, temperature/leak physics for slow local health control, and magnetic nonvolatile state only as a future-process consolidation anchor.
+## Current main architecture rule
 
-## Selected routing hierarchy
+`representation compiler` chooses Grammar/template/Myelin/exact form.
 
-1. **Direct fourth face** — nearest-neighbor private analog contact; minimum load.
-2. **Segmented analog tap spine** — short non-neighbor analog route with unused segments isolated.
-3. **Protected event spine + local capacitor tap** — regional shared event/control route; each destination converts the event back into local analog evidence.
-4. **Myelin chord** — stable hot long-range relation.
-5. **Exact/global fabric** — changing, cold or precision state.
+`carrier/volume compiler` then chooses direct fourth face, segmented electrical tap, regional event spine, dedicated electrical/Myelin chord, future Optical Void Chord, component bay and thermal/optical corridor allocation.
 
-The subwire/tap spine is not a universal replacement for the fourth face.
+A good representation should eliminate long communication before the carrier compiler tries to optimize it.
 
-## v13D1 quantitative screen
+## v13G4 goal
 
-Using the prior ~72 fF Tri-Wall evidence node, 25 mV source differential, 3 fF receptor, and v13C1 shielded-wire proxy ~6.231 fF/100 um:
+Build the first **mixed intelligent local region** rather than another isolated primitive.
 
-- fourth face -> ~24.0 mV transferred;
-- full 100 um trunk + eight 10 um branches with only one active receptor -> ~20.88 mV;
-- same trunk with all eight receptors attached -> ~16.79 mV, reject for current high-margin use;
-- selected 25 um segment + 10 um branch -> ~23.32 mV;
-- selected 50 um segment + 10 um branch -> ~22.86 mV.
+### Required physical/electrical part
 
-For the full 180 um protected-wire inventory:
-- >=20 mV target -> at most 2 simultaneous active 3 fF analog taps;
-- >=18 mV target -> at most 5.
+1. one existing eight-way Regional Event Lease;
+2. at least two real Grammar/template/Myelin destinations behind the lease;
+3. one direct fourth-face neighbor path;
+4. one v13E-style four-tap protected electrical event spine;
+5. local familiarity/Use state so repeated validated traffic can promote/demote taps without a per-event central router;
+6. exact fallback fully independent;
+7. post-capture recovery.
 
-This motivates automatic electrical congestion suppression using the old v12F homeostasis principle.
+### Required volumetric/system model part
 
-## Old repetition signal reused for decentralized tap learning
+8. two candidate long relations with real distance/traffic metadata;
+9. compare dedicated electrical chord against direct-photocharge Optical Void Chord using good/moderate/poor endpoint/path scenarios;
+10. reserve actual aperture/corridor area in the model rather than treating optics as zero-volume;
+11. one Optical Dendrite fan-in case and one optical fanout case;
+12. one Component Bay for exact/residual memory/logic;
+13. one Thermal Artery/thermal-budget model near the hot exact/optical-source block;
+14. one reserve/bypass route for failure recovery.
 
-v12E preserved self-referenced familiarity differential:
-- first validated firing ~1.3-1.6 mV;
-- second ~16.8-17.2 mV;
-- third ~28.2-28.6 mV across TT, SS/85C and one mismatch seed.
+### Workloads
 
-Selected policy:
-- first use -> no physical promotion;
-- second close validated use -> probation;
-- third close validated use -> temporary electrical tap may open;
-- continued long-term validated reuse -> slower lease/use reservoir may consolidate the path;
-- inactivity/fatigue closes/demotes it;
-- raw/noisy events never train it.
+Replay the same promotion/fallback policy over representative image, sound, code and reasoning traces or the closest preserved event-count/workload models available in the repository. Do not create a separate architecture per workload.
 
-## Event-spine energy proxy
+## Measurements
 
-Using the v13C2 180 um protected wire inventory (~11.216 fF) and a 0.2 V local event, a conservative `C*V^2` wire pulse proxy is ~0.449 fJ.
-
-If promoted taps are static over a burst:
-- shared spine proxy = ~0.449 fJ + ~0.68 fJ local wall event per active destination;
-- separately toggled fourth-face proxy = ~1.2 fJ gate + ~0.68 fJ wall per destination.
-
-At fanout 8 this simplified proxy is ~5.89 fJ vs ~15.04 fJ (~61% lower). This excludes drivers/vias and is not a whole-region energy claim.
-
-## Decentralized physics rule
-
-- fast electricity/charge -> event, evidence, familiarity, fatigue, lease, tap state;
-- slow local heat/PVT -> replica-leak Thermal Brake changes promotion/decay/inhibition;
-- expired charge -> one-way recovery;
-- future magnetic/nonvolatile state -> only after rare exact verification of a persistent relation;
-- exact computer -> ambiguity, semantics, arithmetic and consolidation verification, not per-event routing.
-
-## Next physical experiment — v13D3
-
-Build one real shielded 4-tap first slice, then expand to 8 taps only after the first slice passes.
-
-Required:
-
-1. one shielded service/event spine;
-2. four short tap subwires with one small receptor each;
-3. one local v12E-style familiarity trace/reference per tap or an equivalent shared-reference topology;
-4. temporary tap enable only after repeated validated use;
-5. one shared v12F-style electrical homeostat that prevents excessive simultaneous analog loading;
-6. one v11U/v12A-style replica PVT/temperature sensor that changes promotion/decay pressure without observing route activity;
-7. post-decision expired-charge recovery only after live evidence is captured;
-8. compare direct fourth-face neighbor, segmented analog tap, and event-spine/local-wall injection using the same source evidence;
-9. run TT/FF/SS + independent mismatch;
-10. measure tap count, evidence margin, false promotion, demotion, service crosstalk, energy, recovery and latency.
+- useful decisions/results per total energy;
+- long coordinate selections removed;
+- reader/conversion count removed;
+- electrical wire length/capacitance;
+- optical endpoint energy and aperture/corridor occupancy;
+- number/lifetime of promoted relations;
+- fallback/invalidations;
+- thermal load and cooling allocation;
+- recovery gain after information expires;
+- failure reroute success;
+- total region area/volume proxy.
 
 ## Acceptance
 
-Keep the Autonomic Tap Spine only if:
+Keep the Heterogeneous Void Fabric only if the mixed region demonstrates a material system advantage after including support costs. Reject or demote any carrier whose endpoint, aperture, cooling, alignment, route-write or fallback cost exceeds the electrical alternative.
 
-- one/two incidental uses cannot create a persistent route;
-- repeated validated use does create a temporary tap autonomously;
-- congestion/homeostasis limits analog fanout before margin falls below the characterized boundary;
-- thermal/PVT adaptation changes thresholds without corrupting route identity;
-- weak analog state is never broadcast through an over-loaded unsegmented bus;
-- static/burst-amortized taps produce a material routing/control advantage over separate fourth-face gates;
-- exact fallback remains independent.
+The literal hollow/package geometry remains a future fabrication target. v13G4 must first prove that the **electrical + optical + thermal + exact mixture** is better than the same intelligent region implemented only with the present electrical hierarchy.
