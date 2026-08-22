@@ -1,0 +1,7 @@
+corner,gate_V,exact_receptor_V,partial_receptor_V,separation_mV,provenance
+tt,1.0,0.47995,0.4767,3.25,prior_v13B3_measured
+tt,1.1,0.5138774,0.4936721,20.2053,new_PDK_transient
+tt,1.2,0.5197614,0.4946798,25.0816,new_PDK_transient
+ff,1.2,0.5196141,0.4945551,25.0590,new_PDK_transient
+ss,1.2,0.5199134,0.4948492,25.0642,new_PDK_transient
+tt,1.8,0.524486,0.499492,24.9940,prior_v13B3_measured
