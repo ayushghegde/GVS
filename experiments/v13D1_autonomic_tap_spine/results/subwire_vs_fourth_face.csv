@@ -1,0 +1,6 @@
+case,wire_um,wire_fF,receiver_fF,total_load_fF,active_taps,transferred_mV,pass20,pass18
+fourth_face_local,0,0.0,3.0,3.0,1,24.0,True,True
+shared_spine_100um_8x10um_one_active,180,11.2158,3.0,14.2158,1,20.877843736298914,True,True
+shared_spine_100um_8x10um_all8_active,180,11.2158,24.0,35.2158,8,16.788570341311633,False,False
+segmented_spine_25um_plus10um_one_active,35,2.18085,3.0,5.18085,1,23.321847323526498,True,True
+segmented_spine_50um_plus10um_one_active,60,3.7386,3.0,6.7386,1,22.860452179744115,True,True
