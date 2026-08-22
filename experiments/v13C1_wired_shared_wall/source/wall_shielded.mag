@@ -1,0 +1,18 @@
+magic
+tech sky130A
+timestamp 1788000001
+<< checkpaint >>
+rect 0 0 10500 1000
+<< metal4 >>
+rect 100 100 10100 140
+rect 100 290 10100 350
+rect 100 480 10100 520
+rect 100 670 10100 730
+rect 100 860 10100 900
+<< labels >>
+rlabel metal4 200 100 400 140 0 A_EVID
+rlabel metal4 200 290 400 350 0 GND
+rlabel metal4 200 480 400 520 0 SERVICE
+rlabel metal4 200 670 400 730 0 GND
+rlabel metal4 200 860 400 900 0 B_EVID
+<< end >>
