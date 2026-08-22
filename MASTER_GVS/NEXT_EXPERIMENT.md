@@ -1,4 +1,4 @@
-# Current Next Experiment — v13B5 Self-Configuring Shared-Wall Local Region
+# Current Next Experiment — v13C3 Physical Shared-Service Eight-Cell Slice
 
 ## What is already solved
 
@@ -6,110 +6,66 @@ The physical locality path remains:
 
 `orthogonal coordinate -> compact coordinate release -> Regional Event Lease -> 8 isolated local event paths`.
 
-The repository now also contains:
+New v13C results now add:
 
-- v13A5: physically closed PVT-tracking Grammar ratio with co-placed self-check readout;
-- v13A6: 10-MOS dual-pair reader that avoids analog swap-path asymmetry;
-- v13A7: legal same-die MIM-over-transistor vertical overlap;
-- v13B0: deep passive-Myelin chains are unsafe without regeneration;
-- v13B1: direct analog steering is useful when the destination already has a physical competition node;
-- v13B2: Tri-Wall Glyph Cell and structured Nervous Core concept;
-- v13B3: physical 3-MIM + minimum fourth-face MOS cell, full-swing/static contact PVT + small mismatch pass, direct ~1 V lease-gate control rejected;
-- v13B4: self-configuring fourth-face threshold model, new 1.1/1.2 V gate-transfer screen, leak/recovery lifecycle, and shared-wall geometry/electrical screen.
+- **v13C0 exclusion audit:** 29 distinct explicit rejected/not-default idea families were identified in the two master audit files after merging obvious duplicates; v13C now separates principle rejection from implementation/mode/process rejection so useful old mechanisms are not accidentally discarded;
+- **v13C1 wired shared wall:** a 100 um SKY130 M4 wall proxy shows an unshielded service line couples ~1.184 fF into each weak analog face, enough for a ~29 mV worst charge-sharing kick on the present ~72 fF evidence-node proxy; adding reference shields removes direct extracted service-to-evidence capacitor terms in the tested geometry;
+- **v13C1 two-service proxy:** two robust service wires can coexist between outer shields; direct service-to-evidence terms remain absent in extraction, while service-to-service coupling is ~2.386 fF/100 um and therefore must be treated as robust/slow routing;
+- **v13C2 eight-cell service-spine model:** a 2x2x2 cell block reduces independent wall-panel count from 48 to 36 by sharing common walls; a simple shared 100 um trunk + eight 10 um branches reduces protected control-wire length/capacitance proxy by ~77.5% versus eight separate 100 um protected routes.
 
-## New v13B4 result
+## Architecture rule added by v13C
 
-### Self-Setting Fourth Face
+Every old rejection is classified as one of:
 
-A fourth-face link should learn from repeated **validated** useful outcomes, not from raw traffic.
+- `PRINCIPLE_REJECTED` — keep rejected unless fundamentally new evidence changes the need;
+- `IMPLEMENTATION_REJECTED` — underlying physics remains available with a different topology/control;
+- `MODE_ONLY` — use only when workload/area/margin makes it win;
+- `FUTURE_PROCESS` — unavailable/uneconomic in current SKY130, not physically impossible.
 
-Per contact:
-- local Use Reservoir stores recent useful-reuse charge;
-- a small residual tap samples post-capture cleanup charge only after a validated winner;
-- inactivity lets the state decay;
-- unvalidated/noisy events cannot refresh it.
+This protects mechanisms such as stored-leak adaptation, one-way recovery, direct analog context, selective Grammar, and targeted 3D from being lost merely because one earlier implementation failed.
 
-Shared across one eight-way group:
-- two v12A-style replica leak pilots;
-- one Environment Reservoir / PVT reference;
-- one slow promotion/demotion decision element.
+## Selected shared wall
 
-This reuses v11S/T/U and v12A rather than inventing a software calibration table.
+Use a **Service Spine Wall**:
 
-### Actual pass-gate screen
+`cell-A capacitor face -> dielectric -> robust shield/reference -> protected service lanes -> robust shield/reference -> dielectric -> cell-B capacitor face`
 
-The physical v13B3 fourth-face topology was rerun with the real SKY130 MIM + W=0.42/L=0.15 NFET models.
+Preferred service lanes:
 
-TT:
-- gate 1.0 V -> only ~3.25 mV exact/partial separation: reject high-confidence use;
-- gate 1.1 V -> ~20.21 mV;
-- gate 1.2 V -> ~25.08 mV.
+- v12A-style shared environment/PVT pilot state;
+- validated-use promotion/demotion control;
+- one-way expired-charge recovery;
+- VDD/GND/reference;
+- static/burst-amortized fourth-face enable;
+- robust winner/event/Myelin-chord landing.
 
-At 1.2 V nominal:
-- TT ~25.08 mV;
-- FF ~25.06 mV;
-- SS ~25.06 mV.
+Do not route tiny GC/GR/dendrite/latch-internal analog state through the shared service spine.
 
-One fresh mismatch-library launch per corner also preserved ~24.9-25.9 mV separation. This is a first screen only; multi-seed mismatch at 1.2 V remains required.
+## Next physical experiment — v13C3
 
-The measured gate charge is ~0.98-1.02 fC at 1.2 V, giving a simple gate-voltage-times-charge work proxy around ~1.2 fJ.
+Build one physically extracted eight-cell service slice in ordinary SKY130 geometry before any literal hollow-package claim.
 
-### Charge lifecycle
+Required:
 
-Selected rule from v11/v12:
+1. two weak analog evidence traces on opposite sides of at least four shared wall sections;
+2. two robust service lanes inside the protected spine;
+3. one reference/recovery shield structure;
+4. two v12A-style replica pilot inputs shared across the eight local contacts;
+5. at least two physical Use Reservoir / validated residual-tap paths;
+6. one fourth-face gate branch;
+7. three timed phases: configure before evidence, hold service lines static during weak evidence, then cleanup/recovery after decision;
+8. TT/FF/SS plus independent mismatch;
+9. measure analog kick, service/service crosstalk, evidence margin, promotion/demotion correctness, recovered charge, wire/source energy and area;
+10. compare against separate walls + separate protected routes;
+11. if this passes, populate the same region with real Grammar/template/Myelin structures behind the eight-way lease.
 
-`live charge -> information`
+## Acceptance
 
-`controlled leak -> adaptation / time / threshold`
+The shared service framework survives only if:
 
-`expired/reset charge -> one-way recovery`
-
-Do not harvest a live analog state while it is still carrying information.
-
-### Shared-wall result
-
-Sharing structural walls can materially reduce duplicated framework material. In the user's illustrative t/p=0.1 geometry model:
-- independent shell solid fraction ~48.8%;
-- shared framework ~27.1%;
-- ~44.5% less framework material;
-- cavity fraction rises from ~51.2% to ~72.9%.
-
-But two capacitor faces must not share a floating middle conductor. Two 2x2 MIMs with a floating midpoint correspond to ~4.756 fF effective coupling; a 0.2 V neighbor transition could inject ~12.4 mV into a ~72 fF evidence node.
-
-Selected solution: **Janus Service Wall** — independent capacitor faces on both sides of one structural wall with a robust central shield/reference/service spine.
-
-See:
-- `experiments/v13B4_self_config_shared_walls/REPORT.md`
-- `experiments/v13B4_self_config_shared_walls/results/fourth_face_gate_transfer.csv`
-
-## Next physical experiment — v13B5
-
-Build the first physical self-configuring contact group behind the already-proven eight-way Regional Lease.
-
-Required steps:
-
-1. reuse two replica leak pilots for the eight local contacts;
-2. build at least two local Use Reservoirs and post-capture validated residual taps;
-3. implement one shared slow promotion/demotion reader/trainer;
-4. keep the robust v13A5/v13A6 path active while a contact is unpromoted or uncertain;
-5. once promoted, drive the fourth-face gate to at least the tested 1.2 V point and use direct analog transfer;
-6. run repeated-use, alternating-use, two-then-idle, raw-noise, false-refresh and long-idle tests;
-7. run TT/FF/SS + at least four independent mismatch launches per corner at the promoted gate point;
-8. add one-way expired-charge recovery and confirm it does not disturb live evidence or contact retention;
-9. physically emulate one Janus shared wall with two isolated MIM faces and a strongly referenced middle shield, then extract cross-coupling;
-10. compare shared-wall area/capacitance against two separate walls;
-11. after those pass, populate the eight-way region with multiple real Grammar/template/Myelin structures.
-
-## Acceptance rule
-
-Keep self-configuring contacts only if:
-
-- raw/noisy traffic cannot promote them;
-- validated repeated use does promote them;
-- inactivity naturally demotes them;
-- PVT/mismatch does not create false promotion or wrong analog transfer;
-- recovery never loads live information;
-- shared-wall crosstalk remains small versus the measured ~25 mV local class separation;
-- area/energy saved by removing repeated readers/routing is larger than the slow adaptation hardware cost.
-
-The hollow/framework package remains a later physical implementation target. The immediate goal is to prove the same electrical rules in ordinary manufacturable silicon first.
+- no service transition during the protected evidence phase creates a false decision;
+- raw/noisy events cannot train a contact;
+- validated repeated use can train it;
+- cleanup/recovery never loads live evidence;
+- shield/service overhead is smaller than the routing/reader/framework it removes;
+- exact fallback remains independent.
