@@ -1,0 +1,4 @@
+corner,gate_V,exact_receptor_V,partial_receptor_V,separation_mV,abs_gate_charge_fC
+TT,1.2,0.5195036,0.4945867,24.9169,0.998389
+FF,1.2,0.5201432,0.4942629,25.8803,1.040010
+SS,1.2,0.5189027,0.4939622,24.9405,0.967249
