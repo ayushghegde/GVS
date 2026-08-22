@@ -119,7 +119,7 @@ Three ~2x2 um MIM-equivalent walls reproduce approximately the historical three-
 ### Fourth-face link
 A minimum NFET can connect local evidence/event to a small Contact Receptor.
 
-Two different operating classes are now distinguished:
+Two operating classes are distinguished:
 - ~0.5 V analog evidence required a strongly enabled gate (~1.1–1.2 V class in the tested screen) to preserve ~25 mV separation;
 - a ~0.2 V robust regional event is much easier to pass and under v13E the promoted tap is selected at **0.9 V** after full mismatch closure.
 
@@ -422,7 +422,25 @@ Selected decentralized policy:
 
 Electrical and optical routes remain fallbacks for one another where physically available. Exact fallback verifies correctness during transitions but does not schedule every event.
 
-## 16. Exact computer boundary
+## 16. Mixed-carrier workload consequence — v13G3
+
+Using the preserved v13A workload/event-count model and a moderate ~19.23 fJ direct-photocharge optical event only for relations that actually qualify as long/hot:
+
+At **50% of surviving long selections optically promoted** in the sensitivity model:
+- image total ~28.27 pJ vs exact ~47.56 pJ -> ~40.6% lower;
+- sound Grammar ~562.64 pJ vs exact ~1183.2 pJ -> ~52.4% lower;
+- code ~8.43 pJ vs exact ~99.2 pJ -> ~91.5% lower;
+- reasoning ~2.11 pJ vs exact ~10.8 pJ -> ~80.5% lower.
+
+This is not a measured system. It demonstrates that communication-sensitive code/reasoning gain the most from long-route promotion after local Grammar/Myelin/locality already remove unnecessary traffic.
+
+Selected order of decisions:
+1. representation compiler tries to eliminate/localize communication;
+2. Regional Lease/Myelin keeps hot work local where possible;
+3. carrier/volume compiler handles the long relations that remain;
+4. optical promotion is allowed only when it beats the cheapest valid electrical route after endpoint/aperture/cooling/fallback cost.
+
+## 17. Exact computer boundary
 
 Use exact computation for:
 - arithmetic/carry/index/pointer/code state;
@@ -432,7 +450,7 @@ Use exact computation for:
 - verifying a relation before durable consolidation;
 - cold/new cases where physical structure has not earned promotion.
 
-## 17. Current physical correctness rules
+## 18. Current physical correctness rules
 
 - extraction, not DRC alone, determines electrical correctness;
 - weak analog state remains local/short;
@@ -447,7 +465,7 @@ Use exact computation for:
 - future optical analog evidence must be self-referenced/differential when absolute drift can consume margin;
 - optics is not selected merely because it is faster; it must beat the cheapest valid electrical route including endpoint cost.
 
-## 18. Rejection handling
+## 19. Rejection handling
 
 Every rejected result must be tagged:
 - `PRINCIPLE_REJECTED`;
@@ -457,34 +475,42 @@ Every rejected result must be tagged:
 
 This prevents useful principles such as stored-leak adaptation, recovery, analog context, selective Grammar and targeted 3D/optical structure from being lost because one topology failed.
 
-## 19. Current forward experiment — v13G3
+## 20. Current forward experiment — v13G4
 
-Build the first **heterogeneous regional system**, not another isolated carrier:
+Build the first **mixed intelligent local/volumetric region**, not another isolated carrier.
 
+Required:
 1. one existing eight-way Regional Lease;
-2. multiple real local Grammar/template/Myelin paths;
-3. one/few direct fourth-face neighbors;
-4. one four-tap v13E electrical event spine;
-5. model/placeholder endpoints for two promoted long Optical Void Chords;
-6. one Optical Dendrite fan-in case and one optical fanout case in the system model;
-7. one internal exact/residual-memory bay;
-8. Thermal Artery / thermal-budget model near the hot exact/optical source block;
-9. exact fallback independent of every promoted route;
-10. workload traces from sound/image/code/reasoning to measure which relations actually earn electrical vs optical promotion.
+2. multiple real local Grammar/template/Myelin destinations;
+3. one direct fourth-face neighbor path;
+4. one v13E-style four-tap electrical event spine;
+5. local familiarity/Use state for autonomic promotion/demotion;
+6. two candidate long relations with real distance/traffic metadata;
+7. dedicated electrical versus direct-photocharge Optical Void Chord comparison using good/moderate/poor scenarios;
+8. one Optical Dendrite fan-in and one optical fanout case in the system model;
+9. one internal exact/residual-memory Component Bay;
+10. one Thermal Artery/thermal-budget model near the hot exact/optical-source block;
+11. one reserve/bypass route for failure recovery;
+12. exact fallback independent of every promoted path.
+
+Replay image, sound, code and reasoning through the same promotion/fallback policy.
 
 Measure:
-- useful decisions per energy;
-- long events removed;
+- useful decisions/results per total energy;
+- long coordinate selections removed;
 - readers/conversions removed;
-- occupied wall/routing/aperture volume;
-- thermal load;
-- fallback rate;
-- route lifetime/payback;
-- failure recovery.
+- electrical wire length/capacitance;
+- optical endpoint energy and aperture/corridor occupancy;
+- number/lifetime/payback of promoted relations;
+- fallback/invalidations;
+- thermal load/cooling allocation;
+- recovery after information expires;
+- failure reroute success;
+- total region area/volume proxy.
 
-Only after this system-level comparison should literal hollow-package fabrication details be promoted further.
+Keep the Heterogeneous Void Fabric only if the full mixed system beats the same intelligent region implemented only with the present electrical hierarchy after all support costs are included.
 
-## 20. Maintenance rule
+## 21. Maintenance rule
 
 **After every experiment:**
 1. keep the experiment report/results;
