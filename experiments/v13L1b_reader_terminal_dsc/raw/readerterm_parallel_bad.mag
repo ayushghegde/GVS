@@ -1,0 +1,15 @@
+magic
+tech sky130A
+timestamp 1787520002
+<< metal2 >>
+rect 62 930 92 1580
+rect 462 930 492 1580
+<< metal3 >>
+rect 70 850 100 1660
+rect 220 850 250 1660
+<< labels >>
+rlabel metal2 62 1500 92 1560 0 GC
+rlabel metal2 462 1500 492 1560 0 GR
+rlabel metal3 70 850 100 900 0 NERVE
+rlabel metal3 220 850 250 900 0 ARTERY
+<< end >>
