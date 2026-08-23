@@ -1,0 +1,5 @@
+domain,long_events,local_core_pJ,all_electrical_comm_pJ,hollow_comm_pJ,all_electrical_total_pJ,hollow_total_pJ,hollow_vs_all_electrical_pct,hollow_vs_exact_pct
+image,6,26.1714,0.2253,0.192402,26.3967,26.363802,0.12463,44.56215
+sound,160,506.7003,6.008,5.130716,512.7083,511.831016,0.171108,56.74180
+code,24,0.0408559,0.9012,0.769607,0.9420559,0.810463,13.96867,99.18300
+reasoning,3,1.0605967,0.11265,0.096201,1.1732467,1.156798,1.402014,89.28891
