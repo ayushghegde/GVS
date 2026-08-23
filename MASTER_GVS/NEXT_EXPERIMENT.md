@@ -1,104 +1,85 @@
-# Current Next Experiment — v13J5 Physical Facade/Recovery Quiet-Window Closure
+# Current Next Experiment — v13K4 Physical Neurovascular Cell Slice
 
-## What v13J has now established
+## What v13K established
 
-### v13J0 — Facade Utility Shell
-- use outside/backside/sidewall surfaces selectively for robust/shared utilities;
-- do not duplicate the whole nervous/data network externally;
-- facade is valuable for recovery/decoupling, power/reference, test/repair, thermal interface, optional photonics and fault bypass;
-- graph model showed no ordinary cell-to-cell shortest-path improvement from duplicating the facade, but better resilience under heavy random link loss.
+### v13K0 — Neurovascular cell anatomy
+The cell now has physically separate service roles:
+- **Nerve** for firing/events;
+- **Charge Artery** for expired-charge collection;
+- **Thermal Capillary** for passive heat removal;
+- optional **Light Nerve** for long/hot/reused relations;
+- direct fourth-face contact for paired neighbors.
 
-### v13J1 — Hierarchical Reservoir Collector
-- local reservoirs remain part of computation;
-- only expired state drains one-way;
-- tiny packets should first pool regionally before any chip-level conversion;
-- large batching belongs at the chip/facade collector, not one converter per cell.
+Cells/support may occupy outer, inner, underside and side surfaces when fabrication and total cost justify it. Shared controller/memory/exact functions live in Component Bays / Exact Service Cores rather than one microcontroller per cell.
 
-### v13J2 — Integrated system screen
-- facade + tiny recovery credit alone changed the 64-episode dynamic proxy by only ~0.043%;
-- its primary value is congestion/isolation/serviceability/fault bypass, not a giant energy credit;
-- optional photonics remains conditional and was the larger route-energy lever in the long/hot stress case.
+Illustrative 10x10x2 mm shell with 0.2 mm framework gives 1.878x inner+outer surface versus outer alone; after 30% service reserve the geometry still leaves ~1.31x outer-only usable surface.
 
-### v13J3 — Facade Quiet Window
-Using the conservative existing ~0.124 fF coupling proxy against a ~72 fF weak node:
-- one 0.9 V utility step -> ~1.55 mV kick;
-- 1.2 V -> ~2.06 mV;
-- 1.8 V -> ~3.09 mV.
+### v13K1 — low-swing artery disturbance
+Using the existing conservative 0.124 fF coupling proxy to a 72 fF weak node:
+- v13J 1.8 V utility step -> ~3.09 mV kick;
+- v13K actual regional-recovery swing ~0.1990 -> 0.2893 V -> only ~0.155 mV per artery.
 
-From a ~25 mV useful differential and 18 mV high-margin target:
-- four aligned 0.9 V transitions still leave ~18.81 mV;
-- three at 1.2 V;
-- two at 1.8 V;
-- beyond those simple aligned stress points the high-margin target fails.
+Even 32 perfectly aligned low-voltage artery transitions leave about 20.0 mV from a 25 mV differential in the first-order model, still above the 18 mV high-margin screen.
 
-Selected rule: freeze/stagger high-swing facade activity during weak analog integration; resume after capture.
+Therefore normal recovery no longer needs a universal global Facade Quiet Window. High-swing exceptional power/config/test traffic remains separately shielded and may still be staggered if extracted coupling requires it.
 
-v13J3 also reuses v13P12 rather than only the tiny tap-gate recovery proxy:
-- 10 pF shared reservoir across four tiles;
-- nominal TT/FF/SS pass;
-- 12/12 mismatch launches / 48 tile instances pass;
-- ~220 fJ energy increase in one four-tile recovery interval;
-- 40 pF separate target -> 10 pF shared target.
+### v13K2 — recovery/thermal scaling
+Using the v13C line-capacitance proxy:
+- one 0.5 mm Charge Artery ~31.16 fF;
+- four branches ~124.62 fF = ~1.25% of a 10 pF regional reservoir;
+- branch-capacitor energy over the preserved 0.1990 -> 0.2893 V recovery rise ~2.75 fJ versus ~220 fJ regional stored-energy reference.
 
-### v13J4 — Autonomous Recovery Backpressure
-The 10 pF regional reservoir is a short-term buffer, not a long-term battery. First-order accumulation from 0.199 V with ~220 fJ packets gives:
-- 1 packet ~0.289 V;
-- 2 ~0.357 V;
-- 4 ~0.464 V;
-- 8 ~0.626 V;
-- 16 ~0.862 V;
-- 18 ~0.912 V.
+Thermal collection is passive: every cell/small cluster gets a thermal capillary into a larger shared Thermal Artery/Exhaust; no per-cell pump/controller.
 
-Therefore drain the regional bank every one/few recovery episodes when a safe window appears, and batch conversion only in a larger downstream facade/chip collector.
+### v13K3 — integrated architecture
+Direct fourth-face neighbor remains the shortest private electrical route (~0.15 fJ event proxy) and is ~77.6% below the one-tap event-spine proxy (~0.67 fJ).
 
-Conceptual local control:
-`RECOVERY_PRESENT & CAPTURED_OR_DONE & !WEAK_ANALOG_ACTIVE -> allow facade drain`.
+v13K keeps the complete existing GVS core: Coordinate Release, 8-way Lease, Grammar, templates, Myelin, context, familiarity, homeostasis, event spine, shared recovery and exact fallback.
 
-No central per-event recovery scheduler is required.
+## v13K4 physical goal
+Build the first same-die electrical **Neurovascular Cell Slice**. Do not add more control logic unless a measured failure requires it.
 
-## v13J5 physical goal
-Close the facade/recovery interface electrically before adding more package ideas.
+### Required physical/electrical elements
+1. one real weak Grammar/Tri-Wall evidence node from the existing SKY130 family;
+2. one direct fourth-face or ~0.2 V local Nerve;
+3. one separate low-voltage Charge Artery;
+4. one simple recovery contact driven by the existing cleanup/expired-state lifecycle signal;
+5. one regional recovery branch / scaled reservoir equivalent;
+6. shield/service geometry between weak node, Nerve and Charge Artery;
+7. exact/robust result capture independent of recovery.
 
-### Required circuit/physical slice
-1. one real Grammar/evidence node from the closed ratio/readout family;
-2. robust `VALID/CAPTURED/DONE` state;
-3. one weak local membrane/evidence node exposed to extracted coupling;
-4. one shielded facade-equivalent utility/recovery line;
-5. one Recovery Valve / Autonomic Recovery Gate;
-6. one regional shared-reservoir branch, starting with the v13P12 10 pF-class behavior or a scaled same-die proxy;
-7. exact fallback independent.
-
-### Timing battery
-8. switch one facade utility at 0.9/1.2/1.8 V while weak analog evidence is live;
-9. repeat with 2/3/4 simultaneous aligned utilities until the actual high-margin/fallback boundary is observed;
-10. repeat the same switching only after `CAPTURED/DONE` and verify accepted result does not change;
-11. inject recovery while analog is active and verify ARG keeps the drain closed;
-12. inject after capture and verify reservoir drains.
-
-### Robustness
-13. TT/FF/SS nominal;
-14. independent mismatch launches;
-15. false-capture / stuck-open recovery-path stress;
-16. stuck-closed recovery path must degrade energy only, not correctness;
-17. facade bypass failure must leave normal local electrical/exact path functional.
+### Battery
+8. nominal TT/FF/SS;
+9. independent mismatch launches;
+10. Nerve active alone;
+11. Charge Artery active alone after expiry;
+12. Nerve + Charge Artery simultaneous;
+13. multiple aligned low-voltage arteries as stress;
+14. deliberately inject a high-swing 0.9/1.2/1.8 V facade-equivalent line for comparison;
+15. verify high-swing unsafe disturbance causes fallback before wrong acceptance;
+16. stuck-closed recovery contact -> energy loss only, no correctness loss;
+17. stuck-open recovery contact during live state -> must be blocked by topology/lifecycle or convert to fallback, never silently accepted.
 
 ### Measurements
-- exact/partial or winner margin before facade switching;
-- margin after forced utility switching;
-- fallback count versus wrong-accept count;
-- regional reservoir voltage before/after safe drain;
-- live-node disturbance from recovery branch;
-- energy removed/recovered;
-- extra facade/service parasitic load;
-- latency added by the quiet window.
+- extracted Nerve-to-evidence and Artery-to-evidence coupling;
+- exact/partial margin before and during simultaneous low-voltage service activity;
+- false robust-result count;
+- fallback count;
+- regional recovery voltage and energy;
+- Nerve event energy;
+- added area/parasitic load versus direct fourth-face baseline.
+
+### Separate physical floorplan screen
+18. make a manufacturability/floorplan model for inner+outer+underside+side cell skins;
+19. reserve area for Nerve/Charge/Thermal/Optical services;
+20. compare practical stacked/backside implementation against literal full inside-out active framework;
+21. keep the full inside-out version FUTURE_PROCESS until a credible fabrication stack exists.
 
 ## Acceptance
-v13J facade/recovery interface is physically closed only if:
-- normal scheduled facade recovery causes no accepted-result corruption across PVT + mismatch;
-- forced unsafe simultaneous switching produces fallback before wrong acceptance;
-- recovery never loads live information state;
-- stuck-closed recovery does not affect correctness;
-- shared regional reservoir still performs its original recovery/lease-support role;
-- exact fallback remains independent.
-
-After that closure, return to the full eight-region mixed intelligent block and compare the physical electrical base with optional package layers rather than adding more isolated primitives.
+v13K4 passes only if:
+- low-voltage Charge Artery can operate without a global quiet window across PVT + mismatch;
+- direct neighbor remains cheaper/simpler than routing it through a shared spine;
+- recovery cannot corrupt live information;
+- thermal path remains electrically passive;
+- exact fallback remains independent;
+- high-swing utilities remain isolated enough or fail safely.
