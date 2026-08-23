@@ -1,0 +1,20 @@
+magic
+tech sky130A
+timestamp 1787482867
+<< checkpaint >>
+rect -630 -680 10630 980
+<< metal2 >>
+rect 0 250 10000 300
+rect 0 0 10000 50
+<< metal3 >>
+rect 0 -50 10000 350
+<< metal4 >>
+rect 0 100 10000 150
+rect 0 0 10000 50
+<< labels >>
+rlabel metal2 0 0 10000 50 0 GC
+rlabel metal2 0 250 10000 300 0 GR
+rlabel metal3 0 -50 10000 350 0 SHIELD
+rlabel metal4 0 0 10000 50 0 NERVE
+rlabel metal4 0 100 10000 150 0 ARTERY
+<< end >>
