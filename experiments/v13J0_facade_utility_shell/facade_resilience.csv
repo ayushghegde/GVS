@@ -1,0 +1,3 @@
+network,nodes,edges,avg_shortest_mm,p95_shortest_mm,max_shortest_mm,giant_mean_20pct_fail,giant_p5_20pct_fail,giant_mean_30pct_fail,giant_p5_30pct_fail,giant_mean_40pct_fail,giant_p5_40pct_fail
+internal_only,32,64,6.967741935483871,12.5,16.0,0.997,0.96875,0.98665625,0.9375,0.9445,0.84375
+internal_plus_perimeter_facade,56,116,6.967741935483871,12.5,16.0,0.9995,1.0,0.995375,0.96875,0.98178125,0.9375
