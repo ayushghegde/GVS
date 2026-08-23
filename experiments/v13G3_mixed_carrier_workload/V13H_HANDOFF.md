@@ -1,0 +1,1 @@
+v13G carrier exploration is complete enough to hand off. v13H must run a fair all-electrical vs hollow mixed-region comparison, add thin TIR lightpipes instead of oversized empty optical corridors when useful, and treat heat harvesting only at a large shared exhaust/harvester boundary.
