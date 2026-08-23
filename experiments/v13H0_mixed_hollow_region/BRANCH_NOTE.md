@@ -1,0 +1,1 @@
+The active v13H experiment is currently stored on the v13G heterogeneous-void branch to preserve continuity; a dedicated branch can be cut after the mixed-region architecture is fully synchronized.
