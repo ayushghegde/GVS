@@ -1,67 +1,65 @@
-# Current Next Experiment — v13G4 Mixed Physical/Volumetric Glyph Region
+# Current Next Experiment — v13H1 Physical Mixed Intelligent Region
 
-## What is now closed or selected
+## What v13H0 established
 
-- v13E four-tap electrical event spine: selected promoted tap gate **0.9 V**, nominal TT/FF/SS pass, **12/12 independent mismatch launches pass**, direct-neighbor fourth face remains cheaper than the shared spine, and post-capture expired tap charge can be partially recovered without disturbing the live event.
-- v13F hollow photonic void: conventional optics rejected locally; Optical Void Chords kept only for long/hot robust relations; direct Photocharge Receptor kept as a future photonic-process candidate.
-- v13F1 crossover compiler: direct-photocharge optical scenarios cross the present dedicated electrical-event slope at roughly **2–18 mm** depending on source/path efficiency; conventional ~120–150 fJ photonics does not beat a simple local wire inside ordinary chip distances.
-- v13G0 multi-physics screen: electricity remains primary local physics; capacitive/inductive links are only for tiny contactless gaps; RF/mmWave is backup/broadcast mode; acoustic is signal-processing-only; heat/microfluidics are slow control/cooling; MEMS/PCM and magnetism are rare future consolidation technologies.
-- v13G1 Heterogeneous Void Fabric: cavity is zoned into active framework walls, Optical Corridors, Thermal Arteries, Component Bays, structural/alignment ribs and reserve/bypass volume.
-- v13G2 Optical Dendrite/Fanout: long optical fan-in/fanout is promising only for sparse promoted relations; weak analog optical use must be differential/self-referenced rather than absolute-thresholded.
-- v13G3 mixed-carrier workload screen: image/sound/code/reasoning all remain hybrid; communication-sensitive code/reasoning gain most when a subset of truly long/hot selections earns optical promotion.
+The hollow architecture now has a fair qualification against the improved all-electrical hierarchy, not only against the old 0.68 pJ global-coordinate proxy.
 
-## Current main architecture rule
+- nearest/local traffic remains electrical;
+- 0.9 V four-tap event spine is physically closed;
+- thin TIR/glass lightpipes replace oversized free-space corridors when a fixed guided route is sufficient;
+- with ~0.08 dB/cm propagation + ~0.47 dB/facet literature proxy, direct-photocharge TIR runtime is ~11 fJ/event across 3–20 mm;
+- including a 1 pJ rare route write, approximate reuse break-even is ~2102 uses at 3 mm, 126 at 5 mm, 38 at 10 mm, 23 at 15 mm and 16 at 20 mm;
+- eight-region 10 mm-cube lifetime screen: at 64 uses/relation and 50% hot candidate routes, hollow hybrid communication is ~31% below the best dedicated-electrical route model; all-hot bound ~44.7%;
+- in preserved v13A workloads at 10 mm, 50% eligible and 64 uses, whole-workload improvement is small for image/sound, ~14% for code and ~1.4% for reasoning versus the improved all-electrical route model;
+- thermal harvesting is moved to a large shared top/package/rack boundary; hollow thermal routes remain component-free but use vapor/heat-pipe/microfluidic transport rather than relying on an evacuated empty channel.
 
-`representation compiler` chooses Grammar/template/Myelin/exact form.
+## v13H1 goal
 
-`carrier/volume compiler` then chooses direct fourth face, segmented electrical tap, regional event spine, dedicated electrical/Myelin chord, future Optical Void Chord, component bay and thermal/optical corridor allocation.
+Build the first physically grounded **mixed intelligent region** with actual local GVS structures, not only carrier models.
 
-A good representation should eliminate long communication before the carrier compiler tries to optimize it.
+### Required physical/electrical block
+1. existing 8-way Regional Event Lease;
+2. at least one real Grammar path using the closed 10-MIM + 10-MOS reader;
+3. at least one static-template path;
+4. at least one short Passive Myelin path;
+5. one direct fourth-face neighbor relation;
+6. one closed 0.9 V four-tap electrical event spine;
+7. local v12E familiarity + Use/Lease state controlling at least one promoted tap;
+8. post-capture recovery;
+9. exact fallback independent of all analog paths.
 
-## v13G4 goal
+### 3D carrier/floorplan model
+10. place 8 regions in an explicit 3D package geometry and derive route lengths rather than assigning arbitrary distances;
+11. allow the compiler to choose direct electrical chord vs thin TIR optical lightpipe only after route-lifetime break-even;
+12. reserve realistic lightpipe cross-section / bend / coupling volume;
+13. include one optical fan-in or fanout candidate only if route identity semantics allow it;
+14. include a redundant electrical fallback for every optical route.
 
-Build the first **mixed intelligent local region** rather than another isolated primitive.
-
-### Required physical/electrical part
-
-1. one existing eight-way Regional Event Lease;
-2. at least two real Grammar/template/Myelin destinations behind the lease;
-3. one direct fourth-face neighbor path;
-4. one v13E-style four-tap protected electrical event spine;
-5. local familiarity/Use state so repeated validated traffic can promote/demote taps without a per-event central router;
-6. exact fallback fully independent;
-7. post-capture recovery.
-
-### Required volumetric/system model part
-
-8. two candidate long relations with real distance/traffic metadata;
-9. compare dedicated electrical chord against direct-photocharge Optical Void Chord using good/moderate/poor endpoint/path scenarios;
-10. reserve actual aperture/corridor area in the model rather than treating optics as zero-volume;
-11. one Optical Dendrite fan-in case and one optical fanout case;
-12. one Component Bay for exact/residual memory/logic;
-13. one Thermal Artery/thermal-budget model near the hot exact/optical-source block;
-14. one reserve/bypass route for failure recovery.
+### Thermal system
+15. use component-free Thermal Exhaust/Artery paths that collect heat from many regions/chips;
+16. compare vapor-chamber/heat-pipe/microfluidic transport proxies, not vacuum radiation alone;
+17. send collected heat to one shared top condenser/heat exchanger;
+18. account for pump/fan pressure/energy where applicable;
+19. add optional top-level thermoelectric harvest only after cooling is satisfied;
+20. report both recoverable electricity and useful exported heat separately.
 
 ### Workloads
-
-Replay the same promotion/fallback policy over representative image, sound, code and reasoning traces or the closest preserved event-count/workload models available in the repository. Do not create a separate architecture per workload.
+Replay one common region architecture across preserved image, sound, code and reasoning traces/models. Do not customize hardware per workload.
 
 ## Measurements
-
-- useful decisions/results per total energy;
-- long coordinate selections removed;
-- reader/conversion count removed;
+- correctness/fallback rate;
+- useful decisions per total energy;
+- local reader count and energy;
+- long routes removed by locality;
 - electrical wire length/capacitance;
-- optical endpoint energy and aperture/corridor occupancy;
-- number/lifetime of promoted relations;
-- fallback/invalidations;
-- thermal load and cooling allocation;
-- recovery gain after information expires;
-- failure reroute success;
-- total region area/volume proxy.
+- optical runtime + amortized route-write energy;
+- route lifetime/reuse;
+- occupied framework/cavity volume;
+- thermal resistance/temperature proxy;
+- pump/fan/source overhead;
+- recovered charge energy;
+- top-level heat recovery and useful heat export;
+- failure reroute success.
 
 ## Acceptance
-
-Keep the Heterogeneous Void Fabric only if the mixed region demonstrates a material system advantage after including support costs. Reject or demote any carrier whose endpoint, aperture, cooling, alignment, route-write or fallback cost exceeds the electrical alternative.
-
-The literal hollow/package geometry remains a future fabrication target. v13G4 must first prove that the **electrical + optical + thermal + exact mixture** is better than the same intelligent region implemented only with the present electrical hierarchy.
+Keep the hollow heterogeneous architecture only if the complete mixed region beats the all-electrical version after including route-write, optical endpoints, reserved volume, cooling overhead and fallback. If a thin TIR route does not repay itself, use electrical Myelin/wire. If a thermal harvester worsens junction cooling more than its recovered energy is worth, remove the harvester and keep only the heat exhaust/reuse path.
