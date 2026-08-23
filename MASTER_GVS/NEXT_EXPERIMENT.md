@@ -1,9 +1,9 @@
-# Current Next Experiment — v13K4 Physical Neurovascular Cell Slice
+# Current Next Experiment — v13K5 Physical Neurovascular Cell Slice
 
-## What v13K established
+## What v13K has established
 
 ### v13K0 — Neurovascular cell anatomy
-The cell now has physically separate service roles:
+Each cell/cluster now has physically separate service roles:
 - **Nerve** for firing/events;
 - **Charge Artery** for expired-charge collection;
 - **Thermal Capillary** for passive heat removal;
@@ -16,12 +16,12 @@ Illustrative 10x10x2 mm shell with 0.2 mm framework gives 1.878x inner+outer sur
 
 ### v13K1 — low-swing artery disturbance
 Using the existing conservative 0.124 fF coupling proxy to a 72 fF weak node:
-- v13J 1.8 V utility step -> ~3.09 mV kick;
-- v13K actual regional-recovery swing ~0.1990 -> 0.2893 V -> only ~0.155 mV per artery.
+- 1.8 V high-swing utility step -> ~3.09 mV kick;
+- actual regional-recovery swing ~0.1990 -> 0.2893 V -> only ~0.155 mV per artery.
 
 Even 32 perfectly aligned low-voltage artery transitions leave about 20.0 mV from a 25 mV differential in the first-order model, still above the 18 mV high-margin screen.
 
-Therefore normal recovery no longer needs a universal global Facade Quiet Window. High-swing exceptional power/config/test traffic remains separately shielded and may still be staggered if extracted coupling requires it.
+Normal recovery therefore should not need a universal global quiet window. High-swing exceptional power/config/test traffic remains separately shielded/staggered only when measured coupling requires it.
 
 ### v13K2 — recovery/thermal scaling
 Using the v13C line-capacitance proxy:
@@ -32,11 +32,20 @@ Using the v13C line-capacitance proxy:
 Thermal collection is passive: every cell/small cluster gets a thermal capillary into a larger shared Thermal Artery/Exhaust; no per-cell pump/controller.
 
 ### v13K3 — integrated architecture
-Direct fourth-face neighbor remains the shortest private electrical route (~0.15 fJ event proxy) and is ~77.6% below the one-tap event-spine proxy (~0.67 fJ).
+Direct fourth-face neighbor remains the shortest private electrical route (~0.15 fJ event proxy), ~77.6% below the one-tap event-spine proxy (~0.67 fJ).
 
-v13K keeps the complete existing GVS core: Coordinate Release, 8-way Lease, Grammar, templates, Myelin, context, familiarity, homeostasis, event spine, shared recovery and exact fallback.
+The complete existing GVS core remains: Coordinate Release, 8-way Lease, Grammar, templates, Myelin, context, familiarity, homeostasis, event spine, shared recovery and exact fallback.
 
-## v13K4 physical goal
+### v13K4 — component placement
+Illustrative 32-region placement model:
+- central interior Exact Service Core: average Manhattan route ~5.5 mm;
+- top/bottom center: ~6.0 mm;
+- side center: ~8.0 mm;
+- top corner: ~11.0 mm.
+
+Using the existing 3.74 fJ/mm route proxy only for comparison, frequently accessed exact/memory support favors central/interior placement, while large/hot/slow/test-facing support favors exterior/backside placement.
+
+## v13K5 physical goal
 Build the first same-die electrical **Neurovascular Cell Slice**. Do not add more control logic unless a measured failure requires it.
 
 ### Required physical/electrical elements
@@ -56,9 +65,9 @@ Build the first same-die electrical **Neurovascular Cell Slice**. Do not add mor
 12. Nerve + Charge Artery simultaneous;
 13. multiple aligned low-voltage arteries as stress;
 14. deliberately inject a high-swing 0.9/1.2/1.8 V facade-equivalent line for comparison;
-15. verify high-swing unsafe disturbance causes fallback before wrong acceptance;
+15. verify unsafe high-swing disturbance causes fallback before wrong acceptance;
 16. stuck-closed recovery contact -> energy loss only, no correctness loss;
-17. stuck-open recovery contact during live state -> must be blocked by topology/lifecycle or convert to fallback, never silently accepted.
+17. stuck-open recovery contact during live state -> blocked by lifecycle/topology or converted to fallback, never silently accepted.
 
 ### Measurements
 - extracted Nerve-to-evidence and Artery-to-evidence coupling;
@@ -69,16 +78,15 @@ Build the first same-die electrical **Neurovascular Cell Slice**. Do not add mor
 - Nerve event energy;
 - added area/parasitic load versus direct fourth-face baseline.
 
-### Separate physical floorplan screen
-18. make a manufacturability/floorplan model for inner+outer+underside+side cell skins;
+### Separate manufacturability screen
+18. map inner+outer+underside+side cell skins to practical stacked/backside technology;
 19. reserve area for Nerve/Charge/Thermal/Optical services;
-20. compare practical stacked/backside implementation against literal full inside-out active framework;
-21. keep the full inside-out version FUTURE_PROCESS until a credible fabrication stack exists.
+20. keep literal full inside-out active framework FUTURE_PROCESS until a credible fabrication stack exists.
 
 ## Acceptance
-v13K4 passes only if:
-- low-voltage Charge Artery can operate without a global quiet window across PVT + mismatch;
-- direct neighbor remains cheaper/simpler than routing it through a shared spine;
+v13K5 passes only if:
+- low-voltage Charge Artery operates without a global quiet window across PVT + mismatch;
+- direct neighbor remains cheaper/simpler than routing through a shared spine;
 - recovery cannot corrupt live information;
 - thermal path remains electrically passive;
 - exact fallback remains independent;
