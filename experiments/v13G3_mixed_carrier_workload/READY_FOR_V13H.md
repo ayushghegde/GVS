@@ -1,0 +1,1 @@
+Ready for v13H: fair mixed-region electrical-vs-hollow comparison, thin TIR lightpipes, and package-scale shared thermal exhaust/harvest.
