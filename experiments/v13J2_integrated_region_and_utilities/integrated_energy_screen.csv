@@ -1,0 +1,4 @@
+architecture,communication_pJ,chip_recovery_credit_pJ,net_support_comm_pJ,notes
+v13I HEB baseline,86.2,0.0,86.2,best hollow-electrical baseline
+v13J HEB + facade + hierarchical recovery,86.2,0.076976,86.123024,"same runtime carrier; 64 expiry batch, 90% second-stage transfer, 10 fJ fixed overhead"
+v13J HHE + facade + hierarchical recovery,66.94,0.076976,66.863024,optional optical layer only where v13I break-even passes
