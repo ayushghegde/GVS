@@ -1,0 +1,6 @@
+placement,avg_manhattan_mm,max_manhattan_mm,avg_euclidean_mm,max_euclidean_mm,avg_electrical_route_energy_fJ_proxy,max_electrical_route_energy_fJ_proxy
+center_inside,5.5,8.0,3.783156,5.326819,20.57,29.92
+top_center,6.0,9.0,3.927269,5.511352,22.44,33.66
+bottom_center,6.0,9.0,3.927269,5.511352,22.44,33.66
+side_center_x0,8.0,13.0,5.902201,9.532838,29.92,48.62
+corner_top,11.0,19.0,7.708820,12.464951,41.14,71.06
