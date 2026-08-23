@@ -1,0 +1,1 @@
+v13H will compare the best all-electrical hierarchy against a hollow mixed region using the same measured/proxy GVS local primitives. No optical route is accepted unless distance + reuse repays endpoint/switch cost.
