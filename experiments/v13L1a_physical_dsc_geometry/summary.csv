@@ -1,0 +1,7 @@
+variant,drc_errors,service,coupling_to_GC_fF,coupling_to_GR_fF,normalized_asymmetry,direct_service_to_weak_terms
+parallel,0,NERVE,4.309500,0.000000,1.000000,present
+parallel,0,ARTERY,0.944026,1.139590,-0.093858,present
+orthogonal,0,NERVE,0.127589,0.127589,0.000000,present
+orthogonal,0,ARTERY,0.127589,0.127589,0.000000,present
+shielded,0,NERVE,0.000000,0.000000,0.000000,not_reported_at_extractor_resolution
+shielded,0,ARTERY,0.000000,0.000000,0.000000,not_reported_at_extractor_resolution
