@@ -1,0 +1,1 @@
+v13H0 conditional pass: the hollow heterogeneous region beats the best current all-electrical route only when route distance and validated lifetime reuse are high enough; local traffic remains electrical. Thin TIR lightpipes replace oversized optical corridors. Shared thermal exhaust/harvesting moves to package/rack scale.
