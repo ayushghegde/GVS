@@ -1,370 +1,399 @@
 # GVS / Neural Glyph — MAIN ARCHITECTURE
 
-**Status:** authoritative integration document. Update after every architecture-changing experiment. Old experiment folders remain evidence; this file states the combined current system.
+**Status:** authoritative combined architecture through v13J4. Update after every architecture-changing experiment. Version folders keep evidence and failures; this file states the current system.
 
-## 0. Objective and rules
-Build the cheapest practical hardware + software AI that can still become highly capable. Do not choose analog, digital, optical or brain-like hardware in advance; use the representation/physics that wins after real communication, area, energy, latency, correctness and support costs.
+## 0. Design objective and non-negotiable rules
+Build the cheapest practical hardware + software AI system that can remain highly capable while minimizing unnecessary memory reads, conversions, data movement, routing and duplicated support hardware.
 
-Core rules:
-- stable/reused/local structure -> physical/electrical when it wins;
+Rules:
+- stable/reused/local structure -> physical implementation when total cost wins;
 - changing/rare/exact state -> exact computer hardware;
 - ambiguity/failure -> exact fallback;
 - weak analog state stays local/short;
 - robust meaning/results may travel farther;
-- live charge = information; controlled leak = adaptation/time; expired charge may be recovered;
-- raw/noisy activity may not train leases/promoted routes;
-- DRC alone is insufficient: extraction/connectivity determines physical correctness;
-- keep failed experiments and tag whether the principle or only the implementation failed.
+- locality is part of computation;
+- raw/noisy activity may not refresh leases or train persistent routes;
+- live charge = information; controlled leak = time/adaptation; expired charge may be recovered;
+- capture/validate before cleanup/recovery;
+- sharing is accepted only when it does not corrupt local decisions;
+- DRC alone is insufficient; extraction/connectivity is authoritative;
+- a failed implementation does not automatically reject the principle.
 
 ## 1. Whole-system flow
 ```text
 input / sensor / exact data
-        -> physical coordinate release
-        -> Regional Event Lease
-        -> eight isolated local paths
+        -> Active-Low Coordinate Release
+        -> 8-way Regional Event Lease
         -> local intelligent Glyph region
              Tri-Wall capacitive evidence
              static templates
              Grammar motifs
              short Passive Myelin
-             local competition/inhibition
-             familiarity/context/fatigue/homeostasis
-             direct fourth-face / tap routing
-        -> confident physical winner -> robust event
+             direct analog steering when destination already has a membrane
+             local competition / inhibition
+             familiarity / context / fatigue / homeostasis
+             direct fourth-face links
+             segmented taps / Autonomic Event Spine
+        -> confident local winner -> robust event
         -> ambiguous/new/invalid -> exact fallback
-        -> carrier+volume compiler chooses next route
-             electrical/Myelin
-             event spine
-             future thin TIR optical chord
+        -> representation + carrier + volume compiler
+             local electrical / Myelin
+             regional event spine
+             dedicated electrical chord
+             optional thin TIR optical chord only after break-even
         -> next region / exact computer / output
 ```
-The exact computer is a precision/fallback/consolidation boundary, not the per-event router.
 
-## 2. Closed physical front end
+The exact computer is a precision/fallback/consolidation boundary, not the per-event central router.
+
+## 2. Physically/electrically closed front end
 ### Active-Low Coordinate Release
-4-transistor CMOS NOR releases a local selection only when row+column agree.
+4-transistor CMOS NOR; selected row+column agreement releases the local region.
 
-### Regional Event Lease
-Validated long selection can be reused locally; only validated success/winners refresh it. DONE/CLEAN hard-clear remains available.
+### 8-way Regional Event Lease
+Validated long selection is reused for a local burst. Raw activity cannot refresh it.
 
-Selected 8-way physical interface from v13A4:
+Selected v13A4 interface:
 - 14 NFET + 2 PFET + 1 MIM;
-- TT/FF/SS + 12 mismatch launches passed;
+- TT/FF/SS + 12 mismatch launches pass;
 - write + 11 refreshes ~106.8 fJ TT proxy;
-- one selection + lease ~0.787 pJ versus ~5.44 pJ for eight independent long selections in the earlier communication proxy.
+- one selection + lease ~0.787 pJ versus ~5.44 pJ for eight independent long selections in the earlier proxy.
 
-## 3. Local stable computation
+## 3. Local computation primitives
 ### Capacitive ternary synapses — v12K
-Physical MIM coupling represents stable local synaptic structure when cheaper than repeated memory reads. Exact residual handles exceptions.
+Stable local weights may be physical MIM coupling; exact residual handles exceptions.
 
 ### Shared templates — v12L/v12M
-Repeated templates use shared capacitive structure + static configuration; avoid per-event template SRAM reads/one-hot/naive decoders when they are more expensive.
+Repeated templates use shared capacitive structure/static configuration rather than repeated per-event memory/decoder work when cheaper.
 
 ### Grammar — v12N -> v13A5/A6
-Fixed 0.5 V Grammar threshold is rejected. Current physical Grammar uses a legal 10-MIM ratio array plus a 10-MOS dual-input-pair self-check reader when a robust decision is needed.
+Fixed 0.5 V threshold is rejected. Selected robust Grammar uses:
+- legal 10-MIM physical ratio array;
+- 10-MOS dual-input-pair self-check reader;
+- fresh replay for conservative two-phase checking;
+- 6 ns/phase selected closure;
+- nominal TT/FF/SS exact+partial pass;
+- combined MIM+MOS mismatch screen with zero wrong accepts;
+- co-placed readout energy roughly 76–97 fJ in the closure battery.
 
-Closed readout state:
-- fresh replay for conservative two-phase check;
-- 6 ns/phase selected;
-- TT/FF/SS exact+partial pass;
-- combined MIM+MOS small mismatch screen closed with zero wrong accepts;
-- co-placed readout energy ~76–97 fJ in that battery.
+Use Grammar selectively when motif recognition removes larger work/routing.
 
-### Direct analog steering
-If the destination already has a membrane/competition node, local evidence may directly steer it instead of paying a separate robust reader. Keep the robust reader for true boundaries.
+### Direct analog steering — v12G/v13B
+If the destination already has a local membrane/competition node, weak state may directly steer it instead of paying a separate reader. Robust reader remains for true boundaries.
 
 ### Myelin
-- Passive Myelin = short local capacitive structural edge;
-- Full-Swing Myelin = robust boundary link;
-- deep passive analog chains are rejected because margin decays;
+- Passive Myelin: short local capacitive structural edge;
+- Full-Swing Myelin: robust boundary/event link;
+- deep passive analog chains are rejected because signal margin and absolute level decay;
 - stable distant relations may earn a direct electrical or future optical chord.
 
 ## 4. Tri-Wall / framework cell
 ### Tri-Wall Glyph Cell
-Three capacitor faces provide local evidence; a fourth connection face exports to a neighbor/receptor. SKY130 emulates literal sidewalls with legal planar MIMs.
+Three capacitor faces supply evidence; fourth side is controlled connection/output. SKY130 currently emulates literal walls with legal planar MIMs.
 
-Three ~2x2 um MIM-equivalent walls reproduce ~27 mV-class historical exact/partial separation in the present first-order cell model.
+Three ~2x2 um MIM-equivalent walls reproduce ~27 mV-class historical exact/partial separation in the current first-order model.
 
 ### Fourth-face link
 Minimum NFET + small Contact Receptor.
-- ~0.5 V analog evidence needed ~1.1–1.2 V gate class to preserve ~25 mV separation in the tested physical/PDK screen;
-- robust ~0.2 V regional events are easier to transfer.
+- ~0.5 V analog evidence needed ~1.1–1.2 V gate class in tested screens to preserve ~25 mV separation;
+- ~0.2 V robust regional events pass much more easily.
+
+Direct fourth face remains the preferred nearest-neighbor route.
 
 ### Contact Receptor
-Small landing capacitance prevents one large cell membrane from charge-sharing directly into another large membrane.
+Small landing capacitance prevents large membrane-to-membrane charge dilution.
 
 ## 5. Autonomic Tap Spine — v13D/v13E
-Shared protected trunk with local subwires/taps; each tap owns local state instead of a central per-event router.
+Protected shared trunk with isolated local subwires/taps. Each tap owns local physical state.
 
-Closed four-tap result:
-- shielded ~180 um spine, four isolated branches;
-- selected promoted-tap gate = **0.9 V**;
+Closed v13E four-tap result:
+- shielded ~180 um spine with four isolated branches;
+- promoted-tap gate selected at **0.9 V**;
 - nominal TT/FF/SS pass;
-- **12/12 TT/FF/SS independent mismatch launches pass**;
-- selected outputs essentially retain full ~0.2 V event;
-- inactive taps microvolt-class;
-- protected analog disturbance ~0.344 mV in current coupling proxy.
+- **12/12 independent TT/FF/SS mismatch launches pass**;
+- selected outputs retain essentially full ~0.2 V event;
+- inactive taps remain microvolt-class;
+- protected analog disturbance ~0.344 mV in the current coupling proxy.
 
 Event-source proxies:
-- direct neighbor fourth face ~0.15 fJ/event;
-- ~180 um event spine one tap ~0.67 fJ;
+- direct fourth-face neighbor ~0.15 fJ;
+- ~180 um spine one tap ~0.67 fJ;
 - four taps ~1.34 fJ.
 
-Therefore fourth face remains the nearest-neighbor winner; the event spine is the next scale.
-
-### Familiarity / promotion
-Reuse v12E self-referenced repetition rather than a digital counter in every cell:
-- first use ~1–2 mV familiarity class;
+### Familiarity / promotion — v12E
+Electrical repetition replaces a digital counter in the fast path:
+- first validated use ~1–2 mV familiarity class;
 - second ~17 mV;
-- third ~28 mV across preserved screens.
+- third ~28 mV in preserved screens.
 
 Lifecycle:
-`validated repetition -> probation -> temporary tap -> slower Use/Lease state -> promoted route`; inactivity leaks it away.
+`validated repetition -> probation -> temporary tap -> slower Use/Lease state -> promoted route`; inactivity demotes it.
 
-### Homeostasis
-Reuse v12F pooled electrical homeostasis to suppress too many simultaneous weak-analog participants before loading destroys margin.
+### Homeostasis — v12F
+Pooled activity increases inhibition/selection pressure when too many weak analog participants load one segment.
 
-### Electrical context
-Reuse v12G short electrical traces to steer future local inhibition/competition directly when safe.
-
-### Recovery
-After capture, expired tap/configuration charge may be recovered one-way. Current simple v13E tap-gate bench recovered ~53% of removed gate energy; older v12I trace bench recovered ~68.9% in its own geometry. Neither is a universal fraction.
+### Short electrical context — v12G
+Recent charge directly steers future local competition/inhibition when margin is adequate.
 
 ## 6. Shared silicon/framework walls
 ### Janus / Service Spine Wall
-Two cells may share one structural wall. Weak capacitor faces remain isolated; shielded robust/slow services run through the middle.
+Two neighboring cells may share one structural wall. Weak capacitor faces remain isolated; robust/slow services run through the middle behind shields.
 
 Selected stack:
-`cell A weak face -> dielectric -> shield -> service lanes -> shield -> dielectric -> cell B weak face`.
+`weak face A -> dielectric -> shield -> service lanes -> shield -> dielectric -> weak face B`.
 
 v13C physical proxy:
-- unshielded 100 um service line ~1.184 fF coupling to each weak face, enough for ~29 mV simple kick -> rejected;
-- shielding removed direct service-to-evidence terms at extractor resolution in the tested geometry -> kept;
-- multiple service lanes may coexist but require robust signaling/extra shielding/orthogonal routing.
+- unshielded 100 um service line ~1.184 fF coupling to each weak face -> ~29 mV simple kick -> rejected;
+- shielded geometry removed direct service-to-evidence capacitance terms at extractor resolution -> kept;
+- multiple service lanes require robust signaling/extra shielding/orthogonal routing.
 
-Wall services may carry VDD/GND/reference, PVT pilots, configuration, recovery, robust events, Myelin control and exact requests/results. Do not place tiny GC/GR/dendrite/latch-internal nodes on the service spine.
+Service lanes may carry VDD/GND/reference, PVT pilots, configuration, recovery, robust events, Myelin control and exact requests/results. Do not carry tiny GC/GR/dendrite/latch-internal nodes there by default.
 
-## 7. Hollow / Heterogeneous Void Fabric
-The interior is neither completely empty nor maximally filled.
+## 7. Hollow / volumetric architecture
+### Hollow-Electrical Base — default product architecture
+The default package/chip concept is a hollow/framework electrical system:
+- active semiconductor only where devices need it;
+- inner/outer framework surfaces used for cells/capacitors;
+- fourth faces + subwires + event spines + electrical Myelin;
+- component bays for exact memory/logic/support where locality wins;
+- shared thermal exhaust;
+- facade/backside utilities if packaging cost is acceptable;
+- exact fallback independent.
 
-Functional zones:
-- **Active framework/wall zone:** cells, capacitors, fourth faces, service wiring;
-- **Thin optical-lightpipe lanes:** long/hot routes only;
-- **Thermal Exhaust/Artery:** component-free heat transport path to a shared external manifold;
-- **Component Bay:** memory, exact logic, recovery support, sensors/I/O when communication savings repay area/heat;
-- **Structural/alignment ribs:** mechanics + protected services;
-- **Reserve/bypass volume:** fault rerouting and future promotion.
+This is the **lowest-manufacturing-complexity selected architecture today**.
 
-Do not fill the interior with one conductor/network: it destroys independent state/selectivity.
-
-## 8. Routing hierarchy
-1. Direct fourth face — adjacent private weak analog/event.
-2. Segmented analog tap — short non-neighbor weak analog.
-3. Shielded event spine — regional shared robust event/fanout.
-4. Dedicated electrical/Myelin chord — stable short/medium route while wire is cheapest.
-5. **Thin TIR Optical Chord** — future long/hot relation only after distance+reuse break-even.
-6. Capacitive/inductive contactless bridge — only tiny assembly gaps where eliminating galvanic bonds solves packaging/yield.
-7. RF/mmWave — rare broadcast/discovery/backup, not normal local reasoning.
-8. Exact/global fabric — cold/changing/precise/semantic uncertainty.
-
-## 9. Thin TIR Optical Chord — v13F/v13G/v13H
-### Why thin TIR instead of a large empty corridor
-Ordinary total internal reflection requires a higher-index guiding core; therefore the selected near-term hollow route is a skinny transparent glass/polymer lightpipe through the cavity, not a large air corridor. True hollow/air-core anti-resonant guidance is future research only.
-
-Literature-backed v13H proxy:
-- ~0.08 dB/cm propagation;
-- ~0.47 dB/facet coupling;
-- direct-photocharge target ~0.600 fJ detector-incident energy for a 3 fF receptor at 0.2 V and 80% detector QE;
-- laser wall-plug scenario 15%;
-- modulator proxy 5.9 fJ/event.
-
-Runtime optical event work is ~10.9–11.1 fJ over 3–20 mm because endpoint energy dominates propagation.
-
-Fair electrical comparison uses improved dedicated-route proxy:
-`E_electrical ~= 0.15 + 3.74*d_mm fJ/event`.
-
-Including a 1 pJ rare route-write cost, approximate reuse break-even:
-- 3 mm ~2102 uses;
-- 5 mm ~126;
-- 10 mm ~38;
-- 15 mm ~23;
-- 20 mm ~16.
-
-So optics is **not** selected for ordinary local traffic. Distance and reuse must both justify it.
-
-### Optical route volume
-A demonstrated ~9x9 um guide core is ~0.00081 mm^3 over 10 mm; even a conservative 50x50 um reserved lane is ~0.025 mm^3 over 10 mm. Optical routing therefore need not reserve component-sized empty volume.
-
-### Direct Photocharge Receptor
-Future photonic-process candidate:
-`light -> photodiode -> local charge -> local physical competition`, avoiding a conventional receiver amplifier when margin permits.
-
-Weak optical analog use must be differential/self-referenced, never one absolute intensity threshold.
-
-### Optical Dendrite / Fanout
-Future sparse long-range option:
-- multiple distant sources may deposit charge into one local receptor when pooled evidence is semantically acceptable;
-- one source may fan out to several direct-photocharge receptors;
-- source identity is lost in pooled fan-in, so exact/code identity-sensitive signals stay separate/electrical.
-
-## 10. v13H fair hollow-versus-all-electrical qualification
-Eight regions were modeled at corners of an illustrative 10 mm cube. Pair distances: 12 at 10 mm, 12 at 14.14 mm, 4 at 17.32 mm. Every relation is allowed the improved dedicated electrical route; optics is selected only when lifetime total including 1 pJ write is lower.
-
-Communication-lifetime results:
-- 16 uses/relation -> no optical promotion wins;
-- 32 uses, 50% hot -> ~14.7% communication saving;
-- 64 uses, 50% hot -> **~31.0%**;
-- 64 uses, all hot -> **~44.7%**;
-- 128 uses, all hot -> ~60.9%;
-- 256 uses, all hot -> ~69.0%.
-
-This is the first fair qualification against the improved electrical route rather than only the old 0.68 pJ global-coordinate proxy.
-
-Using preserved v13A image/sound/code/reasoning cores with 10 mm long relations, 50% optical eligibility and 64 lifetime uses:
-- image whole-workload improvement vs improved all-electrical ~0.12%;
-- sound ~0.17%;
-- code **~14.0%**;
-- reasoning ~1.4%.
-
-Therefore hollow optics is most valuable where communication is a large fraction of useful work; local image/sound computation remains predominantly electrical/capacitive.
-
-## 11. Thermal architecture
-### Thermal Brake
-Local replica-leak/PVT state changes promotion/retention/inhibition when a region becomes hot. Heat is slow environment physics, not fast route identity.
-
-### Shared Thermal Exhaust / Artery
-Do **not** harvest every tiny heat source locally. Many chips/regions dump heat into component-free hollow exhaust paths that lead to one larger top/package/rack collection system.
-
-A literal evacuated empty channel is not a high-power heat conveyor by itself; radiation at modest chip temperatures is too weak. Selected physical direction is hollow vapor-chamber / heat-pipe / microfluidic exhaust with conducting walls/wicks/working fluid, while remaining empty of computing components.
-
-Sequence:
-`hot framework -> spreader/wick -> hollow vapor/exhaust route -> top condenser/heat exchanger -> optional TEG -> outside/facility heat sink or useful heat loop`.
-
-Place the thermoelectric stage at the external collection boundary so it does not add thermal resistance to every cell.
-
-A 2025 external rack model reported 125 W TEG output from 25 kW heat (~0.5%), 219 W in a dual-stage variant (~0.876%), and ~20.1 kW useful hot-water output. GVS uses those only as scale scenarios, not measurements. Primary goal is cooling + useful heat export; electrical heat harvesting is secondary.
-
-## 12. Other physics
-- capacitive contactless coupling: MODE_ONLY for micrometer assembly gaps;
-- inductive coupling: MODE_ONLY for isolated/vertical gap links;
-- RF/mmWave: MODE_ONLY broadcast/backup;
-- phononic/acoustic: MODE_ONLY filters/sensors/delay, reject normal routing;
-- magnetism/MRAM: FUTURE_PROCESS persistent verified state only;
-- MEMS/PCM optical switches: FUTURE_PROCESS rare route consolidation, not per-event switching;
-- wireless power: reject as default because protected service-wall power is cheaper/controlled.
-
-## 13. Exact computer boundary
-Keep exact hardware for arithmetic/carry/index/pointer/code state, rapidly changing/cold knowledge, low-margin ambiguity, semantic invalidation, correction, and route consolidation verification. Do not force these functions into analog/optical physics merely for purity.
-
-## 14. Compilers
-### Representation compiler
-Chooses Grammar/template/Myelin/exact representation.
-
-### Carrier + volume compiler
-Chooses fourth face, segmented tap, event spine, electrical chord, thin TIR optical chord, component bay, thermal path and fallback route.
-
-A representation is optimized first: if local Grammar/Myelin removes a communication entirely, the carrier compiler does not route it.
-
-## 15. Current acceptance status
-### Physically/electrically closed in current SKY130 flow
-- Active-Low Coordinate Release;
-- 8-way Regional Lease/interface;
-- 10-MIM + 10-MOS robust Grammar readout;
-- physical Tri-Wall emulation / fourth-face screens;
-- shielded service-wall proxy;
-- four-tap Autonomic Event Spine at 0.9 V with 12/12 mismatch closure.
-
-### Model/literature-backed future-process architecture
-- literal hollow/vertical framework fabrication;
-- thin TIR photonic lightpipes and direct photocharge endpoints;
-- Optical Dendrites/fanout;
-- vapor/microfluidic thermal exhaust integrated into hollow volume;
-- MEMS/PCM/magnetic persistent route anchors.
-
-Never label future-process models as physical GVS measurements.
-
-## 16. v13I full-hollow comparison and product decision
-### Hollow-Electrical Base
-The default architecture is the hollow/framework chip with electrical local computation and routing only:
-- Tri-Wall cells;
-- fourth faces;
-- segmented subwires/event spines;
-- electrical/Myelin chords;
-- shared walls/service spines;
+### Heterogeneous Void Fabric
+Interior space is assigned by function rather than maximally filled or maximally empty:
+- active framework/wall zone;
 - component bays;
-- exact fallback;
-- shared thermal exhaust.
+- thermal exhaust/arteries;
+- narrow optional optical/lightpipe lanes;
+- structural/alignment ribs;
+- reserve/bypass volume.
 
-This is the **lowest-manufacturing-complexity selected architecture** today.
+Do not fill the interior with one continuous conductor/network.
 
-### Optional Photonic Layer
-Do not manufacture photonics into every hollow chip by default. Add thin TIR/direct-photocharge optical hardware only for products/regions whose expected route distance + reuse + source-idle behavior repays it.
+## 8. Facade Utility Shell — v13J
+Outside/backside/sidewall surfaces may host robust shared utilities analogous to pipes/tanks/services on a building.
 
-Fresh v13I eight-region expected-lifetime screen using the same 10 mm cube:
-- 16 uses/relation: no route is optical-economic;
-- 32 uses, 50% hot: ~8.17% expected communication saving;
-- 64 uses, 50% hot: **~22.34%**;
-- 128 uses, 50% hot: **~30.46%**;
-- 256 uses, 50% hot: **~34.52%**.
+### Facade Utility Shell
+Good facade candidates:
+- power/reference;
+- recovery/decoupling banks;
+- configuration/test/repair;
+- ESD/I/O support;
+- large regulators/support devices;
+- thermal manifold/condenser interface;
+- optional optical source/coupling bank;
+- sparse fault bypass.
 
-At 64 uses and every route hot, communication saving is ~44.68%.
+Keep weak/local/frequent analog computation inside/protected framework.
 
-The v13I result is intentionally more conservative than the earlier route-candidate screen because it treats hot-route eligibility probabilistically rather than assigning the optical layer only the longest routes.
+Illustrative 10x10x2 mm, 32-region geometry:
+- exterior area ~280 mm^2;
+- sidewalls ~80 mm^2;
+- naive dedicated central-collector routes total ~176 mm;
+- distributed top/bottom quadrant-bank facade routes total ~96 mm in the refined model -> ~45.5% shorter than that naive central arrangement.
 
-### Whole-workload result
-At 10 mm, 50% eligibility and 64 lifetime uses:
-- image total improvement ~0.125%;
+Outside wiring did **not** shorten ordinary cell-to-cell shortest paths in the tested graph, so duplicating the full nervous network on the facade is rejected.
+
+Sparse facade bypass improved graph resilience under heavy random edge loss and is retained as robust utility/fault infrastructure.
+
+This direction is consistent with backside-power research: moving robust power/services to the backside can reduce frontside signal congestion and can support backside I/O/ESD and dense decoupling structures. This is supporting precedent, not proof of literal GVS facade fabrication.
+
+## 9. Facade Quiet Window — v13J3
+Shielding does not allow unlimited simultaneous high-swing facade activity near weak analog nodes.
+
+Using the conservative existing ~0.124 fF protected-branch coupling proxy with a ~72 fF weak node and ~25 mV useful differential:
+- one 0.9 V utility step -> ~1.55 mV kick;
+- one 1.2 V step -> ~2.06 mV;
+- one 1.8 V step -> ~3.09 mV.
+
+Against the current 18 mV high-margin screen:
+- up to 4 aligned 0.9 V transitions remain above ~18.8 mV;
+- up to 3 at 1.2 V;
+- up to 2 at 1.8 V.
+
+Normal policy is stricter: **freeze/stagger high-swing facade transitions during weak analog accumulation; resume after result capture.** Emergency robust activity may force fallback rather than silently accept a disturbed analog result.
+
+## 10. Reservoir and energy lifecycle
+### Core rule from v11/v12
+`LIVE charge = information / lease / context / familiarity / adaptation`
+
+`controlled leak = time/environment/self-regulation`
+
+`EXPIRED charge = recover one-way if worthwhile`
+
+Do not harvest from live high-impedance state.
+
+### v13E tiny recovery reference
+Simple expired tap-gate bench recovered ~53% of removed gate energy into a low-voltage rail; old v12I trace bench recovered ~68.9% in its own geometry. These are not universal fractions.
+
+### v13P12 regional shared reservoir — reused in v13J
+One 10 pF reservoir shared across four tiles:
+- replaced 40 pF total separate recovery capacitance with 10 pF target -> 75% reduction;
+- nominal TT/FF/SS pass;
+- 12/12 mismatch launches, 48 tile instances pass;
+- weakest post-error second-request minimum remained above 0.9 V;
+- ~220 fJ capacitor-energy increase in one four-tile recovery interval.
+
+The 10 pF reservoir is still a lumped physical candidate, not a completed exterior bank PEX.
+
+### Hierarchical Reservoir Collector
+Selected hierarchy:
+`local reservoir computes -> expires -> regional shared reservoir -> safe-window drain -> larger facade/chip collector -> infrequent converter/low-voltage reuse`.
+
+Do not put one active converter on every tiny reservoir.
+
+The old tiny-packet screen showed chip conversion overhead only amortizes at large batch sizes. Reusing the larger ~220 fJ regional packet makes the second stage much more plausible.
+
+## 11. Autonomous Recovery Backpressure — v13J4
+The regional reservoir is a buffer, not a permanent battery.
+
+First-order 10 pF energy-accumulation screen starting near 0.199 V with ~220 fJ packets:
+- 1 packet -> ~0.289 V;
+- 2 -> ~0.357 V;
+- 4 -> ~0.464 V;
+- 5 -> ~0.510 V;
+- 8 -> ~0.626 V;
+- 16 -> ~0.862 V;
+- 18 -> ~0.912 V.
+
+Therefore do not hold hundreds of packets in a small regional capacitor. Drain the regional bank every one/few recovery episodes when safe; perform large batching only in the bigger downstream chip/facade collector.
+
+### Autonomic Recovery Gate
+Conceptual local control:
+`RECOVERY_PRESENT & CAPTURED_OR_DONE & !WEAK_ANALOG_ACTIVE -> allow facade drain`.
+
+The reservoir voltage itself can represent recovery urgency/backpressure; no digital event counter is required in the fast path. Exact threshold/device still needs PVT/self-referenced physical closure.
+
+Failure policy:
+- stuck-open recovery path must not be allowed to load live state;
+- stuck-closed path may lose recovery efficiency but must not break inference correctness;
+- overfull bank triggers conservative drain/fallback, never threshold corruption.
+
+## 12. Routing hierarchy
+1. direct fourth face — nearest neighbor private analog/event;
+2. segmented analog tap — short non-neighbor weak analog;
+3. shielded electrical event spine — regional robust event/fanout;
+4. dedicated electrical/Myelin chord — stable short/medium relation;
+5. optional thin TIR optical chord — long/hot route only after lifetime break-even;
+6. contactless capacitive/inductive bridge — tiny assembly gaps only when packaging needs it;
+7. RF/mmWave — rare broadcast/discovery/backup;
+8. exact/global fabric — cold/changing/precise/semantically uncertain.
+
+## 13. Optional Photonic Layer — not default
+Thin TIR/direct-photocharge photonics is an optional package/region upgrade only when route distance, reuse and source-idle behavior repay manufacturing and running cost.
+
+Selected v13I conservative eight-region expected-lifetime screen:
+- 16 uses/relation -> no optical-economic routes;
+- 32 uses, 50% hot -> ~8.17% expected communication saving;
+- 64 uses, 50% hot -> ~22.34%;
+- 128 uses, 50% hot -> ~30.46%;
+- 256 uses, 50% hot -> ~34.52%.
+
+At 10 mm / 64 uses / 50% eligibility, preserved workload total improvement:
+- image ~0.125%;
 - sound ~0.171%;
 - code ~13.97%;
 - reasoning ~1.40%.
 
-One simple sum of one operation from each preserved domain changes ~541.22 pJ -> ~540.16 pJ, only ~0.196%. Thus the heterogeneous layer is **not** a universal whole-system energy improvement; it is a route-dominated optimization.
+Thus photonics is a route-dominated optimization, not a universal whole-chip win.
 
-### Optical-source idle rule
-At 10 mm and 64 uses, after amortizing a 1 pJ route write, only ~10.97 fJ/promoted-event advantage remains. A shared optical source therefore must contribute less than that in idle/start/tuning energy per promoted event.
+Optical source idle/start/tuning energy is a hard acceptance term. At 10 mm / 64 uses only ~10.97 fJ/event advantage remains after the modeled route-write amortization; if the source cannot stay below the corresponding utilization budget through sharing/power-gating, keep the route electrical.
 
-Equivalent idle-power budget:
-- at 100 MHz promoted events: ~1.1 uW;
-- at 1 GHz: ~11 uW;
-- at 10 GHz: ~110 uW.
+Weak optical analog evidence must be differential/self-referenced, never one absolute light threshold.
 
-If the source cannot meet this through sharing/power-gating/high utilization, keep the route electrical.
+## 14. Thermal architecture
+### Thermal Brake
+Replica-leak/PVT state changes promotion/retention/inhibition as temperature/process conditions change. Heat is slow environment physics, not fast route identity.
 
-### Manufacturing-cost rule
-Current photonic packaging requires extra emit/modulate/detect devices, waveguide/lightpipe integration, optical alignment/test, source distribution and possibly nonvolatile optical switches. External photonics literature identifies packaging/assembly/test as a dominant cost category. Therefore the current manufacturing ranking is:
+### Shared Thermal Exhaust
+Do not harvest every tiny heat source locally. Many regions/chips send heat through component-free vapor/heat-pipe/microfluidic exhaust to a common top/package/rack collector.
 
-`Hollow-Electrical Base < Hollow-Heterogeneous Extension`.
+Sequence:
+`hot framework -> spreader/wick -> hollow thermal route -> condenser/heat exchanger -> optional large TEG -> external heat sink/useful heat loop`.
 
-No dollar ratio is claimed until a real process/BOM/yield model exists.
+Cooling has priority over harvesting. Low-grade electrical heat conversion is secondary; useful heat export may be much larger.
 
-### Running-cost rule
-- local/low-reuse/mixed workloads -> Hollow-Electrical Base wins or is near-tied;
-- long/hot/repeated multi-mm traffic -> optional heterogeneous optical layer can lower running energy if source-idle and alignment overhead stay below break-even;
-- shared thermal exhaust/harvester belongs to both architectures and cannot be used as a special optical credit.
+## 15. Other physics status
+- capacitive contactless coupling: MODE_ONLY for tiny assembly gaps;
+- inductive coupling: MODE_ONLY for isolated/vertical gaps;
+- RF/mmWave: MODE_ONLY broadcast/backup;
+- phononic/acoustic: MODE_ONLY filters/sensors/delay, reject normal routing;
+- magnetism/MRAM: FUTURE_PROCESS persistent verified state only;
+- MEMS/PCM optical switches: FUTURE_PROCESS rare route consolidation, not per-event switching;
+- alpha particles: REJECT runtime carrier; KEEP only as radiation-fault model;
+- wireless power: reject as default because protected service-wall power is cheaper/controllable.
 
-## 17. Alpha-particle screen / Radiation Quarantine Rule
-Alpha particles are **rejected as a GVS runtime carrier**.
+### Radiation Quarantine Rule
+One isolated high-amplitude transient may not train a persistent route or refresh the lease. Promotion still requires repeated validated success; suspicious uncorrelated spikes are invalid/noise unless normal timing/context validation confirms them.
 
-Reasoning:
-- representative MeV alpha energy is hundreds of fJ to pJ per particle, already larger than current electrical/optical event proxies;
-- ionization charge deposited in semiconductor can exceed the tiny charge needed by a 3 fF Glyph receptor by hundreds of times;
-- alpha ranges in semiconductor are short compared with millimeter hollow-package routes;
-- ionizing particles are a known source of single-event upsets in CMOS.
+## 16. Compilers
+### Representation compiler
+Chooses Grammar/template/Myelin/exact representation.
 
-Keep only the fault-model consequence:
-- one isolated physical transient may not train a persistent route;
-- raw spikes may not refresh the lease;
-- promotion still requires repeated validated success;
-- low-margin results retain reference/two-phase/exact checking;
-- suspicious uncorrelated high-amplitude events are treated as invalid/noise.
+### Carrier + volume + placement compiler
+Chooses:
+- fourth face;
+- segmented tap;
+- event spine;
+- electrical chord;
+- optional TIR optical chord;
+- wall/facade service lane;
+- component bay;
+- thermal path;
+- recovery collector;
+- fallback route.
 
-No alpha-particle communication subsystem belongs in the main architecture.
+Placement tendency:
+`weak + frequent + local -> inside/protected framework`
 
-## 18. Maintenance rule
+`robust + shared + slow/large/hot -> wall/facade/exterior if total cost wins`.
+
+A good representation may eliminate a communication before the carrier compiler routes it.
+
+## 17. Current evidence status
+### Physically/electrically closed in current SKY130 flow
+- Active-Low Coordinate Release;
+- 8-way Regional Lease/interface;
+- 10-MIM + 10-MOS robust Grammar readout;
+- physical Tri-Wall/fourth-face screens;
+- shielded service-wall proxy;
+- four-tap Autonomic Event Spine at 0.9 V with 12/12 mismatch closure;
+- v13P12 10 pF / four-tile regional shared-recovery circuit result (lumped reservoir, not exterior layout).
+
+### Architecture/circuit/system model or outside-process future target
+- literal hollow/vertical framework;
+- Facade Utility Shell physical package;
+- regional-to-facade recovery converter;
+- Autonomic Recovery Gate physical implementation;
+- thin TIR photonics/direct photocharge;
+- Optical Dendrites/fanout;
+- integrated vapor/microfluidic thermal exhaust;
+- MEMS/PCM/magnetic route anchors.
+
+Never label future-process/model values as fabricated GVS measurements.
+
+## 18. Current next physical closure target
+Build one same-die electrical proxy that combines:
+- real Grammar/evidence node;
+- robust VALID/CAPTURED/DONE;
+- one facade-equivalent shielded utility/recovery line;
+- one Recovery Valve / Autonomic Recovery Gate;
+- one regional shared reservoir branch;
+- facade transitions at 0.9/1.2/1.8 V during and after weak analog windows;
+- post-capture recovery;
+- TT/FF/SS + independent mismatch;
+- deliberately forced simultaneous utility switching to measure the true fallback boundary.
+
+Only after this electrical interface closes should the literal facade/backside package be promoted as a physical implementation target.
+
+## 19. Maintenance rule
 After every experiment:
-1. keep raw results/report, including failures;
+1. preserve raw results and failures;
 2. update this MAIN_ARCHITECTURE.md;
 3. update NEXT_EXPERIMENT.md;
 4. update decision/do-not-reinvent records when status changes;
-5. distinguish measured PDK/layout, circuit model, system proxy and outside-literature numbers;
-6. never leave the active architecture only inside version folders.
+5. label evidence type: measured PDK/layout, circuit model, system proxy, or external literature;
+6. never leave the active architecture distributed only across version folders.
