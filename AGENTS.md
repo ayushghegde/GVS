@@ -2,6 +2,14 @@
 
 These rules apply to every AI/Codex agent working in this repository.
 
+## First source of truth
+
+Before reading version folders or choosing the next experiment, read `MASTER_GVS/MAIN_ARCHITECTURE.md` first.
+
+`MASTER_GVS/MAIN_ARCHITECTURE.md` is the single authoritative description of the current GVS / Neural Glyph architecture. Historical experiments, preserved baselines, old summaries and older branch documentation are evidence sources; they do not override the Main Architecture.
+
+Do not rewrite or replace the Main Architecture merely because an older version folder says something different. Architecture changes must come from new experiment evidence and then be integrated deliberately.
+
 ## Non-negotiable experiment persistence
 
 An experiment is not finished until its reproducible record is written into this repository.
@@ -47,15 +55,19 @@ Run `python scripts/cleanup_experiment.py experiments/<version-or-id>` before fi
 
 Before reporting an experiment as complete:
 
-1. Put its files in `experiments/<version-or-id>/`.
-2. Run `python scripts/cleanup_experiment.py experiments/<version-or-id>`.
-3. Run `python scripts/finalize_experiment.py experiments/<version-or-id>`.
-4. Inspect the generated/updated `manifest.json`.
-5. Commit the experiment files and manifest to the active branch.
-6. In the final response, state the commit/branch and the next unresolved problem.
+1. Read `MASTER_GVS/MAIN_ARCHITECTURE.md` and identify the active architecture affected by the experiment.
+2. Put the experiment files in `experiments/<version-or-id>/`.
+3. Run `python scripts/cleanup_experiment.py experiments/<version-or-id>`.
+4. Run `python scripts/finalize_experiment.py experiments/<version-or-id>`.
+5. Inspect the generated/updated `manifest.json`.
+6. Commit the experiment files and manifest to the active branch.
+7. If the experiment changes the architecture, update `MASTER_GVS/MAIN_ARCHITECTURE.md` deliberately from that evidence.
+8. In the final response, state the commit/branch and the next unresolved problem.
 
 If GitHub write access is unavailable, package the full experiment directory and tell the user that repository persistence is the blocker. Do not claim the repository was updated.
 
-## Current historical baseline
+## Historical baseline
 
 `v12S` is the preserved autonomous complete-tile schematic experiment. It is a **PARTIAL PASS** because the integrated SKY130 schematic lifecycle passed the recorded electrical tests, while real placed/routed RC extraction was not completed. The canonical repository copy is `experiments/v12S/`.
+
+v12S is historical experimental evidence. It is not the current whole-system architecture and does not override `MASTER_GVS/MAIN_ARCHITECTURE.md`.
