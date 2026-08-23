@@ -233,7 +233,7 @@ Therefore hollow optics is most valuable where communication is a large fraction
 Local replica-leak/PVT state changes promotion/retention/inhibition when a region becomes hot. Heat is slow environment physics, not fast route identity.
 
 ### Shared Thermal Exhaust / Artery
-User-selected scale rule: do **not** harvest every tiny heat source locally. Many chips/regions dump heat into component-free hollow exhaust paths that lead to one larger top/package/rack collection system.
+Do **not** harvest every tiny heat source locally. Many chips/regions dump heat into component-free hollow exhaust paths that lead to one larger top/package/rack collection system.
 
 A literal evacuated empty channel is not a high-power heat conveyor by itself; radiation at modest chip temperatures is too weak. Selected physical direction is hollow vapor-chamber / heat-pipe / microfluidic exhaust with conducting walls/wicks/working fluid, while remaining empty of computing components.
 
@@ -283,7 +283,84 @@ A representation is optimized first: if local Grammar/Myelin removes a communica
 
 Never label future-process models as physical GVS measurements.
 
-## 16. Maintenance rule
+## 16. v13I full-hollow comparison and product decision
+### Hollow-Electrical Base
+The default architecture is the hollow/framework chip with electrical local computation and routing only:
+- Tri-Wall cells;
+- fourth faces;
+- segmented subwires/event spines;
+- electrical/Myelin chords;
+- shared walls/service spines;
+- component bays;
+- exact fallback;
+- shared thermal exhaust.
+
+This is the **lowest-manufacturing-complexity selected architecture** today.
+
+### Optional Photonic Layer
+Do not manufacture photonics into every hollow chip by default. Add thin TIR/direct-photocharge optical hardware only for products/regions whose expected route distance + reuse + source-idle behavior repays it.
+
+Fresh v13I eight-region expected-lifetime screen using the same 10 mm cube:
+- 16 uses/relation: no route is optical-economic;
+- 32 uses, 50% hot: ~8.17% expected communication saving;
+- 64 uses, 50% hot: **~22.34%**;
+- 128 uses, 50% hot: **~30.46%**;
+- 256 uses, 50% hot: **~34.52%**.
+
+At 64 uses and every route hot, communication saving is ~44.68%.
+
+The v13I result is intentionally more conservative than the earlier route-candidate screen because it treats hot-route eligibility probabilistically rather than assigning the optical layer only the longest routes.
+
+### Whole-workload result
+At 10 mm, 50% eligibility and 64 lifetime uses:
+- image total improvement ~0.125%;
+- sound ~0.171%;
+- code ~13.97%;
+- reasoning ~1.40%.
+
+One simple sum of one operation from each preserved domain changes ~541.22 pJ -> ~540.16 pJ, only ~0.196%. Thus the heterogeneous layer is **not** a universal whole-system energy improvement; it is a route-dominated optimization.
+
+### Optical-source idle rule
+At 10 mm and 64 uses, after amortizing a 1 pJ route write, only ~10.97 fJ/promoted-event advantage remains. A shared optical source therefore must contribute less than that in idle/start/tuning energy per promoted event.
+
+Equivalent idle-power budget:
+- at 100 MHz promoted events: ~1.1 uW;
+- at 1 GHz: ~11 uW;
+- at 10 GHz: ~110 uW.
+
+If the source cannot meet this through sharing/power-gating/high utilization, keep the route electrical.
+
+### Manufacturing-cost rule
+Current photonic packaging requires extra emit/modulate/detect devices, waveguide/lightpipe integration, optical alignment/test, source distribution and possibly nonvolatile optical switches. External photonics literature identifies packaging/assembly/test as a dominant cost category. Therefore the current manufacturing ranking is:
+
+`Hollow-Electrical Base < Hollow-Heterogeneous Extension`.
+
+No dollar ratio is claimed until a real process/BOM/yield model exists.
+
+### Running-cost rule
+- local/low-reuse/mixed workloads -> Hollow-Electrical Base wins or is near-tied;
+- long/hot/repeated multi-mm traffic -> optional heterogeneous optical layer can lower running energy if source-idle and alignment overhead stay below break-even;
+- shared thermal exhaust/harvester belongs to both architectures and cannot be used as a special optical credit.
+
+## 17. Alpha-particle screen / Radiation Quarantine Rule
+Alpha particles are **rejected as a GVS runtime carrier**.
+
+Reasoning:
+- representative MeV alpha energy is hundreds of fJ to pJ per particle, already larger than current electrical/optical event proxies;
+- ionization charge deposited in semiconductor can exceed the tiny charge needed by a 3 fF Glyph receptor by hundreds of times;
+- alpha ranges in semiconductor are short compared with millimeter hollow-package routes;
+- ionizing particles are a known source of single-event upsets in CMOS.
+
+Keep only the fault-model consequence:
+- one isolated physical transient may not train a persistent route;
+- raw spikes may not refresh the lease;
+- promotion still requires repeated validated success;
+- low-margin results retain reference/two-phase/exact checking;
+- suspicious uncorrelated high-amplitude events are treated as invalid/noise.
+
+No alpha-particle communication subsystem belongs in the main architecture.
+
+## 18. Maintenance rule
 After every experiment:
 1. keep raw results/report, including failures;
 2. update this MAIN_ARCHITECTURE.md;
