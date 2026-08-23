@@ -1,0 +1,2 @@
+regions,package_x_mm,package_y_mm,package_z_mm,external_surface_mm2,side_surface_mm2,avg_to_central_collector_mm,sum_dedicated_to_central_mm,avg_to_nearest_top_bottom_mm,sum_local_drops_to_surface_mm
+32,10,10,2,280,80,5.5,176.0,0.5,16.0
