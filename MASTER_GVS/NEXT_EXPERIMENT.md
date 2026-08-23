@@ -1,96 +1,104 @@
-# Current Next Experiment — v13I3 Integrated Hollow-Electrical Base + Optional Photonic Layer
+# Current Next Experiment — v13J5 Physical Facade/Recovery Quiet-Window Closure
 
-## What v13I established
+## What v13J has now established
 
-v13I compared two versions of the same hollow/framework architecture.
+### v13J0 — Facade Utility Shell
+- use outside/backside/sidewall surfaces selectively for robust/shared utilities;
+- do not duplicate the whole nervous/data network externally;
+- facade is valuable for recovery/decoupling, power/reference, test/repair, thermal interface, optional photonics and fault bypass;
+- graph model showed no ordinary cell-to-cell shortest-path improvement from duplicating the facade, but better resilience under heavy random link loss.
 
-### Hollow-Electrical Base (default)
-- Tri-Wall/fourth-face local cells;
-- segmented subwires / 0.9 V Autonomic Event Spine;
-- electrical/Myelin chords;
-- shared Janus/Service Spine walls;
-- component bays;
-- exact fallback;
-- shared Thermal Exhaust/Artery and top heat-recovery boundary.
+### v13J1 — Hierarchical Reservoir Collector
+- local reservoirs remain part of computation;
+- only expired state drains one-way;
+- tiny packets should first pool regionally before any chip-level conversion;
+- large batching belongs at the chip/facade collector, not one converter per cell.
 
-### Hollow-Heterogeneous Extension (optional)
-Adds thin TIR/direct-photocharge photonic routes only where distance + reuse + source-idle behavior passes lifetime break-even.
+### v13J2 — Integrated system screen
+- facade + tiny recovery credit alone changed the 64-episode dynamic proxy by only ~0.043%;
+- its primary value is congestion/isolation/serviceability/fault bypass, not a giant energy credit;
+- optional photonics remains conditional and was the larger route-energy lever in the long/hot stress case.
 
-Fresh v13I expected eight-region communication screen:
-- 16 uses/relation -> 0% optical saving because no route is economic;
-- 32 uses, 50% hot -> ~8.17%;
-- 64 uses, 50% hot -> ~22.34%;
-- 128 uses, 50% hot -> ~30.46%;
-- 256 uses, 50% hot -> ~34.52%.
+### v13J3 — Facade Quiet Window
+Using the conservative existing ~0.124 fF coupling proxy against a ~72 fF weak node:
+- one 0.9 V utility step -> ~1.55 mV kick;
+- 1.2 V -> ~2.06 mV;
+- 1.8 V -> ~3.09 mV.
 
-Whole preserved-domain screen at 10 mm / 64 uses / 50% optical eligibility:
-- image ~0.125% total improvement;
-- sound ~0.171%;
-- code ~13.97%;
-- reasoning ~1.40%;
-- simple sum of one operation/domain only ~0.196%.
+From a ~25 mV useful differential and 18 mV high-margin target:
+- four aligned 0.9 V transitions still leave ~18.81 mV;
+- three at 1.2 V;
+- two at 1.8 V;
+- beyond those simple aligned stress points the high-margin target fails.
 
-Therefore photonics is not a universal whole-chip win. It is a route-dominated optimization.
+Selected rule: freeze/stagger high-swing facade activity during weak analog integration; resume after capture.
 
-Optical source idle/start/tuning energy is now a hard acceptance term. At 10 mm and 64 uses only ~10.97 fJ/promoted-event advantage remains after 1 pJ route-write amortization, corresponding to only ~11 uW allowable idle overhead at a 1 GHz promoted-event stream.
+v13J3 also reuses v13P12 rather than only the tiny tap-gate recovery proxy:
+- 10 pF shared reservoir across four tiles;
+- nominal TT/FF/SS pass;
+- 12/12 mismatch launches / 48 tile instances pass;
+- ~220 fJ energy increase in one four-tile recovery interval;
+- 40 pF separate target -> 10 pF shared target.
 
-Manufacturing ranking today:
-`Hollow-Electrical Base < Hollow-Heterogeneous Extension`.
+### v13J4 — Autonomous Recovery Backpressure
+The 10 pF regional reservoir is a short-term buffer, not a long-term battery. First-order accumulation from 0.199 V with ~220 fJ packets gives:
+- 1 packet ~0.289 V;
+- 2 ~0.357 V;
+- 4 ~0.464 V;
+- 8 ~0.626 V;
+- 16 ~0.862 V;
+- 18 ~0.912 V.
 
-Alpha particles are rejected as a runtime carrier and retained only as a radiation-fault model. One isolated unvalidated transient may not train a persistent route or refresh the lease.
+Therefore drain the regional bank every one/few recovery episodes when a safe window appears, and batch conversion only in a larger downstream facade/chip collector.
 
-## v13I3 goal
+Conceptual local control:
+`RECOVERY_PRESENT & CAPTURED_OR_DONE & !WEAK_ANALOG_ACTIVE -> allow facade drain`.
 
-Build the strongest **single integrated electrical region** possible with currently physically grounded GVS primitives, then attach the optional photonic/thermal/package models around that same region instead of creating separate architectures.
+No central per-event recovery scheduler is required.
 
-### A. Physical/electrical integrated region
-1. one existing eight-way Regional Event Lease;
-2. one closed physical Grammar path (10 MIM + 10 MOS robust reader);
-3. one static-template path;
-4. one short Passive Myelin path;
-5. one direct fourth-face relation;
-6. one closed 0.9 V four-tap event-spine branch group;
-7. v12E familiarity / Use state controlling at least one temporary/promoted tap;
-8. v12F homeostatic loading limit;
-9. v12G direct electrical context on one local decision;
-10. post-capture expired-charge recovery;
-11. exact fallback independent of all analog paths.
+## v13J5 physical goal
+Close the facade/recovery interface electrically before adding more package ideas.
 
-### B. Common 3D floorplan
-12. place eight regions, shared walls, component bays and service lanes in one explicit package geometry;
-13. derive route lengths from the floorplan;
-14. give every route a valid electrical fallback;
-15. reserve only narrow optional optical conduits/sites, not component-sized empty corridors.
+### Required circuit/physical slice
+1. one real Grammar/evidence node from the closed ratio/readout family;
+2. robust `VALID/CAPTURED/DONE` state;
+3. one weak local membrane/evidence node exposed to extracted coupling;
+4. one shielded facade-equivalent utility/recovery line;
+5. one Recovery Valve / Autonomic Recovery Gate;
+6. one regional shared-reservoir branch, starting with the v13P12 10 pF-class behavior or a scaled same-die proxy;
+7. exact fallback independent.
 
-### C. Optional photonic layer qualification
-16. choose optical only after lifetime electrical-vs-optical break-even;
-17. include route-write, source idle/start/tuning, detector/modulator and alignment/test cost terms;
-18. keep a regional/shared source bank, not one laser per cell;
-19. include one Optical Dendrite/fanout case only where pooled semantics are valid;
-20. automatically demote optics if its measured/modelled total cost exceeds electrical.
+### Timing battery
+8. switch one facade utility at 0.9/1.2/1.8 V while weak analog evidence is live;
+9. repeat with 2/3/4 simultaneous aligned utilities until the actual high-margin/fallback boundary is observed;
+10. repeat the same switching only after `CAPTURED/DONE` and verify accepted result does not change;
+11. inject recovery while analog is active and verify ARG keeps the drain closed;
+12. inject after capture and verify reservoir drains.
 
-### D. Thermal system
-21. component-free hollow heat arteries shared across many regions/chips;
-22. vapor/heat-pipe/microfluidic transport to one top/outside collector;
-23. cooling has priority over harvesting;
-24. optional top TEG/heat-reuse stage only if it does not increase junction temperature materially;
-25. report electric recovery and useful exported heat separately.
+### Robustness
+13. TT/FF/SS nominal;
+14. independent mismatch launches;
+15. false-capture / stuck-open recovery-path stress;
+16. stuck-closed recovery path must degrade energy only, not correctness;
+17. facade bypass failure must leave normal local electrical/exact path functional.
 
-### E. Manufacturing/operating cost model
-26. create first explicit BOM/process-step count for Hollow-Electrical Base;
-27. add incremental optical BOM/process/test steps for Optional Photonic Layer;
-28. include expected yield/alignment/test sensitivity as uncertainty, not fake dollar precision;
-29. calculate runtime energy at low/medium/high route reuse including optical idle power;
-30. produce a final product rule: base electrical-only package versus high-end photonic option.
-
-## Workloads
-Replay the same architecture against preserved image, sound, code and reasoning traces/models. Do not customize the physical system by domain.
+### Measurements
+- exact/partial or winner margin before facade switching;
+- margin after forced utility switching;
+- fallback count versus wrong-accept count;
+- regional reservoir voltage before/after safe drain;
+- live-node disturbance from recovery branch;
+- energy removed/recovered;
+- extra facade/service parasitic load;
+- latency added by the quiet window.
 
 ## Acceptance
-The project keeps one common main architecture.
+v13J facade/recovery interface is physically closed only if:
+- normal scheduled facade recovery causes no accepted-result corruption across PVT + mismatch;
+- forced unsafe simultaneous switching produces fallback before wrong acceptance;
+- recovery never loads live information state;
+- stuck-closed recovery does not affect correctness;
+- shared regional reservoir still performs its original recovery/lease-support role;
+- exact fallback remains independent.
 
-- The Hollow-Electrical Base must work independently and remains the default product.
-- Optional photonics is added only if it lowers lifetime running energy enough to justify its extra manufacturing/test complexity.
-- Thermal harvesting may not be counted as free power and may not worsen cooling to create a favorable energy number.
-- Radiation/alpha-like isolated transients may not become learned structure.
-- If the optional layer fails, the electrical/exact system remains fully functional.
+After that closure, return to the full eight-region mixed intelligent block and compare the physical electrical base with optional package layers rather than adding more isolated primitives.
