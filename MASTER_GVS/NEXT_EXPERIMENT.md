@@ -1,65 +1,96 @@
-# Current Next Experiment — v13H1 Physical Mixed Intelligent Region
+# Current Next Experiment — v13I3 Integrated Hollow-Electrical Base + Optional Photonic Layer
 
-## What v13H0 established
+## What v13I established
 
-The hollow architecture now has a fair qualification against the improved all-electrical hierarchy, not only against the old 0.68 pJ global-coordinate proxy.
+v13I compared two versions of the same hollow/framework architecture.
 
-- nearest/local traffic remains electrical;
-- 0.9 V four-tap event spine is physically closed;
-- thin TIR/glass lightpipes replace oversized free-space corridors when a fixed guided route is sufficient;
-- with ~0.08 dB/cm propagation + ~0.47 dB/facet literature proxy, direct-photocharge TIR runtime is ~11 fJ/event across 3–20 mm;
-- including a 1 pJ rare route write, approximate reuse break-even is ~2102 uses at 3 mm, 126 at 5 mm, 38 at 10 mm, 23 at 15 mm and 16 at 20 mm;
-- eight-region 10 mm-cube lifetime screen: at 64 uses/relation and 50% hot candidate routes, hollow hybrid communication is ~31% below the best dedicated-electrical route model; all-hot bound ~44.7%;
-- in preserved v13A workloads at 10 mm, 50% eligible and 64 uses, whole-workload improvement is small for image/sound, ~14% for code and ~1.4% for reasoning versus the improved all-electrical route model;
-- thermal harvesting is moved to a large shared top/package/rack boundary; hollow thermal routes remain component-free but use vapor/heat-pipe/microfluidic transport rather than relying on an evacuated empty channel.
+### Hollow-Electrical Base (default)
+- Tri-Wall/fourth-face local cells;
+- segmented subwires / 0.9 V Autonomic Event Spine;
+- electrical/Myelin chords;
+- shared Janus/Service Spine walls;
+- component bays;
+- exact fallback;
+- shared Thermal Exhaust/Artery and top heat-recovery boundary.
 
-## v13H1 goal
+### Hollow-Heterogeneous Extension (optional)
+Adds thin TIR/direct-photocharge photonic routes only where distance + reuse + source-idle behavior passes lifetime break-even.
 
-Build the first physically grounded **mixed intelligent region** with actual local GVS structures, not only carrier models.
+Fresh v13I expected eight-region communication screen:
+- 16 uses/relation -> 0% optical saving because no route is economic;
+- 32 uses, 50% hot -> ~8.17%;
+- 64 uses, 50% hot -> ~22.34%;
+- 128 uses, 50% hot -> ~30.46%;
+- 256 uses, 50% hot -> ~34.52%.
 
-### Required physical/electrical block
-1. existing 8-way Regional Event Lease;
-2. at least one real Grammar path using the closed 10-MIM + 10-MOS reader;
-3. at least one static-template path;
-4. at least one short Passive Myelin path;
-5. one direct fourth-face neighbor relation;
-6. one closed 0.9 V four-tap electrical event spine;
-7. local v12E familiarity + Use/Lease state controlling at least one promoted tap;
-8. post-capture recovery;
-9. exact fallback independent of all analog paths.
+Whole preserved-domain screen at 10 mm / 64 uses / 50% optical eligibility:
+- image ~0.125% total improvement;
+- sound ~0.171%;
+- code ~13.97%;
+- reasoning ~1.40%;
+- simple sum of one operation/domain only ~0.196%.
 
-### 3D carrier/floorplan model
-10. place 8 regions in an explicit 3D package geometry and derive route lengths rather than assigning arbitrary distances;
-11. allow the compiler to choose direct electrical chord vs thin TIR optical lightpipe only after route-lifetime break-even;
-12. reserve realistic lightpipe cross-section / bend / coupling volume;
-13. include one optical fan-in or fanout candidate only if route identity semantics allow it;
-14. include a redundant electrical fallback for every optical route.
+Therefore photonics is not a universal whole-chip win. It is a route-dominated optimization.
 
-### Thermal system
-15. use component-free Thermal Exhaust/Artery paths that collect heat from many regions/chips;
-16. compare vapor-chamber/heat-pipe/microfluidic transport proxies, not vacuum radiation alone;
-17. send collected heat to one shared top condenser/heat exchanger;
-18. account for pump/fan pressure/energy where applicable;
-19. add optional top-level thermoelectric harvest only after cooling is satisfied;
-20. report both recoverable electricity and useful exported heat separately.
+Optical source idle/start/tuning energy is now a hard acceptance term. At 10 mm and 64 uses only ~10.97 fJ/promoted-event advantage remains after 1 pJ route-write amortization, corresponding to only ~11 uW allowable idle overhead at a 1 GHz promoted-event stream.
 
-### Workloads
-Replay one common region architecture across preserved image, sound, code and reasoning traces/models. Do not customize hardware per workload.
+Manufacturing ranking today:
+`Hollow-Electrical Base < Hollow-Heterogeneous Extension`.
 
-## Measurements
-- correctness/fallback rate;
-- useful decisions per total energy;
-- local reader count and energy;
-- long routes removed by locality;
-- electrical wire length/capacitance;
-- optical runtime + amortized route-write energy;
-- route lifetime/reuse;
-- occupied framework/cavity volume;
-- thermal resistance/temperature proxy;
-- pump/fan/source overhead;
-- recovered charge energy;
-- top-level heat recovery and useful heat export;
-- failure reroute success.
+Alpha particles are rejected as a runtime carrier and retained only as a radiation-fault model. One isolated unvalidated transient may not train a persistent route or refresh the lease.
+
+## v13I3 goal
+
+Build the strongest **single integrated electrical region** possible with currently physically grounded GVS primitives, then attach the optional photonic/thermal/package models around that same region instead of creating separate architectures.
+
+### A. Physical/electrical integrated region
+1. one existing eight-way Regional Event Lease;
+2. one closed physical Grammar path (10 MIM + 10 MOS robust reader);
+3. one static-template path;
+4. one short Passive Myelin path;
+5. one direct fourth-face relation;
+6. one closed 0.9 V four-tap event-spine branch group;
+7. v12E familiarity / Use state controlling at least one temporary/promoted tap;
+8. v12F homeostatic loading limit;
+9. v12G direct electrical context on one local decision;
+10. post-capture expired-charge recovery;
+11. exact fallback independent of all analog paths.
+
+### B. Common 3D floorplan
+12. place eight regions, shared walls, component bays and service lanes in one explicit package geometry;
+13. derive route lengths from the floorplan;
+14. give every route a valid electrical fallback;
+15. reserve only narrow optional optical conduits/sites, not component-sized empty corridors.
+
+### C. Optional photonic layer qualification
+16. choose optical only after lifetime electrical-vs-optical break-even;
+17. include route-write, source idle/start/tuning, detector/modulator and alignment/test cost terms;
+18. keep a regional/shared source bank, not one laser per cell;
+19. include one Optical Dendrite/fanout case only where pooled semantics are valid;
+20. automatically demote optics if its measured/modelled total cost exceeds electrical.
+
+### D. Thermal system
+21. component-free hollow heat arteries shared across many regions/chips;
+22. vapor/heat-pipe/microfluidic transport to one top/outside collector;
+23. cooling has priority over harvesting;
+24. optional top TEG/heat-reuse stage only if it does not increase junction temperature materially;
+25. report electric recovery and useful exported heat separately.
+
+### E. Manufacturing/operating cost model
+26. create first explicit BOM/process-step count for Hollow-Electrical Base;
+27. add incremental optical BOM/process/test steps for Optional Photonic Layer;
+28. include expected yield/alignment/test sensitivity as uncertainty, not fake dollar precision;
+29. calculate runtime energy at low/medium/high route reuse including optical idle power;
+30. produce a final product rule: base electrical-only package versus high-end photonic option.
+
+## Workloads
+Replay the same architecture against preserved image, sound, code and reasoning traces/models. Do not customize the physical system by domain.
 
 ## Acceptance
-Keep the hollow heterogeneous architecture only if the complete mixed region beats the all-electrical version after including route-write, optical endpoints, reserved volume, cooling overhead and fallback. If a thin TIR route does not repay itself, use electrical Myelin/wire. If a thermal harvester worsens junction cooling more than its recovered energy is worth, remove the harvester and keep only the heat exhaust/reuse path.
+The project keeps one common main architecture.
+
+- The Hollow-Electrical Base must work independently and remains the default product.
+- Optional photonics is added only if it lowers lifetime running energy enough to justify its extra manufacturing/test complexity.
+- Thermal harvesting may not be counted as free power and may not worsen cooling to create a favorable energy number.
+- Radiation/alpha-like isolated transients may not become learned structure.
+- If the optional layer fails, the electrical/exact system remains fully functional.
