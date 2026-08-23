@@ -1,93 +1,102 @@
-# Current Next Experiment — v13K5 Physical Neurovascular Cell Slice
+# Current Next Experiment — v13L1 Physical Differential Neurovascular Slice
 
-## What v13K has established
+## What changed in v13L0
+v13L0 did not replace the v13K architecture. It refined the physical signoff question.
 
-### v13K0 — Neurovascular cell anatomy
-Each cell/cluster now has physically separate service roles:
-- **Nerve** for firing/events;
-- **Charge Artery** for expired-charge collection;
-- **Thermal Capillary** for passive heat removal;
-- optional **Light Nerve** for long/hot/reused relations;
-- direct fourth-face contact for paired neighbors.
+The selected Grammar path is a differential 10-MIM candidate/reference structure feeding the physically selected 10-MOS two-phase self-check reader. Therefore service disturbance must be measured on **both** evidence sides.
 
-Cells/support may occupy outer, inner, underside and side surfaces when fabrication and total cost justify it. Shared controller/memory/exact functions live in Component Bays / Exact Service Cores rather than one microcontroller per cell.
+**Differential Service Coupling (DSC):** unequal Nerve/Charge-Artery coupling into candidate versus reference; common-mode coupling is less dangerous than unequal coupling because the Grammar decision depends on their difference.
 
-Illustrative 10x10x2 mm shell with 0.2 mm framework gives 1.878x inner+outer surface versus outer alone; after 30% service reserve the geometry still leaves ~1.31x outer-only usable surface.
+v13L0 reused the conservative v13K values:
+- weak node ~72 fF per side;
+- useful differential ~25 mV;
+- high-margin target ~18 mV;
+- average service coupling reference ~0.124 fF;
+- Nerve swing ~0.200 V;
+- Charge-Artery swing ~0.0903 V.
 
-### v13K1 — low-swing artery disturbance
-Using the existing conservative 0.124 fF coupling proxy to a 72 fF weak node:
-- 1.8 V high-swing utility step -> ~3.09 mV kick;
-- actual regional-recovery swing ~0.1990 -> 0.2893 V -> only ~0.155 mV per artery.
+Worst-direction deterministic stress found:
+- at 1x average coupling, 8 Nerve + 32 Artery aligned transitions retain the 18 mV target until normalized candidate/reference coupling asymmetry exceeds ~45.3%;
+- at 2x average coupling, the same stress allows ~22.6% asymmetry;
+- at 2x coupling with 32 Nerve + 32 Artery aligned transitions, tolerance falls to ~10.9%.
 
-Even 32 perfectly aligned low-voltage artery transitions leave about 20.0 mV from a 25 mV differential in the first-order model, still above the 18 mV high-margin screen.
+**Decision:** low-swing neurovascular separation remains worth physicalizing, but v13L1 must sign off extracted differential coupling, not only absolute coupling into one weak node. No new scheduler, ADC, calibration loop or per-cell controller is added.
 
-Normal recovery therefore should not need a universal global quiet window. High-swing exceptional power/config/test traffic remains separately shielded/staggered only when measured coupling requires it.
-
-### v13K2 — recovery/thermal scaling
-Using the v13C line-capacitance proxy:
-- one 0.5 mm Charge Artery ~31.16 fF;
-- four branches ~124.62 fF = ~1.25% of a 10 pF regional reservoir;
-- branch-capacitor energy over the preserved 0.1990 -> 0.2893 V recovery rise ~2.75 fJ versus ~220 fJ regional stored-energy reference.
-
-Thermal collection is passive: every cell/small cluster gets a thermal capillary into a larger shared Thermal Artery/Exhaust; no per-cell pump/controller.
-
-### v13K3 — integrated architecture
-Direct fourth-face neighbor remains the shortest private electrical route (~0.15 fJ event proxy), ~77.6% below the one-tap event-spine proxy (~0.67 fJ).
-
-The complete existing GVS core remains: Coordinate Release, 8-way Lease, Grammar, templates, Myelin, context, familiarity, homeostasis, event spine, shared recovery and exact fallback.
-
-### v13K4 — component placement
-Illustrative 32-region placement model:
-- central interior Exact Service Core: average Manhattan route ~5.5 mm;
-- top/bottom center: ~6.0 mm;
-- side center: ~8.0 mm;
-- top corner: ~11.0 mm.
-
-Using the existing 3.74 fJ/mm route proxy only for comparison, frequently accessed exact/memory support favors central/interior placement, while large/hot/slow/test-facing support favors exterior/backside placement.
-
-## v13K5 physical goal
-Build the first same-die electrical **Neurovascular Cell Slice**. Do not add more control logic unless a measured failure requires it.
+## v13L1 physical goal
+Build the first same-die electrical **Differential Neurovascular Cell Slice** around the selected robust Grammar path.
 
 ### Required physical/electrical elements
-1. one real weak Grammar/Tri-Wall evidence node from the existing SKY130 family;
-2. one direct fourth-face or ~0.2 V local Nerve;
-3. one separate low-voltage Charge Artery;
-4. one simple recovery contact driven by the existing cleanup/expired-state lifecycle signal;
-5. one regional recovery branch / scaled reservoir equivalent;
-6. shield/service geometry between weak node, Nerve and Charge Artery;
-7. exact/robust result capture independent of recovery.
+1. real legal 10-MIM Grammar candidate/reference structure;
+2. selected body-tied 10-MOS dual-input-pair two-phase self-check reader;
+3. direct fourth-face path or ~0.2 V local Nerve;
+4. separate low-voltage Charge Artery;
+5. simple one-way recovery contact driven by the existing cleanup/expired-state lifecycle signal;
+6. regional recovery branch / scaled reservoir equivalent;
+7. shield/service-face geometry between weak pair, Nerve and Charge Artery;
+8. at least two deliberately asymmetric service-placement variants so candidate/reference coupling imbalance is actually tested;
+9. exact/robust result capture independent of recovery.
 
-### Battery
-8. nominal TT/FF/SS;
-9. independent mismatch launches;
-10. Nerve active alone;
-11. Charge Artery active alone after expiry;
-12. Nerve + Charge Artery simultaneous;
-13. multiple aligned low-voltage arteries as stress;
-14. deliberately inject a high-swing 0.9/1.2/1.8 V facade-equivalent line for comparison;
-15. verify unsafe high-swing disturbance causes fallback before wrong acceptance;
-16. stuck-closed recovery contact -> energy loss only, no correctness loss;
-17. stuck-open recovery contact during live state -> blocked by lifecycle/topology or converted to fallback, never silently accepted.
+### Physical extraction measurements
+For Nerve and Charge Artery separately measure:
+- coupling to Grammar candidate side;
+- coupling to Grammar reference side;
+- average coupling;
+- differential coupling;
+- normalized asymmetry `(Ccand-Cref)/(Ccand+Cref)`;
+- local RC and added weak-node capacitance.
+
+Do not call a layout safe merely because each absolute coupling term looks small.
+
+### Electrical battery
+1. DRC and extracted connectivity first;
+2. nominal TT/FF/SS;
+3. independent MIM + MOS mismatch launches;
+4. exact and partial Grammar motifs;
+5. Nerve active alone;
+6. Charge Artery active alone only after expiry;
+7. Nerve + Charge Artery simultaneous;
+8. aligned multi-line low-voltage service stress;
+9. candidate-side-near service placement;
+10. reference-side-near service placement;
+11. swap physical orientation and repeat the two-phase self-check;
+12. deliberately inject 0.9/1.2/1.8 V high-swing facade-equivalent activity for comparison;
+13. verify unsafe high-swing/asymmetric disturbance becomes fallback before any wrong robust acceptance;
+14. stuck-closed recovery contact -> efficiency/energy failure only, never wrong computation;
+15. attempted live-state recovery -> topologically blocked or safely rejected/fallback.
 
 ### Measurements
-- extracted Nerve-to-evidence and Artery-to-evidence coupling;
-- exact/partial margin before and during simultaneous low-voltage service activity;
+- exact/partial margin before and during service activity;
+- phase-0 and phase-1 logical consistency;
+- physical-side preference count;
 - false robust-result count;
 - fallback count;
-- regional recovery voltage and energy;
+- regional recovery voltage and recovered/stored-energy change;
 - Nerve event energy;
-- added area/parasitic load versus direct fourth-face baseline.
+- added area/parasitic load versus direct fourth-face baseline;
+- differential-coupling budget versus the v13L0 model.
 
-### Separate manufacturability screen
-18. map inner+outer+underside+side cell skins to practical stacked/backside technology;
-19. reserve area for Nerve/Charge/Thermal/Optical services;
-20. keep literal full inside-out active framework FUTURE_PROCESS until a credible fabrication stack exists.
+## Hollow / inside-out mapping screen
+Keep this separate from SKY130 electrical signoff.
+
+Map the verified planar slice onto the practical hollow interpretation:
+- protected weak/local computation skin;
+- matched/shielded Nerve + Charge-Artery framework paths;
+- robust high-swing facade/backside services farther from weak evidence;
+- passive Thermal Capillary paths toward shared collectors;
+- optional optical routes only after distance/reuse/source-idle break-even.
+
+Literal active inner cavity walls remain FUTURE_PROCESS until a credible fabrication stack exists.
 
 ## Acceptance
-v13K5 passes only if:
-- low-voltage Charge Artery operates without a global quiet window across PVT + mismatch;
-- direct neighbor remains cheaper/simpler than routing through a shared spine;
-- recovery cannot corrupt live information;
-- thermal path remains electrically passive;
-- exact fallback remains independent;
-- high-swing utilities remain isolated enough or fail safely.
+v13L1 passes only if:
+- zero wrong robust Grammar accepts across nominal PVT + the preserved mismatch battery;
+- normal low-swing Nerve/Charge-Artery activity does not require a global quiet window;
+- extracted differential service coupling stays within measured margin or causes safe fallback;
+- the two-phase reader catches deliberately induced physical-side preference;
+- recovery cannot load a live information node;
+- exact fallback stays independent of Nerve/recovery state;
+- direct neighbor remains cheaper/simpler than unnecessary spine traversal;
+- high-swing exceptional utilities remain sufficiently isolated or fail safely.
+
+## After v13L1
+If v13L1 physically passes, promote the DSC geometry/signoff rule into `MAIN_ARCHITECTURE.md`, update the decision ledger/lineage, then build a multi-primitive local region behind the eight-way Regional Event Lease. If it fails, inspect extracted asymmetry and weak-node loading before changing Grammar or adding control logic.
