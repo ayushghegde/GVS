@@ -1,0 +1,24 @@
+RECOVERED v13A6 PHYSICAL VALIDATION
+Date: 2026-08-23
+Technology: SKY130A tech version reported by Magic 1.0.602-0-gf3c505b
+Magic source: 8.3.681, locally rebuilt non-Tcl batch binary
+
+PRIMITIVES
+nf_cross: DRC=0; extracted sky130_fd_pr__nfet_01v8 l=30 w=42 (0.30um/0.42um)
+nf_reset: DRC=0; extracted sky130_fd_pr__nfet_01v8 l=15 w=42 (0.15um/0.42um)
+pf_input: DRC=0; extracted sky130_fd_pr__pfet_01v8 l=55 w=275 (0.55um/2.75um)
+pf_tail: DRC=0; extracted sky130_fd_pr__pfet_01v8 l=30 w=100 (0.30um/1.00um)
+
+READER
+Preserved gen_reader_bodytied.py + recovered children: hierarchical top DRC=0
+Flattened regenerated reader: DRC=0
+Flattened regenerated reader: extracted device count=10 MOS
+Topology check: 2 cross NFET + 2 reset NFET + 4 input PFET + 2 tail PFET; intended mirrored phase mapping preserved.
+
+MIM RECONSTRUCTION
+grammar10_mim_reconstructed: DRC=0; extracted device count=10 MIM; all w=200 l=200 in extraction scale (2um x 2um).
+
+PROVENANCE WARNING
+Recovered MOS child layouts are reconstruction from committed v13A6 dimensions + preserved exact top-generator pin coordinates. They are not asserted byte-identical to lost originals.
+The 10-MIM file is also reconstructed, not the lost original co-placed closure layout.
+Historical timing, PEX parasitics, mismatch and energy results remain evidence for the lost historical geometry; rerun acceptance tests before assigning those numbers to this reconstruction.
