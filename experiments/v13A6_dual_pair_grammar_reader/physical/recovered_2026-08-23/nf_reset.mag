@@ -1,0 +1,54 @@
+magic
+tech sky130A
+timestamp 1788120000
+<< checkpaint >>
+rect -630 -650 745 769
+<< nmos >>
+rect 50 0 65 42
+<< ndiff >>
+rect 0 38 50 42
+rect 0 4 8 38
+rect 42 4 50 38
+rect 0 0 50 4
+rect 65 38 115 42
+rect 65 4 73 38
+rect 107 4 115 38
+rect 65 0 115 4
+<< ndiffc >>
+rect 8 4 42 38
+rect 73 4 107 38
+<< poly >>
+rect 37 102 40 136
+rect 74 102 77 136
+rect 50 42 65 102
+rect 50 -20 65 0
+<< polycont >>
+rect 40 102 74 136
+<< locali >>
+rect 37 102 40 136
+rect 74 102 77 136
+<< viali >>
+rect 40 102 74 136
+rect 8 4 42 38
+rect 73 4 107 38
+<< metal1 >>
+rect 37 136 77 139
+rect 37 102 40 136
+rect 74 102 77 136
+rect 37 99 77 102
+rect 5 38 45 41
+rect 5 4 8 38
+rect 42 4 45 38
+rect 5 1 45 4
+rect 70 38 110 41
+rect 70 4 73 38
+rect 107 4 110 38
+rect 70 1 110 4
+<< labels >>
+flabel metal1 s 5 1 45 41 0 FreeSans 200 0 0 0 SOURCE
+port 1 nsew
+flabel metal1 s 70 1 110 41 0 FreeSans 200 0 0 0 DRAIN
+port 2 nsew
+flabel metal1 s 37 99 77 139 0 FreeSans 200 0 0 0 GATE
+port 3 nsew
+<< end >>
