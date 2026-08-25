@@ -1,0 +1,6 @@
+replicas,variable_plus_constraint_cap_switch_fj_per_sweep_per_replica,median_first_solution_steps,capacitive_switch_proxy_fj_to_first_solution_if_all_replicas_active
+1,235.5376,23.0,5417.3648
+2,235.5376,17.0,8008.2784
+4,235.5376,12.5,11776.88
+8,235.5376,10.0,18843.008
+16,235.5376,9.0,33917.4144
