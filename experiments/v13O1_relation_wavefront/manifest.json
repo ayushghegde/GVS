@@ -1,0 +1,16 @@
+{
+  "schema": "gvs-experiment-manifest-v1",
+  "experiment": "v13O1_relation_wavefront",
+  "evidence_class": "deterministic Python 3 graph/event model",
+  "files": [
+    {"path": "REPORT.md"},
+    {"path": "source/run_v13o1.py"},
+    {"path": "results/wavefront_summary.csv"}
+  ],
+  "provenance": [
+    "500 grounded queries per configuration",
+    "fixed random seeds are in source",
+    "0.67 fJ is a preserved event-carrier proxy, not new PEX"
+  ],
+  "status": "MODEL PASS"
+}
