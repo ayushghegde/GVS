@@ -1,0 +1,21 @@
+{
+  "schema": "gvs-canonical-simulation-v1",
+  "architecture_source": "MASTER_GVS/MAIN_ARCHITECTURE.md",
+  "current_experiment_family": "v13M",
+  "historical_physical_baseline": {
+    "grammar_reader": "experiments/v13A6_dual_pair_grammar_reader",
+    "regional_lease": "experiments/v13A4_shared_local_group",
+    "neurovascular_geometry": "experiments/v13L1a_physical_dsc_geometry"
+  },
+  "current_reproducible_work": {
+    "v13M0": "experiments/v13M0_surface_intelligent_octet/source/run_v13m0.py",
+    "v13M1": "experiments/v13M1_surface_route_compiler/source/run_v13m1.py"
+  },
+  "rules": [
+    "Do not replace accepted hardware merely because historical source is inconvenient.",
+    "Separate historical evidence from reconstructed/new closure.",
+    "Run the canonical scripts before changing architecture constants.",
+    "Persist source, commands, results, report and manifest for every experiment.",
+    "Do not label model geometry as PEX or fabricated measurement."
+  ]
+}
