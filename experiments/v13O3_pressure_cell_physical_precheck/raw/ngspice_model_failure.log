@@ -1,0 +1,10 @@
+Attempted model load with locally built ngspice revision 26.
+Failure occurs while parsing current SKY130 model deck before candidate pressure-cell evaluation.
+Representative repeated diagnostics:
+Undefined number [MC_MM_SWITCH]
+Expression err: 4.23e-09+mc_mm_switch*agauss(...)
+Cannot compute substitute
+...
+ERROR: fatal error in ngspice, exit(1)
+Circuit: .param mc_mm_switch=0
+Copies=580 Evals=578 Placeholders=1860 Symbols=329 Errors=864
