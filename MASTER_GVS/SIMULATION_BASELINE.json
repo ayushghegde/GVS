@@ -9,7 +9,8 @@
   },
   "current_reproducible_work": {
     "v13M0": "experiments/v13M0_surface_intelligent_octet/source/run_v13m0.py",
-    "v13M1": "experiments/v13M1_surface_route_compiler/source/run_v13m1.py"
+    "v13M1": "experiments/v13M1_surface_route_compiler/source/run_v13m1.py",
+    "v13M2": "experiments/v13M2_two_octet_locality/source/run_v13m2.py"
   },
   "rules": [
     "Do not replace accepted hardware merely because historical source is inconvenient.",
