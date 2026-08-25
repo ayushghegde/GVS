@@ -1,0 +1,41 @@
+{
+  "schema": "gvs-experiment-manifest-v1",
+  "experiment": "v13N2_exact_burst_pool",
+  "generated_utc": "2026-08-25T14:36:59.688079+00:00",
+  "host": {
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "python": "3.13.5"
+  },
+  "tools": {
+    "ngspice": null,
+    "magic": null,
+    "klayout": null
+  },
+  "environment": {
+    "PDK_ROOT": null,
+    "PDK": null
+  },
+  "files": [
+    {
+      "path": "REPORT.md",
+      "bytes": 3275,
+      "sha256": "bcfa6ccab02ac2f243b86820342c466f619bbb4dc75325805c0fed1fbcce13c5"
+    },
+    {
+      "path": "results/burst_pool.csv",
+      "bytes": 1100,
+      "sha256": "a9c8c6f80f4f31be3c03e793755123299497c39a407a71f8eb57d5d4d20856c9"
+    },
+    {
+      "path": "source/run_v13n2.py",
+      "bytes": 850,
+      "sha256": "51841aa8801905da6b5f5bbd948e9673cc51dc6a5377705fb317678fd8dfe3bd"
+    }
+  ],
+  "required_review": [
+    "Confirm REPORT.md states PASS/PARTIAL PASS/FAIL.",
+    "Confirm exact run command/script is present.",
+    "Confirm simulator/PDK/corner information is recorded.",
+    "Confirm generated data is not mislabeled as historical or extracted data."
+  ]
+}
