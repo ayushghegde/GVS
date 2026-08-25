@@ -1,0 +1,2 @@
+operation,input_pairs_tested,wrong_results,correct_fraction,nand_cells,max_gate_depth,final_carry_depth,runtime_instruction_fetches,runtime_program_counter_steps
+8-bit unsigned addition,65536,0,1.0,72,20,19,0,0
