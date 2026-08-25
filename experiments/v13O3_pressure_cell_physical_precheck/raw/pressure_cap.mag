@@ -1,0 +1,25 @@
+magic
+tech sky130A
+timestamp 1788120100
+<< metal3 >>
+rect -14 115 214 214
+rect -14 -14 214 115
+<< mimcap >>
+rect 0 48 200 200
+rect 0 16 16 48
+rect 48 16 200 48
+rect 0 0 200 16
+<< mimcapcontact >>
+rect 16 16 48 48
+<< metal4 >>
+rect 11 48 53 53
+rect 11 16 16 48
+rect 48 16 53 48
+rect 11 11 53 16
+rect 17 -80 47 11
+<< labels >>
+flabel metal3 s 120 150 200 180 0 FreeSans 200 0 0 0 BASE
+port 1 nsew
+flabel metal4 s 17 -80 100 -50 0 FreeSans 200 0 0 0 PRESSURE
+port 2 nsew
+<< end >>
