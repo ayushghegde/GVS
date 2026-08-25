@@ -1,0 +1,41 @@
+{
+  "schema": "gvs-experiment-manifest-v1",
+  "experiment": "v13N3_shared_service_tax",
+  "generated_utc": "2026-08-25T14:41:09.821021+00:00",
+  "host": {
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "python": "3.13.5"
+  },
+  "tools": {
+    "ngspice": null,
+    "magic": null,
+    "klayout": null
+  },
+  "environment": {
+    "PDK_ROOT": null,
+    "PDK": null
+  },
+  "files": [
+    {
+      "path": "REPORT.md",
+      "bytes": 2794,
+      "sha256": "0e7cde01b69303f89ae2ab731b9fa47f98d40bedcda2cac125be0510c170c275"
+    },
+    {
+      "path": "results/shared_service_tax.csv",
+      "bytes": 1066,
+      "sha256": "bf8e9b9be257661d01b3faa2800b3d46b92bb993978c2d5a79ba080a58973a74"
+    },
+    {
+      "path": "source/run_v13n3.py",
+      "bytes": 680,
+      "sha256": "bd2ed9446ac689075a4a03517a0c69a4e2a12b275d9f27f439fe06a4bfc533cc"
+    }
+  ],
+  "required_review": [
+    "Confirm REPORT.md states PASS/PARTIAL PASS/FAIL.",
+    "Confirm exact run command/script is present.",
+    "Confirm simulator/PDK/corner information is recorded.",
+    "Confirm generated data is not mislabeled as historical or extracted data."
+  ]
+}
