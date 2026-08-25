@@ -1,0 +1,6 @@
+variables,clauses,replicas,instances,success_fraction,mean_first_solution_steps,median_first_solution_steps,max_first_solution_steps
+64,269,1,50,0.62,24.483870967741936,23,99
+64,269,2,50,0.72,20.63888888888889,17.0,63
+64,269,4,50,0.88,18.363636363636363,12.5,67
+64,269,8,50,0.9,12.844444444444445,10,46
+64,269,16,50,0.98,12.714285714285714,9,75
