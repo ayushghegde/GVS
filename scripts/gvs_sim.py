@@ -35,7 +35,7 @@ def verify_files():
 
 def main():
     ap=argparse.ArgumentParser()
-    ap.add_argument('command',choices=['status','verify','v13m0','v13m1','v13m'])
+    ap.add_argument('command',choices=['status','verify','v13m0','v13m1','v13m2','v13m'])
     a=ap.parse_args()
     if a.command=='status': status(); return 0
     if a.command=='verify': return verify_files()
@@ -44,5 +44,7 @@ def main():
         run_script(c['current_reproducible_work']['v13M0'])
     if a.command in ('v13m1','v13m'):
         run_script(c['current_reproducible_work']['v13M1'])
+    if a.command in ('v13m2','v13m'):
+        run_script(c['current_reproducible_work']['v13M2'])
     return 0
 if __name__=='__main__': raise SystemExit(main())
