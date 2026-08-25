@@ -2,7 +2,7 @@
 """Canonical entry point for reproducible GVS simulation/model experiments.
 
 Use this instead of copying constants from chat history. Historical evidence,
-current model work, and candidate architecture files remain explicitly separated.
+current model work, candidate architectures and trace tooling remain explicitly separated.
 """
 from __future__ import annotations
 import json, subprocess, sys
@@ -17,11 +17,12 @@ def load():
 def status():
     print(json.dumps(load(),indent=2))
 
-def run_script(rel):
+def run_script(rel,args=None):
     p=ROOT/rel
     if not p.exists():
-        raise SystemExit(f'missing canonical experiment script: {p}')
-    subprocess.run([sys.executable,str(p)],check=True,cwd=p.parent)
+        raise SystemExit(f'missing canonical script: {p}')
+    cmd=[sys.executable,str(p)] + (args or [])
+    subprocess.run(cmd,check=True,cwd=p.parent)
 
 def verify_files():
     c=load(); missing=[]
@@ -30,6 +31,7 @@ def verify_files():
         paths.append(c['candidate_architecture_source'])
     paths += list(c['historical_physical_baseline'].values())
     paths += list(c['current_reproducible_work'].values())
+    paths += list(c.get('support_tools',{}).values())
     for rel in paths:
         if not (ROOT/rel).exists(): missing.append(rel)
     if missing:
@@ -54,6 +56,12 @@ def run_family(family):
         print(f'== {key} ==')
         run_script(work[key])
 
+def run_trace(args):
+    c=load(); analyzer=c.get('support_tools',{}).get('trace_analyzer')
+    if not analyzer:
+        raise SystemExit('trace analyzer is not registered')
+    run_script(analyzer,args)
+
 def usage():
     print('usage:')
     print('  python3 scripts/gvs_sim.py status')
@@ -61,6 +69,7 @@ def usage():
     print('  python3 scripts/gvs_sim.py current')
     print('  python3 scripts/gvs_sim.py run <registered-key>')
     print('  python3 scripts/gvs_sim.py family <v13M|v13N|...>')
+    print('  python3 scripts/gvs_sim.py trace <trace.csv> [--slots N] [--out summary.json]')
 
 def main():
     if len(sys.argv)<2:
@@ -72,7 +81,7 @@ def main():
     if cmd=='current': run_family(c['current_experiment_family']); return 0
     if cmd=='run' and len(sys.argv)==3: run_key(sys.argv[2]); return 0
     if cmd=='family' and len(sys.argv)==3: run_family(sys.argv[2]); return 0
-    # compatibility with older one-word experiment/family commands
+    if cmd=='trace' and len(sys.argv)>=3: run_trace(sys.argv[2:]); return 0
     raw=sys.argv[1]
     if raw in c['current_reproducible_work']:
         run_key(raw); return 0
