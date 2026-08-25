@@ -1,111 +1,137 @@
-# Current Next Experiment — v13M3 Two-Octet Physical/System Slice
+# Current Next Experiment — v13N4 Trace-Driven Frugality Closure
 
-## Why v13M3 is next
-v13M has now answered the system-model questions that were blocking a physical composition.
+## Why v13N4 is next
+v13N has reduced the cheapness/smartness question to measurable workload quantities instead of adding more hardware rules.
 
-### v13M0 — mixed intelligent octet
-A heterogeneous eight-cell region behind one existing Regional Event Lease retained about **77.8% lower selection + local-core proxy** than eight independent long selections in the tested workloads. Hollow 2x2x2 placement reduced local communication by about 10-15% for some interaction graphs but not all.
+### v13N0 — shared Exact Service Core geometry
+For 32 intelligent octets in the preserved 10 x 10 x 2 mm geometry:
+- 1 central exact core removes 96.875% of per-octet core copies with ~41.14 fJ average request+return route;
+- 4 shared cores remove 87.5% with ~17.765 fJ round-trip route;
+- 8 remove 75% with ~13.09 fJ.
 
-**Decision:** intelligence/locality comes from several real primitives cooperating behind one lease. Hollow geometry helps placement, service separation and adjacency; it is not itself the compute mechanism.
+**Decision:** the hollow interior should contain a sparse exact/memory backbone, not one computer-like controller per cell/octet.
 
-### v13M1 — surface routing
-Forcing all communication to stay on the 10 x 10 x 2 mm shell is rejected. Across 4,186 boundary-location pairs the mean surface-routing penalty was only ~3%, but directly opposite cells can pay a **5x path-length penalty** (2 mm direct vs 10 mm around the shell).
+### v13N1 — local-first/exact-fallback break-even
+Using the preserved ~1.324 pJ local intelligent-octet episode and four-core access route, local-first becomes lower energy than exact-every-episode when exact computation exceeds approximately:
+- 1.45 pJ at 90% local resolution;
+- 1.75 pJ at 75% local resolution;
+- 2.63 pJ at 50% local resolution.
 
-**Decision:** use surfaces as a placement/service fabric, not a mandatory data manifold. Keep protected direct/interior chords legal when they materially reduce cost.
+**Decision:** local physical intelligence is useful as a cheap filter in front of exact computation, but it is not automatically cheaper if exact work is tiny or local resolution is poor.
 
-### v13M2 — two-octet locality
-The two-octet model retained about **73-78% selection + local-core savings** from 0% through 100% cross-octet episodes. At 100% crossing, a short 2 mm electrical chord remains much cheaper per crossing than either a 10 mm electrical surface route or a 10 mm optical route amortized over 64 uses.
+### v13N2 — burst sizing
+For 32 octets and independent exact requests, <=0.1% immediate-service overflow requires:
+- 3 exact slots at 1% ambiguity;
+- 6 at 5%;
+- 9 at 10%;
+- 16 at 25%.
 
-**Decision:** v13M does not require perfect locality. Crossing another intelligent region should cost another lease/handoff, not repeated long selection of every primitive. Optical promotion must compare against the best real electrical geometry, not an artificially long surface-only route.
+**Decision:** exact capacity should be sized from ambiguity/throughput, not minimized blindly and not duplicated blindly.
 
-## v13M3 goal
-Build the first physically grounded **two-octet Hollow Surface Intelligent Region** using the accepted GVS hardware rather than creating new cell logic.
+### v13N3 — shared-service transport tax
+With four shared exact cores, exact request/return transport contributes only:
+- ~0.067% of a local-octet episode at 5% ambiguity;
+- ~0.134% at 10%;
+- ~0.335% at 25%;
+- ~0.671% at 50%.
 
-Each octet should contain/represent the existing functional classes:
-1. Grammar;
-2. static template;
-3. short Passive Myelin;
-4. local competition/context/regeneration;
-5. robust boundary/exact handoff;
-6. direct fourth-face/local neighbor relations;
-7. one Regional Event Lease shared by the local structures.
+**Decision:** the access wire is already a second-order energy term in the current model. The unresolved costs are exact compute/memory, ambiguity rate/correlation, packaging/yield and thermal capacity.
 
-Do not invent a new comparator, ADC, microcontroller or recovery scheduler merely to make the composition easier.
+## v13N4 goal
+Measure the **real Ambiguity Budget** and exact-service burst structure from representative multi-region work before choosing physical Exact Service Core count or filling more Component Bay volume.
 
-## Required neurovascular/service anatomy
-Across the two-octet physical/system slice include:
-- one low-swing Nerve link between octets;
-- one separate low-voltage Charge-Artery branch toward a shared regional recovery node;
-- protected weak-evidence placement using the v13L orthogonal-or-shield rule;
-- one deliberately opposite-surface **short protected electrical chord** so v13M1 is tested physically rather than only modeled;
-- a passive Thermal-Capillary geometry/attachment representation sufficient to estimate area/path feasibility without pretending it is a full thermal-fluid signoff;
-- optical conduit/route may be represented, but do not populate/promote an optical runtime path unless real route length and expected reuse pass the preserved break-even.
+### Ambiguity Budget
+The fraction of intelligent-octet episodes that cannot be robustly resolved locally and therefore request exact fallback.
 
-## Physical baseline rule
-Use the repository's accepted historical hardware as architectural truth.
+The experiment must distinguish:
+- local robust accept;
+- safe local fallback;
+- exact request;
+- exact completion;
+- wrong robust accept (must remain zero);
+- cross-octet event;
+- memory/exact-state traffic.
 
-Where the recovered/reconstructed Grammar implementation is used, keep its provenance explicit. Before calling the Grammar instance physically closed inside v13M3, the recovered block must demonstrate the required two-phase robust behavior under the relevant PVT/mismatch battery. If that closure is still incomplete, v13M3 may proceed with geometry/service extraction around it, but the final v13M3 verdict must remain PARTIAL rather than silently inheriting a PASS.
+## Trace requirement
+Use representative workloads that exercise different structure classes rather than one hand-picked motif stream. At minimum preserve separate traces/classes for:
+- repetitive/local motif-heavy work;
+- template/reuse-heavy work;
+- context/reasoning-like mixed work;
+- code/control/exact-heavy work;
+- novelty/change burst stress.
 
-## Workload replay
-Replay at least four traffic classes:
-- local-only: 0% cross-octet handoff;
-- mostly local: 25%;
-- mixed: 50%;
-- cross-heavy: 100%.
+If a full model trace is not yet available, build an adapter around the nearest preserved v12S/v13 workload generator and clearly label it as a proxy. Do not invent a favorable fallback percentage and call it measured.
 
-For each class, preserve the same logical work while changing only placement/routing/locality.
+## Canonical trace fields
+Each completed octet episode should record at least:
+- epoch/time index;
+- octet/region id;
+- workload class;
+- local primitive operations;
+- lease acquisition/refresh count;
+- local robust accept or fallback;
+- exact request yes/no;
+- exact service completion epoch;
+- exact service slot/core id if modeled;
+- cross-octet handoff count;
+- robust Nerve/chord/spine events;
+- memory bytes/words moved where available;
+- wrong robust accept count;
+- optional local energy components when directly measurable.
 
 ## Measurements
-### Computation/locality
-- long selections per completed episode;
-- lease acquisitions and refreshes;
-- local primitive operations completed per lease;
-- cross-octet handoffs;
-- exact fallbacks;
-- wrong robust accepts (must remain zero).
+### Intelligence/locality
+- local-resolution fraction;
+- Ambiguity Budget;
+- local operations completed per lease;
+- cross-octet rate;
+- exact-heavy versus structure-heavy workload split;
+- wrong accepts and safe fallbacks.
 
-### Physical electrical
-- DRC and extracted connectivity;
-- GC/GR total loading around the physical Grammar instance;
-- Nerve->GC and Nerve->GR coupling separately;
-- Artery->GC and Artery->GR coupling separately;
-- normalized Differential Service Coupling;
-- cross-octet chord coupling into weak evidence;
-- two-phase physical-side preference;
-- Nerve event energy;
-- Charge-Artery branch/recovery energy;
-- cross-octet chord energy;
-- total selection + local-core + communication energy.
+### Exact-backbone demand
+- exact requests per epoch distribution;
+- mean/p95/p99/p99.9/max concurrency;
+- burst correlation / over-dispersion relative to independent demand;
+- queue depth and wait if a proposed pool is smaller than the burst;
+- exact-core utilization;
+- memory/exact-state traffic per completed episode.
 
-### Hollow cost
-- active/computation surface used;
-- service surface reserved;
-- whether total service/support reservation remains below the v13M0 ~46.74% geometric break-even for the chosen shell model;
-- area cost of shields/chords/component bays;
-- thermal-capillary area/path estimate.
+### Cost
+Feed the measured trace back into v13N0-v13N3 to compute:
+- minimum practical Exact Service Core/service-slot count;
+- candidate Component Bay locations;
+- exact transport tax;
+- local-first versus exact-every-episode energy frontier using measured exact energy when available;
+- duplicated exact/memory hardware avoided;
+- whether shared-memory traffic becomes the new dominant cost.
 
 ## Acceptance
-v13M3 passes only if:
-- zero wrong robust accepts in the tested battery;
-- ordinary low-swing Nerve/Artery activity does not require a new global quiet scheduler;
-- recovery never alters correctness of a live information state;
-- direct fourth-face/local routes remain preferred for touching cells;
-- the short opposite-surface chord materially beats the forced surface detour without creating unacceptable DSC;
-- crossing into another octet uses another lease/handoff rather than reselecting every primitive;
-- the hollow service reservation does not erase the useful-surface advantage;
-- no optical route is selected when a shorter electrical route wins;
-- no new per-cell controller is introduced.
+v13N4 passes only if:
+- wrong robust accepts remain zero in the tested trace/replay;
+- local-resolution/fallback classification is reproducible;
+- exact overflow is handled by queue/delay/escalation, never by guessing;
+- a shared exact pool materially reduces duplicated capacity versus one-per-octet for at least the structure-heavy target workloads;
+- measured exact-service transport remains a second-order cost or the architecture is adjusted;
+- no new per-cell controller/recovery scheduler is added to hide poor local resolution;
+- exact-heavy workloads are allowed to remain exact-heavy rather than being forced through unsuitable local analog structures.
 
-## If v13M3 passes
-Promote the following into `MAIN_ARCHITECTURE.md`:
-1. Hollow Surface Intelligent Octet as the first concrete local-region composition;
-2. surfaces = placement/service fabric, not surface-only routing;
-3. protected short interior/opposite-surface chord rule;
-4. optical comparison against best actual electrical path;
-5. service-reservation break-even as a hollow-cost compiler constraint;
-6. canonical `scripts/gvs_sim.py` workflow as the experiment entry point.
+## After v13N4
+Choose a concrete physical v13N5 configuration from the measured workload distribution:
+- number and size of Exact Service Core Component Bays;
+- exact-memory placement;
+- which cell surfaces actually need local intelligent octets;
+- which interior/exterior locations stay empty;
+- shared recovery/thermal capacity;
+- promoted electrical chords;
+- optional optical routes only if real traffic crosses their break-even.
 
-Then scale from two octets to a real multi-region trace replay rather than studying isolated primitives again.
+Then build the physical multi-octet slice. Do not physically lock an arbitrary exact-core count before this trace-driven sizing step.
 
-## If v13M3 fails
-Inspect physical placement/coupling and service-area pressure first. Do not discard the v13K neurovascular anatomy or v13A computation merely because a particular two-octet layout is poor. If the service reservation exceeds the hollow-area break-even, simplify/shared-route the service anatomy before adding more control logic.
+## If v13N4 shows poor local resolution
+Do not automatically add more local hardware. First classify why:
+- missing reusable motif/template -> local structure may help;
+- insufficient analog margin -> inspect physical implementation;
+- genuinely novel/exact computation -> keep it on the Frugal Exact Backbone;
+- memory-dominated work -> improve placement/state reuse rather than comparator count.
+
+The target is minimum total cost, not maximum analogization.
