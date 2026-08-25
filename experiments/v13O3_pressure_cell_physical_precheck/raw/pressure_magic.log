@@ -1,0 +1,15 @@
+Using NULL graphics device.
+Input style sky130(): scaleFactor=2, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    ubm 
+Using technology "sky130A", version 1.0.602-0-gf3c505b.
+SkyWater SKY130: Open Source rules and DRC
+:load pressure_cap
+Cell pressure_cap read from current working directory
+:drc check
+:drc count total
+Total DRC errors found: 0
+:extract all
+Extracting pressure_cap into pressure_cap.ext:
+Processing pressure_cap
+:quit -noprompt
