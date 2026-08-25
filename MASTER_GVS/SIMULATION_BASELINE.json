@@ -1,7 +1,8 @@
 {
   "schema": "gvs-canonical-simulation-v1",
   "architecture_source": "MASTER_GVS/MAIN_ARCHITECTURE.md",
-  "current_experiment_family": "v13M",
+  "candidate_architecture_source": "MASTER_GVS/V13N_ARCHITECTURE.md",
+  "current_experiment_family": "v13N",
   "historical_physical_baseline": {
     "grammar_reader": "experiments/v13A6_dual_pair_grammar_reader",
     "regional_lease": "experiments/v13A4_shared_local_group",
@@ -10,13 +11,19 @@
   "current_reproducible_work": {
     "v13M0": "experiments/v13M0_surface_intelligent_octet/source/run_v13m0.py",
     "v13M1": "experiments/v13M1_surface_route_compiler/source/run_v13m1.py",
-    "v13M2": "experiments/v13M2_two_octet_locality/source/run_v13m2.py"
+    "v13M2": "experiments/v13M2_two_octet_locality/source/run_v13m2.py",
+    "v13N0": "experiments/v13N0_exact_core_pool/source/run_v13n0.py",
+    "v13N1": "experiments/v13N1_local_first_frontier/source/run_v13n1.py",
+    "v13N2": "experiments/v13N2_exact_burst_pool/source/run_v13n2.py",
+    "v13N3": "experiments/v13N3_shared_service_tax/source/run_v13n3.py"
   },
   "rules": [
     "Do not replace accepted hardware merely because historical source is inconvenient.",
     "Separate historical evidence from reconstructed/new closure.",
     "Run the canonical scripts before changing architecture constants.",
     "Persist source, commands, results, report and manifest for every experiment.",
-    "Do not label model geometry as PEX or fabricated measurement."
+    "Do not label model geometry as PEX or fabricated measurement.",
+    "Treat routing, surface use, component placement, sharing and optical promotion as compiler choices unless a measured correctness/physics constraint makes them hard requirements.",
+    "Do not fill hollow volume or duplicate support hardware unless measured system benefit repays its cost."
   ]
 }
