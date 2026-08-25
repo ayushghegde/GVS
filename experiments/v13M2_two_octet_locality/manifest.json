@@ -1,0 +1,18 @@
+{
+  "schema": "gvs-experiment-manifest-v1",
+  "experiment": "v13M2_two_octet_locality",
+  "status": "MODEL PASS / PHYSICAL TWO-OCTET SLICE OPEN",
+  "provenance": "Deterministic two-octet locality model using preserved GVS selection, lease, local-core and route-energy proxies.",
+  "run_command": "python3 experiments/v13M2_two_octet_locality/source/run_v13m2.py",
+  "files": [
+    "REPORT.md",
+    "source/run_v13m2.py",
+    "results/locality_sweep.csv",
+    "results/route_choice.csv"
+  ],
+  "required_review": [
+    "Do not interpret the 73-78% value as whole-chip energy.",
+    "Cross-route values are model proxies, not PEX.",
+    "Optical must compare against the best actual electrical path."
+  ]
+}
