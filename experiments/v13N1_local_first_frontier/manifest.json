@@ -1,0 +1,46 @@
+{
+  "schema": "gvs-experiment-manifest-v1",
+  "experiment": "v13N1_local_first_frontier",
+  "generated_utc": "2026-08-25T14:36:58.944893+00:00",
+  "host": {
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "python": "3.13.5"
+  },
+  "tools": {
+    "ngspice": null,
+    "magic": null,
+    "klayout": null
+  },
+  "environment": {
+    "PDK_ROOT": null,
+    "PDK": null
+  },
+  "files": [
+    {
+      "path": "REPORT.md",
+      "bytes": 3773,
+      "sha256": "1289e45f1d07348573109d98e7160a32f6ff90dfe524973b7518d7a9934574f2"
+    },
+    {
+      "path": "results/break_even.csv",
+      "bytes": 238,
+      "sha256": "722162f7f65eacf0471022a9a3aa63041161279f66836ba3550e8482540e6f0a"
+    },
+    {
+      "path": "results/energy_frontier.csv",
+      "bytes": 2328,
+      "sha256": "94199ef9ea0173e264a9e2142b029d2bada67a4986192dfece3aa785e1f9eb1a"
+    },
+    {
+      "path": "source/run_v13n1.py",
+      "bytes": 1235,
+      "sha256": "8486951d4e62a98ff54621d6d966f9ef15bb787acb9210c6d981f11e4591fa94"
+    }
+  ],
+  "required_review": [
+    "Confirm REPORT.md states PASS/PARTIAL PASS/FAIL.",
+    "Confirm exact run command/script is present.",
+    "Confirm simulator/PDK/corner information is recorded.",
+    "Confirm generated data is not mislabeled as historical or extracted data."
+  ]
+}
