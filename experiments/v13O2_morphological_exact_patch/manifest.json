@@ -1,0 +1,16 @@
+{
+  "schema": "gvs-experiment-manifest-v1",
+  "experiment": "v13O2_morphological_exact_patch",
+  "evidence_class": "deterministic functional Python model",
+  "files": [
+    {"path": "REPORT.md"},
+    {"path": "source/run_v13o2.py"},
+    {"path": "results/exact_patch_summary.csv"}
+  ],
+  "provenance": [
+    "all 65,536 8-bit input pairs exhaustively checked",
+    "NAND-only fixed spatial dataflow",
+    "no physical area/energy/PEX claim"
+  ],
+  "status": "FUNCTIONAL MODEL PASS"
+}
