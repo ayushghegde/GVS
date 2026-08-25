@@ -1,0 +1,2 @@
+variables,clauses,instances,success_fraction,mean_steps_success,median_steps_success,mean_pressure_kicks_success
+64,269,50,0.84,38.92857142857143,27.0,4.5
