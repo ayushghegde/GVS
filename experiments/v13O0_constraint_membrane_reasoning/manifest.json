@@ -1,0 +1,25 @@
+{
+  "schema": "gvs-experiment-manifest-v1",
+  "experiment": "v13O0_constraint_membrane_reasoning",
+  "generated_utc": "2026-08-25T16:24:16.395779+00:00",
+  "host": {
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "python": "3.13.5"
+  },
+  "tools": {
+    "class": "deterministic Python 3 model"
+  },
+  "files": [
+    {"path": "REPORT.md", "bytes": 2361, "sha256": "8eb8360c0da2cbafb04060c5c27331cdbbe53e7b9d4833f7627bcc509eb0204f"},
+    {"path": "results/capacitive_proxy.csv", "bytes": 302, "sha256": "9de2b79033277b873a1f5ba2c52e5f17b384e2a2a26a088e609a3fad2b59a721"},
+    {"path": "results/pressure_pulse.csv", "bytes": 157, "sha256": "4a2ba4cecd57cba5db6a5e42a498fb24101e16c50646b40d783a38214ea1e3a1"},
+    {"path": "results/replica_tradeoff.csv", "bytes": 351, "sha256": "7d0b5f85b7c131e2be43fd21fe7945dbc0400598003badc26c9f73bfe35e918b"},
+    {"path": "results/single_fabric_summary.csv", "bytes": 531, "sha256": "344bac70870f67095dcf93fba4049380febb6fc6cdc5d1ff9cda9423bb5bb209"},
+    {"path": "source/run_v13o0.py", "bytes": 4261, "sha256": "e044c2bb02ab03e90c6e93156f60d7458e5fffd8e4d75f9b16ac30844a58a082"}
+  ],
+  "required_review": [
+    "REPORT.md states evidence class and verdict",
+    "Run script and results are preserved",
+    "No model result is labeled PEX/physical measurement"
+  ]
+}
