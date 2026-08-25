@@ -1,0 +1,25 @@
+{
+  "schema": "gvs-experiment-manifest-v1",
+  "experiment": "v13M0_surface_intelligent_octet",
+  "status": "MODEL PASS / PHYSICAL COMPOSITION OPEN",
+  "provenance": "Deterministic Python model using preserved repository energy/geometry proxies; no new PEX or fabricated measurement claim.",
+  "run_command": "python3 experiments/v13M0_surface_intelligent_octet/source/run_v13m0.py",
+  "files": [
+    "REPORT.md",
+    "source/run_v13m0.py",
+    "results/placement_energy.csv",
+    "results/placements.json",
+    "results/optical_break_even.csv",
+    "results/surface_capacity.csv"
+  ],
+  "inputs_from_repository": [
+    "v13A/v13B long-selection, lease, Grammar, template and Myelin energy proxies",
+    "v13K 10x10x2 mm all-surface geometry",
+    "v13I electrical/optical lifetime route proxies"
+  ],
+  "required_review": [
+    "Do not relabel model results as PEX.",
+    "Do not interpret hollow placement as universally shorter routing.",
+    "Physical multi-primitive composition remains open."
+  ]
+}
