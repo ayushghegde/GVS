@@ -1,0 +1,23 @@
+{
+  "schema": "gvs-experiment-manifest-v1",
+  "experiment": "v13O3_pressure_cell_physical_precheck",
+  "status": "PARTIAL / PHYSICAL CLOSURE OPEN",
+  "tools": {
+    "magic": "8.3.681",
+    "sky130A.tech": "1.0.602-0-gf3c505b",
+    "ngspice": "revision 26 build attempted; current SKY130 model-deck parse failure"
+  },
+  "files": [
+    {"path": "REPORT.md"},
+    {"path": "raw/pressure_cap.mag"},
+    {"path": "raw/pressure_cap.ext"},
+    {"path": "raw/pressure_magic.log"},
+    {"path": "raw/ngspice_model_failure.log"}
+  ],
+  "provenance": [
+    "Magic DRC reported 0 errors",
+    "extraction recognized sky130_fd_pr__cap_mim_m3_1",
+    "PRESSURE terminal remained disconnected from the extracted MIM top node",
+    "ngspice failure occurred during PDK model parsing before candidate-circuit evaluation"
+  ]
+}
