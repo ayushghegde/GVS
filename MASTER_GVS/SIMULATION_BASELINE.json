@@ -17,6 +17,10 @@
     "v13N2": "experiments/v13N2_exact_burst_pool/source/run_v13n2.py",
     "v13N3": "experiments/v13N3_shared_service_tax/source/run_v13n3.py"
   },
+  "support_tools": {
+    "trace_schema": "MASTER_GVS/TRACE_SCHEMA.md",
+    "trace_analyzer": "scripts/gvs_trace_analyze.py"
+  },
   "rules": [
     "Do not replace accepted hardware merely because historical source is inconvenient.",
     "Separate historical evidence from reconstructed/new closure.",
