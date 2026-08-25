@@ -1,0 +1,20 @@
+{
+  "schema": "gvs-experiment-manifest-v1",
+  "experiment": "v13M1_surface_route_compiler",
+  "status": "MODEL PASS; MANDATORY SURFACE-ONLY ROUTING REJECTED",
+  "provenance": "Deterministic Python geometry model on the preserved v13K 10x10x2 mm shell class; electrical route energy is a preserved proxy, not PEX.",
+  "run_command": "python3 experiments/v13M1_surface_route_compiler/source/run_v13m1.py",
+  "files": [
+    "REPORT.md",
+    "source/run_v13m1.py",
+    "results/detour_summary.csv"
+  ],
+  "generated_but_not_required_for_conclusion": [
+    "results/pair_detours.csv"
+  ],
+  "required_review": [
+    "Do not relabel geometry results as physical extraction.",
+    "Keep direct/interior chords legal for opposite-surface relations.",
+    "Surface services are organization, not a mandatory signal manifold."
+  ]
+}
