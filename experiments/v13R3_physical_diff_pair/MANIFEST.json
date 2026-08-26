@@ -1,0 +1,10 @@
+{
+  "experiment":"v13R3_physical_diff_pair",
+  "evidence_class":"real Magic SKY130A geometry/DRC/extraction; transient open",
+  "report":"REPORT.md",
+  "results":"RESULTS.json",
+  "raw":{"layout":"raw/v13r_diff_pair_sym.mag","extraction":"raw/v13r_diff_pair_sym.ext","build_commands":"raw/build_sym.cmd"},
+  "primitive_dependency":"experiments/v13A6_dual_pair_grammar_reader/physical/recovered_2026-08-23/nf_cross.mag",
+  "tool":"Magic 8.3.681",
+  "note":"No TT/FF/SS, leakage, backflow, time constant or energy claim until a SKY130-compatible modern simulator is used."
+}
