@@ -1,0 +1,6 @@
+supporting_contacts,contact_error_probability,confidence_margin_votes,wrong_end_to_end_fraction,stalled_fraction,mean_local_attempts_per_planned_hop
+1,0.1,1,0.49025,0.0,1.0
+3,0.1,1,0.29755,0.0,1.0
+5,0.1,3,0.00785,0.0005,1.08795
+7,0.1,3,0.00325,0.0,1.026296875
+9,0.1,3,0.00085,0.0,1.00835625
