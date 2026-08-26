@@ -44,6 +44,19 @@ for g in [0,2,4,8,12,16,20,24]:
                      avg_extra_cell_hops_per_mixed_episode=avg,p95_extra_hops=p95,
                      all_module_classes_available_after_10pct_random_cell_failures=avail,
                      avg_extra_route_energy_fJ_at_0p15fJ_per_hop=avg*0.15))
+
 out=Path(__file__).resolve().parents[1]/'results'; out.mkdir(exist_ok=True)
 df=pd.DataFrame(rows); df.to_csv(out/'differentiation_sweep.csv',index=False)
+
+# Cost sensitivity for the selected 4-general-cell fabric.
+g=4; copies={m:SPEC[m]+g for m in MODULES}; rr=np.random.default_rng(132); savings=[]
+for _ in range(20000):
+    weights={m:10**rr.uniform(math.log10(0.25),math.log10(8.0)) for m in MODULES}
+    universal=64 + sum(64*weights[m] for m in MODULES)
+    diff=64 + sum(copies[m]*weights[m] for m in MODULES)
+    savings.append(100*(1-diff/universal))
+qs=np.quantile(savings,[.05,.5,.95])
+pd.DataFrame([dict(mean_total_hardware_cost_reduction_pct=float(np.mean(savings)),p05_reduction_pct=float(qs[0]),median_reduction_pct=float(qs[1]),p95_reduction_pct=float(qs[2]))]).to_csv(out/'cost_sensitivity.csv',index=False)
+
 print(df[df.general_cells==4].to_string(index=False))
+print('cost sensitivity mean/p05/median/p95:',float(np.mean(savings)),*map(float,qs))
