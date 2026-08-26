@@ -1,0 +1,9 @@
+{
+  "experiment":"v13R1_cell_differentiation",
+  "evidence_class":"deterministic role-placement, failure, and abstract cost-sensitivity model",
+  "source":"source/run_v13r1.py",
+  "results":"RESULTS.json",
+  "report":"REPORT.md",
+  "seeds":{"placement":1000,"routing":2000,"failures":3000,"cost_sensitivity":132},
+  "note":"Abstract module cost is not silicon area or dollars."
+}
