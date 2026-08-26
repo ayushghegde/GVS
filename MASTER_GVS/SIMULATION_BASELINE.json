@@ -1,8 +1,8 @@
 {
   "schema": "gvs-canonical-simulation-v1",
   "architecture_source": "MASTER_GVS/MAIN_ARCHITECTURE.md",
-  "candidate_architecture_source": "MASTER_GVS/V13N_ARCHITECTURE.md",
-  "current_experiment_family": "v13N",
+  "candidate_architecture_source": "MASTER_GVS/V13Q_ARCHITECTURE.md",
+  "current_experiment_family": "v13Q",
   "historical_physical_baseline": {
     "grammar_reader": "experiments/v13A6_dual_pair_grammar_reader",
     "regional_lease": "experiments/v13A4_shared_local_group",
@@ -15,7 +15,8 @@
     "v13N0": "experiments/v13N0_exact_core_pool/source/run_v13n0.py",
     "v13N1": "experiments/v13N1_local_first_frontier/source/run_v13n1.py",
     "v13N2": "experiments/v13N2_exact_burst_pool/source/run_v13n2.py",
-    "v13N3": "experiments/v13N3_shared_service_tax/source/run_v13n3.py"
+    "v13N3": "experiments/v13N3_shared_service_tax/source/run_v13n3.py",
+    "v13Q0": "experiments/v13Q0_cell_as_wire_confidence/source/run_v13q0.py"
   },
   "support_tools": {
     "trace_schema": "MASTER_GVS/TRACE_SCHEMA.md",
@@ -28,6 +29,8 @@
     "Persist source, commands, results, report and manifest for every experiment.",
     "Do not label model geometry as PEX or fabricated measurement.",
     "Treat routing, surface use, component placement, sharing and optical promotion as compiler choices unless a measured correctness/physics constraint makes them hard requirements.",
-    "Do not fill hollow volume or duplicate support hardware unless measured system benefit repays its cost."
+    "Do not fill hollow volume or duplicate support hardware unless measured system benefit repays its cost.",
+    "For v13Q, local cell contacts are candidate communication paths, not permanently open connections.",
+    "Uncertain population state must continue settling or remain non-robust; it is not permission to guess."
   ]
 }
