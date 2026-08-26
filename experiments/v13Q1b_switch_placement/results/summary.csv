@@ -1,0 +1,3 @@
+variant,drc_errors,nfet_instances,reported_NEIGHBOR_to_GC_fF,reported_NEIGHBOR_to_GR_fF,reported_GATE_to_GC_fF,reported_GATE_to_GR_fF,reported_direct_aperture_terms_to_weak_pair,decision
+near_weak_core,0,1,0.00622776,,0.0108039,0.00970849,yes,REJECT_NEAR_WEAK_CORE
+remote_cell_wall,0,1,,,,,no_at_extractor_precision,KEEP_FOR_TRANSIENT_TEST
