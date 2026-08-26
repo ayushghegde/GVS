@@ -1,0 +1,9 @@
+{
+  "experiment":"v13R0_slow_charge_egress",
+  "evidence_class":"deterministic normalized charge-flow model",
+  "source":"source/run_v13r0.py",
+  "results":"RESULTS.json",
+  "report":"REPORT.md",
+  "seed":130,
+  "note":"No absolute recovered-joule or transistor-PVT claim."
+}
