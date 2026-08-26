@@ -1,0 +1,9 @@
+{
+  "selected_tau_event_intervals": 8,
+  "selected": [
+    {"scenario":"uniform","peak_inflow_reduction_pct":52.9167732429185,"peak_reservoir_reduction_pct":60.36091189771782,"transferred_fraction":0.9999999999999948},
+    {"scenario":"bursty","peak_inflow_reduction_pct":74.17595635600561,"peak_reservoir_reduction_pct":18.72439095581768,"transferred_fraction":0.9999999999999898},
+    {"scenario":"aligned","peak_inflow_reduction_pct":86.92435664452589,"peak_reservoir_reduction_pct":28.553080872074823,"transferred_fraction":1.000000000000029}
+  ],
+  "ideal_first_order_latency_at_tau8": {"t90_intervals":18.420680743952364,"t95_intervals":23.965858188431927,"t99_intervals":36.84136148790473}
+}
