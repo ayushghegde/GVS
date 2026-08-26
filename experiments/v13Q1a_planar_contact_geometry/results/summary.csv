@@ -1,0 +1,4 @@
+variant,drc_errors,contact_count,total_direct_contact_to_CELL_fF,aggregate_contact_to_GC_fF,aggregate_contact_to_GR_fF,contact_DSC_percent,NERVE_to_GC_fF,NERVE_to_GR_fF,ARTERY_to_GC_fF,ARTERY_to_GR_fF
+face_independent,0,4,0.431792,0.01765768,0.01765768,0.0,,,,
+corner_independent,0,4,0.1792772,0.012549754,0.012549754,0.0,,,,
+eight_contact_plus_services,0,8,0.4226104,0.022550324,0.022550324,0.0,0.01448,0.01448,0.0123103,0.0123103
