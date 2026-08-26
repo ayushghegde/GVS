@@ -1,0 +1,9 @@
+{
+  "key_sweep":{
+    "penalty0":{"coarse_reduction_pct":38.020833333333336,"fine_reduction_pct":67.70833333333333},
+    "penalty16":{"coarse_reduction_pct":25.520833333333336,"fine_reduction_pct":42.708333333333336},
+    "penalty32":{"coarse_reduction_pct":13.020833333333336,"fine_reduction_pct":17.708333333333336},
+    "penalty40":{"coarse_reduction_pct":6.7708333333333375,"fine_reduction_pct":5.2083333333333375}
+  },
+  "break_even_penalty_units_per_extra_type":{"fine_vs_coarse":38.0,"fine_vs_universal":43.333333333333336,"coarse_vs_universal":48.666666666666664}
+}
