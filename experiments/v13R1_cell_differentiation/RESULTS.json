@@ -1,0 +1,7 @@
+{
+  "selected_general_cells":4,
+  "selected":{"relay_cells":20,"optional_module_copy_reduction_pct":81.25,"avg_extra_cell_hops_per_mixed_episode":1.8456,"p95_extra_hops":4.0,"all_module_classes_available_after_10pct_random_cell_failures":1.0,"avg_extra_route_energy_fJ_at_0p15fJ_per_hop":0.27684},
+  "module_copy_reduction_pct":{"grammar":75.0,"template":78.125,"binding":81.25,"constraint":81.25,"exact":90.625},
+  "cost_sensitivity":{"mean_total_hardware_cost_reduction_pct":73.37906376801462,"p05_reduction_pct":65.74052917045513,"median_reduction_pct":73.92344066213562,"p95_reduction_pct":78.96682414161992},
+  "general_cell_sweep":{"0":{"copy_reduction_pct":87.5,"avg_hops":3.0814,"availability":0.9901},"2":{"copy_reduction_pct":84.375,"avg_hops":2.1518,"availability":0.9999},"4":{"copy_reduction_pct":81.25,"avg_hops":1.8456,"availability":1.0},"8":{"copy_reduction_pct":75.0,"avg_hops":1.7094,"availability":1.0}}
+}
