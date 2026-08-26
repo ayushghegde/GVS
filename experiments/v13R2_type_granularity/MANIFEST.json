@@ -1,0 +1,8 @@
+{
+  "experiment":"v13R2_type_granularity",
+  "evidence_class":"deterministic abstract manufacturing/design-cost sensitivity model",
+  "source":"source/run_v13r2.py",
+  "results":"RESULTS.json",
+  "report":"REPORT.md",
+  "note":"Cost units are abstract and are not dollars or silicon area."
+}
