@@ -1,0 +1,17 @@
+{
+  "schema": "gvs-experiment-manifest-v1",
+  "experiment": "v13Q0_cell_as_wire_confidence",
+  "verdict": "MODEL PASS / PHYSICAL 3-D CONTACT CLOSURE OPEN",
+  "evidence_class": "deterministic Python geometry/stochastic fixed-seed model using preserved GVS event-energy proxy",
+  "run_command": "python3 experiments/v13Q0_cell_as_wire_confidence/source/run_v13q0.py",
+  "fixed_seeds": [20260826, 314159, 12345],
+  "source": ["source/run_v13q0.py"],
+  "results": ["results/routing.csv", "results/population_confidence.csv", "results/quorum_relay.csv"],
+  "important_limits": [
+    "No 3-D ECC PEX claim.",
+    "Edge and vertex contact energies are swept assumptions, not extracted values.",
+    "Quorum contact errors are independent in the present stress model.",
+    "Population-confidence model is not a whole-AI accuracy benchmark.",
+    "0.15 fJ face-event value is a preserved GVS proxy, not a new measurement."
+  ]
+}
