@@ -1,0 +1,5 @@
+evidence_drift,correct_fraction,wrong_robust_fraction,still_uncertain_fraction,mean_steps_if_decided
+0.08,0.67085,0.01915,0.31,39.192246376811596
+0.12,0.9258,0.00255,0.07165,32.96628426778693
+0.18,0.998,0.0001,0.0019,23.132852419597235
+0.25,1.0,0.0,0.0,16.2163
