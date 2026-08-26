@@ -1,0 +1,8 @@
+{
+  "drc_errors":0,
+  "nfet_instances":2,
+  "coupling_fF":{"neighbor_to_cell":0.016098,"artery_to_cell":0.016098,"neighbor_to_GC":0.00403226,"artery_to_GR":0.00403226,"GC_to_GR":0.0175439},
+  "simple_72fF_kick_mV":{"neighbor_0p2V":0.0112007,"artery_0p0903V":0.00505713},
+  "tool":"Magic 8.3.681 + SKY130A physical geometry/extraction",
+  "transient_status":"open: supplied ngspice revision 26 is incompatible with current SKY130 combined model deck"
+}
