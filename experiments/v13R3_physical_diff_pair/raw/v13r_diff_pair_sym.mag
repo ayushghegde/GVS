@@ -1,0 +1,40 @@
+magic
+tech sky130A
+timestamp 1787758598
+<< checkpaint >>
+rect -450 2219 1210 2300
+rect -500 2116 1260 2219
+rect -610 826 1370 2116
+rect -550 270 1310 826
+<< via1 >>
+rect 180 1555 210 1585
+rect 550 1555 580 1585
+rect 135 1456 165 1486
+rect 225 1456 255 1486
+rect 505 1456 535 1486
+rect 595 1456 625 1486
+<< metal2 >>
+rect 180 1585 210 1670
+rect 550 1585 580 1670
+rect 20 1456 135 1486
+rect 255 1456 505 1486
+rect 625 1456 740 1486
+rect 80 900 110 1300
+rect 650 900 680 1300
+use nf_cross  nf_cross_0
+timestamp 1788120000
+transform 1 0 130 0 1 1450
+box 0 -20 130 139
+use nf_cross  nf_cross_1
+timestamp 1788120000
+transform 1 0 500 0 1 1450
+box 0 -20 130 139
+<< labels >>
+rlabel metal2 20 1456 165 1486 0 NEIGHBOR
+rlabel metal2 225 1456 535 1486 0 CELL
+rlabel metal2 180 1555 210 1670 0 AP_GATE
+rlabel metal2 595 1456 740 1486 0 ARTERY
+rlabel metal2 550 1555 580 1670 0 EXPIRE
+rlabel metal2 80 900 110 1300 0 GC
+rlabel metal2 650 900 680 1300 0 GR
+<< end >>
