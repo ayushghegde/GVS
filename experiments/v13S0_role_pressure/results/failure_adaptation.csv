@@ -1,0 +1,4 @@
+policy,total_backlog_area,max_total_queue,ending_queue,served,reserve_role_changes,role_pressure_pulses,failed_grammar_cells,failed_template_cells,failed_binding_cells,failed_constraint_cells,failed_exact_cells
+fixed,559680.0,1366.0,1170.0,29295.0,0,0,0,1,2,1,0
+role_pressure,234709.0,700.0,261.0,30204.0,60,2264,0,1,2,1,0
+oracle,211005.0,664.0,161.0,30304.0,0,0,0,1,2,1,0
