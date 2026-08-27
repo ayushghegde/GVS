@@ -1,0 +1,9 @@
+{
+  "experiment":"v13S1_two_stage_venule",
+  "evidence_class":"normalized charge-flow model",
+  "cells":256,
+  "scenarios":["uniform","bursty","aligned"],
+  "selected":{"group_cells":8,"cell_to_venule_tau":2,"venule_to_artery_tau":8},
+  "command":"python3 source/run_v13s1.py",
+  "claim_limit":"Time constants and charge units are normalized. Physical device/PVT closure remains open."
+}
