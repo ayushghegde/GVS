@@ -1,0 +1,4 @@
+Local PDK probe, 2026-08-27 runtime:
+/mnt/data/tools/common/sky130A/libs.tech/netgen/sky130A_setup.tcl lists sky130_fd_bs_flash__special_sonosfet_star.
+/mnt/data/tools/common/sky130A/libs.tech/ngspice/sonos_see_e/ contains beginning_of_life and end_of_life model material including typical/worst files.
+The generic /mnt/data/sky130_fd_pr.tar.zst did not contain a SONOS Magic layout cell, so v13U does not claim an open physical SONOS layout macro.
