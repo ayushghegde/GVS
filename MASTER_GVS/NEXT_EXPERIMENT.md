@@ -1,52 +1,45 @@
-# Current Next Experiment — v13S4 Adaptive Tissue Physical Closure
+# Current Next Experiment — v13T4 Integrated Adaptive Tissue Physical Closure
 
 ## Goal
-Physically close the first small v13S tissue using a simulator that correctly supports the current SKY130 model deck.
+Physically close the first adaptive General Reserve Cell together with a real stateful Grammar neighbor, Relay neighbor and the v13S venous recovery hierarchy.
 
 ## Required slice
-- common ECC base geometry;
+- preserved weak GC/GR Grammar evidence pair;
 - one Relay ECC;
 - one Grammar/state ECC;
-- one General Reserve ECC carrying two switchable Expression Patch functions;
-- boundary communication aperture;
-- normal post-expiry isolation;
-- shared Local Venule;
-- one deliberately weak venule -> Charge-Artery outlet;
-- regional reservoir equivalent and battery/collector load;
-- preserved weak GC/GR evidence pair.
+- one General Reserve ECC with two Expression Patch selectors;
+- one fast and one slow Role Pressure storage path or equivalent physically measurable two-timescale implementation;
+- hysteresis/dwell/fatigue implemented with the minimum local analog/state hardware justified by measurement;
+- break-before-make patch isolation;
+- Local Venule -> Charge Artery -> regional reservoir -> battery/collector equivalent;
+- boundary communication and role-control placement.
 
-## Required battery
-1. Magic DRC + extracted connectivity/RC.
-2. Contact aperture OFF leakage / ON low-swing event delay and energy.
-3. Verify live information cannot enter the venule.
-4. After expiry, measure cell -> venule emptying and residual charge versus time.
-5. Measure venule -> Charge-Artery flow, regional-reservoir ripple and backflow.
-6. Uniform, bursty and aligned expiry stress.
-7. Simultaneous information event + neighboring recovery.
-8. RPF/General-Reserve role-change disturbance.
-9. TT / FF / SS.
-10. Independent mismatch screen.
-11. Area/device/capacitance comparison against:
-    - fixed differentiated v13R cells with direct slow egress;
-    - universal-cell control;
-    - v13S common-base + patch + venule tissue.
-
-## Acceptance
-- zero wrong robust accepts;
-- uncertain population may remain unresolved rather than guess;
-- live-state recovery remains blocked;
-- recovery failure changes energy only, not correctness;
-- boundary venule does not materially reduce GC/GR margin;
-- two-stage recovery empties the cell sooner while not increasing artery/reservoir stress versus direct tau=8 after real device sizing;
-- General Reserve adaptation materially reduces overload without high switching/support cost;
-- Expression Patches and shared venule reduce total physical cost after their interfaces are counted;
-- no per-cell microcontroller, ADC or recovery scheduler is added.
+## Battery
+1. Magic DRC and extracted connectivity/RC.
+2. Role Pressure accumulation/leak on fast and slow paths.
+3. Verify noisy pressure cannot cause rapid patch thrashing.
+4. Patch A -> isolated -> Patch B handoff with zero make-before-break overlap.
+5. Old patch residual state -> Local Venule while new patch operates.
+6. Neighboring Grammar/Relay computation during role change.
+7. Live-state recovery remains blocked.
+8. Venule/Artery/reservoir ripple during role-change bursts.
+9. TT/FF/SS.
+10. Independent mismatch.
+11. stuck patch-select, stuck pressure, stuck venule outlet faults.
+12. total area/capacitance/energy versus fixed differentiated and universal-cell controls.
+13. zero wrong robust accepts; uncertainty may remain unresolved.
 
 ## Tooling
-Prefer current ngspice (official release 47 as of August 2026) or another simulator demonstrably compatible with the same SKY130 model deck. Tool substitution must be validated on the PDK's own test deck before GVS results are accepted.
+Use a Linux simulator demonstrably compatible with the current SKY130 model deck. The uploaded ngspice 47 archive is the official Windows binary package and is preserved as tool provenance, but this Linux runtime cannot execute it without a Windows compatibility layer. Do not substitute a toy MOS model for signoff.
 
-## If it passes
-Promote v13S adaptive differentiation + two-stage venous hierarchy into `MAIN_ARCHITECTURE.md`, then scale to a multi-region intelligent trace rather than another isolated primitive.
+## Acceptance
+- adaptive reserve materially reduces overload without high re-role rate;
+- no noisy role-pressure oscillation;
+- break-before-make prevents state mixing;
+- old-patch recovery does not block new-patch work long enough to erase the adaptation benefit;
+- role controls/venules do not materially disturb GC/GR;
+- recovery failure changes energy only, not correctness;
+- adaptive reserve remains cheaper than making ordinary cells universal.
 
-## If it fails
-Keep the failure local: coarsen patch roles, reduce reserve adaptability, change venule group size/time constants, or revert affected cell types to v13R direct SCE. Do not undo proven Grammar, cell-as-wire, population confidence or neurovascular isolation merely to rescue a bad support layout.
+## After pass
+Promote v13S/v13T adaptive differentiation into MAIN_ARCHITECTURE, then test a multi-region reasoning trace where reserve cells, cell-as-wire transport, population confidence, relation/constraint reasoning and venous recovery operate together.

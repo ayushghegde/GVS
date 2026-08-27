@@ -1,0 +1,3 @@
+policy,mean_backlog,mean_max_queue,mean_switches,mean_completed,mean_max_simultaneous_switches
+break_before_make_wave,24055.38,106.82,99.78,28003.28,1.0
+dual_unstaggered,23899.62,106.24,121.5,28002.94,4.0

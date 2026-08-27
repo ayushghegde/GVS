@@ -1,0 +1,9 @@
+metric,value
+DRC_errors,0
+NFET_instances,2
+GC_GR_fF,0.040625
+direct_role_or_patch_to_GC_reported,false
+direct_role_or_patch_to_GR_reported,false
+state_to_own_patch_fF,0.0310908
+role_pressure_to_own_patch_fF,0.00217518
+state_to_role_pressure_fF,0.00260013

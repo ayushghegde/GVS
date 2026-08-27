@@ -1,0 +1,8 @@
+{
+  "experiment":"v13T3_physical_patch_gate",
+  "status":"PHYSICAL_GEOMETRY_PASS",
+  "tool":"Magic 8.3.681 + SKY130A 1.0.602-0-gf3c505b",
+  "device_source":"experiments/v13A6_dual_pair_grammar_reader/physical/recovered_2026-08-23/nf_reset.mag",
+  "outputs":["results/summary.csv"],
+  "evidence_boundary":"geometry/extraction only; transistor timing/PVT/mismatch open"
+}

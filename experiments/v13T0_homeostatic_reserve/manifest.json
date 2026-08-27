@@ -1,0 +1,8 @@
+{
+  "experiment":"v13T0_homeostatic_reserve",
+  "status":"MODEL_PASS",
+  "run_command":"python3 source/run_v13t0.py",
+  "seeds":"100..199",
+  "stress":"7 workload phases + burst noise + 10% specialized-cell loss at midpoint",
+  "outputs":["results/policy_summary.csv"]
+}

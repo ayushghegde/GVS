@@ -1,49 +1,11 @@
 {
-  "schema": "gvs-canonical-simulation-v1",
-  "architecture_source": "MASTER_GVS/MAIN_ARCHITECTURE.md",
-  "candidate_architecture_source": "MASTER_GVS/V13S_ARCHITECTURE.md",
-  "current_experiment_family": "v13S",
-  "historical_physical_baseline": {
-    "grammar_reader": "experiments/v13A6_dual_pair_grammar_reader",
-    "regional_lease": "experiments/v13A4_shared_local_group",
-    "neurovascular_geometry": "experiments/v13L1a_physical_dsc_geometry"
-  },
-  "current_physical_evidence": {
-    "v13R3_differentiated_pair": "experiments/v13R3_physical_diff_pair",
-    "v13S2_shared_venule": "experiments/v13S2_shared_venule_physical"
-  },
-  "current_reproducible_work": {
-    "v13M0": "experiments/v13M0_surface_intelligent_octet/source/run_v13m0.py",
-    "v13M1": "experiments/v13M1_surface_route_compiler/source/run_v13m1.py",
-    "v13M2": "experiments/v13M2_two_octet_locality/source/run_v13m2.py",
-    "v13N0": "experiments/v13N0_exact_core_pool/source/run_v13n0.py",
-    "v13N1": "experiments/v13N1_local_first_frontier/source/run_v13n1.py",
-    "v13N2": "experiments/v13N2_exact_burst_pool/source/run_v13n2.py",
-    "v13N3": "experiments/v13N3_shared_service_tax/source/run_v13n3.py",
-    "v13Q0": "experiments/v13Q0_cell_as_wire_confidence/source/run_v13q0.py",
-    "v13R0": "experiments/v13R0_slow_charge_egress/source/run_v13r0.py",
-    "v13R1": "experiments/v13R1_cell_differentiation/source/run_v13r1.py",
-    "v13R2": "experiments/v13R2_type_granularity/source/run_v13r2.py",
-    "v13S0": "experiments/v13S0_role_pressure_field/source/run_v13s0.py",
-    "v13S1": "experiments/v13S1_two_stage_venule/source/run_v13s1.py",
-    "v13S3": "experiments/v13S3_expression_patch_cost/source/run_v13s3.py"
-  },
-  "support_tools": {
-    "trace_schema": "MASTER_GVS/TRACE_SCHEMA.md",
-    "trace_analyzer": "scripts/gvs_trace_analyze.py"
-  },
-  "rules": [
-    "Do not replace accepted hardware merely because historical source is inconvenient.",
-    "Separate historical evidence from reconstructed/new closure.",
-    "Run the canonical scripts before changing architecture constants.",
-    "Persist source, commands, results, report and manifest for every experiment.",
-    "Do not label model geometry as PEX or fabricated measurement.",
-    "Treat routing, surface use, component placement, sharing and optical promotion as compiler choices unless measured correctness/physics makes them hard requirements.",
-    "Local cell contacts are candidate communication paths, not permanently open connections.",
-    "Uncertain population state must continue settling or remain non-robust; it is not permission to guess.",
-    "Only expired/invalidated information state may enter recovery.",
-    "Keep Local Venule -> Charge Artery -> regional reservoir -> battery/collector as distinct recovery scales when each materially pays.",
-    "Most cells remain physically differentiated; only a small General Reserve population may re-role through local Role Pressure.",
-    "Use a common ECC base plus reusable Expression Patches rather than universal cells or unlimited unique cell types."
-  ]
+  "schema":"gvs-canonical-simulation-v1",
+  "architecture_source":"MASTER_GVS/MAIN_ARCHITECTURE.md",
+  "candidate_architecture_source":"MASTER_GVS/V13T_ARCHITECTURE.md",
+  "current_experiment_family":"v13T",
+  "historical_physical_baseline":{"grammar_reader":"experiments/v13A6_dual_pair_grammar_reader","regional_lease":"experiments/v13A4_shared_local_group","neurovascular_geometry":"experiments/v13L1a_physical_dsc_geometry"},
+  "current_physical_evidence":{"v13S2_shared_venule":"experiments/v13S2_shared_venule_physical","v13T3_patch_gate":"experiments/v13T3_physical_patch_gate"},
+  "current_reproducible_work":{"v13M0":"experiments/v13M0_surface_intelligent_octet/source/run_v13m0.py","v13M1":"experiments/v13M1_surface_route_compiler/source/run_v13m1.py","v13M2":"experiments/v13M2_two_octet_locality/source/run_v13m2.py","v13N0":"experiments/v13N0_exact_core_pool/source/run_v13n0.py","v13N1":"experiments/v13N1_local_first_frontier/source/run_v13n1.py","v13N2":"experiments/v13N2_exact_burst_pool/source/run_v13n2.py","v13N3":"experiments/v13N3_shared_service_tax/source/run_v13n3.py","v13Q0":"experiments/v13Q0_cell_as_wire_confidence/source/run_v13q0.py","v13R0":"experiments/v13R0_slow_charge_egress/source/run_v13r0.py","v13R1":"experiments/v13R1_cell_differentiation/source/run_v13r1.py","v13R2":"experiments/v13R2_type_granularity/source/run_v13r2.py","v13S0":"experiments/v13S0_role_pressure_field/source/run_v13s0.py","v13S1":"experiments/v13S1_two_stage_venule/source/run_v13s1.py","v13S3":"experiments/v13S3_expression_patch_cost/source/run_v13s3.py","v13T0":"experiments/v13T0_homeostatic_reserve/source/run_v13t0.py","v13T1":"experiments/v13T1_adaptation_speed/source/run_v13t1.py","v13T2":"experiments/v13T2_patch_handoff/source/run_v13t2.py"},
+  "support_tools":{"trace_schema":"MASTER_GVS/TRACE_SCHEMA.md","trace_analyzer":"scripts/gvs_trace_analyze.py"},
+  "rules":["Do not replace accepted hardware merely because historical source is inconvenient.","Persist source, commands, results, report and manifest for every experiment.","Do not label model geometry as PEX or fabricated measurement.","Most cells remain physically differentiated; only a small General Reserve population may re-role.","Use dual-time-scale Role Pressure with hysteresis/dwell/fatigue rather than instant queue chasing.","Use break-before-make patch handoff; old patch state may drain through the Local Venule while the new patch becomes active.","Limit local role changes to a developmental wave when correlated switching has no throughput benefit.","Keep Local Venule -> Charge Artery -> regional reservoir -> battery/collector as distinct recovery scales when each pays.","Uncertain population state may remain non-robust; it is not permission to guess."]
 }

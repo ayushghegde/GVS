@@ -1,0 +1,8 @@
+{
+  "experiment":"v13T1_adaptation_speed",
+  "status":"MODEL_PASS_BOUNDARY_FOUND",
+  "run_command":"python3 source/run_v13t1.py",
+  "seeds":"50..99",
+  "phase_durations":[4,8,16,32,64,120],
+  "outputs":["results/speed_sweep.csv"]
+}

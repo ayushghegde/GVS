@@ -1,0 +1,42 @@
+magic
+tech sky130A
+timestamp 1788300001
+<< metal1 >>
+rect 905 -699 945 -659
+rect 970 -699 1010 -659
+rect 937 -601 977 -561
+rect 1505 -699 1545 -659
+rect 1570 -699 1610 -659
+rect 1537 -601 1577 -561
+<< via1 >>
+rect 910 -694 940 -664
+rect 975 -694 1005 -664
+rect 942 -596 972 -566
+rect 1510 -694 1540 -664
+rect 1575 -694 1605 -664
+rect 1542 -596 1572 -566
+<< metal2 >>
+rect 62 930 92 1580
+rect 462 930 492 1580
+rect 800 -694 940 -664
+rect 975 -694 1120 -664
+rect 1400 -694 1540 -664
+rect 1575 -694 1720 -664
+rect 942 -596 972 -420
+rect 1542 -596 1572 -420
+use nf_reset patch_a
+transform 1 0 900 0 1 -700
+box 0 -20 115 139
+use nf_reset patch_b
+transform 1 0 1500 0 1 -700
+box 0 -20 115 139
+<< labels >>
+rlabel metal2 62 1500 92 1560 0 GC
+rlabel metal2 462 1500 492 1560 0 GR
+rlabel metal2 800 -694 900 -664 0 STATE_A
+rlabel metal2 1020 -694 1120 -664 0 PATCH_A
+rlabel metal2 1400 -694 1500 -664 0 STATE_B
+rlabel metal2 1620 -694 1720 -664 0 PATCH_B
+rlabel metal2 942 -470 972 -420 0 ROLE_PRESSURE_A
+rlabel metal2 1542 -470 1572 -420 0 ROLE_PRESSURE_B
+<< end >>

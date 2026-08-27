@@ -1,0 +1,7 @@
+{
+  "experiment":"v13T2_patch_handoff",
+  "status":"MODEL_PASS",
+  "run_command":"python3 source/run_v13t2.py",
+  "seeds":"100..199",
+  "outputs":["results/handoff_summary.csv"]
+}
