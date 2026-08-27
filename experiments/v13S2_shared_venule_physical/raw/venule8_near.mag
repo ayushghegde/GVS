@@ -1,0 +1,37 @@
+magic
+tech sky130A
+timestamp 1788200001
+<< metal1 >>
+rect 1805 801 1845 841
+rect 1870 801 1910 841
+rect 1837 899 1877 939
+<< via1 >>
+rect 1810 806 1840 836
+rect 1875 806 1905 836
+rect 1842 904 1872 934
+<< metal2 >>
+rect 62 930 92 1580
+rect 462 930 492 1580
+# deliberately near weak pair
+rect 20 806 1840 836
+rect 1875 806 2200 836
+rect 1842 904 1872 1060
+# spent landing pads
+rect 900 770 940 870
+rect 1020 770 1060 870
+rect 1140 770 1180 870
+rect 1260 770 1300 870
+rect 1380 770 1420 870
+rect 1500 770 1540 870
+rect 1620 770 1660 870
+rect 1740 770 1780 870
+use nf_reset venule_outlet
+transform 1 0 1800 0 1 800
+box 0 -20 115 139
+<< labels >>
+rlabel metal2 62 1500 92 1560 0 GC
+rlabel metal2 462 1500 492 1560 0 GR
+rlabel metal2 900 806 1000 836 0 VENULE
+rlabel metal2 2050 806 2200 836 0 ARTERY
+rlabel metal2 1842 1010 1872 1060 0 SLOW_GATE
+<< end >>
