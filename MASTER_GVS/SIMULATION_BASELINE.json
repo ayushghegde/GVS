@@ -1,15 +1,16 @@
 {
   "schema": "gvs-canonical-simulation-v1",
   "architecture_source": "MASTER_GVS/MAIN_ARCHITECTURE.md",
-  "candidate_architecture_source": "MASTER_GVS/V13R_ARCHITECTURE.md",
-  "current_experiment_family": "v13R",
+  "candidate_architecture_source": "MASTER_GVS/V13S_ARCHITECTURE.md",
+  "current_experiment_family": "v13S",
   "historical_physical_baseline": {
     "grammar_reader": "experiments/v13A6_dual_pair_grammar_reader",
     "regional_lease": "experiments/v13A4_shared_local_group",
     "neurovascular_geometry": "experiments/v13L1a_physical_dsc_geometry"
   },
   "current_physical_evidence": {
-    "v13R3_differentiated_pair": "experiments/v13R3_physical_diff_pair"
+    "v13R3_differentiated_pair": "experiments/v13R3_physical_diff_pair",
+    "v13S2_shared_venule": "experiments/v13S2_shared_venule_physical"
   },
   "current_reproducible_work": {
     "v13M0": "experiments/v13M0_surface_intelligent_octet/source/run_v13m0.py",
@@ -22,7 +23,10 @@
     "v13Q0": "experiments/v13Q0_cell_as_wire_confidence/source/run_v13q0.py",
     "v13R0": "experiments/v13R0_slow_charge_egress/source/run_v13r0.py",
     "v13R1": "experiments/v13R1_cell_differentiation/source/run_v13r1.py",
-    "v13R2": "experiments/v13R2_type_granularity/source/run_v13r2.py"
+    "v13R2": "experiments/v13R2_type_granularity/source/run_v13r2.py",
+    "v13S0": "experiments/v13S0_role_pressure_field/source/run_v13s0.py",
+    "v13S1": "experiments/v13S1_two_stage_venule/source/run_v13s1.py",
+    "v13S3": "experiments/v13S3_expression_patch_cost/source/run_v13s3.py"
   },
   "support_tools": {
     "trace_schema": "MASTER_GVS/TRACE_SCHEMA.md",
@@ -35,11 +39,11 @@
     "Persist source, commands, results, report and manifest for every experiment.",
     "Do not label model geometry as PEX or fabricated measurement.",
     "Treat routing, surface use, component placement, sharing and optical promotion as compiler choices unless measured correctness/physics makes them hard requirements.",
-    "Do not fill hollow volume or duplicate support hardware unless measured system benefit repays its cost.",
     "Local cell contacts are candidate communication paths, not permanently open connections.",
     "Uncertain population state must continue settling or remain non-robust; it is not permission to guess.",
-    "Only expired/invalidated information state may enter Slow Charge Egress.",
-    "Keep the regional reservoir between cell-scale recovery and the larger battery/collector.",
-    "Differentiate cells by omitting unused optional modules, but keep a compact reusable cell library and a small general reserve."
+    "Only expired/invalidated information state may enter recovery.",
+    "Keep Local Venule -> Charge Artery -> regional reservoir -> battery/collector as distinct recovery scales when each materially pays.",
+    "Most cells remain physically differentiated; only a small General Reserve population may re-role through local Role Pressure.",
+    "Use a common ECC base plus reusable Expression Patches rather than universal cells or unlimited unique cell types."
   ]
 }
