@@ -1,0 +1,10 @@
+{
+  "experiment": "v13U_quantum_effect_screen",
+  "status": "ARCHITECTURE_MODEL_PROCESS_DATA_PASS",
+  "run_command": "python3 source/run_v13u.py",
+  "seeds": [1310, 1311, 1312],
+  "persisted_results": "results/key_results.csv",
+  "generated_full_results": "results/summary.json",
+  "external_process_data": "Official SKY130 SONOS device documentation: 100k endurance, approximately 2 ms program, approximately 6 ms erase, and 1.8 V e-test current limits used by the read-margin screen.",
+  "claims_boundary": "No coherent quantum advantage claimed; no SONOS fabricated measurement or complete flash-macro PEX claimed."
+}
