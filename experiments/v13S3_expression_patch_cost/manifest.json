@@ -1,0 +1,10 @@
+{
+  "experiment": "v13S3_expression_patch_cost",
+  "status": "MODEL_PASS",
+  "run_command": "python3 source/run_v13s3.py",
+  "seed": 132,
+  "trials": 20000,
+  "inputs": "v13R/v13S 64-cell role composition; module weights swept log-uniform 0.25x..8x base-cell unit",
+  "outputs": ["results/patch_cost_summary.csv"],
+  "evidence_boundary": "abstract normalized hardware-cost sensitivity; not silicon area/cost"
+}
