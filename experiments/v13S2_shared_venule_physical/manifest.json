@@ -1,0 +1,10 @@
+{
+  "experiment":"v13S2_shared_venule_physical",
+  "evidence_class":"real SKY130 Magic geometry/extraction",
+  "magic":"8.3.681",
+  "sky130A_tech":"1.0.602-0-gf3c505b",
+  "nfet_source":"experiments/v13A6_dual_pair_grammar_reader/physical/recovered_2026-08-23/nf_reset.mag",
+  "layouts":["raw/venule8_near.mag","raw/venule8_unshielded.mag"],
+  "acceptance":"0 DRC; correct outlet connectivity; boundary placement has no direct recovery-to-GC/GR term at extractor report precision",
+  "claim_limit":"Physical geometry/RC only. No ngspice slow-transient/PVT claim."
+}
