@@ -1,0 +1,12 @@
+{
+  "experiment":"v13S0_role_pressure",
+  "evidence_class":"deterministic system model",
+  "seed":1300,
+  "failure_seed":99,
+  "region_cells":64,
+  "general_reserve_cells":4,
+  "epochs":840,
+  "command":"python3 source/run_v13s0.py",
+  "inputs":"v13R differentiated role counts; synthetic phase-shift workload",
+  "claim_limit":"No transistor/area/PVT claim. General Reserve Cells logically re-role; physical inventory is not changed at runtime."
+}
