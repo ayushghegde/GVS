@@ -1,0 +1,35 @@
+magic
+tech sky130A
+timestamp 1788200003
+<< metal1 >>
+rect 1805 -699 1845 -659
+rect 1870 -699 1910 -659
+rect 1837 -601 1877 -561
+<< via1 >>
+rect 1810 -694 1840 -664
+rect 1875 -694 1905 -664
+rect 1842 -596 1872 -566
+<< metal2 >>
+rect 62 930 92 1580
+rect 462 930 492 1580
+rect 20 -694 1840 -664
+rect 1875 -694 2200 -664
+rect 1842 -596 1872 -440
+rect 900 -730 940 -630
+rect 1020 -730 1060 -630
+rect 1140 -730 1180 -630
+rect 1260 -730 1300 -630
+rect 1380 -730 1420 -630
+rect 1500 -730 1540 -630
+rect 1620 -730 1660 -630
+rect 1740 -730 1780 -630
+use nf_reset venule_outlet
+transform 1 0 1800 0 1 -700
+box 0 -20 115 139
+<< labels >>
+rlabel metal2 62 1500 92 1560 0 GC
+rlabel metal2 462 1500 492 1560 0 GR
+rlabel metal2 900 -694 1000 -664 0 VENULE
+rlabel metal2 2050 -694 2200 -664 0 ARTERY
+rlabel metal2 1842 -490 1872 -440 0 SLOW_GATE
+<< end >>
