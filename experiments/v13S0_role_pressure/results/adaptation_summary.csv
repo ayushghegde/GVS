@@ -1,0 +1,4 @@
+policy,total_backlog_area,max_total_queue,ending_queue,served,reserve_role_changes,role_pressure_pulses
+fixed,374590.0,812.0,553.0,29912.0,0,0
+role_pressure,102786.0,335.0,18.0,30447.0,40,1769
+oracle,88218.0,300.0,4.0,30461.0,0,0
