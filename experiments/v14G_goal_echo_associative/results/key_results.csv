@@ -1,0 +1,11 @@
+metric,condition,value
+context_accuracy,sigma=.2,0.97275
+goal_recognition,sigma=.2,0.994
+episode_recall,sigma=.2,0.9843333333333333
+goal_echo_8hop,sigma=.2;echo=0,0.0394
+goal_echo_8hop,sigma=.2;echo=1,0.8724
+goal_echo_12hop,sigma=.2;echo=1,0.7498
+code_repair,sigma=.2,0.9673333333333334
+unseen_arithmetic,withheld=216,0.0
+64hop_success,loss=.06;spacing=8,1.0
+64hop_success,loss=.08;spacing=8,0.9885
