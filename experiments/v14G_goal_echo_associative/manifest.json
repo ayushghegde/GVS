@@ -1,0 +1,16 @@
+{
+  "experiment": "v14G",
+  "name": "Goal-Echo Associative Reasoning Fabric",
+  "status": "model-pass-physical-device-open",
+  "canonical_runner": "experiments/v14G_goal_echo_associative/source/run_v14g.py",
+  "retained_results": ["experiments/v14G_goal_echo_associative/results/key_results.csv"],
+  "runner_outputs": ["results/summary.json", "results/key_results.csv"],
+  "seed": 1407001,
+  "evidence_boundary": "Algorithmic/event-level physical models only. No fabricated v14G two-terminal device and no claim of foundation-model-level intelligence.",
+  "parent": "experiment/v14EG-reciprocal-semantic-wave-tissue@7e8455072d0b0293162eb6932b6740c21f84a184",
+  "notes": [
+    "MOS transistors are prohibited inside the v14G semantic/reasoning core candidate.",
+    "v14E remains the physically closed reference/fallback for comparison only.",
+    "Full sweep matrices are regenerated deterministically by the canonical runner; the repository retains compact key results to limit storage."
+  ]
+}
