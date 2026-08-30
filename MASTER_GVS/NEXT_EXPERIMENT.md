@@ -1,22 +1,22 @@
-# Current Next Experiment — v13U4 Consolidation Interface Closure
+# Current Next Experiment — v14D1 Physical Contradiction Fatigue + Adaptive Freeze
 
 ## Goal
-Close the smallest persistent-memory interface that can help adaptive tissue without putting slow/high-voltage NVM into every cell.
+Physically reproduce v14D Local Contradiction Restart without adding a scheduler, while finally closing the inherited v14C Role-Pressure PEX-mismatch boundary.
 
 ## Required path
-`fast MIM/MOS state -> familiarity/stability -> deep promotion -> shared NVM interface -> persistent prior -> power-up seed -> live RPF allowed to override`.
+`persistent local contradiction -> CFN fatigue accumulation -> hysteretic local reset/reseed -> neighborhood re-settles -> Population Confidence verifies result`.
 
 ## Battery
-1. reproduce v13U endurance/staleness frontier;
-2. load SKY130 SONOS programmed/erased BOL/EOL model corners with a compatible simulator if available;
-3. verify low-voltage read separation and read disturbance;
-4. model/measure shared high-voltage programming infrastructure and amortization;
-5. program/erase latency must stay off the critical reasoning path;
-6. power-cut restart: compare random boot, SONOS prior, and live re-adaptation;
-7. stale persistent prior may delay adaptation but must never force a wrong robust result;
-8. test sparse relation/morphology consolidation, not per-event context;
-9. compare lifetime writes against 100k guaranteed cycles;
-10. keep MRAM as a future parameter envelope only unless a real process model is available.
+1. normalize or flatten the preserved FAST/SLOW Magic ext2spice hierarchy without deleting electrical nodes;
+2. rerun 48 FAST + 48 SLOW with real SKY130 MOS + MIM mismatch and preserve raw results;
+3. keep FAST/SLOW crossover as an adaptation-speed degradation, never an answer-correctness permission;
+4. implement smallest MIM/MOS Contradiction Fatigue Node (CFN);
+5. isolated contradiction/noise must decay without restart;
+6. repeated local contradiction must trigger only the affected neighborhood;
+7. solved Binding/Relation neighborhoods must remain electrically undisturbed;
+8. stochastic reseed must come from the cheapest measured physical noise source;
+9. run TT/FF/SS + supply + temperature + mismatch;
+10. integrate CFN+CPE into multi-region reasoning and compare unresolved/on-time/energy/area against v14C/v14D model targets.
 
 ## Acceptance
-Keep persistent quantum-effect memory only if total lifetime cost improves after high-voltage/process/area/endurance costs. Otherwise keep purely volatile MIM/MOS tissue and external/ordinary persistent configuration.
+Promote CFN only if local restart materially reduces unresolved hard queries per added physical area/energy and does not introduce false confident answers. Otherwise retain v14C CPE and keep contradictions unresolved.
