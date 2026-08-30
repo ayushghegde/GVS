@@ -1,0 +1,12 @@
+{
+  "experiment": "v14E_physical_contradiction_fatigue",
+  "status": "PHYSICAL_PEX_PVT_MISMATCH_PASS",
+  "selected_cell": "15 MOS + 2 MIM unclamped CFN",
+  "fatigue_mim_um": [3.0, 3.0],
+  "bucket_mim_um": [1.71, 1.71],
+  "pvt_runs": 108,
+  "mismatch_runs": 192,
+  "pvt_expected": {"one_restart": 0, "two_restart": 27, "spaced_restart": 0, "confident_restart": 0},
+  "mismatch_expected": {"one_restart": 0, "two_restart": 48, "spaced_restart": 0, "confident_restart": 0},
+  "claims_boundary": "Simulation and extracted-layout evidence only; not fabricated silicon measurement."
+}
