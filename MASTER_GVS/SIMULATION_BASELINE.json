@@ -1,8 +1,8 @@
 {
   "schema": "gvs-canonical-simulation-v1",
   "architecture_source": "MASTER_GVS/MAIN_ARCHITECTURE.md",
-  "candidate_architecture_source": "MASTER_GVS/V13U_ARCHITECTURE.md",
-  "current_experiment_family": "v13U",
+  "candidate_architecture_source": "MASTER_GVS/V14D_ARCHITECTURE.md",
+  "current_experiment_family": "v14D",
   "historical_physical_baseline": {
     "grammar_reader": "experiments/v13A6_dual_pair_grammar_reader",
     "regional_lease": "experiments/v13A4_shared_local_group",
@@ -10,7 +10,8 @@
   },
   "current_physical_evidence": {
     "v13S2_shared_venule": "experiments/v13S2_shared_venule_physical",
-    "v13T3_patch_gate": "experiments/v13T3_physical_patch_gate"
+    "v13T3_patch_gate": "experiments/v13T3_physical_patch_gate",
+    "v14C_role_pressure": "selected 2-MIM FAST / 4-MIM SLOW PVT evidence recorded in MASTER_GVS/V14C_ARCHITECTURE.md; final normalized 48+48 PEX mismatch remains conditional"
   },
   "current_reproducible_work": {
     "v13M0": "experiments/v13M0_surface_intelligent_octet/source/run_v13m0.py",
@@ -30,7 +31,10 @@
     "v13T0": "experiments/v13T0_homeostatic_reserve/source/run_v13t0.py",
     "v13T1": "experiments/v13T1_adaptation_speed/source/run_v13t1.py",
     "v13T2": "experiments/v13T2_patch_handoff/source/run_v13t2.py",
-    "v13U": "experiments/v13U_quantum_effect_screen/source/run_v13u.py"
+    "v13U": "experiments/v13U_quantum_effect_screen/source/run_v13u.py",
+    "v14C_system": "experiments/v14C_heterogeneous_adaptive_tissue/source/run_v14c_system.py",
+    "v14C_hard_pressure": "experiments/v14C_heterogeneous_adaptive_tissue/source/run_v14c_hard_pressure.py",
+    "v14D_local_restart": "experiments/v14D_local_contradiction_restart/source/run_v14d_local_restart.py"
   },
   "support_tools": {
     "trace_schema": "MASTER_GVS/TRACE_SCHEMA.md",
@@ -46,6 +50,8 @@
     "Do not place SONOS programming/high-voltage support in every ECC; share it if it earns lifetime cost.",
     "Coherent quantum memory is not part of the current cheap GVS fabric.",
     "Use stochastic exploration only where measured benefit repays it; no quantum source is required.",
-    "Keep Local Venule -> Charge Artery -> regional reservoir -> battery/collector recovery hierarchy."
+    "Keep Local Venule -> Charge Artery -> regional reservoir -> battery/collector recovery hierarchy.",
+    "Local Contradiction Restart may disturb only the unresolved contradiction neighborhood; solved Binding/Relation state is preserved.",
+    "Population Confidence remains the authority for robust answers; restart/reseed mechanisms never authorize an answer."
   ]
 }
