@@ -1,22 +1,26 @@
-# Current Next Experiment — v14D1 Physical Contradiction Fatigue + Adaptive Freeze
+# Current Next Experiment — v14G1 Transistor-Free Structural Operator
+
+## Problem
+v14G can recall and compose learned semantic relations, but it cannot solve an exact relation that has never been physically embodied. The deliberate withheld-arithmetic screen scored 0%.
 
 ## Goal
-Physically reproduce v14D Local Contradiction Restart without adding a scheduler, while finally closing the inherited v14C Role-Pressure PEX-mismatch boundary.
+Create a transistor-free physical operator that represents a reusable transformation rather than one memorized value-to-value edge.
 
-## Required path
-`persistent local contradiction -> CFN fatigue accumulation -> hysteretic local reset/reseed -> neighborhood re-settles -> Population Confidence verifies result`.
+## First target
+Arithmetic addition is the clean acceptance task because the correct result is unambiguous and generalization can be measured exactly.
 
-## Battery
-1. normalize or flatten the preserved FAST/SLOW Magic ext2spice hierarchy without deleting electrical nodes;
-2. rerun 48 FAST + 48 SLOW with real SKY130 MOS + MIM mismatch and preserve raw results;
-3. keep FAST/SLOW crossover as an adaptation-speed degradation, never an answer-correctness permission;
-4. implement smallest MIM/MOS Contradiction Fatigue Node (CFN);
-5. isolated contradiction/noise must decay without restart;
-6. repeated local contradiction must trigger only the affected neighborhood;
-7. solved Binding/Relation neighborhoods must remain electrically undisturbed;
-8. stochastic reseed must come from the cheapest measured physical noise source;
-9. run TT/FF/SS + supply + temperature + mismatch;
-10. integrate CFN+CPE into multi-region reasoning and compare unresolved/on-time/energy/area against v14C/v14D model targets.
+Test at least three approaches:
+1. residue/phase-coded value rings where addition is a physical displacement or phase transform;
+2. regular waveguide/coupler displacement that reuses one relation geometry across many values;
+3. sparse learned lookup as the control.
 
 ## Acceptance
-Promote CFN only if local restart materially reduces unresolved hard queries per added physical area/energy and does not introduce false confident answers. Otherwise retain v14C CPE and keep contradictions unresolved.
+Keep an operator only if it:
+- computes unseen operand combinations rather than recalling them;
+- uses no MOS transistor in the reasoning core;
+- needs substantially fewer programmable links than a value-by-value lookup table;
+- composes for at least 8 sequential operations under device variation;
+- retains an exact-error detector or Population Confidence boundary;
+- has a credible fabrication path simpler/cheaper than recreating transistor logic.
+
+If none passes, v14G remains an associative retrieval/reasoning fabric and exact arithmetic stays an unresolved hardware problem rather than being hidden behind a processor.
