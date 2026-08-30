@@ -1,8 +1,8 @@
 {
   "schema": "gvs-canonical-simulation-v1",
   "architecture_source": "MASTER_GVS/MAIN_ARCHITECTURE.md",
-  "candidate_architecture_source": "MASTER_GVS/V14E_ARCHITECTURE.md",
-  "current_experiment_family": "v14E",
+  "candidate_architecture_source": "MASTER_GVS/V14G_ARCHITECTURE.md",
+  "current_experiment_family": "v14G",
   "historical_physical_baseline": {
     "grammar_reader": "experiments/v13A6_dual_pair_grammar_reader",
     "regional_lease": "experiments/v13A4_shared_local_group",
@@ -12,7 +12,8 @@
     "v13S2_shared_venule": "experiments/v13S2_shared_venule_physical",
     "v13T3_patch_gate": "experiments/v13T3_physical_patch_gate",
     "v14E_role_pressure": "FAST/SLOW physical primitive frozen after completed 48+48 mismatch; worst observed activation-envelope separation about 39.9 ns",
-    "v14E_cfn": "15-MOS + 2-MIM unclamped CFN, 3.0x3.0-um fatigue MIM, 108/108 PEX PVT and 192/192 PEX mismatch complete"
+    "v14E_cfn": "15-MOS + 2-MIM unclamped CFN, 3.0x3.0-um fatigue MIM, 108/108 PEX PVT and 192/192 PEX mismatch complete",
+    "v14G_semantic_core": "model-level transistor-free candidate only; no fabricated two-terminal v14G device yet"
   },
   "current_reproducible_work": {
     "v13M0": "experiments/v13M0_surface_intelligent_octet/source/run_v13m0.py",
@@ -36,7 +37,8 @@
     "v14C_system": "experiments/v14C_heterogeneous_adaptive_tissue/source/run_v14c_system.py",
     "v14C_hard_pressure": "experiments/v14C_heterogeneous_adaptive_tissue/source/run_v14c_hard_pressure.py",
     "v14D_local_restart": "experiments/v14D_local_contradiction_restart/source/run_v14d_local_restart.py",
-    "v14E_physical_cfn": "experiments/v14E_physical_contradiction_fatigue/results/summary.json"
+    "v14E_physical_cfn": "experiments/v14E_physical_contradiction_fatigue/results/summary.json",
+    "v14G_goal_associative": "experiments/v14G_goal_echo_associative/source/run_v14g.py"
   },
   "support_tools": {
     "trace_schema": "MASTER_GVS/TRACE_SCHEMA.md",
@@ -52,6 +54,11 @@
     "Keep Local Venule -> Charge Artery -> regional reservoir -> battery/collector recovery hierarchy.",
     "Local Contradiction Restart may disturb only the unresolved contradiction neighborhood; solved Binding/Relation state is preserved.",
     "Regional resource pressure may control extra settling and reserve recruitment but may not veto a mature local contradiction restart.",
-    "Population Confidence remains the authority for robust answers; restart/reseed mechanisms never authorize an answer."
+    "Population Confidence remains the authority for robust answers; restart/reseed mechanisms never authorize an answer.",
+    "MOS transistors are prohibited inside the v14G semantic/reasoning core candidate; v14E CMOS remains reference evidence only.",
+    "Prefer sparse learned two-terminal links over dense all-to-all connectivity unless measured accuracy requires density.",
+    "Prefer sparse restoration junctions over one active exotic device per semantic cell.",
+    "Do not claim a two-terminal device is cheaper than CMOS until area, process steps, programming overhead, yield and energy are measured or credibly bounded.",
+    "Goal Echo is part of the v14G reasoning hypothesis: forward prompt evidence and reciprocal goal compatibility must be compared against forward-only controls."
   ]
 }
