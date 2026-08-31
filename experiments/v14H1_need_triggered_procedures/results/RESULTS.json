@@ -1,0 +1,40 @@
+{
+  "summary": {
+    "generated_problems": 6000,
+    "train_fraction": 0.25,
+    "heldout_problems": 4500,
+    "need_gated_nominal_trace_success": 1.0,
+    "full_state_lookup_heldout_first_action_success": 0.0,
+    "blind_fixed_sequence_trace_success": 0.16577777777777777,
+    "numeric_values_are_not_part_of_need_templates": true
+  },
+  "population_stress": [
+    {"feature_flip_probability":"0.02","population_replicas":"5","trace_success_rate":"0.9996","trials":"10000"},
+    {"feature_flip_probability":"0.05","population_replicas":"5","trace_success_rate":"0.9964","trials":"10000"},
+    {"feature_flip_probability":"0.1","population_replicas":"5","trace_success_rate":"0.9522","trials":"10000"},
+    {"feature_flip_probability":"0.15","population_replicas":"5","trace_success_rate":"0.8431","trials":"10000"},
+    {"feature_flip_probability":"0.2","population_replicas":"5","trace_success_rate":"0.6546","trials":"10000"},
+    {"feature_flip_probability":"0.02","population_replicas":"7","trace_success_rate":"1.0","trials":"10000"},
+    {"feature_flip_probability":"0.05","population_replicas":"7","trace_success_rate":"0.9988","trials":"10000"},
+    {"feature_flip_probability":"0.1","population_replicas":"7","trace_success_rate":"0.9892","trials":"10000"},
+    {"feature_flip_probability":"0.15","population_replicas":"7","trace_success_rate":"0.9379","trials":"10000"},
+    {"feature_flip_probability":"0.2","population_replicas":"7","trace_success_rate":"0.8136","trials":"10000"},
+    {"feature_flip_probability":"0.02","population_replicas":"9","trace_success_rate":"1.0","trials":"10000"},
+    {"feature_flip_probability":"0.05","population_replicas":"9","trace_success_rate":"0.9999","trials":"10000"},
+    {"feature_flip_probability":"0.1","population_replicas":"9","trace_success_rate":"0.9971","trials":"10000"},
+    {"feature_flip_probability":"0.15","population_replicas":"9","trace_success_rate":"0.9764","trials":"10000"},
+    {"feature_flip_probability":"0.2","population_replicas":"9","trace_success_rate":"0.9048","trials":"10000"}
+  ],
+  "example_trace": {
+    "problem": "rectangle width unknown; length is 5 greater; area is 84",
+    "trace": [
+      "need unknown value -> bind width as x",
+      "need length expression -> length = x + 5",
+      "need area equation -> x(x + 5) = 84",
+      "need zero-form equation -> x^2 + 5x - 84 = 0",
+      "need roots -> factor as (x + 12)(x - 7) = 0",
+      "need physically valid dimension -> choose x = 7"
+    ],
+    "hardware_status": "selection mechanism modeled; multiply/factor structural hardware not yet physically solved"
+  }
+}
