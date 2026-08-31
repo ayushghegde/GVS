@@ -1,0 +1,43 @@
+{
+  "experiment": "v14J fixed capacitive-link inference floor",
+  "tool": "Magic 8.3.681 with SKY130A technology 1.0.602-0-gf3c505b",
+  "weak_link": {
+    "geometry_um": "1x1 MIM",
+    "drc_errors": 0,
+    "extracted_device": "sky130_fd_pr__cap_mim_m3_1",
+    "model_capacitance_fF": 2.645,
+    "direct_extracted_TOP_BOT_parasitic_fF": 0.09185,
+    "effective_link_capacitance_proxy_fF": 2.73685,
+    "top_to_substrate_parasitic_fF": 0.10183,
+    "bottom_to_substrate_parasitic_fF": 0.37336
+  },
+  "strong_link": {
+    "geometry_um": "2x2 MIM",
+    "drc_errors": 0,
+    "extracted_device": "sky130_fd_pr__cap_mim_m3_1",
+    "model_capacitance_fF": 9.245,
+    "direct_extracted_TOP_BOT_parasitic_fF": 0.10026,
+    "effective_link_capacitance_proxy_fF": 9.34526,
+    "top_to_substrate_parasitic_fF": 0.09965,
+    "bottom_to_substrate_parasitic_fF": 0.58038
+  },
+  "strong_to_weak_effective_capacitance_ratio": 3.414604380948901,
+  "read_voltage_V": 0.2,
+  "receiving_node_capacitance_proxy_fF": 5.0,
+  "four_link_charge_share_V": {
+    "0_strong_4_weak": 0.1372938535,
+    "1_strong_3_weak": 0.1556655248,
+    "2_strong_2_weak": 0.1657114094,
+    "3_strong_1_weak": 0.1720456673,
+    "4_strong_0_weak": 0.1764045432
+  },
+  "read_electrostatic_energy_proxy_fJ": {
+    "weak_link": 0.054737,
+    "strong_link": 0.1869052
+  },
+  "limits": [
+    "SKY130 MIM is fixed geometry and does not provide v14J plasticity.",
+    "Effective capacitance proxy adds the extracted direct TOP-BOT parasitic to nominal current-PDK MIM area model; it is not a fabricated measurement.",
+    "Receiving-node voltage and energy are simple charge-sharing/electrostatic proxies, not full-region transient measurements."
+  ]
+}
