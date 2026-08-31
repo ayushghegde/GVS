@@ -1,8 +1,8 @@
 {
   "schema": "gvs-canonical-simulation-v1",
   "architecture_source": "MASTER_GVS/MAIN_ARCHITECTURE.md",
-  "candidate_architecture_source": "MASTER_GVS/V14K_ARCHITECTURE.md",
-  "current_experiment_family": "v14K",
+  "candidate_architecture_source": "MASTER_GVS/V14L_ARCHITECTURE.md",
+  "current_experiment_family": "v14L",
   "historical_physical_baseline": {
     "grammar_reader": "experiments/v13A6_dual_pair_grammar_reader",
     "regional_lease": "experiments/v13A4_shared_local_group",
@@ -17,7 +17,8 @@
     "v14H_connection_memory": "model-level connection-memory candidate; persistent semantic node voltage is not required in v14H2/v14H3 models",
     "v14J_fixed_capacitive_floor": "Magic/SKY130 fixed 1x1-um and 2x2-um MIM links are 0 DRC and extract as real sky130_fd_pr__cap_mim_m3_1; effective nominal+direct-parasitic coupling proxy about 2.737 fF weak and 9.345 fF strong, ratio about 3.415x",
     "v14J_plastic_link": "model-level reversible memcapacitive connection only; no programmable SKY130 SPCL exists yet",
-    "v14K_self_revision": "model-level structural-revision candidate: dormant connection slots + effort eligibility + teacher-free self-test + provisional consolidation; no physical v14K dormant programmable crosspoint is closed yet"
+    "v14K_self_revision": "model-level structural-revision candidate: dormant connection slots + effort eligibility + teacher-free self-test + provisional consolidation; no physical v14K dormant programmable crosspoint is closed yet",
+    "v14L_qvc": "model-level pre-biased leaky quantal charge-vesicle cell using v14J extracted MIM capacitance proxies; passive one-capacitor fanout rejected; volatile release switch remains unclosed physical target"
   },
   "current_reproducible_work": {
     "v13M0": "experiments/v13M0_surface_intelligent_octet/source/run_v13m0.py",
@@ -49,7 +50,8 @@
     "v14H3_local_plasticity": "experiments/v14H3_local_connection_plasticity/source/run_v14h3.py",
     "v14J_self_plastic_links": "experiments/v14J_self_plastic_capacitive_links/source/run_v14j.py",
     "v14K_structural_revision": "experiments/v14K_self_revising_understanding/source/run_v14k.py",
-    "v14K_provisional_understanding": "experiments/v14K_self_revising_understanding/source/run_v14k_provisional.py"
+    "v14K_provisional_understanding": "experiments/v14K_self_revising_understanding/source/run_v14k_provisional.py",
+    "v14L_charge_vesicle": "experiments/v14L_quantal_charge_vesicle/source/run_v14l.py"
   },
   "support_tools": {
     "trace_schema": "MASTER_GVS/TRACE_SCHEMA.md",
@@ -62,7 +64,7 @@
     "Coherent quantum memory is not part of the current cheap GVS fabric.",
     "Keep Local Venule -> Charge Artery -> regional reservoir -> battery/collector recovery hierarchy.",
     "Population Confidence remains the authority for robust answers; restart/reseed/learning mechanisms never authorize an answer by themselves.",
-    "MOS transistors are prohibited inside the v14G/v14H/v14J/v14K semantic and reasoning core candidate; v14E CMOS remains reference evidence only.",
+    "MOS transistors are prohibited inside the v14G/v14H/v14J/v14K/v14L semantic and reasoning core candidate; v14E CMOS remains reference evidence only.",
     "Persistent semantic memory in ordinary semantic cells belongs in sparse connection state, not stored node voltage; temporary excitation charge is allowed.",
     "Connection plasticity must be reversible: useful relations may strengthen and disproven relations must be able to weaken and later strengthen again.",
     "v14K may recruit a genuinely new semantic relation only through a physically pre-existing dormant candidate connection slot; do not imply that metal wires grow after fabrication.",
@@ -73,6 +75,10 @@
     "Ordinary SKY130 MIM is an inference-only fixed-connection floor and must never be described as a programmable learning device.",
     "Prefer sparse dormant connection slots over a dense all-to-all rewiring matrix; structural learning has finite capacity and must eventually prune/reuse/allocate slots.",
     "Do not claim a ferroelectric memcapacitor or other two-terminal plastic device is cheaper than CMOS until programming rails, selectors, process steps, half-select disturbance, yield, endurance, retention, area and energy are counted.",
+    "v14L rejects passive one-capacitor fanout as a general communication mechanism; long chains require local energy regeneration.",
+    "v14L must reuse v14K OFF/WEAK/STRONG relation elements as packet couplers rather than duplicating the semantic graph with a second synapse matrix.",
+    "Literal neurotransmitter/fluid chemistry is not the v14L baseline; solid-state threshold or ionic devices are candidates only after full process and firing-energy accounting.",
+    "Do not claim v14L collectively beats transistor control until VRS firing energy, switching delay, leakage, variation, drive, endurance and BEOL integration all close against the whole-cell reference.",
     "Goal Echo remains part of the reasoning hypothesis: forward prompt evidence and reciprocal goal compatibility must be compared against forward-only controls.",
     "CRRO is currently accepted only for exact modular addition in Z_420; do not call it general arithmetic.",
     "Exact transformations remain subproblems inside the broader self-revising connection-memory intelligence fabric rather than the canonical architecture goal."
