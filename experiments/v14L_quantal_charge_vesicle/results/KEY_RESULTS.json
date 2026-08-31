@@ -1,0 +1,55 @@
+{
+  "schema": "v14L-key-results-v1",
+  "evidence_boundary": "Synthetic charge-sharing and variation model using v14J extracted SKY130 MIM capacitance proxies. No fabricated v14L release device exists yet.",
+  "capacitance_basis_fF": {
+    "weak_link": 2.73685,
+    "strong_link": 9.34526,
+    "membrane": 18.69052
+  },
+  "selected_bias": {
+    "rest_V": 0.60,
+    "threshold_V": 0.80,
+    "reset_V": 0.15,
+    "source_edge_V": 0.65,
+    "leak_tau_ns": 100.0,
+    "packet_spacing_ns": 5.0,
+    "release_fail_probability": 0.01
+  },
+  "passive_fanout_rejection": {
+    "source_start_V": 0.80,
+    "equal_cap_receiver_fanout_1_final_V": 0.40,
+    "equal_cap_receiver_fanout_3_final_V": 0.20,
+    "conclusion": "A single passive charged capacitor cannot regenerate a same-threshold chain; local stored energy is required."
+  },
+  "idle_screen": {
+    "samples": 1000000,
+    "observed_false_fires": 0
+  },
+  "cascade_6weak_1strong": {
+    "layers": 8,
+    "cells_per_layer": 64,
+    "trials": 500,
+    "mean_final_active_fraction": 0.994125,
+    "p05_final_active_fraction": 0.96875,
+    "minimum_final_active_fraction": 0.921875,
+    "common_coupling_plus_replenishment_energy_fJ_per_fire": 9.133418271936694
+  },
+  "cascade_4weak_2strong": {
+    "layers": 8,
+    "cells_per_layer": 64,
+    "trials": 500,
+    "mean_final_active_fraction": 0.99884375,
+    "p05_final_active_fraction": 0.984375,
+    "minimum_final_active_fraction": 0.984375,
+    "common_coupling_plus_replenishment_energy_fJ_per_fire": 9.847634126323818
+  },
+  "transistor_break_even_targets": {
+    "reference_VDD_V": 1.8,
+    "energy_rule": "E_VRS must be below C_logic * VDD^2 because coupling/replenishment is common to both references.",
+    "for_5fF_cmos_control_max_VRS_fJ": 16.2,
+    "for_10fF_cmos_control_max_VRS_fJ": 32.4,
+    "for_20fF_cmos_control_max_VRS_fJ": 64.8,
+    "example_10fF_cmos_6ns_and_5fJ_VRS_max_VRS_delay_ns_for_equal_EDP": 17.632005565591484
+  },
+  "decision": "Keep the pre-biased locally regenerative capacitor-centered architecture. Reject passive one-capacitor propagation. Physical promotion is blocked on VRS switching energy, delay, leakage, variation and BEOL integration."
+}
