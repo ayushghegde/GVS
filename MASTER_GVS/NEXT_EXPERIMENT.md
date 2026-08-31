@@ -1,19 +1,43 @@
-# Current Next Experiment — v14J1 Plastic-Link Physical Closure
+# Current Next Experiment — v14K5 Physical Self-Revision Link
+
+## Problem
+v14K can revise explanatory graph structure in the model, but a real chip cannot grow arbitrary wires. Structural learning requires pre-laid sparse dormant candidate links whose coupling can move OFF <-> WEAK <-> STRONG under local electrical teaching signals.
 
 ## Goal
-Determine whether a self-plastic capacitive connection can remain cheaper than transistor memory after the full programming problem is counted.
+Close the smallest physically credible self-revision unit without putting transistor memory into every semantic cell or every synapse.
 
-## Required tests
-1. Obtain or construct a credible compact model for a reversible two-terminal ferroelectric/memcapacitive link with separate read and program regimes.
-2. Replay weak/strong charge transfer using actual device capacitance windows, not the abstract 0.25/0.85 fF model.
-3. Test bidirectional learning with positive/negative local differential pulse pairs, including reversal after a relation changes twice.
-4. Sweep coercive/program threshold variation, read disturbance, retention drift, program failure, and partial-state saturation.
-5. Test half-selected links in a sparse connection bundle so learning one relation does not rewrite neighbors.
-6. Count complete write infrastructure: pulse rails, selectors/isolation if required, routing, write energy, and process steps. Do not compare only the two-terminal device footprint with one transistor.
-7. Compare three hardware options: fixed compiled MIM, programmable ferroelectric memcapacitor, and a transistor-memory baseline on total inference+learning cost.
-8. Retain two/three parallel link copies only if they repay their added area in fault tolerance.
-9. Feed the physical link model into the v14H2 seven-domain connection-memory benchmark and verify that continual learning does not destroy multi-hop reasoning.
-10. Keep specialized node-memory structures such as Role Pressure and CFN sparse; do not reintroduce persistent memory into every semantic cell.
+## Candidates
+1. fixed SKY130 MIM OFF/weak/strong geometry — inference/cost control only, not trainable;
+2. ferroelectric HZO memcapacitive crosspoint — reversible capacitance candidate;
+3. two-terminal conductance-memory crosspoint driving a passive coupling capacitor — control if memcapacitive programming/support is too expensive;
+4. dense CMOS/SRAM programmable connection — cost reference only, prohibited from becoming the semantic core.
+
+## Physical tests
+For each trainable candidate measure or credibly model:
+- OFF/WEAK/STRONG state separation;
+- read pulse below disturb threshold;
+- reversible potentiation and depression;
+- one-shot and gradual programming;
+- half-select / sneak-path disturbance;
+- endurance and retention;
+- failed/stuck programming;
+- write voltage and energy;
+- selector / driver / charge-pump cost;
+- 2- and 3-link bundle behavior;
+- whether one local effort bias can gate a neighborhood without one effort-memory device per link.
+
+## System replay
+Use the same physical plastic-state model in the v14K structural-revision workload:
+- prior explanation fails;
+- effort rises;
+- new lesson recruits dormant slots;
+- contradicted shortcut depresses;
+- teacher is removed;
+- original question reruns;
+- related transfer questions test the new model;
+- uncertain revisions stay provisional until corroborated.
 
 ## Acceptance
-Promote SPCL only if it provides reversible nonvolatile coupling, negligible read disturb, adequate retention/endurance, and a total system cost below the transistor-based memory/routing it replaces. If programming/select infrastructure dominates, keep fixed MIM for inference-only connection planes and reject on-chip plastic SPCL until a cheaper material/process appears.
+Keep a programmable-link candidate only if the complete connection—including programming access and peripheral cost—has a credible path to lower area/energy/process complexity than the transistor-memory baseline while preserving reversible self-revision.
+
+If no device passes, keep v14K as a model architecture and retain fixed compiled MIM as the inference-only cost floor. Do not claim that ordinary SKY130 MIM learns from electrical history.
