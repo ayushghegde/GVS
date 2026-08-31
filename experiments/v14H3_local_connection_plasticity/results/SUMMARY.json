@@ -1,0 +1,24 @@
+{
+  "experiment": "v14H3 local binary connection plasticity",
+  "fixed_geometry_control": {
+    "changed_fraction": 0.2,
+    "overall_after_change_accuracy": 0.8,
+    "changed_relation_accuracy": 0.0,
+    "program_events": 0
+  },
+  "final": [
+    {"reps":1,"sigma":0.2,"stuck_probability_per_write":0,"baseline_accuracy":1.0,"final_accuracy":1.0,"final_never_changed_retention":1.0,"program_events":1000,"events_per_relation_change":2},
+    {"reps":2,"sigma":0.2,"stuck_probability_per_write":0,"baseline_accuracy":1.0,"final_accuracy":1.0,"final_never_changed_retention":1.0,"program_events":2000,"events_per_relation_change":4},
+    {"reps":3,"sigma":0.2,"stuck_probability_per_write":0,"baseline_accuracy":1.0,"final_accuracy":1.0,"final_never_changed_retention":1.0,"program_events":3000,"events_per_relation_change":6},
+    {"reps":1,"sigma":0.2,"stuck_probability_per_write":0.01,"baseline_accuracy":1.0,"final_accuracy":0.996,"final_never_changed_retention":0.998324958123953,"program_events":1000,"events_per_relation_change":2},
+    {"reps":2,"sigma":0.2,"stuck_probability_per_write":0.01,"baseline_accuracy":1.0,"final_accuracy":1.0,"final_never_changed_retention":1.0,"program_events":2000,"events_per_relation_change":4},
+    {"reps":3,"sigma":0.2,"stuck_probability_per_write":0.01,"baseline_accuracy":1.0,"final_accuracy":1.0,"final_never_changed_retention":1.0,"program_events":3000,"events_per_relation_change":6},
+    {"reps":1,"sigma":0.2,"stuck_probability_per_write":0.05,"baseline_accuracy":0.999,"final_accuracy":0.982,"final_never_changed_retention":1.0,"program_events":1000,"events_per_relation_change":2},
+    {"reps":2,"sigma":0.2,"stuck_probability_per_write":0.05,"baseline_accuracy":1.0,"final_accuracy":0.997,"final_never_changed_retention":1.0,"program_events":2000,"events_per_relation_change":4},
+    {"reps":3,"sigma":0.2,"stuck_probability_per_write":0.05,"baseline_accuracy":1.0,"final_accuracy":0.999,"final_never_changed_retention":1.0,"program_events":3000,"events_per_relation_change":6},
+    {"reps":1,"sigma":0.2,"stuck_probability_per_write":0.1,"baseline_accuracy":1.0,"final_accuracy":0.943,"final_never_changed_retention":1.0,"program_events":1000,"events_per_relation_change":2},
+    {"reps":2,"sigma":0.2,"stuck_probability_per_write":0.1,"baseline_accuracy":1.0,"final_accuracy":0.984,"final_never_changed_retention":1.0,"program_events":2000,"events_per_relation_change":4},
+    {"reps":3,"sigma":0.2,"stuck_probability_per_write":0.1,"baseline_accuracy":1.0,"final_accuracy":0.992,"final_never_changed_retention":1.0,"program_events":3000,"events_per_relation_change":6}
+  ],
+  "limits": ["Abstract binary-link model, not a measured device.","Programming energy/area/endurance are not yet physical values."]
+}
