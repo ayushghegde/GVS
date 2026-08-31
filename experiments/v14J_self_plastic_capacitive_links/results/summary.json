@@ -1,0 +1,52 @@
+{
+  "experiment": "v14J self-polarizing capacitive-link learning",
+  "seed": 1410,
+  "continual_learning": {
+    "setup": "1000 relations, 500 targets, 12 rounds, 5% relations changed/round, 3 local learning pulse-pairs/change, 20% read variation, 5% program-event failure",
+    "bidirectional_final_accuracy": {
+      "false_feedback_0": {"1_copy": 0.995, "2_copy": 0.999, "3_copy": 1.0},
+      "false_feedback_0.01": {"1_copy": 0.995, "2_copy": 1.0, "3_copy": 1.0},
+      "false_feedback_0.05": {"1_copy": 0.972, "2_copy": 0.993, "3_copy": 0.997},
+      "false_feedback_0.10": {"1_copy": 0.936, "2_copy": 0.979, "3_copy": 0.98}
+    },
+    "strengthen_only_final_accuracy": {
+      "false_feedback_0": {"1_copy": 0.667, "2_copy": 0.639, "3_copy": 0.633},
+      "false_feedback_0.01": {"1_copy": 0.689, "2_copy": 0.656, "3_copy": 0.636},
+      "false_feedback_0.05": {"1_copy": 0.694, "2_copy": 0.639, "3_copy": 0.624},
+      "false_feedback_0.10": {"1_copy": 0.669, "2_copy": 0.619, "3_copy": 0.603}
+    },
+    "selected_mean_capacitance_fF_at_10pct_false_feedback": {
+      "desired_link": 0.775,
+      "nonselected_link": 0.264
+    }
+  },
+  "six_hop_local_relearning": {
+    "setup": "180 six-hop chains, one locally changed edge in 25% of chains, 5% program-event failure, 20% read variation",
+    "after_relearning_at_10pct_false_feedback": {
+      "1_copy": 0.9611111111,
+      "2_copy": 0.9944444444,
+      "3_copy": 0.9944444444
+    }
+  },
+  "read_program_separation": {
+    "samples": 200000,
+    "read_voltage_V": 0.2,
+    "nominal_threshold_V": 1.5,
+    "program_voltage_V": 3.0,
+    "threshold_sigma_fraction": 0.2,
+    "modeled_read_disturb_probability": 0.0,
+    "modeled_program_above_threshold_probability": 1.0
+  },
+  "abstract_charge_transfer": {
+    "receiving_node_fF": 5.0,
+    "read_voltage_V": 0.2,
+    "0_strong_4_weak_target_V": 0.0333333333,
+    "4_strong_0_weak_target_V": 0.080952381
+  },
+  "limits": [
+    "Abstract memcapacitor state model; not a fabricated device.",
+    "Learning requires a local confirmation/contradiction signal; repeated electrical activity alone does not establish semantic truth.",
+    "Program/read voltages are screening values, not selected process values.",
+    "Program-driver, half-select, process, endurance and yield costs are not yet closed."
+  ]
+}
