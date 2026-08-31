@@ -1,0 +1,14 @@
+{
+  "experiment": "v14H2_connection_imprinted_intelligence",
+  "status": "model-pass / hardware-open",
+  "source": "source/run_v14h2.py",
+  "results": "results/RESULTS.json",
+  "report": "REPORT.md",
+  "architecture_extension": "MASTER_GVS/V14H_CONNECTION_MEMORY.md",
+  "persistent_node_memory_sites": 0,
+  "notes": [
+    "Synthetic broad relational benchmark only; not a foundation-model benchmark.",
+    "Temporary charge is allowed; persistent semantic voltage per ordinary cell is not required.",
+    "Connection memory hardware is not physically selected yet."
+  ]
+}
