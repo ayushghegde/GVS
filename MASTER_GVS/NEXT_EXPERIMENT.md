@@ -1,43 +1,42 @@
-# Current Next Experiment — v14K5 Physical Self-Revision Link
+# Current Next Experiment — v14L5 Physical Quantal Release Closure
 
 ## Problem
-v14K can revise explanatory graph structure in the model, but a real chip cannot grow arbitrary wires. Structural learning requires pre-laid sparse dormant candidate links whose coupling can move OFF <-> WEAK <-> STRONG under local electrical teaching signals.
+v14L now has a capacitor-centered communication architecture that survives the model-level cascade, but the decisive nonlinear release device is still abstract. A plain passive capacitor was rejected because charge sharing cannot regenerate a same-threshold chain. The remaining question is whether a real two-terminal volatile release element can provide threshold/hold behavior, controlled leak and a fast low-energy firing event cheaply enough that the **whole QVC cell** beats transistor control.
 
 ## Goal
-Close the smallest physically credible self-revision unit without putting transistor memory into every semantic cell or every synapse.
+Close one physically credible QVC/VRS unit using the v14J extracted MIM capacitance floor and a real or literature-grounded volatile threshold compact model. Do not tune the network further until this device budget is tested.
 
-## Candidates
-1. fixed SKY130 MIM OFF/weak/strong geometry — inference/cost control only, not trainable;
-2. ferroelectric HZO memcapacitive crosspoint — reversible capacitance candidate;
-3. two-terminal conductance-memory crosspoint driving a passive coupling capacitor — control if memcapacitive programming/support is too expensive;
-4. dense CMOS/SRAM programmable connection — cost reference only, prohibited from becoming the semantic core.
+## Physical target
+Selected QVC model:
+- Cmem = 18.69052 fF;
+- rest bias = 0.60 V;
+- fire threshold = 0.80 V;
+- reset target = 0.15 V;
+- leak tau target = ~100 ns;
+- source firing edge = ~0.65 V;
+- v14K WEAK/STRONG relation capacitors remain the communication links.
 
-## Physical tests
-For each trainable candidate measure or credibly model:
-- OFF/WEAK/STRONG state separation;
-- read pulse below disturb threshold;
-- reversible potentiation and depression;
-- one-shot and gradual programming;
-- half-select / sneak-path disturbance;
-- endurance and retention;
-- failed/stuck programming;
-- write voltage and energy;
-- selector / driver / charge-pump cost;
-- 2- and 3-link bundle behavior;
-- whether one local effort bias can gate a neighborhood without one effort-memory device per link.
+Candidate VRS classes:
+1. chalcogenide ovonic threshold switch;
+2. oxide volatile threshold switch;
+3. solid-state ionic/filamentary volatile selector;
+4. a small CMOS threshold/reset circuit only as the cost reference, not as the preferred semantic-core implementation.
 
-## System replay
-Use the same physical plastic-state model in the v14K structural-revision workload:
-- prior explanation fails;
-- effort rises;
-- new lesson recruits dormant slots;
-- contradicted shortcut depresses;
-- teacher is removed;
-- original question reruns;
-- related transfer questions test the new model;
-- uncertain revisions stay provisional until corroborated.
+Literal neurotransmitter/fluid chemistry is not a baseline candidate.
+
+## Required experiments
+1. Build/import a compact VRS model with explicit Vth, Vhold, Ron, Roff/leak, switching delay and cycle energy.
+2. Connect it to the real v14J MIM capacitance proxies and the selected 6-WEAK + 1-STRONG fan-out load.
+3. Run transient integration -> threshold -> release -> reset -> replenishment.
+4. Sweep temperature/device variation enough to test idle false firing, missed firing and threshold drift.
+5. Measure complete firing energy, including the VRS, leak, replenishment and capacitive fan-out.
+6. Compare against transistor controls at 5/10/20 fF effective switched capacitance and 6 ns reference delay.
+7. Check the physical target budgets: VRS <16.2/32.4/64.8 fJ for 5/10/20 fF energy break-even; for the 10 fF reference and a 5 fJ VRS, delay should be <=17.63 ns for equal EDP, with ~10 ns preferred.
+8. Test whether WEAK/STRONG v14K links preserve the predicted packet amplitude after extracted parasitics are included.
+9. Test the post-fire charge path into Local Venule -> Charge Artery -> regional reservoir without allowing recovery to alter correctness.
+10. Count BEOL material/process area, thermal budget, selectors and routing before calling the device cheaper than CMOS.
 
 ## Acceptance
-Keep a programmable-link candidate only if the complete connection—including programming access and peripheral cost—has a credible path to lower area/energy/process complexity than the transistor-memory baseline while preserving reversible self-revision.
+Promote v14L only if the **complete QVC/VRS cell and sparse network**, not the isolated switch, beats the transistor reference on useful firing reliability plus energy and preferably energy-delay product while preserving v14K structural learning.
 
-If no device passes, keep v14K as a model architecture and retain fixed compiled MIM as the inference-only cost floor. Do not claim that ordinary SKY130 MIM learns from electrical history.
+If no VRS candidate closes the budget, keep v14L as a system concept, retain capacitive packet coupling, and reject the nonlinear-device implementation rather than hiding the cost in uncounted peripherals.
