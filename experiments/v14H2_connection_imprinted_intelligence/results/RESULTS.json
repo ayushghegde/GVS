@@ -1,0 +1,58 @@
+{
+  "experiment": "v14H2 connection-imprinted excitation fabric",
+  "persistent_node_memory_sites": 0,
+  "cells": 2852,
+  "learned_sparse_connections": 5312,
+  "directed_connection_density": 0.0006532979988321314,
+  "queries": 2130,
+  "domains": ["context","cause","code","plan","fact","analogy","operation"],
+  "connection_variation": {
+    "0": {"context":1.0,"operation":1.0,"fact":1.0,"analogy":1.0,"cause":1.0,"code":1.0,"plan":1.0,"ALL":1.0},
+    "0.1": {"context":1.0,"operation":1.0,"fact":1.0,"analogy":0.99375,"cause":1.0,"code":1.0,"plan":1.0,"ALL":0.9995305164319249},
+    "0.2": {"context":1.0,"operation":1.0,"fact":1.0,"analogy":0.9375,"cause":0.9944444444444445,"code":1.0,"plan":1.0,"ALL":0.9948356807511737},
+    "0.3": {"context":1.0,"operation":1.0,"fact":1.0,"analogy":0.80625,"cause":0.9888888888888889,"code":1.0,"plan":0.9785714285714285,"ALL":0.9830985915492958}
+  },
+  "retained_node_charge_control": [
+    {"retained_previous_activation_fraction":0,"accuracy":0.9967136150234742},
+    {"retained_previous_activation_fraction":0.02,"accuracy":0.9967136150234742},
+    {"retained_previous_activation_fraction":0.05,"accuracy":0.9967136150234742},
+    {"retained_previous_activation_fraction":0.1,"accuracy":0.9967136150234742},
+    {"retained_previous_activation_fraction":0.2,"accuracy":0.9910798122065728},
+    {"retained_previous_activation_fraction":0.3,"accuracy":0.9892018779342723},
+    {"retained_previous_activation_fraction":0.5,"accuracy":0.9826291079812206}
+  ],
+  "capacitive_cofiring_screen": [
+    {"variation_sigma":0.05,"trials":5000,"correct_target_higher_voltage_rate":1.0,"mean_voltage_margin_V":0.04664056741049202,"p01_voltage_margin_V":0.043099640669722376},
+    {"variation_sigma":0.1,"trials":5000,"correct_target_higher_voltage_rate":1.0,"mean_voltage_margin_V":0.04663908667630862,"p01_voltage_margin_V":0.0394597796145656},
+    {"variation_sigma":0.2,"trials":5000,"correct_target_higher_voltage_rate":1.0,"mean_voltage_margin_V":0.046596331877506066,"p01_voltage_margin_V":0.03201522946025413},
+    {"variation_sigma":0.3,"trials":5000,"correct_target_higher_voltage_rate":1.0,"mean_voltage_margin_V":0.04649919218992648,"p01_voltage_margin_V":0.024016759305392203},
+    {"variation_sigma":0.4,"trials":5000,"correct_target_higher_voltage_rate":1.0,"mean_voltage_margin_V":0.04636340957136953,"p01_voltage_margin_V":0.015859193221552135}
+  ],
+  "weight_quantization": {
+    "2_level_weak_strong": {
+      "0": {"context":1.0,"operation":1.0,"fact":1.0,"analogy":1.0,"cause":1.0,"code":1.0,"plan":1.0,"ALL":1.0},
+      "0.1": {"context":1.0,"operation":1.0,"fact":1.0,"analogy":1.0,"cause":1.0,"code":1.0,"plan":1.0,"ALL":1.0},
+      "0.2": {"context":1.0,"operation":1.0,"fact":1.0,"analogy":0.975,"cause":1.0,"code":1.0,"plan":1.0,"ALL":0.9981220657276996},
+      "0.3": {"context":1.0,"operation":1.0,"fact":0.9944444444444445,"analogy":0.85625,"cause":0.9833333333333333,"code":1.0,"plan":1.0,"ALL":0.9873239436619718},
+      "0.4": {"context":0.9972222222222222,"operation":1.0,"fact":0.9555555555555556,"analogy":0.76875,"cause":0.9555555555555556,"code":1.0,"plan":0.9428571428571428,"ALL":0.9704225352112676}
+    },
+    "4_level": {
+      "0": {"context":1.0,"operation":1.0,"fact":1.0,"analogy":1.0,"cause":1.0,"code":1.0,"plan":1.0,"ALL":1.0},
+      "0.1": {"context":1.0,"operation":1.0,"fact":1.0,"analogy":1.0,"cause":1.0,"code":1.0,"plan":1.0,"ALL":1.0},
+      "0.2": {"context":1.0,"operation":1.0,"fact":1.0,"analogy":0.95,"cause":1.0,"code":1.0,"plan":1.0,"ALL":0.996244131455399},
+      "0.3": {"context":0.9986111111111111,"operation":1.0,"fact":1.0,"analogy":0.85625,"cause":0.9888888888888889,"code":1.0,"plan":1.0,"ALL":0.9877934272300469},
+      "0.4": {"context":1.0,"operation":1.0,"fact":0.9833333333333333,"analogy":0.75625,"cause":0.9888888888888889,"code":1.0,"plan":0.95,"ALL":0.976056338028169}
+    }
+  },
+  "twelve_hop_connection_bundle": {
+    "0.2": {"1":0.9945,"2":1.0,"3":1.0,"5":1.0},
+    "0.3": {"1":0.771,"2":0.9865,"3":0.9985,"5":1.0},
+    "0.4": {"1":0.413,"2":0.859,"3":0.974,"5":0.9975}
+  },
+  "limits": [
+    "Synthetic relational benchmark, not a foundation-model benchmark.",
+    "Operation selection is tested, but structural multiplication/factorization remains open.",
+    "Persistent memory is assumed to reside in connection strength; a cheap trainable physical coupler is not yet closed.",
+    "Threshold/restoration physics for long cascades remains a hardware problem."
+  ]
+}
