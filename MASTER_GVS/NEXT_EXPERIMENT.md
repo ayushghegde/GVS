@@ -1,26 +1,24 @@
-# Current Next Experiment — v14G1 Transistor-Free Structural Operator
+# Current Next Experiment — v14H2 Structural Product / Factor Relation
 
 ## Problem
-v14G can recall and compose learned semantic relations, but it cannot solve an exact relation that has never been physically embodied. The deliberate withheld-arithmetic screen scored 0%.
+v14H0 now has a model-level reusable exact addition candidate in `Z_420`, and v14H1 has a need-triggered transformation-selection model. The remaining gap in the user's rectangle example is physical structural multiplication/factorization.
 
 ## Goal
-Create a transistor-free physical operator that represents a reusable transformation rather than one memorized value-to-value edge.
+Create a transistor-free reusable product/factor relation that does not store one link for every `(a,b)->a*b` pair and that can stay compatible with residue-coded values.
 
-## First target
-Arithmetic addition is the clean acceptance task because the correct result is unambiguous and generalization can be measured exactly.
-
-Test at least three approaches:
-1. residue/phase-coded value rings where addition is a physical displacement or phase transform;
-2. regular waveguide/coupler displacement that reuses one relation geometry across many values;
-3. sparse learned lookup as the control.
+## Candidates to test
+1. residue-domain product coupling: each residue ring performs local modular multiplication and a coherent population reconstructs the product state;
+2. logarithmic/phase product transform: multiplication becomes additive phase displacement where representation permits it, with explicit handling of zero/sign and finite-domain limits;
+3. factor-constraint membrane: candidate factor populations co-fire only when their structural product relation satisfies the target residue tuple;
+4. sparse pair lookup as the control.
 
 ## Acceptance
-Keep an operator only if it:
-- computes unseen operand combinations rather than recalling them;
-- uses no MOS transistor in the reasoning core;
-- needs substantially fewer programmable links than a value-by-value lookup table;
-- composes for at least 8 sequential operations under device variation;
-- retains an exact-error detector or Population Confidence boundary;
-- has a credible fabrication path simpler/cheaper than recreating transistor logic.
+Keep a candidate only if it:
+- solves held-out operand pairs;
+- supports the `x(x+5)=84` factor relation without a CPU;
+- composes for at least eight operations/transformations under modeled variation;
+- has a materially better confidence/error boundary than the current CRRO replica-disagreement signal;
+- uses far fewer programmable pair links than a full product table;
+- has a plausible two-terminal/passive + sparse-restoration physical path.
 
-If none passes, v14G remains an associative retrieval/reasoning fabric and exact arithmetic stays an unresolved hardware problem rather than being hidden behind a processor.
+If no candidate passes, keep CRRO for exact modular addition and mark multiplication/factorization unresolved.

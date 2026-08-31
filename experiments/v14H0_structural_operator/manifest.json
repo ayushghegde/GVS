@@ -1,0 +1,9 @@
+{
+  "experiment": "v14H0_structural_operator",
+  "status": "model_complete_candidate_selected",
+  "domain": "Z_420 modular addition",
+  "selected": "five-replica coprime residue ring operator using moduli 3,4,5,7",
+  "controls": ["three-track wave displacement", "25-percent sparse pair lookup", "full lookup structural count"],
+  "reproducible_sources": ["source/run_v14h0.py", "source/run_coherence_checks.py"],
+  "important_limit": "no physical two-terminal implementation; multiplication/factorization unresolved"
+}

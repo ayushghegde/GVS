@@ -1,0 +1,9 @@
+{
+  "experiment": "v14H1_need_triggered_procedures",
+  "status": "control_model_complete",
+  "mechanism": "Need Potential -> Need-Triggered Transformation Cell",
+  "problem_states": 6000,
+  "heldout_states": 4500,
+  "nominal_need_gated_trace_success": 1.0,
+  "important_limit": "selection only; multiplication and factorization hardware remain unresolved"
+}
