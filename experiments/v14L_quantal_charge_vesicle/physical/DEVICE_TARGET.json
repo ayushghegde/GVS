@@ -1,0 +1,55 @@
+{
+  "device": "v14L QVC/VRS physical target",
+  "status": "not fabricated; compact-model/device closure required",
+  "qvc_target": {
+    "electrical_form": "pre-biased membrane capacitance with controlled leak plus volatile threshold release",
+    "membrane_capacitance_target_fF": 18.69052,
+    "rest_bias_V": 0.60,
+    "fire_threshold_V": 0.80,
+    "reset_target_V": 0.15,
+    "leak_tau_target_ns": 100.0,
+    "source_edge_target_V": 0.65
+  },
+  "vrs_acceptance": {
+    "preferred_topology": "two-terminal BEOL volatile threshold element; avoid per-cell CMOS control if possible",
+    "required_behavior": [
+      "high resistance below threshold",
+      "abrupt conduction above threshold",
+      "automatic return to high resistance below hold condition",
+      "repeatable firing under capacitive load",
+      "sufficient off-state leakage control to preserve integration window"
+    ],
+    "energy_budget_fJ_per_fire": {
+      "vs_5fF_cmos_control": 16.2,
+      "vs_10fF_cmos_control": 32.4,
+      "vs_20fF_cmos_control": 64.8
+    },
+    "example_edp_target": {
+      "reference_cmos_control_cap_fF": 10.0,
+      "reference_cmos_delay_ns": 6.0,
+      "assumed_vrs_energy_fJ": 5.0,
+      "max_vrs_delay_ns_for_equal_EDP": 17.632005565591484,
+      "preferred_vrs_delay_ns": 10.0
+    }
+  },
+  "candidate_device_classes": [
+    "ovonic threshold switch (OTS)",
+    "oxide volatile threshold switch",
+    "solid-state ionic/filamentary volatile selector"
+  ],
+  "explicit_nonselection": [
+    "no literal neurotransmitter/fluid chemical synapse",
+    "no claim that any candidate is cheaper than CMOS before full process and firing-energy accounting"
+  ],
+  "required_next_measurements": [
+    "compact-model threshold and hold voltage",
+    "off leakage versus voltage and temperature",
+    "on resistance/current under QVC fanout load",
+    "switching delay distribution",
+    "energy per complete fire/reset cycle",
+    "cycle-to-cycle and device-to-device variation",
+    "endurance and threshold drift",
+    "BEOL thermal/process compatibility",
+    "whole-cell transient with weak and strong v14K capacitive links"
+  ]
+}
