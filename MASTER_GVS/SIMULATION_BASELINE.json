@@ -1,7 +1,7 @@
 {
   "schema": "gvs-canonical-simulation-v1",
   "architecture_source": "MASTER_GVS/MAIN_ARCHITECTURE.md",
-  "candidate_architecture_source": "MASTER_GVS/V14H_ARCHITECTURE.md",
+  "candidate_architecture_source": "MASTER_GVS/V14H_CONNECTION_MEMORY.md",
   "current_experiment_family": "v14H",
   "historical_physical_baseline": {
     "grammar_reader": "experiments/v13A6_dual_pair_grammar_reader",
@@ -14,7 +14,7 @@
     "v14E_role_pressure": "FAST/SLOW physical primitive frozen after completed 48+48 mismatch; worst observed activation-envelope separation about 39.9 ns",
     "v14E_cfn": "15-MOS + 2-MIM unclamped CFN, 3.0x3.0-um fatigue MIM, 108/108 PEX PVT and 192/192 PEX mismatch complete",
     "v14G_semantic_core": "model-level transistor-free candidate only; no fabricated two-terminal v14G device yet",
-    "v14H_structural_reasoning": "model-level only; no physical two-terminal CRRO or NTTC implementation yet"
+    "v14H_connection_memory": "model-level connection-memory candidate; persistent semantic node voltage is not required in v14H2/v14H3 models; physical weak/strong link closure remains open"
   },
   "current_reproducible_work": {
     "v13M0": "experiments/v13M0_surface_intelligent_octet/source/run_v13m0.py",
@@ -42,7 +42,9 @@
     "v14G_goal_associative": "experiments/v14G_goal_echo_associative/source/run_v14g.py",
     "v14H0_structural_operator": "experiments/v14H0_structural_operator/source/run_v14h0.py",
     "v14H0_coherence_checks": "experiments/v14H0_structural_operator/source/run_coherence_checks.py",
-    "v14H1_need_triggered": "experiments/v14H1_need_triggered_procedures/source/run_v14h1.py"
+    "v14H1_need_triggered": "experiments/v14H1_need_triggered_procedures/source/run_v14h1.py",
+    "v14H2_connection_imprinted": "experiments/v14H2_connection_imprinted_intelligence/source/run_v14h2.py",
+    "v14H3_local_plasticity": "experiments/v14H3_local_connection_plasticity/source/run_v14h3.py"
   },
   "support_tools": {
     "trace_schema": "MASTER_GVS/TRACE_SCHEMA.md",
@@ -52,7 +54,6 @@
     "Do not replace accepted hardware merely because historical source is inconvenient.",
     "Persist source, commands, results, report and manifest for every experiment.",
     "Do not label model/process data as fabricated measurement.",
-    "Persistent NVM is a sparse consolidation layer, not a mirror of live adaptive roles.",
     "Coherent quantum memory is not part of the current cheap GVS fabric.",
     "Use stochastic exploration only where measured benefit repays it; no quantum source is required.",
     "Keep Local Venule -> Charge Artery -> regional reservoir -> battery/collector recovery hierarchy.",
@@ -60,12 +61,16 @@
     "Regional resource pressure may control extra settling and reserve recruitment but may not veto a mature local contradiction restart.",
     "Population Confidence remains the authority for robust answers; restart/reseed mechanisms never authorize an answer.",
     "MOS transistors are prohibited inside the v14G/v14H semantic and reasoning core candidate; v14E CMOS remains reference evidence only.",
+    "Persistent semantic memory in ordinary v14H cells belongs in sparse connection strength, not stored node voltage; temporary excitation charge is allowed.",
+    "Prefer sparse weak/strong connection levels before high-precision analog weights unless measured reasoning benefit repays precision.",
+    "Prefer connection/population redundancy over copying persistent memory hardware into every semantic cell.",
     "Prefer sparse learned two-terminal links over dense all-to-all connectivity unless measured accuracy requires density.",
     "Prefer sparse restoration junctions over one active exotic device per semantic cell.",
-    "Do not claim a two-terminal device is cheaper than CMOS until area, process steps, programming overhead, yield and energy are measured or credibly bounded.",
+    "A fixed compiled MIM/interconnect connection plane is the inference-only cost floor; it is not an on-chip learning solution.",
+    "Do not claim a memcapacitor, memristor or other two-terminal device is cheaper than CMOS until area, process steps, programming circuitry, yield, endurance, retention and energy are measured or credibly bounded.",
     "Goal Echo remains part of the reasoning hypothesis: forward prompt evidence and reciprocal goal compatibility must be compared against forward-only controls.",
     "CRRO is currently accepted only for exact modular addition in Z_420; do not call it general arithmetic.",
     "Need-Triggered Transformation Cells select reusable transformations from current unmet state; they are not a hidden program counter.",
-    "Multiplication and factorization remain unresolved until a structural operator passes unseen-pair, variation, confidence and hardware-cost tests."
+    "Multiplication, factorization and other exact transformations remain open operator problems, but they are subproblems inside the broader connection-memory intelligence fabric rather than the canonical architecture goal."
   ]
 }
