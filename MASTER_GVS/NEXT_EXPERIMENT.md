@@ -1,33 +1,19 @@
-# Current Next Experiment — v14H3 Connection Plasticity Without Node Memory
+# Current Next Experiment — v14J1 Plastic-Link Physical Closure
 
-## Problem
-v14H2 shows that a broad synthetic reasoning fabric can keep semantic memory in sparse connection strength while resetting node charge between queries. The remaining hardware problem is how those connection strengths are learned or updated cheaply.
+## Goal
+Determine whether a self-plastic capacitive connection can remain cheaper than transistor memory after the full programming problem is counted.
 
-## Candidates
-1. fixed two-level MIM/interconnect geometry after off-chip training — inference-only cost floor;
-2. two-terminal programmable memcapacitive link — connection strength is capacitance state;
-3. two-terminal conductance-memory link — resistive/phase/ionic weight control;
-4. CMOS/SRAM weight storage — reference baseline only, prohibited from becoming the v14H semantic core.
-
-## System test
-Use the same connection rule for context, causal chains, analogy, factual multi-hop, code-like diagnosis, planning and structural-operation selection. After initial training, introduce new facts and changed relations and measure:
-- new-learning accuracy;
-- old-knowledge retention;
-- number of links changed;
-- programming events/energy proxy;
-- required connection precision;
-- sensitivity to variation and stuck links;
-- 12-hop path reliability;
-- structural hardware/link count versus dense and CMOS controls.
+## Required tests
+1. Obtain or construct a credible compact model for a reversible two-terminal ferroelectric/memcapacitive link with separate read and program regimes.
+2. Replay weak/strong charge transfer using actual device capacitance windows, not the abstract 0.25/0.85 fF model.
+3. Test bidirectional learning with positive/negative local differential pulse pairs, including reversal after a relation changes twice.
+4. Sweep coercive/program threshold variation, read disturbance, retention drift, program failure, and partial-state saturation.
+5. Test half-selected links in a sparse connection bundle so learning one relation does not rewrite neighbors.
+6. Count complete write infrastructure: pulse rails, selectors/isolation if required, routing, write energy, and process steps. Do not compare only the two-terminal device footprint with one transistor.
+7. Compare three hardware options: fixed compiled MIM, programmable ferroelectric memcapacitor, and a transistor-memory baseline on total inference+learning cost.
+8. Retain two/three parallel link copies only if they repay their added area in fault tolerance.
+9. Feed the physical link model into the v14H2 seven-domain connection-memory benchmark and verify that continual learning does not destroy multi-hop reasoning.
+10. Keep specialized node-memory structures such as Role Pressure and CFN sparse; do not reintroduce persistent memory into every semantic cell.
 
 ## Acceptance
-A trainable candidate is kept only if it:
-- needs no persistent semantic voltage in ordinary nodes;
-- learns new relations without rewriting a large fraction of the fabric;
-- materially outperforms fixed geometry when adaptation is required;
-- can plausibly use one simple two-terminal connection element or less per stored relation;
-- does not require dense selectors/per-link transistors that erase the cost advantage;
-- preserves Population Confidence and local contradiction handling;
-- has a credible path to being cheaper than the transistor baseline once process steps, write circuitry, variation, yield and endurance are counted.
-
-Structural multiplication/factorization remains an open operator task but is no longer the canonical system goal; it should be tested as one transformation used by the same connection-memory fabric.
+Promote SPCL only if it provides reversible nonvolatile coupling, negligible read disturb, adequate retention/endurance, and a total system cost below the transistor-based memory/routing it replaces. If programming/select infrastructure dominates, keep fixed MIM for inference-only connection planes and reject on-chip plastic SPCL until a cheaper material/process appears.
