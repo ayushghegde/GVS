@@ -1,0 +1,35 @@
+{
+  "schema": "v14N-seeded-nodal-relay-key-results-v1",
+  "evidence_boundary": "Engineering sensitivity model; not a fabricated-device or transistor-layout comparison.",
+  "selected_30ns_transport": {
+    "spacing_hops": 22,
+    "regeneration_nodes": 3,
+    "success": 1.0,
+    "mean_delay_ns": 172.1691,
+    "p95_delay_ns": 199.3871,
+    "energy_fJ": 9.185
+  },
+  "favorable_cmos_transport_control": {
+    "spacing_hops": 4,
+    "repeaters": 16,
+    "delay_ns": 111.36,
+    "energy_fJ": 261.44
+  },
+  "seeded_device_speed_sensitivity": {
+    "55ns_baseline_half_delay": {"target_mean_ns": 27.5, "p95_ns": 34.7561, "probability_le_38p5ns": 0.990265},
+    "75ns_baseline_half_delay": {"target_mean_ns": 37.5, "p95_ns": 47.3721, "probability_le_38p5ns": 0.599685},
+    "40ns_baseline_0p75_delay": {"target_mean_ns": 30.0, "p95_ns": 37.9068, "probability_le_38p5ns": 0.95977}
+  },
+  "half_effective_ionic_distance_screen": {
+    "55ns_baseline": {"linear_path_delay_ns": 27.5, "quadratic_field_drift_delay_ns": 13.75},
+    "75ns_baseline": {"linear_path_delay_ns": 37.5, "quadratic_field_drift_delay_ns": 18.75},
+    "caution": "This is a sensitivity bracket, not a compact physical model. Filament nucleation barriers can dominate."
+  },
+  "preferred_target": {
+    "minimum_device_gate": "p95 <= 38 ns against the hardest v14M energy-delay reference",
+    "preferred_mean_delay_ns": "10-15",
+    "transport_crossover_mean_delay_ns": 12.5,
+    "reason": "At about 12.5 ns mean junction delay, the sparse 64-hop transport proxy reaches ~111.5 ns, approximately equal to the favorable CMOS latency control; 10 ns reaches ~99.1 ns."
+  },
+  "decision": "Keep Seeded Nucleation BDJ plus Sparse Regeneration Trunk. The seed attacks ionic nucleation delay; sparse regeneration removes unnecessary active switching on physical transport hops. Semantic reasoning nodes are never skipped."
+}
