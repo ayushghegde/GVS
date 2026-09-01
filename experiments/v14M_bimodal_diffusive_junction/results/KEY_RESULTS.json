@@ -1,0 +1,48 @@
+{
+  "schema": "v14M-bimodal-diffusive-junction-v2",
+  "evidence_boundary": "Model-level group experiment; no cited device is a fabricated v14M BDJ meeting every selected target simultaneously.",
+  "selected_device": {
+    "name": "Bimodal Diffusive Junction (BDJ)",
+    "target_stack": "Ag or Ag-alloy / ultrathin HfO2-class dielectric / Pt-class bottom electrode",
+    "volatile_role": "low-compliance weak filament integrates pulse history, fires, then self-relaxes",
+    "nonvolatile_role": "higher-stress stable filament stores OFF/WEAK/STRONG learned relation",
+    "semantic_core_MOS": 0,
+    "target_Vth_V": 0.25,
+    "target_volatile_compliance_A": 1e-7,
+    "link_G_S": {"OFF": 2.5e-10, "WEAK": 2.5e-9, "STRONG": 2.5e-8}
+  },
+  "selected_group": {"cells": 64, "layers": 8, "strong_links_per_cell": 3, "weak_links_per_cell": 2, "threshold_factor": 0.5},
+  "cascade": [
+    {"read_sigma": 0.10, "mean_final_active": 0.987796875, "p05": 0.953125, "min": 0.921875},
+    {"read_sigma": 0.20, "mean_final_active": 0.985734375, "p05": 0.953125, "min": 0.921875},
+    {"read_sigma": 0.30, "mean_final_active": 0.980046875, "p05": 0.9375, "min": 0.890625},
+    {"read_sigma": 0.40, "mean_final_active": 0.9540625, "p05": 0.890625, "min": 0.765625}
+  ],
+  "background_only_false_fire_screen": {"samples": 1000000, "sigma": 0.30, "false_fires": 0},
+  "selected_30ns_energy": {
+    "fire_energy_proxy_fJ": 0.75,
+    "link_read_fJ": 0.0646925927,
+    "fixed_line_bias_overhead_fJ": 1.5,
+    "total_fJ": 2.3146925927,
+    "energy_ratio_vs_5fF_cmos": 0.1428822588,
+    "edp_ratio_vs_5fF_cmos": 0.7144112940,
+    "energy_ratio_vs_10fF_cmos": 0.0714411294,
+    "edp_ratio_vs_10fF_cmos": 0.3572056470
+  },
+  "edp_break_even_delay_ns": {"5fF_cmos": 38.47222274, "10fF_cmos": 62.27593581, "20fF_cmos": 97.28027137},
+  "learning_rewrite_screen_at_20pct_read_sigma_5pct_program_fail": {
+    "one_copy_changed_relation_correct": 0.9305,
+    "two_copy_changed_relation_correct": 0.9905,
+    "three_copy_changed_relation_correct": 0.9976666667,
+    "note": "Device redundancy helps failed writes; semantically wrong feedback remains common-mode."
+  },
+  "structural_proxy": {
+    "bdj_neuron_devices": 64,
+    "bdj_link_devices": 320,
+    "bdj_total_two_terminal_devices": 384,
+    "cmos_6mos_neurons_plus_one_ideal_element_per_link": 704,
+    "element_count_reduction_fraction": 0.4545454545,
+    "caution": "Element count only; not layout area/process cost."
+  },
+  "decision": "KEEP at model level; physical promotion requires one fabricated stack to close volatile speed/energy plus reversible nonvolatile programming without per-device transistor compliance/selection."
+}
