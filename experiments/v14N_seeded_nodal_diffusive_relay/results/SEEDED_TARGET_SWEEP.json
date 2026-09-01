@@ -1,0 +1,13 @@
+{
+  "schema": "v14N-seeded-target-sweep-v1",
+  "evidence_boundary": "Synthetic physical-transport sensitivity model; junction delays are targets, not measured device results.",
+  "favorable_cmos_transport_delay_ns": 111.36,
+  "rows": [
+    {"junction_mean_ns": 30.0, "junction_cv": 0.30, "selected_spacing_hops": 22, "regeneration_nodes": 3, "success": 1.0, "mean_transport_delay_ns": 172.2363, "energy_fJ": 9.185, "edp_fJ_ns": 1581.99},
+    {"junction_mean_ns": 20.0, "junction_cv": 0.20, "selected_spacing_hops": 16, "regeneration_nodes": 4, "success": 1.0, "mean_transport_delay_ns": 141.1595, "energy_fJ": 11.5, "edp_fJ_ns": 1623.33},
+    {"junction_mean_ns": 15.0, "junction_cv": 0.15, "selected_spacing_hops": 16, "regeneration_nodes": 4, "success": 1.0, "mean_transport_delay_ns": 121.4468, "energy_fJ": 11.5, "edp_fJ_ns": 1396.64},
+    {"junction_mean_ns": 12.5, "junction_cv": 0.15, "selected_spacing_hops": 16, "regeneration_nodes": 4, "success": 1.0, "mean_transport_delay_ns": 111.4971, "energy_fJ": 11.5, "edp_fJ_ns": 1282.22},
+    {"junction_mean_ns": 10.0, "junction_cv": 0.15, "selected_spacing_hops": 13, "regeneration_nodes": 5, "success": 1.0, "mean_transport_delay_ns": 99.1471, "energy_fJ": 13.815, "edp_fJ_ns": 1369.72}
+  ],
+  "decision": "Prefer 10-15 ns seeded-junction mean delay if physically achievable. Around 12.5 ns the selected sparse-regeneration transport matches the favorable CMOS raw-latency proxy; 10 ns beats it. The older <=38 ns target remains a minimum device EDP gate, not the preferred speed target."
+}
