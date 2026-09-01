@@ -1,42 +1,37 @@
-# Current Next Experiment — v14L5 Physical Quantal Release Closure
-
-## Problem
-v14L now has a capacitor-centered communication architecture that survives the model-level cascade, but the decisive nonlinear release device is still abstract. A plain passive capacitor was rejected because charge sharing cannot regenerate a same-threshold chain. The remaining question is whether a real two-terminal volatile release element can provide threshold/hold behavior, controlled leak and a fast low-energy firing event cheaply enough that the **whole QVC cell** beats transistor control.
+# Current Next Experiment — v14M1 Physical Bimodal Junction Closure
 
 ## Goal
-Close one physically credible QVC/VRS unit using the v14J extracted MIM capacitance floor and a real or literature-grounded volatile threshold compact model. Do not tune the network further until this device budget is tested.
+Determine whether one fabricated two-terminal diffusive junction stack can satisfy both v14M roles and beat the complete transistor reference at group level.
 
-## Physical target
-Selected QVC model:
-- Cmem = 18.69052 fF;
-- rest bias = 0.60 V;
-- fire threshold = 0.80 V;
-- reset target = 0.15 V;
-- leak tau target = ~100 ns;
-- source firing edge = ~0.65 V;
-- v14K WEAK/STRONG relation capacitors remain the communication links.
+## Candidate stack
+Start with the simplest CMOS-compatible family supported by current evidence:
+- Ag or thin Ag-alloy active electrode;
+- ultrathin ALD HfO2, optionally with one control/interfacial layer only if it materially improves speed/variation;
+- Pt/TiN-class bottom electrode.
 
-Candidate VRS classes:
-1. chalcogenide ovonic threshold switch;
-2. oxide volatile threshold switch;
-3. solid-state ionic/filamentary volatile selector;
-4. a small CMOS threshold/reset circuit only as the cost reference, not as the preferred semantic-core implementation.
+Do not add more layers merely to chase one metric.
 
-Literal neurotransmitter/fluid chemistry is not a baseline candidate.
+## Required device evidence
+1. Volatile low-current mode: threshold voltage, delay, off leakage, on current, self-relaxation, refractory time, cycle variation, endurance.
+2. Nonvolatile mode on the same stack: reversible OFF/WEAK/STRONG states, retention, potentiation/depression, program energy, program failure.
+3. Demonstrate clean separation between read/reason pulses and nonvolatile programming.
+4. Quantify forming requirement; reject if forming/per-cell initialization becomes dominant.
+5. Quantify current-compliance implementation. A hidden transistor/current-limiter per BDJ invalidates the transistor-elimination claim.
+6. Measure/simulate fan-out through 3 STRONG + 2 WEAK links and background-only false firing.
+7. Count shared bias rails, drivers, half-select/sneak paths, routing, and write peripherals.
+8. Compare total group energy-delay and area/process complexity against 5 fF, 10 fF, and 20 fF CMOS-control references.
 
-## Required experiments
-1. Build/import a compact VRS model with explicit Vth, Vhold, Ron, Roff/leak, switching delay and cycle energy.
-2. Connect it to the real v14J MIM capacitance proxies and the selected 6-WEAK + 1-STRONG fan-out load.
-3. Run transient integration -> threshold -> release -> reset -> replenishment.
-4. Sweep temperature/device variation enough to test idle false firing, missed firing and threshold drift.
-5. Measure complete firing energy, including the VRS, leak, replenishment and capacitive fan-out.
-6. Compare against transistor controls at 5/10/20 fF effective switched capacitance and 6 ns reference delay.
-7. Check the physical target budgets: VRS <16.2/32.4/64.8 fJ for 5/10/20 fF energy break-even; for the 10 fF reference and a 5 fJ VRS, delay should be <=17.63 ns for equal EDP, with ~10 ns preferred.
-8. Test whether WEAK/STRONG v14K links preserve the predicted packet amplitude after extracted parasitics are included.
-9. Test the post-fire charge path into Local Venule -> Charge Artery -> regional reservoir without allowing recovery to alter correctness.
-10. Count BEOL material/process area, thermal budget, selectors and routing before calling the device cheaper than CMOS.
+## Hard acceptance targets from v14M0
+- preferred firing delay <=30 ns;
+- absolute EDP break-even: <=38.5 ns versus 5 fF CMOS, <=62.3 ns versus 10 fF, <=97.3 ns versus 20 fF under the current energy proxy;
+- no semantic-core MOS/compliance transistor per junction;
+- at least 95% p05 eight-layer propagation at 20% link variation, or a demonstrated system-level trade that repays any extra redundancy;
+- learning write energy must amortize under realistic continual-learning rates.
 
-## Acceptance
-Promote v14L only if the **complete QVC/VRS cell and sparse network**, not the isolated switch, beats the transistor reference on useful firing reliability plus energy and preferably energy-delay product while preserving v14K structural learning.
-
-If no VRS candidate closes the budget, keep v14L as a system concept, retain capacitive packet coupling, and reject the nonlinear-device implementation rather than hiding the cost in uncounted peripherals.
+## If the exact same device cannot satisfy both regimes
+Do not hide the failure. Compare:
+A. one BDJ device type;
+B. v14L capacitor + OTS two-device cell;
+C. fixed MIM connection + separate OTS;
+D. CMOS reference.
+Keep the architecture that wins total system cost, not the one with the fewest named device types.
