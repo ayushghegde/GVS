@@ -1,0 +1,71 @@
+{
+  "schema": "v14O-guided-gap-self-limited-junction-v2",
+  "evidence_boundary": "Engineering sensitivity model, not compact-model or fabricated-device evidence.",
+  "selected_geometry": {
+    "total_oxide_nm": 4.0,
+    "dynamic_gap_mean_nm": 1.3,
+    "gap_sigma_nm": 0.12,
+    "field_focus_factor": 1.45,
+    "intrinsic_ballast_Mohm": 2.2,
+    "concept": "inert nano-spine + sharp field-focus tip + short Ag dynamic gap + passive ballast neck"
+  },
+  "delay": {
+    "mean_ns": 11.846993194813223,
+    "p95_ns": 14.813556240438782,
+    "p99_ns": 16.311666295975126,
+    "prob_le_15ns": 0.95825,
+    "prob_le_38p5ns": 1.0
+  },
+  "ballast_current": {
+    "mean_nA": 112.74570247368993,
+    "p01_nA": 70.87177382737956,
+    "p99_nA": 172.25597407367965
+  },
+  "link_ballast_effective_nS": {
+    "OFF": 0.24986257558342914,
+    "WEAK": 2.486325211337643,
+    "STRONG": 23.696682464454977
+  },
+  "strong_link_penalty_fraction": 0.05213270142180082,
+  "gap_hazard_proxy": {
+    "mean_relative_to_1p2nm": 0.7168549505880437,
+    "p99": 2.706183471633428,
+    "warning": "relative comparison only; spontaneous-bridge probability is not calibrated"
+  },
+  "coincidence_programming": {
+    "dose_proxy": "D=V^2*t (engineering proxy; not a calibrated material law)",
+    "read_dose": 0.8,
+    "half_select_dose": 4.0,
+    "full_learning_dose": 16.0,
+    "single_read_disturb_probability_analytic": 0.0,
+    "single_half_select_disturb_probability_analytic": 2.412890733827222e-06,
+    "single_full_program_probability_analytic": 0.9999988288019234,
+    "provisional_confirmations": 3,
+    "three_confirmation_half_select_proxy": 1.4047950453934718e-17,
+    "three_confirmation_program_probability": 0.9999964864098853,
+    "warning": "rare-event probabilities come from the assumed threshold-distribution model, not device measurements."
+  },
+  "cascade": [
+    {"sigma": 0.1, "mean_final": 0.9878385416666666, "p05": 0.96875, "min": 0.9375, "mean_fJ_per_fire": 1.8954674549982902},
+    {"sigma": 0.2, "mean_final": 0.9864583333333333, "p05": 0.953125, "min": 0.9375, "mean_fJ_per_fire": 1.8954901614117674},
+    {"sigma": 0.3, "mean_final": 0.9795833333333334, "p05": 0.9375, "min": 0.875, "mean_fJ_per_fire": 1.8955540821513888},
+    {"sigma": 0.4, "mean_final": 0.9537890625, "p05": 0.90546875, "min": 0.765625, "mean_fJ_per_fire": 1.8958142814396448}
+  ],
+  "background_only_logical_false_fires": 0,
+  "sparse_transport": {
+    "spacing": 13,
+    "nodes": 5,
+    "success": 1.0,
+    "mean_ns": 108.5290879027612,
+    "p95_ns": 114.97125176789105,
+    "energy_fJ": 11.409621962437802
+  },
+  "cmos_transport_control": {"delay_ns": 111.36, "energy_fJ": 261.44},
+  "relation_rewrite_correctness_with_5pct_physical_write_fail": {"1": 0.9012, "2": 0.82, "3": 0.9861},
+  "energy_delay_vs_cmos": {
+    "5fF": {"energy_ratio": 0.11700556551924488, "edp_ratio": 0.23102735641029445},
+    "10fF": {"energy_ratio": 0.05850278275962244, "edp_ratio": 0.11551367820514723},
+    "20fF": {"energy_ratio": 0.02925139137981122, "edp_ratio": 0.057756839102573614}
+  },
+  "decision": "KEEP model-level. v14O fixes v14N delay by guiding the final bridge rather than shrinking the whole oxide; passive ballast addresses current compliance; local differential coincidence programming attacks selector/write-driver overhead. Physical closure remains required."
+}
