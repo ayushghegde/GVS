@@ -1,0 +1,46 @@
+{
+  "schema": "v14P-electrostatic-trail-v1",
+  "evidence_boundary": "Engineering electrostatic/learning model; not a fabricated charge-trap junction.",
+  "selected_branch_tip": {
+    "winner_correct": 0.9806333333333334,
+    "target_above_threshold": 0.8968333333333334,
+    "any_wrong_above_threshold": 0.027758333333333333,
+    "clean_target_only": 0.87165
+  },
+  "learning_rules": {
+    "use_only": {
+      "pre_accuracy_mean": 0.16536458333333334,
+      "remapped_final_accuracy_mean": 0.203125,
+      "adaptation_mean": {"500": 0.203125, "2000": 0.203125, "8000": 0.203125},
+      "old_path_mean": {"500": 0.19791666666666666, "2000": 0.19791666666666666, "8000": 0.19791666666666666}
+    },
+    "confirm_only": {
+      "pre_accuracy_mean": 1.0,
+      "remapped_final_accuracy_mean": 0.4479166666666666,
+      "adaptation_mean": {"500": 0.14583333333333334, "2000": 0.4468750000000001, "8000": 0.4479166666666666},
+      "old_path_mean": {"500": 0.8541666666666669, "2000": 0.553125, "8000": 0.5520833333333334}
+    },
+    "reversible": {
+      "pre_accuracy_mean": 1.0,
+      "remapped_final_accuracy_mean": 1.0,
+      "adaptation_mean": {"500": 0.790625, "2000": 1.0, "8000": 1.0},
+      "old_path_mean": {"500": 0.209375, "2000": 0.0, "8000": 0.0}
+    }
+  },
+  "stress": [
+    {"branches": 4, "threshold_sigma_V": 0.008, "winner_correct": 0.999425, "target_above_threshold": 0.93375, "any_wrong_above_threshold": 0.00005, "clean_target_only": 0.9337},
+    {"branches": 4, "threshold_sigma_V": 0.012, "winner_correct": 0.99475, "target_above_threshold": 0.910275, "any_wrong_above_threshold": 0.004975, "clean_target_only": 0.90555},
+    {"branches": 4, "threshold_sigma_V": 0.016, "winner_correct": 0.978125, "target_above_threshold": 0.88275, "any_wrong_above_threshold": 0.032525, "clean_target_only": 0.85315},
+    {"branches": 4, "threshold_sigma_V": 0.02, "winner_correct": 0.9477, "target_above_threshold": 0.8522, "any_wrong_above_threshold": 0.092275, "clean_target_only": 0.771475},
+    {"branches": 8, "threshold_sigma_V": 0.008, "winner_correct": 0.9994, "target_above_threshold": 0.932825, "any_wrong_above_threshold": 0.000025, "clean_target_only": 0.9328},
+    {"branches": 8, "threshold_sigma_V": 0.012, "winner_correct": 0.993075, "target_above_threshold": 0.9143, "any_wrong_above_threshold": 0.003675, "clean_target_only": 0.91075},
+    {"branches": 8, "threshold_sigma_V": 0.016, "winner_correct": 0.97065, "target_above_threshold": 0.880325, "any_wrong_above_threshold": 0.038, "clean_target_only": 0.845975},
+    {"branches": 8, "threshold_sigma_V": 0.02, "winner_correct": 0.929075, "target_above_threshold": 0.854575, "any_wrong_above_threshold": 0.1307, "clean_target_only": 0.741075},
+    {"branches": 16, "threshold_sigma_V": 0.008, "winner_correct": 0.9989, "target_above_threshold": 0.936725, "any_wrong_above_threshold": 0.000025, "clean_target_only": 0.9367},
+    {"branches": 16, "threshold_sigma_V": 0.012, "winner_correct": 0.990325, "target_above_threshold": 0.9133, "any_wrong_above_threshold": 0.0052, "clean_target_only": 0.9084},
+    {"branches": 16, "threshold_sigma_V": 0.016, "winner_correct": 0.956425, "target_above_threshold": 0.878875, "any_wrong_above_threshold": 0.06085, "clean_target_only": 0.825175},
+    {"branches": 16, "threshold_sigma_V": 0.02, "winner_correct": 0.89475, "target_above_threshold": 0.8503, "any_wrong_above_threshold": 0.21805, "clean_target_only": 0.663}
+  ],
+  "selected_rule": "reversible confirmation/contradiction trail",
+  "decision": "KEEP electrostatic trail as path-bias memory candidate; REJECT ungated use-only deposition."
+}
