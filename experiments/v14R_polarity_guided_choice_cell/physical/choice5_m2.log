@@ -1,0 +1,107 @@
+Using NULL graphics device.
+Input style sky130(): scaleFactor=2, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    ubm 
+Using technology "sky130A", version 1.0.602-0-gf3c505b.
+SkyWater SKY130: Open Source rules and DRC
+:load v14r_choice5_m2
+Cell v14r_choice5_m2 couldn't be read
+No such file or directory
+Creating new cell
+:box 0 0 14 126
+Root cell box:
+           width x height  (   llx,  lly  ), (   urx,  ury  )  area (units^2)
+
+microns:   0.140 x 1.260   ( 0.000,  0.000), ( 0.140,  1.260)  0.176     
+lambda:       14 x 126     (     0,  0    ), (    14,  126  )  1764      
+:paint m2
+:box 14 0 44 14
+Root cell box:
+           width x height  (   llx,  lly  ), (   urx,  ury  )  area (units^2)
+
+microns:   0.300 x 0.140   ( 0.140,  0.000), ( 0.440,  0.140)  0.042     
+lambda:       30 x 14      (    14,  0    ), (    44,  14   )  420       
+:paint m2
+:box 14 28 44 42
+Root cell box:
+           width x height  (   llx,  lly  ), (   urx,  ury  )  area (units^2)
+
+microns:   0.300 x 0.140   ( 0.140,  0.280), ( 0.440,  0.420)  0.042     
+lambda:       30 x 14      (    14,  28   ), (    44,  42   )  420       
+:paint m2
+:box 14 56 44 70
+Root cell box:
+           width x height  (   llx,  lly  ), (   urx,  ury  )  area (units^2)
+
+microns:   0.300 x 0.140   ( 0.140,  0.560), ( 0.440,  0.700)  0.042     
+lambda:       30 x 14      (    14,  56   ), (    44,  70   )  420       
+:paint m2
+:box 14 84 44 98
+Root cell box:
+           width x height  (   llx,  lly  ), (   urx,  ury  )  area (units^2)
+
+microns:   0.300 x 0.140   ( 0.140,  0.840), ( 0.440,  0.980)  0.042     
+lambda:       30 x 14      (    14,  84   ), (    44,  98   )  420       
+:paint m2
+:box 14 112 44 126
+Root cell box:
+           width x height  (   llx,  lly  ), (   urx,  ury  )  area (units^2)
+
+microns:   0.300 x 0.140   ( 0.140,  1.120), ( 0.440,  1.260)  0.042     
+lambda:       30 x 14      (    14,  112  ), (    44,  126  )  420       
+:paint m2
+:box 58 0 88 14
+Root cell box:
+           width x height  (   llx,  lly  ), (   urx,  ury  )  area (units^2)
+
+microns:   0.300 x 0.140   ( 0.580,  0.000), ( 0.880,  0.140)  0.042     
+lambda:       30 x 14      (    58,  0    ), (    88,  14   )  420       
+:paint m2
+:label B0 center m2
+:box 58 28 88 42
+Root cell box:
+           width x height  (   llx,  lly  ), (   urx,  ury  )  area (units^2)
+
+microns:   0.300 x 0.140   ( 0.580,  0.280), ( 0.880,  0.420)  0.042     
+lambda:       30 x 14      (    58,  28   ), (    88,  42   )  420       
+:paint m2
+:label B1 center m2
+:box 58 56 88 70
+Root cell box:
+           width x height  (   llx,  lly  ), (   urx,  ury  )  area (units^2)
+
+microns:   0.300 x 0.140   ( 0.580,  0.560), ( 0.880,  0.700)  0.042     
+lambda:       30 x 14      (    58,  56   ), (    88,  70   )  420       
+:paint m2
+:label B2 center m2
+:box 58 84 88 98
+Root cell box:
+           width x height  (   llx,  lly  ), (   urx,  ury  )  area (units^2)
+
+microns:   0.300 x 0.140   ( 0.580,  0.840), ( 0.880,  0.980)  0.042     
+lambda:       30 x 14      (    58,  84   ), (    88,  98   )  420       
+:paint m2
+:label B3 center m2
+:box 58 112 88 126
+Root cell box:
+           width x height  (   llx,  lly  ), (   urx,  ury  )  area (units^2)
+
+microns:   0.300 x 0.140   ( 0.580,  1.120), ( 0.880,  1.260)  0.042     
+lambda:       30 x 14      (    58,  112  ), (    88,  126  )  420       
+:paint m2
+:label B4 center m2
+:box 0 0 14 126
+Root cell box:
+           width x height  (   llx,  lly  ), (   urx,  ury  )  area (units^2)
+
+microns:   0.140 x 1.260   ( 0.000,  0.000), ( 0.140,  1.260)  0.176     
+lambda:       14 x 126     (     0,  0    ), (    14,  126  )  1764      
+:label CHOICE center m2
+:drc check
+:drc count total
+Total DRC errors found: 0
+:save
+:extract all
+Extracting v14r_choice5_m2 into v14r_choice5_m2.ext:
+Processing v14r_choice5_m2
+:quit
