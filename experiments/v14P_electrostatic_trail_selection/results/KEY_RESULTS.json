@@ -1,46 +1,42 @@
 {
-  "schema": "v14P-electrostatic-trail-v1",
-  "evidence_boundary": "Engineering electrostatic/learning model; not a fabricated charge-trap junction.",
-  "selected_branch_tip": {
-    "winner_correct": 0.9806333333333334,
-    "target_above_threshold": 0.8968333333333334,
-    "any_wrong_above_threshold": 0.027758333333333333,
-    "clean_target_only": 0.87165
+  "schema": "v14P-consolidated-key-results-v2",
+  "evidence_boundary": "All v14P results are engineering electrostatic/learning/guided-gap sensitivity models. No fabricated v14P polarized trail collar, calibrated trap/ferroelectric compact model, or extracted <=1 fF choice node exists yet.",
+  "interpretation_of_user_sketch_4": "Several candidate branch tips leave a transient semantic cell. Learned route preference is stored as a local reversible electrostatic polarization/trapped-charge collar around each branch tip. The favored collar lowers the guided-gap firing barrier; contradicted collars raise it. Traffic alone creates eligibility, not permanent strengthening.",
+  "learning_rule_control": {
+    "use_only_remapped_final_accuracy": 0.203125,
+    "confirm_only_remapped_final_accuracy": 0.4479166666666666,
+    "reversible_confirmation_contradiction_final_accuracy": 1.0
   },
-  "learning_rules": {
-    "use_only": {
-      "pre_accuracy_mean": 0.16536458333333334,
-      "remapped_final_accuracy_mean": 0.203125,
-      "adaptation_mean": {"500": 0.203125, "2000": 0.203125, "8000": 0.203125},
-      "old_path_mean": {"500": 0.19791666666666666, "2000": 0.19791666666666666, "8000": 0.19791666666666666}
-    },
-    "confirm_only": {
-      "pre_accuracy_mean": 1.0,
-      "remapped_final_accuracy_mean": 0.4479166666666666,
-      "adaptation_mean": {"500": 0.14583333333333334, "2000": 0.4468750000000001, "8000": 0.4479166666666666},
-      "old_path_mean": {"500": 0.8541666666666669, "2000": 0.553125, "8000": 0.5520833333333334}
-    },
-    "reversible": {
-      "pre_accuracy_mean": 1.0,
-      "remapped_final_accuracy_mean": 1.0,
-      "adaptation_mean": {"500": 0.790625, "2000": 1.0, "8000": 1.0},
-      "old_path_mean": {"500": 0.209375, "2000": 0.0, "8000": 0.0}
-    }
+  "selected_polarized_tip_screen": {
+    "five_branch_70mV_proxy_winner": 0.9992666666666666,
+    "five_branch_70mV_target_on": 0.9580666666666666,
+    "five_branch_70mV_wrong_on": 0.0009,
+    "relearn_after_4_exposures": 0.9928,
+    "relearn_after_8_exposures": 1.0
   },
-  "stress": [
-    {"branches": 4, "threshold_sigma_V": 0.008, "winner_correct": 0.999425, "target_above_threshold": 0.93375, "any_wrong_above_threshold": 0.00005, "clean_target_only": 0.9337},
-    {"branches": 4, "threshold_sigma_V": 0.012, "winner_correct": 0.99475, "target_above_threshold": 0.910275, "any_wrong_above_threshold": 0.004975, "clean_target_only": 0.90555},
-    {"branches": 4, "threshold_sigma_V": 0.016, "winner_correct": 0.978125, "target_above_threshold": 0.88275, "any_wrong_above_threshold": 0.032525, "clean_target_only": 0.85315},
-    {"branches": 4, "threshold_sigma_V": 0.02, "winner_correct": 0.9477, "target_above_threshold": 0.8522, "any_wrong_above_threshold": 0.092275, "clean_target_only": 0.771475},
-    {"branches": 8, "threshold_sigma_V": 0.008, "winner_correct": 0.9994, "target_above_threshold": 0.932825, "any_wrong_above_threshold": 0.000025, "clean_target_only": 0.9328},
-    {"branches": 8, "threshold_sigma_V": 0.012, "winner_correct": 0.993075, "target_above_threshold": 0.9143, "any_wrong_above_threshold": 0.003675, "clean_target_only": 0.91075},
-    {"branches": 8, "threshold_sigma_V": 0.016, "winner_correct": 0.97065, "target_above_threshold": 0.880325, "any_wrong_above_threshold": 0.038, "clean_target_only": 0.845975},
-    {"branches": 8, "threshold_sigma_V": 0.02, "winner_correct": 0.929075, "target_above_threshold": 0.854575, "any_wrong_above_threshold": 0.1307, "clean_target_only": 0.741075},
-    {"branches": 16, "threshold_sigma_V": 0.008, "winner_correct": 0.9989, "target_above_threshold": 0.936725, "any_wrong_above_threshold": 0.000025, "clean_target_only": 0.9367},
-    {"branches": 16, "threshold_sigma_V": 0.012, "winner_correct": 0.990325, "target_above_threshold": 0.9133, "any_wrong_above_threshold": 0.0052, "clean_target_only": 0.9084},
-    {"branches": 16, "threshold_sigma_V": 0.016, "winner_correct": 0.956425, "target_above_threshold": 0.878875, "any_wrong_above_threshold": 0.06085, "clean_target_only": 0.825175},
-    {"branches": 16, "threshold_sigma_V": 0.02, "winner_correct": 0.89475, "target_above_threshold": 0.8503, "any_wrong_above_threshold": 0.21805, "clean_target_only": 0.663}
+  "v14O_guided_gap_integration": {
+    "4": {"branches":4,"R_nm":8,"q_target_eff_e":10.0,"q_other_eff_e":-3.0,"correct_winner":0.9911,"correct_with_1ns_quench_margin":0.96718,"target_delay_mean_ns":8.066189006668179,"winner_delay_mean_ns":8.0599907278459,"median_first_second_margin_ns":4.425615477141453,"nominal_target_trail_mV":157.85996849520419,"max_wrong_abs_trail_mV":48.095391344202724,"local_dipole_mV_per_e":15.4281915840275,"max_cross_mV_per_e":0.41452840361918314},
+    "5": {"branches":5,"R_nm":8,"q_target_eff_e":10.0,"q_other_eff_e":-3.0,"correct_winner":0.98654,"correct_with_1ns_quench_margin":0.95472,"target_delay_mean_ns":8.056197730959289,"winner_delay_mean_ns":8.0469377118712,"median_first_second_margin_ns":4.025463404918051,"nominal_target_trail_mV":158.92327454288812,"max_wrong_abs_trail_mV":46.834634209116935,"local_dipole_mV_per_e":15.4281915840275,"max_cross_mV_per_e":0.39933985843442715},
+    "8": {"branches":8,"R_nm":8,"q_target_eff_e":10.0,"q_other_eff_e":-3.0,"correct_winner":0.97614,"correct_with_1ns_quench_margin":0.92282,"target_delay_mean_ns":8.049434056146852,"winner_delay_mean_ns":8.033235089089267,"median_first_second_margin_ns":3.3341230791749243,"nominal_target_trail_mV":160.46239002701796,"max_wrong_abs_trail_mV":45.492969812388914,"local_dipole_mV_per_e":15.4281915840275,"max_cross_mV_per_e":0.41452840361918314},
+    "16": {"branches":16,"R_nm":8,"q_target_eff_e":10.0,"q_other_eff_e":-3.0,"correct_winner":0.94604,"correct_with_1ns_quench_margin":0.84806,"target_delay_mean_ns":8.116521372750846,"winner_delay_mean_ns":8.07526768264476,"median_first_second_margin_ns":2.590630536098889,"nominal_target_trail_mV":151.7636584591468,"max_wrong_abs_trail_mV":54.191701380260106,"local_dipole_mV_per_e":15.4281915840275,"max_cross_mV_per_e":2.6000482087274164}
+  },
+  "relearning_12_cycles": {"cycle":12,"overall_mean":0.9833984375,"changed_now_mean":0.976470588235294,"old_selected_mean":0.014215686274509805,"never_changed_mean":1.0},
+  "retention_with_confirmation_refresh_examples": [
+    {"tau_years":1,"query_interval_days":30,"mean_query_accuracy":0.9826561983471075,"last_query_accuracy":0.9806,"mean_final_trail":0.9984266729276886},
+    {"tau_years":2,"query_interval_days":180,"mean_query_accuracy":0.9533900000000001,"last_query_accuracy":0.954,"mean_final_trail":0.9886997193945397},
+    {"tau_years":5,"query_interval_days":365,"mean_query_accuracy":0.9648,"last_query_accuracy":0.9644,"mean_final_trail":0.9930868685696176},
+    {"tau_years":20,"query_interval_days":730,"mean_query_accuracy":0.98188,"last_query_accuracy":0.984,"mean_final_trail":0.9984439670408154}
   ],
-  "selected_rule": "reversible confirmation/contradiction trail",
-  "decision": "KEEP electrostatic trail as path-bias memory candidate; REJECT ungated use-only deposition."
+  "choice_node_quench": {
+    "4_branch_1fF": {"branches":4,"choice_node_fF":1,"quench_ns":0.5132301680226824,"correct_winner":0.99054,"correct_and_quenched":0.98154,"choice_node_energy_fJ":0.03125},
+    "5_branch_1fF": {"branches":5,"choice_node_fF":1,"quench_ns":0.5132301680226824,"correct_winner":0.9873333333333333,"correct_and_quenched":0.9752066666666667,"choice_node_energy_fJ":0.03125},
+    "choice_node_target": "<=1 fF preferred; physical extraction still required"
+  },
+  "hierarchical_fanout": [
+    {"logical_choices":16,"four_way_stages":2,"hierarchical_winner_probability":0.9811694916,"hierarchical_1fF_quench_probability":0.9634207716,"direct_probability_if_screened":0.9476133333333333},
+    {"logical_choices":64,"four_way_stages":3,"hierarchical_winner_probability":0.971887628209464,"hierarchical_1fF_quench_probability":0.9456360241562639,"direct_probability_if_screened":null},
+    {"logical_choices":256,"four_way_stages":4,"hierarchical_winner_probability":0.9626935712466024,"hierarchical_1fF_quench_probability":0.9281795831503392,"direct_probability_if_screened":null}
+  ],
+  "electrostatic_collar_floor": {"parallel_plate_floor_F":3.54167512512e-18,"one_volt_stored_energy_J":1.77083756256e-18,"one_volt_charge_electrons":22.10539743222844,"warning":"geometric electrostatic floor only; excludes trap injection, losses, drivers, selectors and material switching energy"},
+  "decision": "KEEP v14P. Preferred architecture is v14O guided-gap volatile branch + reversible polarized trail collar + tiny shared choice node. Use 4-5 local candidate branches and hierarchical/shared relay expansion for larger logical fanout. Long-term semantic memory is route polarization; transient excitation remains temporary."
 }
