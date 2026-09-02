@@ -1,0 +1,29 @@
+{
+  "schema": "gvs-experiment-manifest-v1-connector",
+  "experiment": "v14Q_usage_eligibility_trail",
+  "status": "PARTIAL PASS",
+  "provenance": {
+    "branch": "experiment/v14Q-usage-eligibility-trail",
+    "base_branch": "experiment/v14P-electrostatic-trail-selection",
+    "base_commit": "b62b51822a3540fb46cb8695328102cdfa86db91",
+    "execution": "Python standard-library model executed in-session; repository persisted through GitHub connector",
+    "pdk": null,
+    "spice": null,
+    "layout_extraction": null
+  },
+  "files": [
+    {"path": "run_v14q.py", "bytes": 3725, "git_blob_sha": "13153fb57c3ecd39489d70370b601c3ef4a23035"},
+    {"path": "results.json", "bytes": 1608, "git_blob_sha": "92c09ed1e55b84571895516eec50622d30f9063b"},
+    {"path": "REPORT.md", "bytes": 4133, "git_blob_sha": "d16031c6268578379efab97fb7269f0f07697b0a"}
+  ],
+  "run_command": "python3 experiments/v14Q_usage_eligibility_trail/run_v14q.py > experiments/v14Q_usage_eligibility_trail/results.json",
+  "random_seeds": "0..199",
+  "required_review": [
+    "REPORT.md states PARTIAL PASS.",
+    "Exact runnable script and command are present.",
+    "No PDK/SPICE/extracted-layout result is claimed.",
+    "Magnetic and RC calculations are explicitly first-order screening models.",
+    "Physical dual-timescale collar remains unresolved and is NEXT_EXPERIMENT."
+  ],
+  "finalizer_note": "The repository's finalize_experiment.py was inspected. Direct local git checkout was unavailable in this execution environment, so this connector manifest records Git blob SHAs and provenance instead of pretending the normal local finalizer ran."
+}
