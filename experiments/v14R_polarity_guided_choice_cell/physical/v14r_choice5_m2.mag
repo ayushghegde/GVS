@@ -1,0 +1,28 @@
+magic
+tech sky130A
+timestamp 1788364356
+<< checkpaint >>
+rect -630 -630 718 756
+<< metal2 >>
+rect 0 112 44 126
+rect 58 112 88 126
+rect 0 98 14 112
+rect 0 84 44 98
+rect 58 84 88 98
+rect 0 70 14 84
+rect 0 56 44 70
+rect 58 56 88 70
+rect 0 42 14 56
+rect 0 28 44 42
+rect 58 28 88 42
+rect 0 14 14 28
+rect 0 0 44 14
+rect 58 0 88 14
+<< labels >>
+rlabel metal2 58 0 88 14 0 B0
+rlabel metal2 58 28 88 42 0 B1
+rlabel metal2 58 56 88 70 0 B2
+rlabel metal2 58 84 88 98 0 B3
+rlabel metal2 58 112 88 126 0 B4
+rlabel metal2 0 0 14 126 0 CHOICE
+<< end >>
