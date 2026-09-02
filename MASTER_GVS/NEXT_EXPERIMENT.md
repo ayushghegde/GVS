@@ -1,41 +1,44 @@
-# Current Next Experiment — v14P5 Physical Polarized Trail Collar
+# Current Next Experiment — v14Q1 Co-located Dual-Timescale Collar
 
 ## Goal
-Close the first physical implementation of the v14P branch-selection primitive: a reversible local polarization/trapped-charge collar around a v14O guided-gap tip plus a <=1 fF shared choice node.
+Physically test the useful part of v14Q: ordinary branch use creates a temporary eligibility state, while confirmed/contradicted learning changes the durable v14P Polarized Trail Collar (PTC) state. Both states should live in the same branch-collar structure if possible.
 
-## Candidate structures — simplest first
+## Why this replaced the literal electromagnet idea
 
-Test in this order:
-1. trap-rich HfO2-class sidewall/collar using the existing branch terminals;
-2. HZO/ferroelectric collar if simple trapping cannot provide reversible retention/endurance;
-3. ionic/electret collar only if it materially reduces write energy/peripheral cost.
+At the current v14O model point, 0.25 V across ~2.3 Mohm gives ~108.7 nA. An ideal straight conductor produces only ~2.17 uT at 10 nm. Direct magnetic writing would require orders of magnitude more current, so a per-branch electromagnet is rejected unless a future magnetoelectric structure proves a major system-level advantage without extra drivers.
 
-Do not add a third transistor gate or per-branch selector merely to make programming easy.
+## Candidate physical mechanism — simplest first
 
-## Required physical tests
+1. **Dual-timescale trap occupancy in the existing collar**: ordinary inference creates a shallow/temporary occupancy state; a later confirmation/contradiction coincidence pulse converts eligible state into deeper/reversible persistent PTC state.
+2. **Separate tiny floating/RC eligibility node** only if leakage and area remain negligible. A ~3.54 aF geometry needs ~2.82e14 ohm for a 1 ms RC time constant, so this is currently second choice.
+3. **Magnetoelectric eligibility** only if it reuses the same two branch terminals and beats the electric/trap approach in energy, area, and disturb.
 
-1. Geometry/electrostatics: 3-D tip + collar field shift and neighboring-branch crosstalk.
-2. Layout/extraction: physically realize the 4-5 branch mouth and show total Choice Node capacitance <=1 fF preferred (<=1.5 fF conditional).
-3. Coupled transient model: calibrated trail state -> local gap field -> bridge delay -> first-branch quench.
-4. Reversible states: favored / neutral / contradicted, including repeated polarity reversal.
-5. Read disturb: large-equivalent inference pulse count.
-6. Retention: with and without confirmation-driven reconsolidation.
-7. Temperature / variation / endurance.
-8. Half-select and neighboring-collar disturbance during local coincidence programming.
-9. Complete program energy, rails and shared peripherals.
-10. Group comparison against direct 16-way branching, v14O nonvolatile-filament weighting, v14J memcapacitive weighting and CMOS reference.
+No per-branch MOS selector, sense amplifier, coil, or dedicated magnetic driver is allowed merely to make the experiment work.
+
+## Required tests
+
+1. Inference pulse amplitude/width -> temporary eligibility occupancy.
+2. Eligibility decay sweep from ns to s.
+3. Persistent PTC disturb after large inference-pulse counts.
+4. Confirmation pulse with low/high eligibility -> durable strengthening delta.
+5. Contradiction pulse -> durable weakening/reversal delta.
+6. Repeated relearning and polarity reversal.
+7. Neighboring collar half-select/crosstalk.
+8. Temperature and process/geometry variation.
+9. Energy per inference trace and per confirmed update.
+10. Compare complete branch cost against v14P without eligibility and against a separate RC eligibility node.
 
 ## Acceptance
 
 Promote only if:
-- 4-5-way physical winner >=99% or a small population-confidence/redundancy correction gives a net system win;
-- choice-node extracted C <=1 fF preferred and first-bridge quench timing closes;
-- ordinary inference does not materially rewrite the collar;
-- changed routes can reverse in a few corroborated learning encounters;
-- neighboring branch bias remains small enough for sparse routing;
-- no per-branch MOS selector/compliance element in the semantic core;
-- total learned-branch + programming infrastructure remains collectively cheaper/better than the transistor reference.
+- usage eligibility materially reduces confirmed relearning encounters (target >=20% improvement retained from the v14Q behavioral model);
+- ordinary inference cannot by itself create durable semantic preference;
+- persistent state drift under inference remains small enough that route accuracy is not degraded;
+- eligibility lifetime can cover the intended local confirmation window without an always-on refresh circuit;
+- neighboring branches do not acquire enough false eligibility to change winner statistics materially;
+- no per-branch active device is added;
+- total energy/area remains better than simply increasing digital/CMOS learning support.
 
 ## Failure rule
 
-If no simple collar material closes retention + reversibility + read-disturb cheaply, keep v14O volatile guided-gap firing and compare the best two-terminal long-term weight alternatives. Do not preserve the charged-tip idea at higher total cost merely because it is biologically suggestive.
+If a co-located temporary state cannot be separated cleanly from the persistent PTC state, discard UET as a hardware primitive and keep v14P confirmation-gated learning unchanged. Do not add a costly second memory device merely to preserve the idea.
