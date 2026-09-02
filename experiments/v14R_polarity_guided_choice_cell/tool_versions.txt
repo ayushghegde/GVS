@@ -1,0 +1,6 @@
+Magic source package: user-supplied magic-8.3.681.zip
+Magic extraction file version: 8.3
+SKY130 technology reported by Magic: sky130A 1.0.602-0-gf3c505b
+PDK source: user-supplied sky130_fd_pr.tar.zst + common.tar.zst
+Python model: Python 3 / NumPy (environment version recorded by manifest host where available)
+ngspice: source build was attempted from user-supplied ngspice-master.zip but did not complete within execution slices; no ngspice result is used as evidence in v14R.
