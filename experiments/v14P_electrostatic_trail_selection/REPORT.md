@@ -1,55 +1,110 @@
-# v14P Experiment Report — Electrostatic Trail Selection
+# v14P Experiment Report — Polarized Trail Branch Selection
 
-## Question
-Can the user's 'positive charge at the useful wire tip' idea become a physically sensible transistor-free route-selection mechanism?
+## What was tested
 
-## Interpretation of the drawing
-The useful abstraction is not that electrons are literally pulled around a bend like particles following a charged signpost. A local trapped charge/polarization changes the electrostatic potential and therefore the barrier/field at a branch mouth. The standard excitation then preferentially switches the easier branch.
+The user's charged-tip drawing was interpreted as a physical route-selection mechanism: several candidate branches leave a cell, and a learned local electrostatic field near each branch tip determines which guided-gap junction forms first.
 
-## Experiment 1 — learning-rule failure control
-Six candidate branches per node were given an electrostatic trail variable. Reading was noisy; trail coupling and base conductance varied by device; 5% of programming attempts failed. After initial learning, 25% of relations were remapped.
+The experiment progressed through four checks:
+1. traffic-only vs feedback-gated trail learning;
+2. monopole vs compensated/dipolar electrostatic trail and retention/relearning sensitivity;
+3. direct integration of the trail field into the v14O guided-gap filament-formation race;
+4. first-bridge quench timing and sparse hierarchical fanout.
 
-Result:
-- use-only deposition: near chance before and after remapping;
-- confirm-only: initial learning works but old positive trails remain competitive after knowledge changes;
-- reversible confirmation/contradiction: initial learning works and remapped relations are relearned rapidly.
+All results are engineering sensitivity models, not fabricated-device measurements.
 
-Selected deterministic aggregate (6 seeds):
-- reversible pre-change accuracy: 100%;
-- after 500 adaptation events: ~79.1% on changed relations;
-- after 2,000: 100%;
-- old-route selection after 2,000: 0%.
+## 1. Learning rule
 
-This is a model result, not measured hardware.
+Use-only deposition failed: early random routes reinforce themselves. In the original six-way remap control, final accuracy remained ~20.3%.
 
-## Experiment 2 — branch-tip electrostatic selection
-A branch barrier model was used with a 0.22-V reasoning pulse and 0.25-V baseline threshold. The selected path carried a favorable trail (+5 effective units); contradicted alternatives used -1. Threshold sigma was 16 mV, trail/coupling variation 25%, and electrostatic crosstalk 15%.
+Confirmation-only strengthening also failed to adapt cleanly because the old favorable trail remained: ~44.8% final remapped accuracy.
 
-120,000 trials:
-- correct branch winner ~98.06%;
-- clean target-only threshold crossing ~87.17%;
-- wrong-branch threshold crossing ~2.78%.
+Reversible confirmation/contradiction trails reached 100% in that deterministic control.
 
-The winner metric matters because Population Confidence / local competition can tolerate weak subthreshold/secondary activity better than requiring every incorrect branch to be perfectly silent.
+Decision: usage creates eligibility only. Confirmation writes favorable polarization; contradiction reverses/neutralizes wrong polarization.
 
-## Experiment 3 — fanout stress
-The same model was swept across 4, 8, and 16 candidate branches and 8-20 mV threshold spread.
+## 2. Polarized/dipole trail
 
-Very wide branching degrades first. The hardest 16-way / 20-mV case reached ~89.5% winner accuracy. This supports the existing sparse-connectivity rule instead of a dense crossbar.
+A compensated positive/negative trail was kept instead of a bare net-charge patch. Point-charge electrostatic sanity calculations in k~20 dielectric give order-10-mV local shifts at a few nanometres, while the compensated field falls faster laterally.
 
-## Physical interpretation
-The preferred v14P device is a small charge-trap/electret/ferroelectric-like pocket adjacent to the v14O guided-gap tip. The trail should modulate the local field/barrier but not carry the full inference current.
+A 70-mV-class barrier-shift proxy in the five-branch threshold model produced ~99.93% winner accuracy at 12-mV threshold sigma, with ~0.09% wrong-branch-above-threshold rate. This is a target window, not a measured trap voltage.
 
-A favorable learning pulse traps charge/polarization that lowers the branch barrier. A contradiction pulse detrapps, compensates, or reverses the field. Ordinary inference pulses stay below the programming condition.
+Relearning a changed route reached ~99.3% after four proper teaching encounters and 100% after eight in the selected sensitivity model.
 
-## Literature boundary
-Two-terminal HfO2 devices have experimentally shown electron-trapping-driven conductance changes and relaxation, so charge-controlled local fields are physically plausible. Charge-trap memories also demonstrate that trapped charge can shift device electrostatics. However, published charge-trap reliability work warns about migration, neighbor interference, and retention loss at small scales. v14P must therefore physically close those exact risks rather than assuming an ideal electret.
+## 3. Guided-gap integration
+
+The electrostatic trail was then applied directly to v14O's field factor / bridge delay rather than a software routing score.
+
+Selected five-branch race:
+- correct first bridge: ~98.65%;
+- correct with >=1 ns before the second branch: ~95.47%;
+- target branch mean delay: ~8.06 ns;
+- median first-to-second margin: ~4.03 ns.
+
+Fanout:
+- 4 branches ~99.11% correct first bridge;
+- 5 ~98.65%;
+- 8 ~97.61%;
+- 12 ~96.47%;
+- 16 ~94.60%.
+
+Decision: ordinary cells should use small branch bundles, not dense local fanout.
+
+## 4. Quench timing problem and fix
+
+The first bridge cannot be assumed to suppress every competitor instantly. With v14O's ~2.3-Mohm modeled ON path, a large source-node capacitance would discharge too slowly.
+
+A new tiny shared Choice Node was introduced only at the branch mouths.
+
+At 1 fF, a 20% voltage reduction takes ~0.51 ns and stores only ~0.031 fJ at 0.25 V. In the race model:
+- 4-way correct + quenched: ~98.15%;
+- 5-way: ~97.52%.
+
+At 0.5 fF those become ~98.67% and ~98.22% respectively.
+
+This converts the next physical question into a clear layout target: can branch-mouth routing be extracted at <=1 fF?
+
+## 5. Hierarchical fanout
+
+Direct 16-way first-bridge probability was ~94.8%. Two independent 4-way stages give ~98.1% first-order winner probability. Therefore larger logical fanout should be built from small local choices / shared relay cells.
+
+This is not permission to skip semantic transformations. It is a physical routing organization.
+
+## 6. Retention / reconsolidation
+
+The trail does not need infinite intrinsic retention if confirmed use refreshes the relation. Ten-year sensitivity examples:
+- tau=1 y, monthly use: ~98.27% mean query accuracy;
+- tau=2 y, 180-day use: ~95.34%;
+- tau=5 y, yearly use: ~96.48%;
+- tau=20 y, two-year use: ~98.19%.
+
+Unused relations may fade and require relearning. No material retention value has yet been demonstrated.
+
+## 7. Repeated structural change
+
+Twelve sequential remap cycles, 20% of relations changed per cycle, 5% physical programming failure, 3% wrong feedback, and three corroborated updates gave at cycle 12:
+- overall ~98.34%;
+- currently changed ~97.65%;
+- old route ~1.42%;
+- never changed 100%.
+
+The remaining error is dominated by bad/common-mode teaching and program faults, not an inability to reverse the field.
 
 ## Decision
-KEEP the electrostatic-trail concept as a route-bias memory layer.
 
-Do not replace v14O firing with it. Combine them:
-- v14O guided-gap branch = fast transient conduction;
-- v14P trail tip = persistent route preference.
+KEEP v14P.
 
-This decoupling is currently more credible than demanding one filament state simultaneously optimize nanosecond firing, long retention, reversible learning, and low leakage.
+The preferred semantic branch is now:
+
+`temporary cell excitation -> tiny choice node -> 4-5 v14O guided-gap candidate branches -> each branch surrounded by a reversible Polarized Trail Collar -> favored branch bridges first -> choice node quenches competitors -> next cell regenerates locally`.
+
+This is a better interpretation of the charged-tip idea than permanently accumulating free positive charge on metal. It also removes the requirement that the main conductive filament itself must simultaneously be fast/volatile and long-retention/nonvolatile.
+
+## Physical evidence still missing
+
+v14P is not complete silicon. Missing gates are:
+- actual polarizable/trap material and reversible barrier window;
+- read disturb, retention, endurance, temperature and half-select behavior;
+- complete programming energy/peripherals;
+- physical layout/extraction of the branch collar and <=1 fF choice node;
+- calibrated compact model coupling trail state to v14O bridge delay;
+- group-level comparison with the best transistor reference after those parasitics/peripherals are counted.
