@@ -1,0 +1,49 @@
+{
+  "schema": "v14S-shared-threshold-polarized-link-cell-v1",
+  "status": "MODEL-LEVEL PARTIAL PASS",
+  "selected_point": {
+    "link_cv": 0.30,
+    "link_failure": 0.01,
+    "trials": 200000,
+    "success": 0.999595,
+    "any_distractor_fired": 0.0,
+    "correct_v_mean_V": 0.21977240467914969,
+    "max_distractor_v_mean_V": 0.046848474720801205
+  },
+  "eight_stage_independent_route_success_proxy": 0.9967645889817958,
+  "stress_points": [
+    {"link_cv":0.20,"failure":0.05,"success":0.99634,"distractor_fire":0.0},
+    {"link_cv":0.30,"failure":0.05,"success":0.99426,"distractor_fire":0.0},
+    {"link_cv":0.40,"failure":0.05,"success":0.99094,"distractor_fire":0.0},
+    {"link_cv":0.50,"failure":0.05,"success":0.98576,"distractor_fire":0.0}
+  ],
+  "fanin_success": {
+    "1": 0.03882,
+    "2": 0.7084,
+    "3": 0.98596,
+    "4": 0.99954,
+    "5": 1.0,
+    "6": 1.0
+  },
+  "energy_fJ": {
+    "four_source_links": 0.045,
+    "shared_threshold": 0.300,
+    "node": 0.00625,
+    "total_selected_event": 0.35125
+  },
+  "structural": {
+    "per_cell_two_terminal_devices": 6,
+    "per_cell_MOS_in_semantic_cell": 0,
+    "lean_reference_MOS_plus_memory_elements": 11,
+    "count_reduction_fraction": 0.4545454545454546,
+    "4096_cell_v14S_two_terminal_devices": 24576,
+    "4096_cell_MOS_saved_before_shared_periphery": 20480,
+    "example_20MOS_driver_per_64_cells_equivalent_MOS_per_cell": 0.3125
+  },
+  "program_window_sensitivity": [
+    {"Vc_mean_V":1.0,"Vc_sigma_V":0.08,"read_0p25_switch_fraction":0.0,"half_0p60_switch_fraction":0.0,"selected_1p20_switch_fraction":0.9938},
+    {"Vc_mean_V":1.0,"Vc_sigma_V":0.12,"read_0p25_switch_fraction":0.0,"half_0p60_switch_fraction":0.000424,"selected_1p20_switch_fraction":0.95208},
+    {"Vc_mean_V":1.0,"Vc_sigma_V":0.18,"read_0p25_switch_fraction":0.000024,"half_0p60_switch_fraction":0.01296,"selected_1p20_switch_fraction":0.866168}
+  ],
+  "evidence_boundary": "v14R node capacitance is from real SKY130/Magic extraction. v14S link/threshold dynamics and energy are engineering targets; no fabricated v14S combined device is claimed."
+}
