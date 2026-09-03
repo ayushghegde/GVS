@@ -1,44 +1,33 @@
-# Current Next Experiment — v14Q1 Co-located Dual-Timescale Collar
+# Current Next Experiment — v14R1 Calibrated Compound PGDB
 
 ## Goal
-Physically test the useful part of v14Q: ordinary branch use creates a temporary eligibility state, while confirmed/contradicted learning changes the durable v14P Polarized Trail Collar (PTC) state. Both states should live in the same branch-collar structure if possible.
 
-## Why this replaced the literal electromagnet idea
+Close the only major unresolved ordinary-cell device in v14R: one two-terminal Polarity-Guided Diffusive Branch combining a v14O volatile guided gap with an edge-exposed reversible HZO polarity collar.
 
-At the current v14O model point, 0.25 V across ~2.3 Mohm gives ~108.7 nA. An ideal straight conductor produces only ~2.17 uT at 10 nm. Direct magnetic writing would require orders of magnitude more current, so a per-branch electromagnet is rejected unless a future magnetoelectric structure proves a major system-level advantage without extra drivers.
+## Required sequence
 
-## Candidate physical mechanism — simplest first
-
-1. **Dual-timescale trap occupancy in the existing collar**: ordinary inference creates a shallow/temporary occupancy state; a later confirmation/contradiction coincidence pulse converts eligible state into deeper/reversible persistent PTC state.
-2. **Separate tiny floating/RC eligibility node** only if leakage and area remain negligible. A ~3.54 aF geometry needs ~2.82e14 ohm for a 1 ms RC time constant, so this is currently second choice.
-3. **Magnetoelectric eligibility** only if it reuses the same two branch terminals and beats the electric/trap approach in energy, area, and disturb.
-
-No per-branch MOS selector, sense amplifier, coil, or dedicated magnetic driver is allowed merely to make the experiment work.
-
-## Required tests
-
-1. Inference pulse amplitude/width -> temporary eligibility occupancy.
-2. Eligibility decay sweep from ns to s.
-3. Persistent PTC disturb after large inference-pulse counts.
-4. Confirmation pulse with low/high eligibility -> durable strengthening delta.
-5. Contradiction pulse -> durable weakening/reversal delta.
-6. Repeated relearning and polarity reversal.
-7. Neighboring collar half-select/crosstalk.
-8. Temperature and process/geometry variation.
-9. Energy per inference trace and per confirmed update.
-10. Compare complete branch cost against v14P without eligibility and against a separate RC eligibility node.
+1. Select one published 5–6 nm HZO stack with usable raw P-V / pulse-switching data and a realistic BEOL-compatible electrode/process candidate.
+2. Fit a calibrated ferroelectric switching model or lookup table. Stop using the current simple Vc threshold sensitivity once calibrated data is available.
+3. Build a 3-D electrostatic model including both metal electrodes, HZO polarization, the exposed collar edge, the guided-gap geometry and neighboring branches.
+4. Measure the actual local gap-voltage/field shift in favored, neutral and reversed states.
+5. Couple that field directly into the v14O guided-gap stochastic firing model.
+6. Test 0.25 V inference disturb over a large pulse-equivalent count.
+7. Test +0.6/-0.6 V selected coincidence, <=0.6 V half-select accumulation, reversal, imprint, retention, temperature and variation.
+8. Add shallow eligibility only if the same collar produces a useful short-lived state without materially biasing inference.
+9. Compare the final PGDB against the best retained v14J/v14M two-terminal alternatives on complete energy, area, program infrastructure, endurance and selection accuracy.
 
 ## Acceptance
 
-Promote only if:
-- usage eligibility materially reduces confirmed relearning encounters (target >=20% improvement retained from the v14Q behavioral model);
-- ordinary inference cannot by itself create durable semantic preference;
-- persistent state drift under inference remains small enough that route accuracy is not degraded;
-- eligibility lifetime can cover the intended local confirmation window without an always-on refresh circuit;
-- neighboring branches do not acquire enough false eligibility to change winner statistics materially;
-- no per-branch active device is added;
-- total energy/area remains better than simply increasing digital/CMOS learning support.
+Promote the compound PGDB only if:
+
+- effective collar coupling >=12.5% equivalent in the current race model, >=15% preferred;
+- five-way correct + quenched >=99% across calibrated variation or a cheaper physical correction achieves the same system target;
+- ordinary inference does not materially rewrite deep polarity;
+- half-select lifetime disturb is acceptable without a per-branch MOS selector;
+- reversal works repeatedly;
+- no standalone UET device is required;
+- total compound branch plus shared programming infrastructure beats the retained transistor/two-terminal references.
 
 ## Failure rule
 
-If a co-located temporary state cannot be separated cleanly from the persistent PTC state, discard UET as a hardware primitive and keep v14P confirmation-gated learning unchanged. Do not add a costly second memory device merely to preserve the idea.
+If HZO cannot retain enough fringe field or half-select/read disturb cannot close without per-branch active selection, reject the HZO collar implementation. Keep the physically closed tiny Choice Node and v14O guided firing core, then test the next two-terminal polarity/charge-trap candidate. Do not add transistors merely to preserve v14R's name.
