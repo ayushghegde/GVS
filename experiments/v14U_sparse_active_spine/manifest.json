@@ -1,0 +1,25 @@
+{
+  "schema": "gvs-experiment-manifest-v1",
+  "experiment": "v14U_sparse_active_spine",
+  "generated_utc": "2026-09-03T16:08:52Z",
+  "provenance": {
+    "parent_experiment": "v14T_hollow_charge_recovery_tile",
+    "physical_note": "The 8x8 and 16x16 SKY130 metal-grid values are preserved measurements from the completed v14U extraction run. The raw 16x16 extraction file was lost during an earlier tool-session interruption and is not claimed to be regenerated.",
+    "model_note": "HZO/FIC, passive rectifier, mechanical, DPD energy and transistor-accounting portions are engineering models and are rerunnable from source/run_v14u.py."
+  },
+  "files": [
+    "REPORT.md",
+    "RUN.md",
+    "IDEA_LEDGER.md",
+    "source/run_v14u.py",
+    "results/results.json",
+    "manifest.json"
+  ],
+  "status": "PARTIAL PASS",
+  "required_review": [
+    "Physical versus modeled evidence is separated.",
+    "Raw 16x16 extraction loss is disclosed.",
+    "No fabricated 4-nm HZO FIC or passive rectifier is claimed.",
+    "No extracted <=52-MOS active-spine PEX is claimed."
+  ]
+}
