@@ -1,0 +1,94 @@
+{
+  "schema": "v14S-chip-level-self-protected-polar-cell-v2",
+  "status": "MODEL/ARCHITECTURE PASS; PHYSICAL COMPOUND-DEVICE PARTIAL",
+  "evidence_boundary": "Only the inherited v14R CHOICE capacitance is extracted SKY130/Magic data. HZO/selector/aperture/guided-gap/yield/periphery numbers are engineering models or explicit targets.",
+  "selected_cell": {
+    "name": "SP-PGCC — Self-Protected Polarity-Guided Choice Cell",
+    "core_MOS_per_cell": 0,
+    "physical_branches": 6,
+    "logical_active_branches": 4,
+    "repair_spares": 2,
+    "branch_anatomy": "low-voltage guided-gap volatile signal path + intrinsic ballast; adjacent HZO route-polarity collar on separate program electrodes; same-footprint passive nonlinear inhibit; grounded aperture shield",
+    "eligibility": "volatile guided-gap residue itself; no standalone eligibility device",
+    "programming": "8-cell local program bank, V/3 row/column scheme; selected collar 1.2 V target, half-select terminal 0.4 V; high-voltage program plane is electrically separate from signal path"
+  },
+  "inherited_physical_choice_node": {
+    "source": "v14R Magic/SKY130 .ext copied under inherited/",
+    "choice_self_af": 112.362,
+    "choice_branch_couplings_af": [7.95455, 7.95455, 7.95455, 7.95455, 7.95455],
+    "choice_total_af": 152.13475
+  },
+  "choice_and_quench": {
+    "HZO_cap_each_aF": 4.4270939064000006,
+    "six_HZO_total_aF": 26.5625634384,
+    "combined_choice_plus_HZO_fF": 0.1786973134384,
+    "20pct_quench_ns": 0.09171285220119196,
+    "choice_energy_fJ_at_0p25V": 0.00558429104495
+  },
+  "aperture_geometry_sweep": [
+    {"aperture_nm":10.0,"neighbor_observe_nm":14.0,"target_retained_fraction":0.7277134253768375,"neighbor_to_target_fraction":0.017678379361659415,"unshielded_norm_target":1.9410327109988956,"shielded_norm_target":1.4125155628894954},
+    {"aperture_nm":10.0,"neighbor_observe_nm":18.0,"target_retained_fraction":0.7277134253768375,"neighbor_to_target_fraction":0.005663014187378643,"unshielded_norm_target":1.9410327109988956,"shielded_norm_target":1.4125155628894954},
+    {"aperture_nm":10.0,"neighbor_observe_nm":20.0,"target_retained_fraction":0.7277134253768375,"neighbor_to_target_fraction":0.0030420526830164094,"unshielded_norm_target":1.9410327109988956,"shielded_norm_target":1.4125155628894954},
+    {"aperture_nm":12.0,"neighbor_observe_nm":14.0,"target_retained_fraction":0.8339742579674317,"neighbor_to_target_fraction":0.0210124125172237,"unshielded_norm_target":1.9410327109988956,"shielded_norm_target":1.6187713148458163},
+    {"aperture_nm":12.0,"neighbor_observe_nm":18.0,"target_retained_fraction":0.8339742579674317,"neighbor_to_target_fraction":0.006665335167286238,"unshielded_norm_target":1.9410327109988956,"shielded_norm_target":1.6187713148458163},
+    {"aperture_nm":12.0,"neighbor_observe_nm":20.0,"target_retained_fraction":0.8339742579674317,"neighbor_to_target_fraction":0.0035736203759358302,"unshielded_norm_target":1.9410327109988956,"shielded_norm_target":1.6187713148458163},
+    {"aperture_nm":14.0,"neighbor_observe_nm":14.0,"target_retained_fraction":0.8932173384690234,"neighbor_to_target_fraction":0.024048488104044592,"unshielded_norm_target":1.9410327109988956,"shielded_norm_target":1.7337640719997467},
+    {"aperture_nm":14.0,"neighbor_observe_nm":18.0,"target_retained_fraction":0.8932173384690234,"neighbor_to_target_fraction":0.007548592494655887,"unshielded_norm_target":1.9410327109988956,"shielded_norm_target":1.7337640719997467},
+    {"aperture_nm":14.0,"neighbor_observe_nm":20.0,"target_retained_fraction":0.8932173384690234,"neighbor_to_target_fraction":0.004039027189930525,"unshielded_norm_target":1.9410327109988956,"shielded_norm_target":1.7337640719997467},
+    {"aperture_nm":16.0,"neighbor_observe_nm":14.0,"target_retained_fraction":0.9279229755232559,"neighbor_to_target_fraction":0.027060316662721084,"unshielded_norm_target":1.9410327109988956,"shielded_norm_target":1.8011288487780672},
+    {"aperture_nm":16.0,"neighbor_observe_nm":18.0,"target_retained_fraction":0.9279229755232559,"neighbor_to_target_fraction":0.00838804228541833,"unshielded_norm_target":1.9410327109988956,"shielded_norm_target":1.8011288487780672},
+    {"aperture_nm":16.0,"neighbor_observe_nm":20.0,"target_retained_fraction":0.9279229755232559,"neighbor_to_target_fraction":0.00447769311677087,"unshielded_norm_target":1.9410327109988956,"shielded_norm_target":1.8011288487780672}
+  ],
+  "selected_aperture": {
+    "aperture_nm":16.0,"neighbor_observe_nm":20.0,"target_retained_fraction":0.9279229755232559,"neighbor_to_target_fraction":0.00447769311677087,"unshielded_norm_target":1.9410327109988956,"shielded_norm_target":1.8011288487780672,"finite_3d_unshielded_patch_V":0.4757659895646805,"estimated_post_aperture_target_V":0.4414741926896247,"effective_target_charge_e":27.76567249620281,"effective_contradicted_charge_e":-8.329701748860844,"external_neighbor_leak_mV_each":1.976785953838309
+  },
+  "six_way_race_with_four_external_neighbors": {"correct_winner":0.9999366666666667,"correct_and_quenched":0.9999366666666667,"winner_delay_mean_ns":7.960844082748395,"winner_delay_p95_ns":9.924054585243185,"trials":300000},
+  "polarization_floor_screen": [
+    {"P_C_m2":0.08,"post_aperture_target_V":0.22073709634481234,"effective_target_charge_e":13.882836248101405,"external_neighbor_leak_mV_each":0.9883929769191545,"correct_winner":0.9951533333333333,"correct_and_quenched":0.9946466666666667,"winner_delay_mean_ns":7.962645408859628,"winner_delay_p95_ns":9.914797907143187,"trials":150000},
+    {"P_C_m2":0.1,"post_aperture_target_V":0.2759213704310154,"effective_target_charge_e":17.353545310126755,"external_neighbor_leak_mV_each":1.235491221148943,"correct_winner":0.9982733333333333,"correct_and_quenched":0.9980066666666667,"winner_delay_mean_ns":7.955273645375934,"winner_delay_p95_ns":9.923306353868126,"trials":150000},
+    {"P_C_m2":0.12,"post_aperture_target_V":0.3311056445172185,"effective_target_charge_e":20.824254372152108,"external_neighbor_leak_mV_each":1.482589465378732,"correct_winner":0.9993733333333333,"correct_and_quenched":0.99922,"winner_delay_mean_ns":7.963248776439807,"winner_delay_p95_ns":9.934070128061228,"trials":150000},
+    {"P_C_m2":0.14,"post_aperture_target_V":0.3862899186034216,"effective_target_charge_e":24.29496343417746,"external_neighbor_leak_mV_each":1.7296877096085208,"correct_winner":0.9998333333333334,"correct_and_quenched":0.9998066666666666,"winner_delay_mean_ns":7.960330081931472,"winner_delay_p95_ns":9.936617170655035,"trials":150000},
+    {"P_C_m2":0.16,"post_aperture_target_V":0.4414741926896247,"effective_target_charge_e":27.76567249620281,"external_neighbor_leak_mV_each":1.976785953838309,"correct_winner":0.99994,"correct_and_quenched":0.9999333333333333,"winner_delay_mean_ns":7.962415601152821,"winner_delay_p95_ns":9.931590826885333,"trials":150000},
+    {"P_C_m2":0.18,"post_aperture_target_V":0.49665846677582776,"effective_target_charge_e":31.236381558228157,"external_neighbor_leak_mV_each":2.2238841980680983,"correct_winner":0.9999866666666667,"correct_and_quenched":0.99998,"winner_delay_mean_ns":7.959605782913196,"winner_delay_p95_ns":9.932283391161583,"trials":150000},
+    {"P_C_m2":0.22,"post_aperture_target_V":0.6070270149482339,"effective_target_charge_e":38.17779968227886,"external_neighbor_leak_mV_each":2.7180806865276748,"correct_winner":1.0,"correct_and_quenched":1.0,"winner_delay_mean_ns":7.958128928865698,"winner_delay_p95_ns":9.921921929030155,"trials":150000}
+  ],
+  "program_protection": {"pulse_ns":100.0,"selected_terminal_V":1.2,"half_select_terminal_V":0.4,"model_Ron_ohm":100000000.0,"model_Roff_ohm":100000000000.0,"HZO_selected_V":1.2,"HZO_half_select_V":0.08087504529285586,"Roff_required_for_half_HZO_le_0p15V_ohm":48059589207.23659,"Ron_max_for_selected_HZO_ge_1p0V_ohm":12606704044.484308,"minimum_required_Roff_over_Ron_window":3.812224752611976},
+  "repair_yield_screen": [
+    {"physical_branches":5,"required_good":4,"per_branch_usable_probability":0.95,"cell_functional_probability":0.9774074999999999,"64_cell_region_probability_if_independent":0.23165554547077796},
+    {"physical_branches":6,"required_good":4,"per_branch_usable_probability":0.95,"cell_functional_probability":0.99777015625,"64_cell_region_probability_if_independent":0.8668673199448013},
+    {"physical_branches":7,"required_good":4,"per_branch_usable_probability":0.95,"cell_functional_probability":0.9998064218749999,"64_cell_region_probability_if_independent":0.9876862432063257},
+    {"physical_branches":5,"required_good":4,"per_branch_usable_probability":0.98,"cell_functional_probability":0.9961576128,"64_cell_region_probability_if_independent":0.7816201168301927},
+    {"physical_branches":6,"required_good":4,"per_branch_usable_probability":0.98,"cell_functional_probability":0.99984708544,"64_cell_region_probability_if_independent":0.9902604593849119},
+    {"physical_branches":7,"required_good":4,"per_branch_usable_probability":0.98,"cell_functional_probability":0.9999946643456,"64_cell_region_probability_if_independent":0.9996585755059965},
+    {"physical_branches":5,"required_good":4,"per_branch_usable_probability":0.99,"cell_functional_probability":0.9990198504,"64_cell_region_probability_if_independent":0.9391685309612591},
+    {"physical_branches":6,"required_good":4,"per_branch_usable_probability":0.99,"cell_functional_probability":0.9999804464100001,"64_cell_region_probability_if_independent":0.998749340731859},
+    {"physical_branches":7,"required_good":4,"per_branch_usable_probability":0.99,"cell_functional_probability":0.9999996583302,"64_cell_region_probability_if_independent":0.9999781333681421},
+    {"physical_branches":5,"required_good":4,"per_branch_usable_probability":0.995,"cell_functional_probability":0.9997524906375,"64_cell_region_probability_if_independent":0.9842822733843045},
+    {"physical_branches":6,"required_good":4,"per_branch_usable_probability":0.995,"cell_functional_probability":0.9999975280126563,"64_cell_region_probability_if_independent":0.9998418051285876},
+    {"physical_branches":7,"required_good":4,"per_branch_usable_probability":0.995,"cell_functional_probability":0.9999999783864078,"64_cell_region_probability_if_independent":0.9999986167310378}
+  ],
+  "program_bank": {
+    "cells_per_bank":8,"program_lines_per_bank":16,"line_switch_MOS_proxy_per_bank":32,"shared_level_MOS_proxy_per_bank":8,"total_shared_program_MOS_proxy_per_bank":40,"amortized_program_MOS_proxy_per_cell":5.0,"64_cell_region_banks":8,"64_cell_region_program_MOS_proxy":320,
+    "energy_bracket": [
+      {"line_length_um":5.0,"line_cap_fF_per_um":0.2,"one_line_cap_fF":1.0,"ideal_V3_transition_energy_fJ":0.64,"pessimistic_all_16_lines_to_1p2V_upper_fJ":11.52},
+      {"line_length_um":5.0,"line_cap_fF_per_um":0.5,"one_line_cap_fF":2.5,"ideal_V3_transition_energy_fJ":1.6,"pessimistic_all_16_lines_to_1p2V_upper_fJ":28.8},
+      {"line_length_um":5.0,"line_cap_fF_per_um":1.0,"one_line_cap_fF":5.0,"ideal_V3_transition_energy_fJ":3.2,"pessimistic_all_16_lines_to_1p2V_upper_fJ":57.6},
+      {"line_length_um":20.0,"line_cap_fF_per_um":0.2,"one_line_cap_fF":4.0,"ideal_V3_transition_energy_fJ":2.56,"pessimistic_all_16_lines_to_1p2V_upper_fJ":46.08},
+      {"line_length_um":20.0,"line_cap_fF_per_um":0.5,"one_line_cap_fF":10.0,"ideal_V3_transition_energy_fJ":6.4,"pessimistic_all_16_lines_to_1p2V_upper_fJ":115.2},
+      {"line_length_um":20.0,"line_cap_fF_per_um":1.0,"one_line_cap_fF":20.0,"ideal_V3_transition_energy_fJ":12.8,"pessimistic_all_16_lines_to_1p2V_upper_fJ":230.4},
+      {"line_length_um":100.0,"line_cap_fF_per_um":0.2,"one_line_cap_fF":20.0,"ideal_V3_transition_energy_fJ":12.8,"pessimistic_all_16_lines_to_1p2V_upper_fJ":230.4},
+      {"line_length_um":100.0,"line_cap_fF_per_um":0.5,"one_line_cap_fF":50.0,"ideal_V3_transition_energy_fJ":32.0,"pessimistic_all_16_lines_to_1p2V_upper_fJ":576.0},
+      {"line_length_um":100.0,"line_cap_fF_per_um":1.0,"one_line_cap_fF":100.0,"ideal_V3_transition_energy_fJ":64.0,"pessimistic_all_16_lines_to_1p2V_upper_fJ":1152.0}
+    ]
+  },
+  "old_cell_comparison": {"v14E_physical_CFN":"15 MOS + 2 MIM; real extracted/PVT/mismatch passed reference, but different contradiction-restart function","v14E_MIM_area_alone_um2":11.9241,"v14S_branch_footprint_break_even_vs_v14E_MIM_area_only_um2_each":1.98735,"v12S_whole_tile":"70 MOS + 14 MIM; TT accepted physical-query window about 28.28 pJ; broader function than one v14S choice cell","v12S_local_two_candidate_route_proxy":"50 MOS + 12 MIM in the parsed route/competition/capture section; broader circuitry than a single v14S cell","v14S_core_MOS":0,"v14S_amortized_shared_program_MOS_proxy_per_cell":5.0,"warning":"device-count and MIM-area ceilings are structural comparisons, not placed-layout area equivalence"},
+  "inference_energy": {
+    "v14S_model_fJ":1.9055842910449499,"winner_delay_mean_ns":7.960844082748395,
+    "cmos_controls":[
+      {"effective_switched_cap_fF":5,"energy_fJ":16.200000000000003,"delay_ns":6.0,"v14S_energy_ratio":0.11762865994104627,"v14S_EDP_ratio":0.15607057024221688},
+      {"effective_switched_cap_fF":10,"energy_fJ":32.400000000000006,"delay_ns":6.0,"v14S_energy_ratio":0.05881432997052313,"v14S_EDP_ratio":0.07803528512110844},
+      {"effective_switched_cap_fF":20,"energy_fJ":64.80000000000001,"delay_ns":6.0,"v14S_energy_ratio":0.029407164985261566,"v14S_EDP_ratio":0.03901764256055422}
+    ]
+  },
+  "decision": "KEEP v14S. The key closure is physical separation of low-voltage inference and high-voltage collar programming. Six passive branch mouths provide four normal routes plus two repair spares. No MOS is allowed in the ordinary semantic cell; MOS is confined to shared 8-cell program porches until a passive regional driver is proven cheaper."
+}
