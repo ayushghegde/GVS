@@ -1,0 +1,35 @@
+{
+  "schema": "gvs-experiment-manifest-v1-git-persisted",
+  "experiment": "v14S_self_protected_polar_cell",
+  "status": "MODEL/ARCHITECTURE PASS; PHYSICAL COMPOUND-DEVICE PARTIAL",
+  "persisted_utc_date": "2026-09-03",
+  "reproducibility": {
+    "run": "python3 experiments/v14S_self_protected_polar_cell/source/run_v14s.py > experiments/v14S_self_protected_polar_cell/run.log",
+    "dependencies": ["Python 3", "NumPy", "SciPy"],
+    "main_seed": 141506,
+    "main_trials": 300000,
+    "local_rerun_results_sha256": "ec71c46326196f61fb71f1625ab3ed6a70dda61644c098c3411399be9c0c3a4e",
+    "note": "The main model was rerun before Git persistence and reproduced the prior v14S results.json bit-for-bit."
+  },
+  "evidence_boundary": {
+    "extracted": "Only inherited/v14r_choice5_m2.ext and its matching .mag are physical Magic/SKY130 evidence from v14R.",
+    "modeled": "HZO polarization, aperture electrostatics, passive nonlinear inhibit, guided-gap statistics, yield, program-periphery count and energy are engineering models/targets.",
+    "not_claimed": "No fabricated v14S compound polar branch or extracted 8-cell Program Porch."
+  },
+  "files": [
+    "REPORT.md",
+    "RUN.md",
+    "SOURCES.md",
+    "V14S_ARCHITECTURE.md",
+    "NEXT_EXPERIMENT.md",
+    "inherited/v14r_choice5_m2.ext",
+    "inherited/v14r_choice5_m2.mag",
+    "source/run_v14s.py",
+    "results/results.json"
+  ],
+  "review": [
+    "Status is explicitly PARTIAL at physical compound-device level.",
+    "No modeled HZO or guided-gap quantity is labeled as extracted.",
+    "Shared programming MOS is included in system accounting rather than hidden."
+  ]
+}
