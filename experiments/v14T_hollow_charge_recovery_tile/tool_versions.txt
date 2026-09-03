@@ -1,0 +1,6 @@
+Magic source: magic-8.3.681.tgz from user-supplied magic-8.3.681.zip
+Magic executable: locally built standard/non-Tcl binary
+SKY130A Magic technology: version 1.0.602-0-gf3c505b
+PDK source: user-supplied sky130_fd_pr.tar.zst + common.tar.zst
+Python: system python3
+Model dependencies: Python standard library only

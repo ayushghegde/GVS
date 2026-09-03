@@ -1,0 +1,11 @@
+Script started on 2026-09-03 14:36:10+00:00
+Using NULL graphics device.
+Input style sky130(): scaleFactor=2, multiplier=2
+Using technology "sky130A", version 1.0.602-0-gf3c505b.
+SkyWater SKY130: Open Source rules and DRC
+Loading "v14t_program_porch_proxy" from command line.
+Cell v14t_program_porch_proxy read from current working directory
+Total DRC errors found: 0
+Extracting v14t_program_porch_proxy into v14t_program_porch_proxy.ext:
+Processing v14t_program_porch_proxy
+Script done on 2026-09-03 14:36:11+00:00 [COMMAND_EXIT_CODE="0"]

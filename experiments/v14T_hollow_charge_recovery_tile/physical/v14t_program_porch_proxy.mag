@@ -1,0 +1,45 @@
+magic
+tech sky130A
+timestamp 1788430000
+<< checkpaint >>
+rect -100 -100 2300 700
+<< metal2 >>
+rect 0 0 2000 14
+rect 0 30 2000 44
+rect 0 60 2000 74
+rect 0 90 2000 104
+rect 0 120 2000 134
+rect 0 150 2000 164
+rect 0 180 2000 194
+rect 0 210 2000 224
+rect 0 240 2000 254
+rect 0 270 2000 284
+rect 0 300 2000 314
+rect 0 330 2000 344
+rect 0 360 2000 374
+rect 0 390 2000 404
+rect 0 420 2000 434
+rect 0 450 2000 464
+<< metal3 >>
+rect 480 -20 510 480
+rect 1480 -20 1510 480
+<< labels >>
+rlabel metal2 0 0 100 14 0 P0
+rlabel metal2 0 30 100 44 0 P1
+rlabel metal2 0 60 100 74 0 P2
+rlabel metal2 0 90 100 104 0 P3
+rlabel metal2 0 120 100 134 0 P4
+rlabel metal2 0 150 100 164 0 P5
+rlabel metal2 0 180 100 194 0 P6
+rlabel metal2 0 210 100 224 0 P7
+rlabel metal2 0 240 100 254 0 P8
+rlabel metal2 0 270 100 284 0 P9
+rlabel metal2 0 300 100 314 0 P10
+rlabel metal2 0 330 100 344 0 P11
+rlabel metal2 0 360 100 374 0 P12
+rlabel metal2 0 390 100 404 0 P13
+rlabel metal2 0 420 100 434 0 P14
+rlabel metal2 0 450 100 464 0 P15
+rlabel metal3 480 -20 510 480 0 TANK0
+rlabel metal3 1480 -20 1510 480 0 TANK1
+<< end >>
