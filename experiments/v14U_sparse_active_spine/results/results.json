@@ -1,0 +1,24 @@
+{
+  "schema": "v14U-sparse-active-spine-v1",
+  "evidence_boundary": {
+    "physical": "SKY130 metal-grid extraction values are preserved measurements from the v14U run; HZO/FIC/rectifier/mechanical/energy are engineering models.",
+    "not_claimed": "No fabricated 4-nm HZO FIC, no fabricated edge rectifier, no extracted <=52-MOS active-spine PEX."
+  },
+  "physical_program_grids": {
+    "8x8": {"drc_errors": 0, "row_R_ohm_mean": 179.0, "col_R_ohm_mean": 31.0, "row_load_fF_mean": 15.964, "col_load_fF_mean": 17.458, "row_RC_ps": 2.86, "col_RC_ps": 0.54},
+    "16x16": {"drc_errors": 0, "row_load_fF_mean": 16.346, "col_load_fF_mean": 17.771, "row_RC_ps": 2.93, "col_RC_ps": 0.55}
+  },
+  "pulse_sweep": [
+    {"pulse_ns": 10, "joint_pass": 1.0, "selected_fail": 0.0, "half_fail": 0.0, "half_p999_V": 0.0517206381, "selected_p001_V": 1.1923648518},
+    {"pulse_ns": 20, "joint_pass": 0.99999, "selected_fail": 0.0, "half_fail": 0.00001, "half_p999_V": 0.0988948305, "selected_p001_V": 1.1999520322},
+    {"pulse_ns": 30, "joint_pass": 0.99995, "selected_fail": 0.0, "half_fail": 0.00005, "half_p999_V": 0.1441687288, "selected_p001_V": 1.1999996710},
+    {"pulse_ns": 40, "joint_pass": 0.999385, "selected_fail": 0.0, "half_fail": 0.000615, "half_p999_V": 0.1860791109, "selected_p001_V": 1.1999999977},
+    {"pulse_ns": 60, "joint_pass": 0.9940725, "selected_fail": 0.0, "half_fail": 0.0059275, "half_p999_V": 0.2612510288, "selected_p001_V": 1.2},
+    {"pulse_ns": 80, "joint_pass": 0.9773225, "selected_fail": 0.0, "half_fail": 0.0226775, "half_p999_V": 0.3296698029, "selected_p001_V": 1.2},
+    {"pulse_ns": 100, "joint_pass": 0.94575, "selected_fail": 0.0, "half_fail": 0.05425, "half_p999_V": 0.3831099932, "selected_p001_V": 1.2}
+  ],
+  "mechanical_HRM": {"trials": 500000, "pass_fraction": 1.0, "deflection_p99_nm": 0.0808511743, "deflection_max_nm": 0.2127144396, "stress_p99_MPa": 0.8630757463, "stress_max_MPa": 1.6077331173},
+  "dynamic_precharge_decode": {"evaluate_ns": 88.85, "write_ns": 30.0, "service_ns": 118.85, "distribution_energy_fJ_proxy": 174.67904, "gross_recovery_fJ_proxy": 116.4526933, "net_with_100fJ_control_fJ_proxy": 158.2263467},
+  "structural_accounting": {"semantic_cell_MOS": 0, "v14S_shared_MOS_equiv_per_cell": 5.0, "v14U_64cell_proxy": 0.75, "v14U_256cell_target": 0.203125},
+  "decision": {"keep": ["electric-polarity route memory", "field-isolated HZO collar", "guided volatile gap", "dry ribbed hollow reservoir", "dynamic precharge decode", "charge return", "sparse regional active gain only"], "reject": ["per-cell MOS selector", "100ns write pulse", "wet electrical cavity", "HZO direct chemical contact with Ag gap"]}
+}
