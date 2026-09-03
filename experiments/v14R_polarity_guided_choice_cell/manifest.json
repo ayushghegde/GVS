@@ -1,0 +1,24 @@
+{
+  "schema": "gvs-experiment-manifest-v1-reconstructed",
+  "experiment": "v14R_polarity_guided_choice_cell",
+  "status": "PARTIAL PASS",
+  "reconstructed_after_persistence_interruption": true,
+  "prior_local_finalizer_run": true,
+  "note": "The original finalized local v14R manifest was not persisted before the prior tool window ended. This manifest records the repository-resident experiment files and explicitly marks the reconstruction. Existing physical/source files are the exact committed v14R files; results are reconstructed from the prior finalized run summary without changing evidence labels.",
+  "important_files": [
+    "REPORT.md",
+    "RUN.md",
+    "source/run_v14r.py",
+    "physical/choice5_m2.cmd",
+    "physical/choice5_m2.log",
+    "physical/v14r_choice5_m2.ext",
+    "physical/v14r_choice5_m2.mag",
+    "results/results.json",
+    "tool_versions.txt"
+  ],
+  "evidence_rules": [
+    "Only the Magic/SKY130 metal branch-mouth DRC/extraction is physical/extracted evidence.",
+    "HZO coupling, guided-gap race, UET, energy and timing beyond metal parasitics remain modeled.",
+    "No fabricated HZO/GG-SLDJ compound branch is claimed."
+  ]
+}
