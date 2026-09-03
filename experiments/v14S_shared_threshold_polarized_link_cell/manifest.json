@@ -1,0 +1,35 @@
+{
+  "schema": "gvs-experiment-manifest-v1-connector",
+  "experiment": "v14S_shared_threshold_polarized_link_cell",
+  "status": "PARTIAL PASS",
+  "provenance": {
+    "branch": "experiment/v14S-shared-threshold-polarized-link-cell",
+    "base_branch": "experiment/v14R-polarity-guided-choice-cell",
+    "base_commit": "e836058e0c08567f921df0634ba66dd8bd35d1fe",
+    "execution": "Python/NumPy Monte Carlo and RC/energy screen executed in-session; repository persisted through GitHub connector",
+    "physical_input_reused": "v14R real SKY130/Magic choice-node capacitance floor (~0.152 fF)",
+    "fabricated_v14S_device": false
+  },
+  "files": [
+    {"path": "run_v14s.py", "bytes": 6099, "git_blob_sha": "4b570953d2b556e44d0861de4ba5233b23118e63"},
+    {"path": "results.json", "bytes": 2093, "git_blob_sha": "c87f76ea141c9f66233aad89e945f4e1bd8533ba"},
+    {"path": "REPORT.md", "bytes": 5877, "git_blob_sha": "fc3e22d09a312a87a8e55dbefb1d637fe647dda8"},
+    {"path": "RUN.md", "bytes": 428, "git_blob_sha": "0e0ce893f9871c3e7b7436a518d1c6290d362080"},
+    {"path": "NEXT_EXPERIMENT.md", "bytes": 992, "git_blob_sha": "9fd1010cf3e565c92b4e3d6619be7f4cc48c1caa"}
+  ],
+  "run_command": "python3 experiments/v14S_shared_threshold_polarized_link_cell/run_v14s.py > experiments/v14S_shared_threshold_polarized_link_cell/results.json",
+  "selected_model_point": {
+    "trials": 200000,
+    "link_cv": 0.30,
+    "link_failure": 0.01,
+    "single_stage_success": 0.999595,
+    "eight_stage_independent_proxy": 0.9967645889817958,
+    "event_energy_target_fJ": 0.35125
+  },
+  "required_review": [
+    "REPORT.md states PARTIAL PASS, not fabricated PASS.",
+    "First failed v14S operating point is preserved in REPORT.md.",
+    "No physical HZO/FTJ or Ag/HfO2 combined-device measurement is claimed.",
+    "v14S1 requires calibrated device models, cumulative disturb, physical MOS reference and full tile accounting."
+  ]
+}
