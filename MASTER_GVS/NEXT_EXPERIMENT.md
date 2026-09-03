@@ -1,44 +1,31 @@
-# Current Next Experiment — v14Q1 Co-located Dual-Timescale Collar
+# Current Next Experiment — v14S1 Physical 64-Cell Tile Closure
+
+Do not invent another semantic-cell topology unless v14S fails.
 
 ## Goal
-Physically test the useful part of v14Q: ordinary branch use creates a temporary eligibility state, while confirmed/contradicted learning changes the durable v14P Polarized Trail Collar (PTC) state. Both states should live in the same branch-collar structure if possible.
+Close one complete 64-cell Shared-Threshold Polarized-Link Cell (STPLC) tile against a physically specified MOS reference.
 
-## Why this replaced the literal electromagnet idea
-
-At the current v14O model point, 0.25 V across ~2.3 Mohm gives ~108.7 nA. An ideal straight conductor produces only ~2.17 uT at 10 nm. Direct magnetic writing would require orders of magnitude more current, so a per-branch electromagnet is rejected unless a future magnetoelectric structure proves a major system-level advantage without extra drivers.
-
-## Candidate physical mechanism — simplest first
-
-1. **Dual-timescale trap occupancy in the existing collar**: ordinary inference creates a shallow/temporary occupancy state; a later confirmation/contradiction coincidence pulse converts eligible state into deeper/reversible persistent PTC state.
-2. **Separate tiny floating/RC eligibility node** only if leakage and area remain negligible. A ~3.54 aF geometry needs ~2.82e14 ohm for a 1 ms RC time constant, so this is currently second choice.
-3. **Magnetoelectric eligibility** only if it reuses the same two branch terminals and beats the electric/trap approach in energy, area, and disturb.
-
-No per-branch MOS selector, sense amplifier, coil, or dedicated magnetic driver is allowed merely to make the experiment work.
-
-## Required tests
-
-1. Inference pulse amplitude/width -> temporary eligibility occupancy.
-2. Eligibility decay sweep from ns to s.
-3. Persistent PTC disturb after large inference-pulse counts.
-4. Confirmation pulse with low/high eligibility -> durable strengthening delta.
-5. Contradiction pulse -> durable weakening/reversal delta.
-6. Repeated relearning and polarity reversal.
-7. Neighboring collar half-select/crosstalk.
-8. Temperature and process/geometry variation.
-9. Energy per inference trace and per confirmed update.
-10. Compare complete branch cost against v14P without eligibility and against a separate RC eligibility node.
+## Required work
+1. Build/calibrate a two-terminal HZO/FTJ polarized-link compact model with OFF/WEAK/STRONG states and real read/program I-V behavior.
+2. Build/calibrate one Ag/HfO2-class volatile threshold-switch model including threshold/hold distribution, delay, leakage, recovery and stress.
+3. Keep the v14R extracted small-node geometry and add realistic device/contact/interconnect capacitance.
+4. Simulate 64 cells with sparse degree-5 links and real transient pulse propagation, not only score-based Monte Carlo.
+5. Sweep process/device envelopes plus local mismatch/variation.
+6. Run read-disturb and cumulative half-select programming stress.
+7. Implement one shared programming rail/driver group and count area/energy amortized per cell.
+8. Build a physically laid-out MOS comparison implementing the same receive/integrate/fire function and degree-5 programmable relation interface.
+9. Compare complete tile: area, event energy, propagation delay, programming energy, static leakage, device count, wire load and yield sensitivity.
 
 ## Acceptance
-
-Promote only if:
-- usage eligibility materially reduces confirmed relearning encounters (target >=20% improvement retained from the v14Q behavioral model);
-- ordinary inference cannot by itself create durable semantic preference;
-- persistent state drift under inference remains small enough that route accuracy is not degraded;
-- eligibility lifetime can cover the intended local confirmation window without an always-on refresh circuit;
-- neighboring branches do not acquire enough false eligibility to change winner statistics materially;
-- no per-branch active device is added;
-- total energy/area remains better than simply increasing digital/CMOS learning support.
+Promote only if all are met together:
+- >=99% single-stage decision accuracy at the selected practical variation envelope;
+- >=99% eight-stage route success after calibrated transient modeling or a correction mechanism that costs less than the lost margin;
+- no meaningful distractor firing under background/weak inputs;
+- read disturb acceptable for expected inference count;
+- half-select cumulative disturb acceptable for expected training count;
+- shared periphery does not erase the device-count/area advantage;
+- total tile energy-delay product beats the physically laid-out MOS reference;
+- common semantic cell remains MOS-free.
 
 ## Failure rule
-
-If a co-located temporary state cannot be separated cleanly from the persistent PTC state, discard UET as a hardware primitive and keep v14P confirmation-gated learning unchanged. Do not add a costly second memory device merely to preserve the idea.
+If the polarized link cannot provide enough low-voltage conductance contrast, test a simpler two-terminal polarized resistive link before adding selectors. If the shared threshold switch is the problem, improve only that single switch using seed/guided-gap/cation-limiter geometry. Do not return to one active switch per branch unless a full tile comparison proves it cheaper.
