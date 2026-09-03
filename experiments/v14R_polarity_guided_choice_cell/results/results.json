@@ -1,0 +1,56 @@
+{
+  "schema": "v14R-polarity-guided-choice-cell-v1-reconstructed",
+  "status": "PARTIAL PASS",
+  "provenance": "Reconstructed from the prior finalized local v14R run after a Git persistence interruption; no values are newly fabricated or re-labeled as extracted.",
+  "evidence_boundary": {
+    "extracted": "Magic/SKY130 five-way metal2 branch-mouth DRC/extraction only.",
+    "modeled": "guided-gap race, HZO electrostatic conversion, UET learning, energy/timing beyond metal parasitics.",
+    "not_claimed": "No fabricated HZO collar or GG-SLDJ; no calibrated compact model; no full post-layout v14R device."
+  },
+  "physical_choice_node": {
+    "choice_self_cap_aF": 112.362,
+    "choice_branch_couplings_aF": [7.95455,7.95455,7.95455,7.95455,7.95455],
+    "choice_total_extracted_aF": 152.13475,
+    "choice_total_extracted_fF": 0.15213475,
+    "drc_errors": 0
+  },
+  "combined_choice_node": {
+    "extracted_metal_plus_estimated_five_collar_fF": 0.1742702,
+    "20pct_quench_ns_at_2p3Mohm": 0.0894407,
+    "stored_energy_fJ_at_0p25V": 0.00544594
+  },
+  "polarity_branch_race": [
+    {"fringe_fraction_of_bound_charge":0.03,"correct_winner":0.6034,"correct_and_quenched":0.5852},
+    {"fringe_fraction_of_bound_charge":0.05,"correct_winner":0.8216,"correct_and_quenched":0.8089},
+    {"fringe_fraction_of_bound_charge":0.075,"correct_winner":0.9533,"correct_and_quenched":0.9482},
+    {"fringe_fraction_of_bound_charge":0.10,"correct_winner":0.9865,"correct_and_quenched":0.9849},
+    {"fringe_fraction_of_bound_charge":0.125,"correct_winner":0.9947,"correct_and_quenched":0.9940},
+    {"fringe_fraction_of_bound_charge":0.15,"correct_winner":0.9975,"correct_and_quenched":0.9973},
+    {"fringe_fraction_of_bound_charge":0.20,"correct_winner":0.9994,"correct_and_quenched":0.9992}
+  ],
+  "uet_normal_screen": {
+    "baseline_recovery_encounters_mean": 84.375,
+    "uet_recovery_encounters_mean": 55.25,
+    "recovery_improvement_fraction": 0.345185,
+    "baseline_final_accuracy_mean": 0.99990234,
+    "uet_final_accuracy_mean": 0.99990234,
+    "changed_final_accuracy_mean": 0.9996094,
+    "obsolete_old_route_selected_mean": 0.0003906
+  },
+  "noisy_feedback": {
+    "0.03": {"raw_recovery":56.0,"raw_final_accuracy":0.99974,"corroborated_recovery":54.17,"corroborated_final_accuracy":1.0},
+    "0.10": {"raw_recovery":62.0,"raw_final_accuracy":0.99831,"corroborated_recovery":55.5,"corroborated_final_accuracy":0.99987},
+    "0.20": {"raw_recovery":71.17,"raw_final_accuracy":0.98737,"corroborated_recovery":58.33,"corroborated_final_accuracy":0.99714},
+    "0.30": {"raw_recovery":91.83,"raw_final_accuracy":0.94661,"corroborated_recovery":70.0,"corroborated_final_accuracy":0.98255}
+  },
+  "program_window_sensitivity": [
+    {"assumed_Vc_mean_V":1.0,"assumed_Vc_sigma_V":0.08,"read_0p25_above_threshold_fraction":0.0,"half_select_0p60_above_threshold_fraction":0.0,"selected_1p20_above_threshold_fraction":0.9940},
+    {"assumed_Vc_mean_V":1.0,"assumed_Vc_sigma_V":0.12,"read_0p25_above_threshold_fraction":0.0,"half_select_0p60_above_threshold_fraction":0.00042,"selected_1p20_above_threshold_fraction":0.9519},
+    {"assumed_Vc_mean_V":1.0,"assumed_Vc_sigma_V":0.18,"read_0p25_above_threshold_fraction":0.0000267,"half_select_0p60_above_threshold_fraction":0.01303,"selected_1p20_above_threshold_fraction":0.8659}
+  ],
+  "decision": {
+    "cell": "v14R Polarity-Guided Choice Cell (PGCC)",
+    "keep": ["v14O guided-gap volatile bridge","v14O passive self-ballast","v14P local reversible electric-polarity collar","five-way sub-fF shared Choice Node","v14K confirmation/contradiction + corroboration","v14Q UET only if co-located and learning-only"],
+    "drop": ["literal magnetic attraction/electromagnet learning","dedicated membrane capacitor","separate VRS","forcing one filament to provide both volatility and retention","per-branch MOS selector/compliance","standalone UET device"]
+  }
+}
