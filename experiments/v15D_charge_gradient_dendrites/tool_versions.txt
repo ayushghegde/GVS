@@ -1,0 +1,4 @@
+Python: system Python used by run_v15d.py
+NumPy: imported by run_v15d.py
+ngspice: compiled from supplied ngspice-master.zip; reports "ngspice compiled from ngspice revision 26"
+Inherited physical PDK evidence: SKY130A / Magic from v15C regional mesh extraction
