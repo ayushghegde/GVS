@@ -1,0 +1,32 @@
+{
+  "schema": "v14V-self-addressed-polarity-fabric-rerun-v2",
+  "status": "PARTIAL PASS",
+  "evidence_boundary": {
+    "extracted": "Magic/SKY130A metal2 TEACH meshes only; both rerun meshes DRC=0.",
+    "modeled": "self-tag charge, ETG volatile conductance, HZO internal voltage, learning and energy beyond extracted metal.",
+    "not_claimed": "No fabricated ETG/FIC/HZO/guided-gap compound device and no pulse-launcher PEX."
+  },
+  "physical_teach_mesh": {
+    "64_cells": {"drc_errors": 0,"cap_fF": 15.212200000000001,"geometry": "8-run 100um serpentine metal2 proxy"},
+    "256_cells": {"drc_errors": 0,"cap_fF": 46.658199999999994,"geometry": "16-run 200um serpentine metal2 proxy"},
+    "note": "Fresh rerun geometry. It intentionally replaces no historical physical measurement and is lighter than the earlier interrupted proxy."
+  },
+  "self_tag": {"trials":1000000,"winner_tag_success":1.0,"loser_false_tag":1e-06,"winner_charge_e_p0p1":2172.932695483046,"loser_charge_e_p99p9":375.1296219171878,"threshold_e_p99p9":1739.2171906952494,"threshold_median_e":900.0},
+  "etg": {"trials":1000000,"hzo_cap_aF":7.96876903152,"delay_ns":100.0,"teach_pulse_ns":30.0,"teach_V":1.2,"roff_median_ohm":1000000000000.0,"fresh_gain_median":5000.0,"tagged_ge_1V":0.999511,"untagged_le_0p15V":1.0,"stale500_le_0p15V":0.999835,"inference_only_le_0p30V":1.0,"tagged_p0p1_V":1.0581395028879286,"untagged_p99p9_V":0.011125790002710365,"stale_p99p9_V":0.07255485272970985,"delay_sweep":[{"delay_ns":20,"tagged_ge_1V":1.0,"tagged_p0p1_V":1.1979236955084727,"untagged_p99p9_V":0.011143155147958592},{"delay_ns":50,"tagged_ge_1V":1.0,"tagged_p0p1_V":1.1976576149427527,"untagged_p99p9_V":0.011094503814472524},{"delay_ns":80,"tagged_ge_1V":1.0,"tagged_p0p1_V":1.1921707329243731,"untagged_p99p9_V":0.011204007771263562},{"delay_ns":100,"tagged_ge_1V":0.999472,"tagged_p0p1_V":1.058067044024389,"untagged_p99p9_V":0.01112128579585303},{"delay_ns":120,"tagged_ge_1V":0.99344,"tagged_p0p1_V":0.4282626061602993,"untagged_p99p9_V":0.011085699623447891},{"delay_ns":160,"tagged_ge_1V":0.946744,"tagged_p0p1_V":0.006662989661985801,"untagged_p99p9_V":0.011199866543810746},{"delay_ns":200,"tagged_ge_1V":0.770992,"tagged_p0p1_V":0.0034228516427493583,"untagged_p99p9_V":0.01110730023633808},{"delay_ns":500,"tagged_ge_1V":0.0,"tagged_p0p1_V":0.0020031715441386592,"untagged_p99p9_V":0.011030318789074765}]},
+  "learning": [
+    {"feedback_error":0.03,"method":"explicit","recovery_epochs_mean":51.15,"final_accuracy_mean":0.9998046875,"changed_final_accuracy_mean":0.99921875,"obsolete_route_selected_mean":0.00078125},
+    {"feedback_error":0.03,"method":"self","recovery_epochs_mean":116.75,"final_accuracy_mean":0.972265625,"changed_final_accuracy_mean":0.8890625,"obsolete_route_selected_mean":0.03046875},
+    {"feedback_error":0.03,"method":"corroborated","recovery_epochs_mean":112.0,"final_accuracy_mean":0.97890625,"changed_final_accuracy_mean":0.915625,"obsolete_route_selected_mean":0.02265625},
+    {"feedback_error":0.1,"method":"self","recovery_epochs_mean":120.7,"final_accuracy_mean":0.95625,"changed_final_accuracy_mean":0.825,"obsolete_route_selected_mean":0.04375},
+    {"feedback_error":0.1,"method":"corroborated","recovery_epochs_mean":115.15,"final_accuracy_mean":0.975390625,"changed_final_accuracy_mean":0.9015625,"obsolete_route_selected_mean":0.025},
+    {"feedback_error":0.2,"method":"self","recovery_epochs_mean":121.0,"final_accuracy_mean":0.9275390625,"changed_final_accuracy_mean":0.7109375,"obsolete_route_selected_mean":0.08359375},
+    {"feedback_error":0.2,"method":"corroborated","recovery_epochs_mean":120.05,"final_accuracy_mean":0.958984375,"changed_final_accuracy_mean":0.8359375,"obsolete_route_selected_mean":0.040625},
+    {"feedback_error":0.3,"method":"self","recovery_epochs_mean":121.0,"final_accuracy_mean":0.8923828125,"changed_final_accuracy_mean":0.5828125,"obsolete_route_selected_mean":0.09921875},
+    {"feedback_error":0.3,"method":"corroborated","recovery_epochs_mean":121.0,"final_accuracy_mean":0.939453125,"changed_final_accuracy_mean":0.759375,"obsolete_route_selected_mean":0.0703125}
+  ],
+  "energy": [
+    {"cells":64,"extracted_teach_metal_fF":15.212200000000001,"estimated_collar_fF":3.06000730810368,"combined_fF":18.27220730810368,"direct_cycle_fJ":26.311978523669303,"after_2over3_recovery_fJ":8.770659507889768,"plus_20fJ_launcher_fJ":28.770659507889768},
+    {"cells":256,"extracted_teach_metal_fF":46.658199999999994,"estimated_collar_fF":12.24002923241472,"combined_fF":58.898229232414714,"direct_cycle_fJ":84.8134500946772,"after_2over3_recovery_fJ":28.271150031559063,"plus_20fJ_launcher_fJ":48.27115003155906}
+  ],
+  "decision": {"keep":"activity-as-address remains viable as a model/metal-routing direction","problem":"ETG must physically provide a large but temporary fresh/stale conductance ratio without rewriting HZO","next":"move slow human/teacher interpretation out of the ETG timing window; regenerate physical tags by replay at the thinking layer"}
+}
