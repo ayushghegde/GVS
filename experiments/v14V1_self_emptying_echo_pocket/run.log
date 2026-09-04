@@ -1,0 +1,7 @@
+{
+  "schema":"v14V1-self-emptying-echo-pocket-v1",
+  "status":"MODEL PASS / PHYSICAL COUPON OPEN",
+  "requirement":{"minimum_fresh_stale_conductance_ratio":13.418263930387589,"nominal_gain_needed_from_1Tohm_off":475.93724567724126},
+  "monte_carlo":{"trials":1000000,"tagged_ge_1V":0.999979,"untagged_le_0p15V":1.0,"stale500_le_0p15V":0.999985,"fresh_gain_p0p1":1172.6187273010976,"fresh_barrier_shift_p0p1_eV":0.2318482486600284,"winner_pocket_ions_p0p1":142.0,"loser_pocket_ions_p99p99":0.0},
+  "note":"Full deterministic stdout-equivalent result is stored in results/results.json."
+}

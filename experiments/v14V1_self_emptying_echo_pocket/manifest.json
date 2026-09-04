@@ -1,0 +1,10 @@
+{
+  "schema":"gvs-experiment-manifest-v1",
+  "experiment":"v14V1_echo_pocket_barrier",
+  "generated_utc":"2026-09-04T06:38:27.879069+00:00",
+  "host":{"platform":"Linux-6.18.35-x86_64-with-glibc2.41","python":"3.13.5"},
+  "tools":{"ngspice":null,"magic":null,"klayout":null},
+  "environment":{"PDK_ROOT":"/mnt/data/gvs_v14r_tools","PDK":"sky130A"},
+  "files":[{"path":"IDEA_LEDGER.md","bytes":708,"sha256":"f9379e66d55bdabd720ce7785bcca29a3a06a82bc0cc741b81cd0763dbcc4a25"},{"path":"NEXT_EXPERIMENT.md","bytes":411,"sha256":"f7a320b74c40a6e066f27c49f8cd4426de815623ffce90f3a343e1169f98f44c"},{"path":"REPORT.md","bytes":4480,"sha256":"2cb9cfe16ad6c9b3b84ed6fb536bf4fc6ae2282a15bdb6415174756c9a05fc79"},{"path":"RUN.md","bytes":353,"sha256":"ddd0ef48bb9747d5b1cc50b2146c4017d64393b950f0081098d1508f5ac9f60a"},{"path":"SOURCES.md","bytes":815,"sha256":"9aa252ebf95d292ab1182626a9d5e419d77da1db10e43955871f26d5802a6b54"},{"path":"V14V1_ARCHITECTURE.md","bytes":2337,"sha256":"d2533570c4f9515ec759d1eb96deb5d7889ad06654f4451ae27f75c0c11dc35b"},{"path":"results/results.json","bytes":3215,"sha256":"4b77a93bcbfb2360eaf3cabdba076288163501f25ed3f6fe231ea0d16fb42d3a"},{"path":"run.log","bytes":3215,"sha256":"4b77a93bcbfb2360eaf3cabdba076288163501f25ed3f6fe231ea0d16fb42d3a"},{"path":"source/run_v14v1.py","bytes":5877,"sha256":"2f733867b76028803324bac220f8c3bb505f47eaff38a680596c0b6ea595abdd"}],
+  "required_review":["Confirm REPORT.md states PASS/PARTIAL PASS/FAIL.","Confirm exact run command/script is present.","Confirm simulator/PDK/corner information is recorded.","Confirm generated data is not mislabeled as historical or extracted data."]
+}
