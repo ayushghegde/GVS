@@ -1,0 +1,22 @@
+magic
+tech sky130A
+timestamp 1788500000
+<< metal2 >>
+rect 0 0 10000 14
+rect 9986 0 10000 74
+rect 0 60 10000 74
+rect 0 60 14 134
+rect 0 120 10000 134
+rect 9986 120 10000 194
+rect 0 180 10000 194
+rect 0 180 14 254
+rect 0 240 10000 254
+rect 9986 240 10000 314
+rect 0 300 10000 314
+rect 0 300 14 374
+rect 0 360 10000 374
+rect 9986 360 10000 434
+rect 0 420 10000 434
+<< labels >>
+rlabel metal2 0 0 120 14 0 TEACH
+<< end >>

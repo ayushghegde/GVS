@@ -1,0 +1,26 @@
+{
+  "schema": "gvs-experiment-manifest-v1",
+  "experiment": "v14V_self_echo_learning",
+  "generated_utc": "2026-09-04T06:33:04.989513+00:00",
+  "host": {"platform":"Linux-6.18.35-x86_64-with-glibc2.41","python":"3.13.5"},
+  "tools": {"ngspice":null,"magic":null,"klayout":null},
+  "environment": {"PDK_ROOT":"/mnt/data/gvs_v14r_tools","PDK":"sky130A"},
+  "files": [
+    {"path":"IDEA_LEDGER.md","bytes":2035,"sha256":"5120d8058704aff5756756c13d25a6246af0bc2e552659b2c4124334b39771f1"},
+    {"path":"NEXT_EXPERIMENT.md","bytes":525,"sha256":"90b54fc0cc62323b8333e1d064f07f49432a9453296a67ca76afd1cbbc160411"},
+    {"path":"REPORT.md","bytes":4046,"sha256":"242410ec6a0fcc25c86ec9c9730adb0e4e58dde3056beacb2f48703ddd1370bd"},
+    {"path":"RUN.md","bytes":655,"sha256":"4d40caa9c4e3a57adad5196654412e62b097804ac4153f8ab817f38db2217597"},
+    {"path":"SOURCES.md","bytes":1249,"sha256":"37c537dd612a883718e182a75cd6222748e04a5274101f7c1f1f506d8062dd1e"},
+    {"path":"V14V_ARCHITECTURE.md","bytes":3362,"sha256":"bd66eea922447dd93ed60b714e7adc63f37a1c4733b8c2d4bbbb1e8a2e030e79"},
+    {"path":"physical/v14v_teach_mesh_16x16.ext","bytes":527,"sha256":"d5abf7ab63a57d70309c85e0ad97986084e86cea717cfc6049e742cbbbe56531"},
+    {"path":"physical/v14v_teach_mesh_16x16.log","bytes":594,"sha256":"17edef94af19b65973be9fb7ecdb80ff621b081ab9531f769129902587b97480"},
+    {"path":"physical/v14v_teach_mesh_16x16.mag","bytes":762,"sha256":"4e0dc05ef5290ba7590e6e8ddad876e7fbe7866ac172b8774219c4c6833d1611"},
+    {"path":"physical/v14v_teach_mesh_8x8.ext","bytes":526,"sha256":"0835faa9884946fd2cf6443fb9ee7be8f9bea5fdbf1fab9d47979eb8df8819a8"},
+    {"path":"physical/v14v_teach_mesh_8x8.log","bytes":584,"sha256":"c03830aed4002f88b18fb1396c1624aa57e666f9a3228fbe7400b13e0854c0ae"},
+    {"path":"physical/v14v_teach_mesh_8x8.mag","bytes":418,"sha256":"8529e71c99eb5d9b6b3a7d31b301158aec1bfff3ff5507478c56f130906e2a50"},
+    {"path":"results/results.json","bytes":6264,"sha256":"5042558c789893aa5747e299e958068abc9ef7d2570c896ee1d0e92c710ee30c"},
+    {"path":"run.log","bytes":6264,"sha256":"5042558c789893aa5747e299e958068abc9ef7d2570c896ee1d0e92c710ee30c"},
+    {"path":"source/run_v14v.py","bytes":7994,"sha256":"8df6e766044e2e35fd25231e18c51e8be040fd4ee1719f39cde50ff4f1af4969"}
+  ],
+  "required_review": ["Confirm REPORT.md states PASS/PARTIAL PASS/FAIL.","Confirm exact run command/script is present.","Confirm simulator/PDK/corner information is recorded.","Confirm generated data is not mislabeled as historical or extracted data."]
+}

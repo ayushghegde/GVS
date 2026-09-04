@@ -1,0 +1,16 @@
+Using NULL graphics device.
+Input style sky130(): scaleFactor=2, multiplier=2
+The following types are not handled by extraction and will be treated as non-electrical types:
+    ubm 
+Using technology "sky130A", version 1.0.602-0-gf3c505b.
+SkyWater SKY130: Open Source rules and DRC
+Loading "v14v_teach_mesh_8x8" from command line.
+Cell v14v_teach_mesh_8x8 read from current working directory
+:drc check
+:drc count total
+Total DRC errors found: 0
+:extract do local
+:extract all
+Extracting v14v_teach_mesh_8x8 into v14v_teach_mesh_8x8.ext:
+Processing v14v_teach_mesh_8x8
+:quit -noprompt

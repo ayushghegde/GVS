@@ -1,0 +1,10 @@
+{
+  "schema": "v14V-self-addressed-polarity-fabric-rerun-v2",
+  "status": "PARTIAL PASS",
+  "evidence_boundary": {"extracted":"Magic/SKY130A metal2 TEACH meshes only; both rerun meshes DRC=0.","modeled":"self-tag charge, ETG volatile conductance, HZO internal voltage, learning and energy beyond extracted metal.","not_claimed":"No fabricated ETG/FIC/HZO/guided-gap compound device and no pulse-launcher PEX."},
+  "physical_teach_mesh": {"64_cells":{"drc_errors":0,"cap_fF":15.212200000000001,"geometry":"8-run 100um serpentine metal2 proxy"},"256_cells":{"drc_errors":0,"cap_fF":46.658199999999994,"geometry":"16-run 200um serpentine metal2 proxy"},"note":"Fresh rerun geometry. It intentionally replaces no historical physical measurement and is lighter than the earlier interrupted proxy."},
+  "self_tag": {"trials":1000000,"winner_tag_success":1.0,"loser_false_tag":1e-06,"winner_charge_e_p0p1":2172.932695483046,"loser_charge_e_p99p9":375.1296219171878,"threshold_e_p99p9":1739.2171906952494,"threshold_median_e":900.0},
+  "etg": {"trials":1000000,"hzo_cap_aF":7.96876903152,"delay_ns":100.0,"teach_pulse_ns":30.0,"teach_V":1.2,"roff_median_ohm":1000000000000.0,"fresh_gain_median":5000.0,"tagged_ge_1V":0.999511,"untagged_le_0p15V":1.0,"stale500_le_0p15V":0.999835,"inference_only_le_0p30V":1.0,"tagged_p0p1_V":1.0581395028879286,"untagged_p99p9_V":0.011125790002710365,"stale_p99p9_V":0.07255485272970985},
+  "learning_summary": "Full detailed array is in results/results.json; this run.log is the exact stdout record from the deterministic rerun.",
+  "decision": {"keep":"activity-as-address remains viable as a model/metal-routing direction","problem":"ETG must physically provide a large but temporary fresh/stale conductance ratio without rewriting HZO","next":"move slow human/teacher interpretation out of the ETG timing window; regenerate physical tags by replay at the thinking layer"}
+}

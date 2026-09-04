@@ -1,37 +1,13 @@
-# v14V exact runs
+# v14V exact run
 
 ## Main engineering experiment
 
 ```bash
-cd experiments/v14V_self_addressed_polarity_fabric
-python3 source/run_v14v.py > run.log
+python3 experiments/v14V_self_echo_learning/source/run_v14v.py > experiments/v14V_self_echo_learning/run.log
 ```
 
-The script writes `results/results.json`. Dependencies: Python 3, NumPy and Numba. Random seeds are fixed in source. The selected self-tag and ETG screens use 1,000,000 Monte Carlo trials; the corrected sequential learning screen uses 20 deterministic seeds.
+The script writes `results/results.json`. Dependencies: Python 3 and NumPy. Random seeds are fixed in source. The self-tag and ETG screens use 1,000,000 Monte Carlo trials; the sequential learning screen uses deterministic seeds.
 
-## Physical TEACH mesh extraction
+## Physical evidence
 
-The original run used Magic 8.3.681 built from the supplied archive and SKY130A technology version `1.0.602-0-gf3c505b`.
-
-256-cell proxy:
-
-```bash
-cd physical
-/mnt/data/gvs_v14v_tools/magic_install/bin/magic -dnull \
-  -T /mnt/data/gvs_v14v_tools/common/sky130A/libs.tech/magic/sky130A.tech \
-  v14v_teach_mesh
-```
-
-At the Magic prompt:
-
-```text
-:drc check
-:drc count total
-:extract do local
-:extract all
-:quit -noprompt
-```
-
-Repeat with `v14v_teach_mesh_8x8` for the 64-cell proxy.
-
-Both original extraction logs and `.ext` files are persisted under `physical/`.
+The persisted `.mag`, `.ext`, and extraction logs under `physical/` are the rerun Magic/SKY130A TEACH-mesh proxies. Their DRC/extraction results are parsed by the report/results. They do not model HZO or the custom ionic devices.
