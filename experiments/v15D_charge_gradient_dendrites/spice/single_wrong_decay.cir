@@ -1,0 +1,10 @@
+* v15D one-off wrong-path residual decay
+IRES 0 d PWL(1n 0 1.001n 4n 2.001n 4n 2.002n 0)
+CFE d 0 24e-18
+CPAR d 0 20e-18
+RLEAK d 0 120G
+.tran 50p 12u
+.meas tran V50N find v(d) at=50n
+.meas tran V5U find v(d) at=5u
+.meas tran V10U find v(d) at=10u
+.end
