@@ -1,0 +1,33 @@
+{
+  "schema": "gvs-experiment-manifest-v1",
+  "experiment": "v15D_charge_gradient_dendrites",
+  "status": "PARTIAL PHYSICS PASS",
+  "tools": {
+    "python": "3.13-class runtime used for recorded experiment",
+    "ngspice": "ngspice compiled from ngspice revision 26",
+    "inherited_physical_evidence": "SKY130A/Magic v15C regional mesh extraction"
+  },
+  "git_persistence_note": "This manifest describes the selected Git-persisted experiment set. Some UTF-8 files were compacted when written through the GitHub contents API, so sandbox SHA-256 byte hashes are intentionally not claimed as Git-byte hashes. Numeric results and experiment meaning are preserved.",
+  "files": [
+    "REPORT.md",
+    "V15D_ARCHITECTURE.md",
+    "IDEA_LEDGER.md",
+    "MODEL_BOUNDARIES.md",
+    "NEXT_EXPERIMENT.md",
+    "RUN.md",
+    "SOURCES.md",
+    "tool_versions.txt",
+    "source/run_v15d.py",
+    "source/coupled_charge_hzo.py",
+    "results/results.json",
+    "spice/charge_burst.cir",
+    "spice/single_wrong_decay.cir",
+    "spice/choice_compact.cir"
+  ],
+  "required_review": [
+    "REPORT.md labels extracted/model evidence separately.",
+    "RUN.md records the exact local run path used in the recorded session.",
+    "The v15D hardware-change-request interpretation is explicitly corrected by v15E: unknown knowledge alone is not a hardware fault.",
+    "The fixed 22.5-electron assumption is superseded by v15E event-derived Q=C*V capture modeling."
+  ]
+}
