@@ -1,0 +1,21 @@
+* v15D charge-gradient dendrite choice compact transient
+VAXSRC src 0 PULSE(0 0.25 1n 50p 50p 15n 40n)
+RBAL src ax 100k
+CAX ax 0 50f
+RLOAD choice 0 2.3Meg
+VB1 b1 0 0.30
+VB2 b2 0 0.02
+VB3 b3 0 0.00
+VB4 b4 0 -0.02
+R1 ax choice r={1e9*exp(-20*V(b1))}
+R2 ax choice r={1e9*exp(-20*V(b2))}
+R3 ax choice r={1e9*exp(-20*V(b3))}
+R4 ax choice r={1e9*exp(-20*V(b4))}
+.tran 10p 20n
+.meas tran I1 find i(R1) at=5n
+.meas tran I2 find i(R2) at=5n
+.meas tran I3 find i(R3) at=5n
+.meas tran I4 find i(R4) at=5n
+.meas tran VCHOICE find v(choice) at=5n
+.meas tran VAX find v(ax) at=5n
+.end
