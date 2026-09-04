@@ -1,0 +1,84 @@
+{
+  "experiment": "v15D_charge_gradient_dendrites",
+  "status": "PARTIAL PHYSICS PASS — FITA REJECTED; CHARGE-GRADIENT DUAL-TIME MEMORY SELECTED FOR CUSTOM-DEVICE COUPON",
+  "architecture": {
+    "DCG": "Dendritic Charge Gradient: validated firing leaves signed charge residue on the existing dendrite/HZO collar; repeated use accumulates it and disuse leaks it away.",
+    "DTM": "Dual-Time Memory in one collar: free electrode/ionic charge is fast and leaky; HZO polarization is the slow durable floor. No extra memory device.",
+    "NBR": "Need-Based Replay: unknown, close-margin, or mismatch states cause candidate replay; known high-margin routes do not.",
+    "SBR": "Two repair branches are retained and may be reassigned before a hardware/topology-change request is emitted.",
+    "FITA_tunnel_anchor": "REJECTED from selected path after v15D improvement; no tunnel selector is required.",
+    "ordinary_semantic_cell_MOS": 0,
+    "polarity_memory": "4-nm HZO collar retained as slow state",
+    "inference": "guided volatile gap + ballast/quench retained",
+    "hollow_charge_return_infrastructure": "retained for shared supply/decoupling, but high-voltage TEACH distribution is no longer required by v15D learning"
+  },
+  "coupled_free_charge_hzo": {
+    "positive_24_replays": {
+      "n": 50000,
+      "sign": 1,
+      "start_pol": 0.0,
+      "replays": 24,
+      "final_pol_q": [0.6133482063514455,0.6856221004394107,0.9235883603112238,0.9999378145031524,0.9999997221102555],
+      "pass_pos_ge_0p8": 0.885,
+      "pass_neg_le_m0p8": 0.0,
+      "peak_v_q": [0.7075015209764508,0.771161963590208,1.0741583592767832,1.7781926001187434,2.051862736672638],
+      "min_v_q": [0.0,0.0,0.0,0.0,0.0],
+      "end_v_q": [0.5940993848289864,0.6567743328360325,0.9764858597750384,1.72086939756793,1.994846794437803],
+      "v10us_abs_q": [0.031103040405294193,0.2237744125531593,0.3386856161848011],
+      "inj_e_total_q": [494.7533236292222,539.9059721163542,585.008971974616],
+      "qpr_e_q": [183.98212708239396,337.45076499487976,567.2890179367729]
+    },
+    "single_wrong_event": {
+      "n": 50000,"sign": 1,"start_pol": 0.0,"replays": 1,
+      "final_pol_q": [0.0,0.0,1.0082328351410499e-09,0.000291069190718272,0.0018060543886244276],
+      "pass_pos_ge_0p8": 0.0,"pass_neg_le_m0p8": 0.0,
+      "peak_v_q": [0.08557377421604917,0.09931441517229238,0.14968275087621913,0.2089688418755626,0.23392066271009176],
+      "min_v_q": [0.0,0.0,0.0,0.0,0.0],
+      "end_v_q": [0.0827668732135305,0.09596807547988236,0.14431862460757994,0.2003887811978636,0.22098674372977178],
+      "v10us_abs_q": [0.004451422799942453,0.027130259005366548,0.039019735913923013],
+      "inj_e_total_q": [13.437064999621425,22.49289395448386,31.61882712654303],
+      "qpr_e_q": [184.60381431297878,338.91905068296836,567.6103859202287]
+    },
+    "erase_old_p0p70_with_26_negative_replays": {
+      "n": 50000,"sign": -1,"start_pol": 0.7,"replays": 26,
+      "final_pol_q": [-0.9966006458631687,-0.9490318546598425,-0.5149018995200703,-0.13814407588348937,-0.045316713404141055],
+      "pass_pos_ge_0p8": 0.0,"pass_neg_le_m0p8": 0.07792,
+      "peak_v_q": [0.0,0.0,0.0,0.0,0.0],
+      "min_v_q": [-1.4964323792119936,-1.2085713267184919,-0.8122848794310492,-0.6353072089080624,-0.5928976603510838],
+      "end_v_q": [-1.4263950420322111,-1.1139938513439962,-0.6786453159662815,-0.5023824775395618,-0.4652706065971507],
+      "v10us_abs_q": [0.021573047358173295,0.1402846218968633,0.21552092276809226],
+      "inj_e_total_q": [538.5381814561817,584.8657393317924,631.9546778546635],
+      "qpr_e_q": [184.9846221062519,337.5683719256083,568.5969924932327]
+    },
+    "negative_24_replays": {
+      "n": 50000,"sign": -1,"start_pol": 0.0,"replays": 24,
+      "final_pol_q": [-0.9999996887922731,-0.9999428823549149,-0.9237319007205123,-0.6847640409173099,-0.6111131560516423],
+      "pass_pos_ge_0p8": 0.0,"pass_neg_le_m0p8": 0.88582,
+      "peak_v_q": [0.0,0.0,0.0,0.0,0.0],
+      "min_v_q": [-2.033717858223922,-1.77974115861855,-1.073697273562271,-0.7713681320027863,-0.7103006597446012],
+      "end_v_q": [-1.9738689530357045,-1.7249152220299766,-0.9762670456657296,-0.6567360736091533,-0.594024314455833],
+      "v10us_abs_q": [0.03146980303141772,0.22306686573750523,0.34183421061824265],
+      "inj_e_total_q": [494.5664208842322,540.0879691106152,585.361706469568],
+      "qpr_e_q": [184.36057006973132,337.6430466546188,574.2162037071577]
+    }
+  },
+  "choice_mc": {
+    "trials": 300000,"seed": 15052,"correct_choice_pass": 0.9999366666666667,"spare_branch_false_win_rate": 3.3333333333333335e-05,
+    "field_margin_V_q": {"p001": 0.25351726107071937,"p01": 0.2944830216915799,"median": 0.4205511984269191,"p99": 0.5203605706383669},
+    "winning_latency_ns_q": {"p01": 2.038114621842075e-07,"median": 3.9920485873172314e-05,"p99": 0.00309607762426131},
+    "note": "Compact stochastic guided-gap nucleation model; no per-branch transistor is implied."
+  },
+  "ngspice": {
+    "charge_burst": {"returncode": 0,"values": {"v1": 0.09007787,"v4": 0.3502979,"v8": 0.6750384,"v12": 0.9760861,"v14": 1.11827,"v5u": 0.5601758,"v10u": 0.2173004},"circuit": "charge_burst.cir","log": "charge_burst.log"},
+    "single_wrong_decay": {"returncode": 0,"values": {"v50n": 0.09016795,"v5u": 0.03531028,"v10u": 0.01369738},"circuit": "single_wrong_decay.cir","log": "single_wrong_decay.log"},
+    "choice_compact": {"returncode": 0,"values": {"vchoice": 0.06577692,"vax": 0.1361146,"branch_current_A": [2.8376245379478083e-08,1.0493148819878843e-10,7.033768e-11,4.714875689564006e-11],"winner_to_runner_current_ratio": 270.4264074261526},"circuit": "choice_compact.cir","log": "choice_compact.log"}
+  },
+  "need_based_learning": {
+    "relations": 256,"episodes": 650,"accuracy_on_committed_answerable": 1.0,"unresolved_answerable": 0,"changed_definition_accuracy": 1.0,"deliberate_novel_relations": 3,"hardware_change_requests": 3,"durable_consolidation_events": 127,"positive_internal_replays_for_consolidation": 3048,"negative_internal_replays_for_redefinition": 1326,"need_based_events": 8640,"untrusted_teach_attempts_blocked": 139057,"spare_branch_recruitments": 0,"remaining_wrong_path_traces": 0,
+    "note": "Behavioral rule of the same fabric. The hardware-request interpretation in this historical run is corrected by v15E: unknown knowledge alone is not a hardware fault."
+  },
+  "energy": {"captured_residual_charge_energy_fJ_per_replay_proxy": 0.0018024487132499998,"inherited_inference_energy_fJ_per_replay_proxy": 1.9056,"24_replay_learning_burst_inference_energy_fJ_proxy": 45.7344,"26_replay_redefinition_negative_burst_fJ_proxy": 49.5456,"note": "Local capture energy is tiny relative to replay inference energy. High-voltage regional HZO program pulse from v15C is removed."},
+  "initial_failed_variant_preserved": {"selected_hzo_spice_V": 0.8740383,"choice_correct": 0.706348,"eight_replay_reaches_0p45V": 0.0448133,"reason": "Initial v15D assumed too-small charge accumulation and independent weak branch races. It was rejected, not overwritten."},
+  "evidence_boundary": {"actual_software_this_run": "compiled ngspice transient charge/decay and compact branch-choice circuits; Python/NumPy coupled free-charge/HZO-domain and system behavior models.","inherited_physical": "v15C fresh Magic/SKY130 TEACH mesh DRC=0, 263.385 fF; v15D no longer requires that mesh for high-voltage programming.","still_not_physical_proof": "fraction of guided-gap event charge that remains as signed dendrite residue, exact fast-charge leakage time, charge-to-guided-gap field coupling, partial-HZO analog retention, and intrinsic Ag deep-trap lifetime."},
+  "next_problem": "Fabricate/model-calibrate one dendrite/HZO/guided-gap coupon to measure signed residual charge per event and analog HZO consolidation/decay. v15E later replaces the fixed 15–25e target with event-derived Q=C·V; do not add branch MOS merely to save it."
+}
