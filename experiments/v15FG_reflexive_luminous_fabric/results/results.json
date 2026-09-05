@@ -1,0 +1,69 @@
+{
+  "experiment": "v15FG_reflexive_luminous_fabric",
+  "seed": 150706,
+  "status": "PARTIAL PASS",
+  "luminous_intermediate_surface": {
+    "trials": 300000,
+    "hold_us": 1.2,
+    "full_scale_optical_energy_fJ": 80.0,
+    "full_scale_photons": 237610.30198801585,
+    "decoded_value_mae_units": 0.023539396114959515,
+    "decoded_value_p99_error_units": 0.0850482103338806,
+    "false_wake_rate": 0.0,
+    "miss_rate": 0.0,
+    "crosstalk_median": 0.0002000581330390703,
+    "crosstalk_p99": 0.0007188143599009032,
+    "physical_node_fullscale_V": 0.45,
+    "note": "scalar intermediate+need only; semantic context is already shared by the same AI state",
+    "need_node_peak_V": 0.44053649629610064,
+    "need_node_1us_V": 0.3892663047739266,
+    "need_node_2us_V": 0.25843928373587377
+  },
+  "same_ai_reflexive_mode": {
+    "trials": 250000,
+    "single_path_accuracy": 0.94678,
+    "linked_same_ai_accuracy": 0.979936,
+    "absolute_accuracy_gain": 0.033156000000000074,
+    "discussion_fraction": 0.19924,
+    "note": "orchestration simulation only; does not measure real LLM reasoning quality"
+  },
+  "need_based_reasoning": {
+    "tasks": 200000,
+    "need_trigger_fraction": 0.48966,
+    "mean_rounds": 2.123955,
+    "p99_rounds": 7.0,
+    "answerable_fraction": 0.99997,
+    "durably_resolved_need_fraction": 0.9999387329984071,
+    "unresolved_need_fraction": 6.126700159294204e-05
+  },
+  "hardware_revision_diagnostic": {
+    "regions": 120000,
+    "fault_fraction": 0.050833333333333335,
+    "revision_request_true_positive": 0.9904918032786886,
+    "revision_request_false_positive": 0.0,
+    "requests_total": 6042,
+    "meaning": "maker-facing chip-revision request only for persistent physical weakness"
+  },
+  "affect_like_modulation": {
+    "trials": 180000,
+    "baseline_high_risk_action_rate": 0.03197777777777778,
+    "modulated_unverified_high_risk_action_rate": 0.0017111111111111112,
+    "verification_rate": 0.31390555555555555,
+    "exploration_rate": 0.22971111111111112,
+    "interpretation": "affect-like control biases (caution/curiosity), not subjective emotion or consciousness"
+  },
+  "charge_gradient_memory": {
+    "local_node_capacitance_aF": 24.0,
+    "status": "intrinsic/effective dendrite-HZO capacitance only; no added memory capacitor",
+    "explanation": "positive/negative charge is the state; capacitance is the physical relation between charge and voltage"
+  },
+  "decisions": {
+    "drop_previous_destination-code interpretation": true,
+    "screen_carries_entire_prompt": false,
+    "screen_carries_scalar_intermediate_and_need": true,
+    "literal_10V_core_encoding": false,
+    "same_ai_linked_discussion_is_optional_software_mode": true,
+    "fita_tunnel_used": false,
+    "explicit_added_memory_capacitor_used": false
+  }
+}
