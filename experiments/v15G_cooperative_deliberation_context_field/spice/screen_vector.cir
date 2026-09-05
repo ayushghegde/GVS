@@ -1,0 +1,45 @@
+* v15G analog partial-thought screen: 8 data dots + 1 reference dot
+* 5 V is hardware rail only; semantic value is normalized light intensity.
+.param VDRV=5
+Vrail rail 0 {VDRV}
+* emitter branches represented as current-controlled optical sources; detector side uses equivalent photocurrents
+* target normalized vector: .15 .72 .38 0 1 .57 .09 .83
+* full-scale detector current 30 pA for 1.2 us. Receiver C=5fF, Rleak=100G.
+I0 0 d0 PULSE(0 4.5p 0 1n 1n 1.2u 3u)
+I1 0 d1 PULSE(0 21.6p 0 1n 1n 1.2u 3u)
+I2 0 d2 PULSE(0 11.4p 0 1n 1n 1.2u 3u)
+I3 0 d3 PULSE(0 0p 0 1n 1n 1.2u 3u)
+I4 0 d4 PULSE(0 30.0p 0 1n 1n 1.2u 3u)
+I5 0 d5 PULSE(0 17.1p 0 1n 1n 1.2u 3u)
+I6 0 d6 PULSE(0 2.7p 0 1n 1n 1.2u 3u)
+I7 0 d7 PULSE(0 24.9p 0 1n 1n 1.2u 3u)
+Iref 0 ref PULSE(0 30.0p 0 1n 1n 1.2u 3u)
+C0 d0 0 5f
+C1 d1 0 5f
+C2 d2 0 5f
+C3 d3 0 5f
+C4 d4 0 5f
+C5 d5 0 5f
+C6 d6 0 5f
+C7 d7 0 5f
+Cref ref 0 5f
+R0 d0 0 100G
+R1 d1 0 100G
+R2 d2 0 100G
+R3 d3 0 100G
+R4 d4 0 100G
+R5 d5 0 100G
+R6 d6 0 100G
+R7 d7 0 100G
+Rref ref 0 100G
+.tran 2n 2u
+.measure tran v0 FIND v(d0) AT=1u
+.measure tran v1 FIND v(d1) AT=1u
+.measure tran v2 FIND v(d2) AT=1u
+.measure tran v3 FIND v(d3) AT=1u
+.measure tran v4 FIND v(d4) AT=1u
+.measure tran v5 FIND v(d5) AT=1u
+.measure tran v6 FIND v(d6) AT=1u
+.measure tran v7 FIND v(d7) AT=1u
+.measure tran vref FIND v(ref) AT=1u
+.end
