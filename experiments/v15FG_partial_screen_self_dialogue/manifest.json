@@ -1,0 +1,20 @@
+{
+  "schema": "gvs-experiment-manifest-v1",
+  "experiment": "v15FG_partial_screen_self_dialogue",
+  "host": {"platform": "Linux-6.18.35-x86_64-with-glibc2.41", "python": "3.13.5"},
+  "status": "PARTIAL PASS",
+  "selected_result_sha256": "23b6c515d7d905eae2dd3735b778e574be2d3feb2e1a22223d888129bb82f47f",
+  "selected_source_sha256": "dae0a924fc56e1bc474626b9641ee1f571e876076a37cf742896869d2935381d",
+  "evidence": {
+    "circuit": "ngspice two-dot +10 screen transient",
+    "screen_statistics": "500000-trial photon/read Monte Carlo",
+    "dialogue": "same-model protocol/error-correlation model only",
+    "affect": "goal/evidence modulation model only"
+  },
+  "required_review": [
+    "REPORT separates circuit evidence from protocol models.",
+    "5 V is per-dot branch representation; specialist core is not driven at 10 V.",
+    "Same-model dialogue is not claimed as measured LLM performance.",
+    "Direct affect is not claimed as consciousness or subjective emotion."
+  ]
+}
