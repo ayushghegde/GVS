@@ -1,0 +1,103 @@
+{
+  "experiment": "v15G_cooperative_deliberation_context_field",
+  "status": "PARTIAL PASS",
+  "corrected_screen": {
+    "trials": 500000,
+    "dots": 8,
+    "minimum_hold_s": 1e-06,
+    "representation": "calibrated normalized analog optical working-state vector; no literal voltage/value mapping",
+    "calibration": "per-dot static gain calibration + one reference dot + one black/dark reference",
+    "rmse_q": [
+      0.004378408035027529,
+      0.006342537714096334,
+      0.016264714692554465,
+      0.03789446124323583,
+      0.0487532417153809
+    ],
+    "max_error_q": [
+      0.00762986520210366,
+      0.01111348275515186,
+      0.031099388844500697,
+      0.07480010450245217,
+      0.09439178851535306
+    ],
+    "pass_rmse_below_0p05": 0.999246,
+    "pass_max_error_below_0p12": 0.999952,
+    "energy_J_q": [
+      1.6976701887258575e-12,
+      2.216946736464229e-12,
+      4.442592837866986e-12,
+      8.07800409688039e-12,
+      9.719758926003992e-12
+    ]
+  },
+  "screen_spice_check": {
+    "ran": false,
+    "reason": "fresh ngspice binary not present in current runtime; v15FG real ngspice screen result remains inherited physical-circuit evidence",
+    "deck": "screen_vector.cir"
+  },
+  "cooperative_self_dialogue": {
+    "trials": 250000,
+    "protocol": "same model, same original prompt, shared evolving transcript. A contributes a partial line of reasoning; B reads it and extends/reframes/repairs it; A then continues from the updated transcript. Final synthesis occurs only after the discussion.",
+    "single_same_compute": {
+      "success": 0.935152,
+      "mean_correct_insights": 7.76664,
+      "mean_wrong_insights": 0.21386
+    },
+    "cooperative_dialogue": {
+      "success": 0.98434,
+      "mean_correct_insights": 7.933828,
+      "mean_wrong_insights": 0.055376
+    },
+    "near_identical_state_control": {
+      "success": 0.935152,
+      "mean_correct_insights": 7.76664,
+      "mean_wrong_insights": 0.21386
+    },
+    "high_sycophancy_control": {
+      "success": 0.92338,
+      "mean_correct_insights": 7.692232,
+      "mean_wrong_insights": 0.139432
+    },
+    "gain_over_single_protocol_model": 0.04918800000000001,
+    "boundary": "Protocol/latent-insight simulation only. This runtime cannot spawn two independent GPT-5.6 Sol conversations, so a real same-model A/B remains required."
+  },
+  "brain_principle_context_field": {
+    "trials": 350000,
+    "principle": "diffuse context fields modulate gain, replay/observation budget, commitment margin and later plasticity; they do not encode a target action.",
+    "fields": {
+      "salience": "importance/novelty gain",
+      "uncertainty": "requests more internal observation/replay",
+      "signed_outcome": "later reinforcement/depression sign and strength",
+      "urgency": "limits or accelerates deliberation"
+    },
+    "baseline_accuracy_proxy": 0.7662657142857143,
+    "rejected_action_coded_affect_accuracy_proxy": 0.7583028571428572,
+    "rejected_action_coded_fraction_changed": 0.07426857142857143,
+    "selected_context_field_accuracy_proxy": 0.8780942857142857,
+    "selected_extra_reasoning_fraction": 0.7255857142857143,
+    "selected_mean_extra_observations": 1.4400914285714286,
+    "selected_action_change_after_new_evidence": 0.18036285714285713,
+    "gain_q": [
+      0.9613521798688416,
+      0.9753968357297143,
+      1.0289006080276033,
+      1.0842192888533002,
+      1.101518808715422
+    ],
+    "plasticity_q": [
+      0.5069423240731042,
+      0.5164035691434843,
+      0.6102620959578254,
+      0.7962439486444586,
+      0.838776531504787
+    ],
+    "decision": "reject emotion-as-command; keep bounded neuromodulatory context fields that alter processing and learning while evidence selects behavior."
+  },
+  "decisions": {
+    "screen": "v15FG literal number/voltage mapping rejected. Screen carries calibrated temporary analog partial-thought state for >=1us; hardware voltage is not meaning.",
+    "dialogue": "not answer-then-compare. Two same-model branches co-author one evolving solution through a shared transcript; independent inference state is necessary for perspective.",
+    "emotion": "do not encode named emotion commands. Use diffuse context modulation analogous in principle to neuromodulation: gain, attention/replay, commitment and plasticity.",
+    "core": "retain v15D signed dendrite free charge + natural decay + HZO consolidation; no added learning capacitor."
+  }
+}
