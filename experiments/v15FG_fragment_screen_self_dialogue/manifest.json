@@ -1,0 +1,20 @@
+{
+  "schema": "gvs-experiment-manifest-v1",
+  "experiment": "v15FG_fragment_screen_self_dialogue",
+  "generated_utc": "2026-09-05T06:15:15.826986+00:00",
+  "host": {"platform": "Linux-6.18.35-x86_64-with-glibc2.41", "python": "3.13.5"},
+  "tools": {"numpy": "2.3.5"},
+  "files": [
+    {"path": "IDEA_LEDGER.md", "bytes": 1152, "sha256": "ed796342a76ebc633c6881b78623fc36be89d45fb07c1c3efa0f4b3d8b2732c6"},
+    {"path": "MODEL_BOUNDARIES.md", "bytes": 787, "sha256": "d5090eaae8be6cea1b4ebdb5a27b69d5f72589b6ff825a77934b06d4a03fa6e5"},
+    {"path": "NEXT_EXPERIMENT.md", "bytes": 721, "sha256": "c047cc36c979a52fbea362ebfb618828efacba227092360c0fd4a388b0f33923"},
+    {"path": "REPORT.md", "bytes": 5917, "sha256": "c8c12e7cafaf99af4bf58e8fed90a16977967f95189fde95bcc266fc8e83ef70"},
+    {"path": "RUN.md", "bytes": 225, "sha256": "d4e4725434cac69edbbc9ac561aed5f8ed2289963a46d156391b113fa50448e3"},
+    {"path": "SOURCES.md", "bytes": 907, "sha256": "65b4e7bfe4ab7ae3f03e1fa56107ea852ba43bf8bff6ff8a1c32e47a6c470137"},
+    {"path": "V15FG_ARCHITECTURE.md", "bytes": 1783, "sha256": "1ae512ad73d238e27a8643749bfdb850a8954f46e8bb3e8d606e551fe759249d"},
+    {"path": "results/results.json", "bytes": 3089, "sha256": "a54491de2eab43402db7236192ccf817d4735e6386942759f2f3c1f3400c0a81"},
+    {"path": "run.log", "bytes": 3161, "sha256": "f5cb822fc902a0946fef41c2bad98df986a642a9795f0a8adeae0784e8f08a2f"},
+    {"path": "source/run_v15fg.py", "bytes": 9406, "sha256": "c3ad3d71a4e4a4a1a678701737664e0a0a31714f01e8aed53f38db70ddf1c2f1"}
+  ],
+  "required_review": ["REPORT.md states status", "exact run script present", "modeled vs fabricated evidence separated"]
+}

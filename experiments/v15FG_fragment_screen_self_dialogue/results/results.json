@@ -1,0 +1,48 @@
+{
+  "experiment": "v15FG_fragment_screen_self_dialogue",
+  "status": "PARTIAL PASS",
+  "selected_architecture": {
+    "screen": "FSS Fragment Scratch Screen: fixed-voltage optical dots hold only intermediate fragments >=1 us; not destination routing",
+    "dialogue": "optional same-model mirror dialogue mode for high-compute users; same prompt to same model replicas then exchange/aggregate",
+    "learning": "inherit v15D charge-gradient dendrites; no FITA/tunnel; no extra learning capacitor",
+    "modulation": "direct functional global charge biases (caution/urgency/curiosity), not literal emotions or consciousness",
+    "hardware_request": "persistent physical-fault evidence may request maker revision; knowledge unknown does not"
+  },
+  "screen": {
+    "trials": 300000,
+    "hold_min_us": 1.0,
+    "coding": "Hamming(12,8), fixed 5-V emitter domain",
+    "decode_success": 1.0,
+    "raw_bit_error_rate": 2.7777777777777776e-07,
+    "persistence_observed_success": 1.0,
+    "mean_lit_dots": 5.994736666666666,
+    "energy_nominal_pj": {"p50": 3.0, "p99": 5.0},
+    "energy_p50_pj_vs_emitter_current_uA": {"0.049999999999999996": 1.5, "0.09999999999999999": 3.0, "0.19999999999999998": 6.0, "0.5": 14.999999999999996, "1.0": 29.999999999999993},
+    "direct_numeric_voltage_rejected": {"max_value_v": 255.0, "median_energy_pj": 16.384, "reason": "numerical value should not equal device voltage; energy/stress scales with value squared"},
+    "electrical_12bit_bus_energy_pj_by_distance": {"2": 0.7680000000000002, "5": 1.9200000000000004, "10": 3.8400000000000007, "20": 7.6800000000000015}
+  },
+  "same_ai_dialogue": {
+    "trials": 500000,
+    "single_accuracy": 0.907684,
+    "two_copy_no_talk_accuracy": 0.907864,
+    "one_exchange_dialogue_accuracy": 0.954066,
+    "fixed_dialogue_compute_multiplier_proxy": 2.45,
+    "initial_disagreement_rate": 0.123086,
+    "adaptive_dialogue_compute_multiplier_proxy": 2.0553887,
+    "evidence_boundary": "correlated-error model, not an actual LLM benchmark in this runtime"
+  },
+  "direct_modulation": {
+    "trials": 250000,
+    "static_accuracy_vs_generic_optimum": 0.564372,
+    "modulated_accuracy_vs_generic_optimum": 0.619364,
+    "note": "functional emotion-like modulation only; does not imply subjective emotion"
+  },
+  "hardware_revision_request": {
+    "trials": 100000,
+    "fault_prevalence": 0.05531,
+    "fault_detection": 0.9815584885192551,
+    "false_request_rate": 1.0585483068519831e-05
+  },
+  "accepted_from_prior": ["HZO polarity", "guided-gap firing", "positive/negative charge-gradient dendrites", "natural decay", "four active + two repair branches", "hollow shared infrastructure", "hardware revision requests for physical faults", "zero-MOS ordinary semantic cells"],
+  "rejected_or_corrected": ["v15E destination-address optical plane", "literal numeric voltage encoding", "FITA tunnel", "SEEP delayed tag", "extra learning capacitor"]
+}
