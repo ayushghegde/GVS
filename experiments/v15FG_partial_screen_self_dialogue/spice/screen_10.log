@@ -1,0 +1,20 @@
+Circuit: * v15f corrected partial-result screen: +10 = two 5-unit dots held >=1us
+
+Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+
+Warning: vdot2: no DC value, transient time 0 value used
+Warning: vdot1: no DC value, transient time 0 value used
+
+No. of Data Rows : 1521
+
+Measurements for Transient Analysis
+
+vd1_1u              =  1.796423e-02
+vd2_1u              =  1.796423e-02
+vdark_1u            =  7.185691e-06
+vneed_1u            =  3.592846e-02
+vscience_1u         =  7.995835e-01
+vscience_max        =  8.003177e-01 at=  5.758204e-07
+
+CPU time since last call: 0.011 seconds.
+Total CPU time: 0.011 seconds.
