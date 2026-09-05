@@ -1,0 +1,27 @@
+{
+  "schema": "gvs-experiment-manifest-v1",
+  "experiment": "v15G_cooperative_deliberation_context_field",
+  "status": "PARTIAL PASS",
+  "host": {
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "python": "3.13.5"
+  },
+  "files": [
+    {"path":"IDEA_LEDGER.md","bytes":843,"sha256":"d1e646f694cc6ca48e23249bbb1c5efc453c4bb97ac884bc1b8c28a3c839c8a1"},
+    {"path":"MODEL_BOUNDARIES.md","bytes":851,"sha256":"aebaca43cf012a7873c2c01718838803ae21cd2423a4967cc695c122c06514a9"},
+    {"path":"NEXT_EXPERIMENT.md","bytes":670,"sha256":"d1cf9d16877e1ef12b6cc71c3f5eef4c207cb76d5c43e37f1930bec514a27f4a"},
+    {"path":"REPORT.md","bytes":5341,"sha256":"6d97b904359b7a699231d09e0b970398733c4780440633cb55cec33f9aca5fb1"},
+    {"path":"RUN.md","bytes":356,"sha256":"8502189d5c4763ecfb6dfd68d95c058fff78820285345d585f01773988f9db1b"},
+    {"path":"SOURCES.md","bytes":1048,"sha256":"564f5bb16100e0f8458812b8e6ba7afb81c99fa3d8b0b970e077e0898f1d65a6"},
+    {"path":"V15G_ARCHITECTURE.md","bytes":2229,"sha256":"e3f0c6c056293dd85a4306fef0b317f9495894757fb239681e26a49d7a3b6acb"},
+    {"path":"results/results.json","bytes":4421,"sha256":"11f83c461fea5567623f50336533f8620c8ca727ff6a529c6c67e1f1c2c62bd3"},
+    {"path":"source/run_v15g.py","bytes":12304,"sha256":"513143ce18ed08b51dd464067d9b474f7febfeb9eed7039584bed4d2b4bb22f2"},
+    {"path":"spice/screen_vector.cir","bytes":1320,"sha256":"d51f186af9e0b87bdd859fc70a1772016d4b83cba023abf6350756455f761dbe"}
+  ],
+  "provenance": {
+    "results": "fresh rerun in current session",
+    "ngspice": "fresh v15G deck prepared but not executed; inherited v15FG real-ngspice circuit evidence remains separate",
+    "web": "literature used only as feasibility checks"
+  },
+  "storage_note": "run.log intentionally omitted from Git because it duplicates results/results.json"
+}
