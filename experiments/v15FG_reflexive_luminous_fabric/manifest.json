@@ -1,0 +1,25 @@
+{
+  "schema": "gvs-experiment-manifest-v1",
+  "experiment": "v15FG_reflexive_luminous_fabric",
+  "status": "PARTIAL PASS",
+  "git_persistence_note": "Git-persisted source uses repository-relative output paths. The local reproducibility run produced SHA-256 04211080cf5e87aeb8a5e112fc2c87aead69e55790591066f9cd3e6ea1ad73a8 for results/results.json before persistence.",
+  "tools": {
+    "python": "3.x",
+    "numpy": "required",
+    "scipy": "required"
+  },
+  "evidence": {
+    "luminous_intermediate_surface": "NumPy photon/noise/crosstalk + SciPy ODE",
+    "same_ai_reflexive_mode": "synthetic orchestration model only",
+    "need_based_reasoning": "behavioral simulation only",
+    "hardware_revision_diagnostic": "synthetic repeated physical-health observations",
+    "affect_like_modulation": "control-policy simulation only"
+  },
+  "required_review": [
+    "Confirm REPORT.md states PARTIAL PASS.",
+    "Confirm exact run command/source is present.",
+    "Do not describe same-AI toy results as an actual ChatGPT multi-session benchmark.",
+    "Do not describe affect-like signals as consciousness or subjective emotion.",
+    "Do not treat logical analog value 10 as literal 10 V on a nanoscale core."
+  ]
+}
