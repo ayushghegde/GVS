@@ -1,0 +1,4 @@
+ngspice compiled from ngspice revision 26
+Written originally by Berkeley University
+Currently maintained by the NGSpice Project
+Python 3.13.5
