@@ -1,0 +1,30 @@
+* v15F corrected partial-result screen: +10 = two 5-unit dots held >=1us
+* Each dot is commanded by a 5 V branch. Optical coupling is represented by a behavioral photocurrent.
+Vdot1 c1 0 PULSE(0 5 100n 2n 2n 1.2u 4u)
+Vdot2 c2 0 PULSE(0 5 100n 2n 2n 1.2u 4u)
+* receiver photodiode current ~90 pA per lit dot at selected operating point
+Bpd1 d1 0 I = {-90p*V(c1)/5}
+Bpd2 d2 0 I = {-90p*V(c2)/5}
+* dark/crosstalk detector ~2e-4 of lit channel
+Bpd3 d3 0 I = {-18f*(V(c1)+V(c2))/5}
+C1 d1 0 5f
+C2 d2 0 5f
+C3 d3 0 5f
+R1 d1 0 100G
+R2 d2 0 100G
+R3 d3 0 100G
+* same-AI continuation node: sum of observed dot voltages controls one already-selected specialist power gate
+Bneed need 0 V={V(d1)+V(d2)}
+Vcore core 0 0.8
+Sg core load need 0 SSW
+.model SSW SW(Ron=20 Roff=1T Vt=0.015 Vh=0.002)
+Cload load 0 40f
+Rload load 0 50k
+.tran 2n 3u
+.measure tran vd1_1u FIND V(d1) AT=1.1u
+.measure tran vd2_1u FIND V(d2) AT=1.1u
+.measure tran vdark_1u FIND V(d3) AT=1.1u
+.measure tran vneed_1u FIND V(need) AT=1.1u
+.measure tran vscience_1u FIND V(load) AT=1.1u
+.measure tran vscience_max MAX V(load)
+.end
