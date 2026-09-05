@@ -1,0 +1,60 @@
+{
+  "experiment": "v15FG_partial_screen_self_dialogue",
+  "status": "MODEL PASS WITH BOUNDARIES",
+  "v15F_partial_screen": {
+    "trials": 500000,
+    "encoding": "signed unary 5-unit quanta; +10 = two + dots, each driven from 5-V branch",
+    "minimum_visible_time_s": 1e-06,
+    "exact_partial_value_read_pass": 0.999998,
+    "misread_rate": 2e-06,
+    "plus10_exact_read_pass": 1.0,
+    "plus10_energy_J_q": [1.8054410155472445e-12,2.055825194164345e-12,3.027639516226617e-12,4.500560836204623e-12,5.058461469175446e-12],
+    "message_energy_J_q": [0.0,0.0,6.471695943138759e-12,1.4138924126194076e-11,1.558505793790879e-11],
+    "lit_dot_photoelectrons_q": [131.0,201.0,655.0,1817.0,2491.0],
+    "false_dot_count_rate": 0.0,
+    "missed_lit_dot_rate": 2e-06,
+    "note": "5 V is the per-dot branch supply. A value of 10 is represented by two 5-unit lit dots rather than forcing 10 V across one emitter."
+  },
+  "v15F_ngspice_screen_10": {
+    "ran": true,"returncode": 0,
+    "values": {"vd1_1u":0.01796423,"vd2_1u":0.01796423,"vdark_1u":7.185691e-06,"vneed_1u":0.03592846,"vscience_1u":0.7995835,"vscience_max":0.8003177},
+    "deck":"screen_10.cir","log":"screen_10.log"
+  },
+  "v15F_receiver_transient_scipy": {
+    "C_F":5e-15,"R_ohm":100000000000.0,"Iph_A":9e-11,"pulse_s":1.2e-06,"read_threshold_V":0.01,
+    "samples_V":{"0.1us":0.0017998200119993997,"1us":0.01798201199400239,"1.2us":0.02157410059437793,"2us":0.02153960976114767,"4us":0.021453623409454822,"8us":0.021282679111074603},
+    "peak_V":0.02157410071710009,"read_pass":true
+  },
+  "v15G_same_model_dialogue": {
+    "trials_per_correlation":300000,
+    "same_model_same_prompt_correlation_sweep": {
+      "0.0":{"single_context_accuracy":0.8199566666666667,"initial_agreement_fraction":0.7051433333333333,"final_correct_fraction_protocol_model":0.8575866666666667,"unresolved_fraction_after_one_exchange":0.11370666666666666,"gain_over_single_context":0.03763000000000005},
+      "0.3":{"single_context_accuracy":0.82071,"initial_agreement_fraction":0.7529733333333334,"final_correct_fraction_protocol_model":0.8542233333333333,"unresolved_fraction_after_one_exchange":0.09496333333333333,"gain_over_single_context":0.033513333333333284},
+      "0.6":{"single_context_accuracy":0.8200166666666666,"initial_agreement_fraction":0.8122266666666667,"final_correct_fraction_protocol_model":0.84634,"unresolved_fraction_after_one_exchange":0.07172333333333333,"gain_over_single_context":0.026323333333333365},
+      "0.85":{"single_context_accuracy":0.8198333333333333,"initial_agreement_fraction":0.8862333333333333,"final_correct_fraction_protocol_model":0.8356666666666667,"unresolved_fraction_after_one_exchange":0.04353666666666667,"gain_over_single_context":0.015833333333333366},
+      "1.0":{"single_context_accuracy":0.8195966666666666,"initial_agreement_fraction":1.0,"final_correct_fraction_protocol_model":0.8195966666666666,"unresolved_fraction_after_one_exchange":0.0,"gain_over_single_context":0.0}
+    },
+    "boundary":"Same-model self-dialogue only creates perspective if inference states/sampling are not perfectly correlated. This is a protocol/error-correlation model, not measured GPT quality."
+  },
+  "v15F_partial_result_power_relay":{"partial_result":10,"representation":"two 5-V screen dots","specialist_core_supply_V":0.8,"gate_window_s":8e-07,"core_peak_V":0.8,"safety_note":"10 is represented by two 5-unit optical quanta. 10 V is not applied across the specialist chip core."},
+  "v15G_direct_affect_goal_reasoning": {
+    "trials":250000,
+    "neutral_affect_action_distribution":{"allow":0.246712,"verify/challenge":0.57754,"block":0.175748},
+    "high_caution_action_distribution":{"allow":0.0548,"verify/challenge":0.852464,"block":0.092736},
+    "fraction_actions_changed_by_direct_affect":0.274924,
+    "vehicle_like_example_action_distribution":{"allow":4e-05,"verify/challenge":0.9023,"block":0.09766},
+    "direct_affect_definition":"caution/urgency/curiosity are direct signed modulatory states in the reasoning fabric. They change thresholds and search depth; they do not hard-code a particular action and are not claimed to be conscious feelings.",
+    "example_interpretation":"In the locked/interior-start style ambiguity, the selected response is usually verify/challenge rather than automatically allow or block, because both threat and legitimate-occupant evidence are considered."
+  },
+  "screen_vs_wire": {
+    "screen_local_dots":16,"chips":8,"energy_for_value_10_two_dots_J_proxy":2.9999999999999997e-12,
+    "electrical_partial_result_energy_J_proxy_by_length_mm":{"2":6.400000000000001e-13,"5":1.6000000000000003e-12,"10":3.2000000000000005e-12,"20":6.400000000000001e-12},
+    "conclusion":"At the deliberately long 1us hold, the optical screen is not an energy win over short electrical links. Its value is reduced cross-chip wiring/visible shared state. Use only if package wiring/concurrency benefits justify the optical hold energy."
+  },
+  "architecture_decisions": {
+    "retain":["v15D signed dendrite charge","HZO slow consolidation","guided-gap firing","4 active + 2 repair branches","unknown state","hardware-revision request only for persistent physical faults","hollow/shared power infrastructure"],
+    "replace":["v15E destination-address optical screen -> v15F partial-result working screen"],
+    "optional_software_feature":"same-model self-dialogue is an application option, not a new chip block",
+    "affect":"direct affect may be represented as modulatory signed state; do not equate it with consciousness or subjective emotion."
+  }
+}
